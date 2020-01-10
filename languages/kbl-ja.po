@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kunoichi Block Library\n"
-"POT-Creation-Date: 2020-01-10 13:39+0900\n"
-"PO-Revision-Date: 2020-01-10 13:41+0900\n"
+"POT-Creation-Date: 2020-01-10 20:40+0900\n"
+"PO-Revision-Date: 2020-01-10 20:41+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language: ja\n"
@@ -23,73 +23,123 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
 
+#: src/Kunoichi/BlockLibrary/Blocks/BubbleBlock.php:30
+msgid "Post"
+msgstr "投稿"
+
+#: src/Kunoichi/BlockLibrary/Rest/PostSearch.php:84
 #: src/Kunoichi/BlockLibrary/Rest/UserSearch.php:75
 msgid "Parameter \"id\" or \"s\" is required."
 msgstr "パラメーター\"id\"または\"s\"が必須です。"
 
-#: assets/js/blocks/bubble.js:38
+#: assets/js/blocks/bubble.js:39
 msgid "Speech Bubble"
 msgstr "吹き出し"
 
-#: assets/js/blocks/bubble.js:44
+#: assets/js/blocks/bubble.js:45
 msgid "Speech bubble with avatar."
 msgstr "アバター付きの吹き出しです。"
 
-#: assets/js/blocks/bubble.js:106
+#: assets/js/blocks/bubble.js:111
 msgid "User not found."
 msgstr "ユーザーが見つかりません。"
 
-#: assets/js/blocks/bubble.js:109
+#: assets/js/blocks/bubble.js:120 assets/js/blocks/bubble.js:150
 msgid "Error"
 msgstr "エラー"
 
-#: assets/js/blocks/bubble.js:119
+#: assets/js/blocks/bubble.js:141 assets/js/components/post-selector.js:45
+msgid "Post not found."
+msgstr "投稿は見つかりませんでした。"
+
+#: assets/js/blocks/bubble.js:162
 msgid "Text Color"
 msgstr "文字色"
 
-#: assets/js/blocks/bubble.js:124
+#: assets/js/blocks/bubble.js:167
 msgid "Background Color"
 msgstr "背景色"
 
-#: assets/js/blocks/bubble.js:143
+#: assets/js/blocks/bubble.js:186
 msgid "Speaker"
 msgstr "発話者"
 
-#: assets/js/blocks/bubble.js:144
+#: assets/js/blocks/bubble.js:187
 msgid "Name"
 msgstr "名前"
 
-#: assets/js/blocks/bubble.js:145
+#: assets/js/blocks/bubble.js:188
 msgid "If name is empty, this will be just omitted."
 msgstr "名前が空白の場合は省略されます。"
 
-#: assets/js/blocks/bubble.js:151
+#: assets/js/blocks/bubble.js:195
 msgid "Select Avatar"
 msgstr "アバターを選択"
 
-#: assets/js/blocks/bubble.js:154
-msgid "User"
-msgstr "ユーザー"
+#: assets/js/blocks/bubble.js:196
+msgid "Clear Avatar"
+msgstr "アバターを削除"
 
-#: assets/js/blocks/bubble.js:158
+#: assets/js/blocks/bubble.js:201 assets/js/components/object-selector.js:74
+msgid "Current User"
+msgstr "現在のユーザー"
+
+#: assets/js/blocks/bubble.js:201
+msgid "Search from WordPress users"
+msgstr "WordPressユーザーから探す"
+
+#: assets/js/blocks/bubble.js:207
+#, python-format
+msgid "Current %s"
+msgstr "現在の%s"
+
+#: assets/js/blocks/bubble.js:208
+#, python-format
+msgid "Search from %s"
+msgstr "%sから探す"
+
+#: assets/js/blocks/bubble.js:214
 msgid "Layout"
 msgstr "レイアウト"
 
-#: assets/js/blocks/bubble.js:160
+#: assets/js/blocks/bubble.js:216
 msgid "Position"
 msgstr "位置"
 
-#: assets/js/blocks/bubble.js:163
+#: assets/js/blocks/bubble.js:219
 msgid "Left"
 msgstr "左"
 
-#: assets/js/blocks/bubble.js:164
+#: assets/js/blocks/bubble.js:220
 msgid "Right"
 msgstr "右"
 
-#: assets/js/blocks/bubble.js:169
+#: assets/js/blocks/bubble.js:225
 msgid "Color Setting"
 msgstr "色設定"
+
+#: assets/js/components/object-selector.js:78
+#: assets/js/components/object-selector.js:81
+msgid "Search"
+msgstr "検索"
+
+#: assets/js/components/object-selector.js:78
+msgid "Enter search keywords..."
+msgstr "検索キーワードを入力…"
+
+#: assets/js/components/post-selector.js:66
+#: assets/js/components/user-selector.js:61
+msgid "Choose"
+msgstr "選択"
+
+#: assets/js/components/post-selector.js:70
+#: assets/js/components/user-selector.js:65
+msgid "Remove"
+msgstr "削除"
+
+#: assets/js/components/user-selector.js:43
+msgid "No user found."
+msgstr "ユーザーが見つかりません。"
 
 #. Plugin Name of the plugin/theme
 msgid "Kunoichi Block Library"
@@ -110,3 +160,6 @@ msgstr "株式会社 KUNOICHI"
 #. Author URI of the plugin/theme
 msgid "https://kunoichiwp.com"
 msgstr "https://kunoichiwp.com"
+
+#~ msgid "User"
+#~ msgstr "ユーザー"

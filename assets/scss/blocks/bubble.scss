@@ -12,101 +12,105 @@ $bubble-name-color: #888 !default;
 
 .kbl-bubble {
 
-  display: flex;
-  align-items: flex-end;
+	display: flex;
+	align-items: flex-end;
 
-  &[data-position='right'] {
-	flex-direction: row-reverse;
-  }
-
-
-  &-avatar {
-	width: 80px;
-	text-align: center;
-  }
-
-  &-image {
-	max-width: 100%;
-	width: auto;
-	height: auto;
-	border-radius: $bubble-image-radius;
-  }
-
-  &-body {
-	width: 100%;
-	box-sizing: border-box;
-
-	[data-position='left'] & {
-	  margin-left: $bubble-pudding;
+	& + & {
+		margin-top: 40px;
 	}
 
-	[data-position='right'] & {
-	  margin-right: $bubble-pudding;
-	}
-  }
-
-  &-name {
-	margin: 0.25em 0 0;
-	display: block;
-	font-size: $bubble-name-font-size;
-	color: $bubble-name-color;
-  }
-
-  &-text {
-	position: relative;
-	z-index: 2;
-	padding: $bubble-pudding;
-	margin: 0;
-	border: $bubble-border-default;
-	background-color: $bubble-bg-default;
-	border-radius: $bubble-radius;
-
-	&[class*=-background-color],
-	&[style*=background-color] {
-	  border: none;
-
-	  &:before {
-		content: none;
-	  }
+	&[data-position='right'] {
+		flex-direction: row-reverse;
 	}
 
-	&:after,
-	&:before {
-	  content: "";
-	  display: block;
-	  width: $bubble-arrow;
-	  height: $bubble-arrow;
-	  transform: rotate(45deg);
-	  position: absolute;
-	  bottom: 40px;
+
+	&-avatar {
+		width: 80px;
+		text-align: center;
 	}
 
-	&:after {
-	  z-index: 3;
-	  background-color: inherit;
+	&-image {
+		max-width: 100%;
+		width: auto;
+		height: auto;
+		border-radius: $bubble-image-radius;
 	}
 
-	&:before {
-	  z-index: 1;
-	  background-color: $bubble-border-color;
+	&-body {
+		width: 100%;
+		box-sizing: border-box;
+
+		[data-position='left'] & {
+			margin-left: $bubble-pudding;
+		}
+
+		[data-position='right'] & {
+			margin-right: $bubble-pudding;
+		}
 	}
 
-	[data-position=left] &:after {
-	  left: -0.5 * $bubble-arrow;
+	&-name {
+		margin: 0.25em 0 0;
+		display: block;
+		font-size: $bubble-name-font-size;
+		color: $bubble-name-color;
 	}
 
-	[data-position=left] &:before {
-	  border-right-color: $bubble-border-color;
-	  left: ($bubble-arrow * -0.5 ) - $bubble-border-width;
-	}
+	&-text {
+		position: relative;
+		z-index: 2;
+		padding: $bubble-pudding;
+		margin: 0;
+		border: $bubble-border-default;
+		background-color: $bubble-bg-default;
+		border-radius: $bubble-radius;
 
-	[data-position=right] &:after {
-	  right: -0.5 * $bubble-arrow;
-	}
+		&[class*=-background-color],
+		&[style*=background-color] {
+			border: none;
 
-	[data-position=right] &:before {
-	  border-right-color: $bubble-border-color;
-	  right: ($bubble-arrow * -0.5 ) - $bubble-border-width;
+			&:before {
+				content: none;
+			}
+		}
+
+		&:after,
+		&:before {
+			content: "";
+			display: block;
+			width: $bubble-arrow;
+			height: $bubble-arrow;
+			transform: rotate(45deg);
+			position: absolute;
+			bottom: 40px;
+		}
+
+		&:after {
+			z-index: 3;
+			background-color: inherit;
+		}
+
+		&:before {
+			z-index: 1;
+			background-color: $bubble-border-color;
+		}
+
+		[data-position=left] &:after {
+			left: -0.5 * $bubble-arrow;
+		}
+
+		[data-position=left] &:before {
+			border-right-color: $bubble-border-color;
+			left: ($bubble-arrow * -0.5 ) - $bubble-border-width;
+		}
+
+		[data-position=right] &:after {
+			right: -0.5 * $bubble-arrow;
+		}
+
+		[data-position=right] &:before {
+			border-right-color: $bubble-border-color;
+			right: ($bubble-arrow * -0.5 ) - $bubble-border-width;
+		}
 	}
-  }
 }
