@@ -1,0 +1,63 @@
+{
+  "name": "block-library",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp build && gulp watch",
+    "package": "gulp build",
+    "watch": "gulp watch",
+    "gulp": "gulp",
+    "jed": "po2json languages/kbl-$LOCALE.po languages/kbl-$LOCALE-kbl.json -f jed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuno1/block-library.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/kuno1/block-library/issues"
+  },
+  "homepage": "https://kunoichiwp.com",
+  "devDependencies": {
+    "@babel/core": "^7.5.4",
+    "@babel/plugin-transform-react-jsx": "^7.0.0",
+    "@babel/preset-env": "^7.5.4",
+    "@wordpress/eslint-plugin": "^3.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "eslint": "^6.0.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-eslint": "^6.0.0",
+    "gulp-imagemin": "^6.1.1",
+    "gulp-include": "^2.4.1",
+    "gulp-load-plugins": "^2.0.1",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-glob": "^1.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-stylelint": "^11.0.0",
+    "gulp-svgmin": "^2.2.0",
+    "gulp-uglify": "^3.0.2",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-pngquant": "^8.0.0",
+    "license-webpack-plugin": "^2.1.3",
+    "merge-stream": "^2.0.0",
+    "po2json": "^1.0.0-alpha",
+    "stylelint": "^12.0.0",
+    "stylelint-config-wordpress": "^15.0.0",
+    "vinyl-named": "^1.1.0",
+    "webpack": "^4.41.3",
+    "webpack-stream": "^5.2.1"
+  }
+}
