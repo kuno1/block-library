@@ -89,7 +89,9 @@ class BubbleBlock extends BlockLibraryBase {
 		if ( class_exists( 'Kunoichi\VirtualMember\PostType' ) && \Kunoichi\VirtualMember\PostType::is_active() ) {
 			$virtual_member = \Kunoichi\VirtualMember\PostType::post_type();
 			$post_type = get_post_type_object( $virtual_member );
-			$virtual_member_label = $post_type->label;
+			if ( $post_type ) {
+			    $virtual_member_label = $post_type->label;
+            }
 		}
 		return [
 			'avatar'         => get_avatar_url( 0 ),

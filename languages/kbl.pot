@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Kunoichi Block Library\n"
-"POT-Creation-Date: 2020-01-10 20:40+0900\n"
+"POT-Creation-Date: 2020-01-14 02:54+0900\n"
 "PO-Revision-Date: 2020-01-10 13:36+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
@@ -16,15 +16,15 @@ msgstr ""
 "X-Poedit-WPHeader: block-library.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
 "X-Poedit-SearchPathExcluded-3: dist\n"
 
-#: src/Kunoichi/BlockLibrary/Blocks/BubbleBlock.php:30
+#: src/Kunoichi/BlockLibrary/Blocks/BubbleBlock.php:100
 msgid "Post"
 msgstr ""
 
@@ -65,62 +65,70 @@ msgstr ""
 msgid "Speaker"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:187
+#: assets/js/blocks/bubble.js:189
+msgid "Input Directly"
+msgstr ""
+
+#: assets/js/blocks/bubble.js:191
 msgid "Name"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:188
+#: assets/js/blocks/bubble.js:192
 msgid "If name is empty, this will be just omitted."
 msgstr ""
 
-#: assets/js/blocks/bubble.js:195
+#: assets/js/blocks/bubble.js:199
 msgid "Select Avatar"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:196
+#: assets/js/blocks/bubble.js:200
 msgid "Clear Avatar"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:201 assets/js/components/object-selector.js:74
-msgid "Current User"
+#: assets/js/blocks/bubble.js:205
+msgid "Specify WordPress User"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:201
+#: assets/js/blocks/bubble.js:205
 msgid "Search from WordPress users"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:207
+#: assets/js/blocks/bubble.js:211
 #, python-format
-msgid "Current %s"
+msgid "Specify %s"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:208
+#: assets/js/blocks/bubble.js:212
 #, python-format
 msgid "Search from %s"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:214
+#: assets/js/blocks/bubble.js:218
 msgid "Layout"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:216
+#: assets/js/blocks/bubble.js:220
 msgid "Position"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:219
+#: assets/js/blocks/bubble.js:223
 msgid "Left"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:220
+#: assets/js/blocks/bubble.js:224
 msgid "Right"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:225
+#: assets/js/blocks/bubble.js:229
 msgid "Color Setting"
 msgstr ""
 
+#: assets/js/components/object-selector.js:73
+msgid "Specify User"
+msgstr ""
+
 #: assets/js/components/object-selector.js:78
-#: assets/js/components/object-selector.js:81
+#: assets/js/components/object-selector.js:82
 msgid "Search"
 msgstr ""
 

@@ -184,6 +184,10 @@ registerBlockType( 'kunoichi/bubble', {
 			<>
 				<InspectorControls>
 					<PanelBody title={ __( 'Speaker', 'kbl' ) } initialOpen={true}>
+						<hr style={ { marginTop: 0 } } />
+						<h4 className="kbl-user-heading">
+							{ __( 'Input Directly', 'kbl' ) }
+						</h4>
 						<TextControl label={ __( 'Name', 'kbl' ) } value={ attributes.name }
 									 help={ __( 'If name is empty, this will be just omitted.', 'kbl' ) }
 									 onChange={ name => setAttributes( { name } ) } />
@@ -198,13 +202,13 @@ registerBlockType( 'kunoichi/bubble', {
 							); }}/>
 						</MediaUploadCheck>
 						<hr />
-						<UserSelector id={ attributes.user } currentLabel={ __( 'Current User', 'kbl' ) } label={ __( 'Search from WordPress users', 'kbl' ) }
+						<UserSelector id={ attributes.user } currentLabel={ __( 'Specify WordPress User', 'kbl' ) } label={ __( 'Search from WordPress users', 'kbl' ) }
 									  onChange={ ( user ) => setAttributes( { user, writer: 0 } ) } />
 						{ KblBubble.virtual_member && (
 							<>
 								<hr />
 								<PostSelector id={ attributes.writer } postType={ KblBubble.virtual_member }
-									currentLabel={ sprintf( __( 'Current %s', 'kbl' ), KblBubble.virtual_member_label ) }
+									currentLabel={ sprintf( __( 'Specify %s', 'kbl' ), KblBubble.virtual_member_label ) }
 									label={ sprintf( __( 'Search from %s', 'kbl' ), KblBubble.virtual_member_label ) }
 									onChange={ ( writer ) => setAttributes( { writer, user: 0 } ) } />
 							</>

@@ -69,13 +69,14 @@ class ObjectSelector extends React.Component {
 		return (
 			<div className="kbl-user-search">
 				{ loading && <Spinner /> }
-				{ object && (
-					<div className="kbl-user-current">
-						<h4 className="kbl-user-heading">{ this.props.currentLabel || __( 'Current User', 'kbl' ) }</h4>
-						{ this.renderObject( object, false ) }
-					</div>
-				) }
-				<TextControl label={ this.props.label || __( 'Search', 'kbl' ) } value={ term } placeholder={ __( 'Enter search keywords...', 'kbl' ) } onChange={ ( value ) => this.setState( { term: value } ) } />
+				<div className="kbl-user-current">
+					<h4 className="kbl-user-heading">{ this.props.currentLabel || __( 'Specify User', 'kbl' ) }</h4>
+					{ object && (
+						this.renderObject( object, false )
+					) }
+				</div>
+				<TextControl label={ this.props.label || __( 'Search', 'kbl' ) } value={ term } placeholder={ __( 'Enter search keywords...', 'kbl' ) }
+							 onChange={ ( value ) => this.setState( { term: value } ) } />
 				<Button className="button" isSecondary={ true } disabled={ ! term.length } isBusy={ searching }
 						onClick={ () => this.search() }>
 					{ __( 'Search', 'kbl' ) }
