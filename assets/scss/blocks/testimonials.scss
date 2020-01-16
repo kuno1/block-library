@@ -1,0 +1,29 @@
+.kbl-testimonial {
+
+	&-wrapper {
+		display: flex;
+		justify-content: center;
+	}
+
+	&-avatar {
+		border-radius: 50%;
+		width: auto;
+		height: auto;
+		max-width: 96px;
+		display: block;
+		margin: 0 auto 10px;
+	}
+
+	&-name {
+		text-align: center;
+	}
+
+	&-position {
+		display: block;
+	}
+
+	&-source {
+		display: block;
+		text-align: center;
+	}
+}

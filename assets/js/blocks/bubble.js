@@ -240,6 +240,7 @@ registerBlockType( 'kunoichi/bubble', {
 					<div className='kbl-bubble-body'>
 						<RichText className={ bodyClasses.join( ' ' ) } style={ bodyStyle || null }
 								  tagName={'p'} value={attributes.content}
+								  placeholder={ __( 'Enter speech here.', 'kbl' ) }
 								  onChange={content => setAttributes({content})}/>
 					</div>
 				</div>

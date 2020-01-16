@@ -14,11 +14,11 @@ use Hametuha\WpEnqueueManager;
 abstract class BlockLibraryBase extends AbstractBlock {
 
 	protected $prefix = 'kunoichi';
-	
+
 	protected $script = '';
-	
+
 	protected $style  = '';
-	
+
 	/**
 	 * Get base directory.
 	 *
@@ -27,7 +27,7 @@ abstract class BlockLibraryBase extends AbstractBlock {
 	public function base_dir() {
 		return dirname( dirname( dirname( dirname( __DIR__ ) ) ) );
 	}
-	
+
 	/**
 	 * Get URL from directory path.
 	 *
@@ -38,7 +38,7 @@ abstract class BlockLibraryBase extends AbstractBlock {
 		$base = $this->base_dir() . '/dist/' . ltrim( $path, '/' );
 		return $this->path_to_url( $base );
 	}
-	
+
 	/**
 	 * Register assets for this block.
 	 */
@@ -67,7 +67,7 @@ abstract class BlockLibraryBase extends AbstractBlock {
 			wp_register_style( $this->style, $this->asset_url( 'css/blocks/' . $this->get_block_base() . '.css' ), $deps, $version );
 		}
 	}
-	
+
 	/**
 	 * Localize script.
 	 *
@@ -76,7 +76,7 @@ abstract class BlockLibraryBase extends AbstractBlock {
 	protected function localize_script() {
 		return [];
 	}
-	
+
 	/**
 	 * Get script for this style.
 	 *
@@ -85,7 +85,7 @@ abstract class BlockLibraryBase extends AbstractBlock {
 	protected function get_script() {
 		return $this->script;
 	}
-	
+
 	/**
 	 * Get style sheet.
 	 *
@@ -94,6 +94,43 @@ abstract class BlockLibraryBase extends AbstractBlock {
 	protected function get_style() {
 		return $this->style;
 	}
-	
-	
+
+	/**
+	 * Get REST request.
+	 *
+	 * @return bool
+	 */
+	protected function is_rest() {
+		return defined( 'REST_REQUEST' ) && REST_REQUEST;
+	}
+
+	/**
+	 * Get root directory.
+	 *
+	 * @return string
+	 */
+	protected function dir() {
+		return dirname( dirname( dirname( dirname( __DIR__ ) ) ) );
+	}
+
+	/**
+	 * Load template.
+	 *
+	 * @param string $name
+	 */
+	protected function get_template_parts( $name ) {
+		$name     = 'template-parts/' . ltrim( $name, '/' );
+		$rel_path = '/' . $name . '.php';
+		$path     =  $this->dir() . '/' . $rel_path;
+		foreach ( [ get_template_directory(), get_stylesheet_directory() ] as $theme_dir ) {
+			$theme_path = $theme_dir . '/' . $rel_path;
+			if ( file_exists( $theme_path ) ) {
+				$path = $theme_path;
+			}
+		}
+		$path = apply_filters( 'kbl_template_path', $path );
+		if ( file_exists( $path ) ) {
+			load_template( $path );
+		}
+	}
 }
