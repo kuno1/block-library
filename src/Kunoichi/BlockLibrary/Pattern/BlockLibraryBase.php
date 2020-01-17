@@ -133,4 +133,20 @@ abstract class BlockLibraryBase extends AbstractBlock {
 			load_template( $path );
 		}
 	}
+
+	/**
+     * Render json.
+     *
+	 * @param array $json
+	 * @param string $type
+	 */
+	protected function json_ld( $json, $type ) {
+		$json['@context'] = 'https://schema.org/';
+		$json['@type']    = $type;
+		?>
+        <script type="application/ld+json">
+            <?php echo json_encode( $json ); ?>
+        </script>
+		<?php
+	}
 }

@@ -5,7 +5,7 @@
 const { registerBlockType } = wp.blocks;
 const { __ } = wp.i18n;
 const { RichText, InnerBlocks, InspectorControls } = wp.editor;
-const { G, SVG, Polygon, PanelBody, TextControl, TextareaControl } = wp.components;
+const { G, SVG, Polygon, PanelBody, TextControl, ToggleControl } = wp.components;
 
 
 registerBlockType( 'kunoichi/steps', {
@@ -27,9 +27,19 @@ registerBlockType( 'kunoichi/steps', {
 	attributes: {
 		title: {
 			type: 'string',
-			source: 'text',
+			source: 'html',
 			selector: '.kbl-step-title',
 			default: '',
+		},
+		description: {
+			type: 'string',
+			source: 'html',
+			selector: '.kbl-step-description',
+			default: '',
+		},
+		nojson: {
+			type: 'boolean',
+			default: false,
 		},
 	},
 
@@ -37,11 +47,20 @@ registerBlockType( 'kunoichi/steps', {
 		className += ' kbl-step-wrap';
 		return (
 			<>
+				<InspectorControls>
+					<PanelBody title={ __( 'How-to Setting', 'kbl' ) } defaultOpen={ true }>
+						<ToggleControl checked={ !attributes.nojson } label={ __( 'Generate JSON-LD', 'kbl' ) }
+							onChange={ ( nojson ) =>  setAttributes( { nojson: !nojson } ) }/>
+					</PanelBody>
+				</InspectorControls>
 				<div className={ className } data-step-type={ attributes.type }>
 					<RichText className="kbl-step-title" tagName="h2" multiline={ false }
 						keepPlaceholderOnFocus={ true }
 						value={ attributes.title } placeholder={ __( 'e.g. How to tie necktie.', 'kbl' ) }
 						onChange={ ( title ) => setAttributes( { title } ) } />
+					<RichText className="kbl-step-description" tagName="p" multiline={ false }
+						value={ attributes.description } placeholder={ __( 'e.g. This article will explain how to tie a necktie.', 'kbl' )}
+						onChange={ ( description) => setAttributes( { description } ) } />
 					<div className="kbl-step-list">
 						<InnerBlocks allowedBlocks={ [ 'kunoichi/step' ] } templateLock={ false } />
 					</div>
@@ -54,6 +73,7 @@ registerBlockType( 'kunoichi/steps', {
 		return (
 			<div className="kbl-step-wrap">
 				<RichText.Content className="kbl-step-title" tagName="h2" value={ attributes.title } multiline={ false } />
+				<RichText.Content className="kbl-step-description" tagName="p" value={ attributes.description } multiline={ false } />
 				<ol className="kbl-step-list">
 					<InnerBlocks.Content />
 				</ol>
