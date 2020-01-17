@@ -1,0 +1,70 @@
+
+
+.kbl-step {
+
+	&-wrap {
+
+	}
+
+	&-title {
+		text-align: center;
+		margin: 0 0 10px;
+	}
+
+	&-list {
+		padding: 0;
+		margin: 0 0 1.5em;
+		counter-reset: steps;
+	}
+
+	&-item {
+		counter-increment: steps;
+		list-style: none;
+		margin: 0;
+		padding: 20px 0;
+		border-bottom: 1px solid #eee;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	&-header {
+		position: relative;
+		padding-left: 40px;
+		flex-basis: 100%;
+	}
+	&-name {
+		margin: 0;
+		font-weight: bold;
+	}
+	&-counter {
+		position: absolute;
+		display: inline-block;
+		padding: 10px;
+		background-color: #000;
+		color: #fff;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		&-empty:before {
+			content: counter(steps);
+			display: inline;
+		}
+	}
+	&-body {
+		padding-bottom: 10px;
+		flex: 1 1 80%;
+	}
+	&-images {
+		flex: 0 0 20%;
+	}
+	&-tip {
+		margin: 10px 0 0;
+		font-size: 0.85em;
+		color: #666;
+		&:before {
+			font-family: 'Dashicons';
+			content: "\f339";
+			color: yellow;
+			margin-right: 0.25em;
+		}
+	}
+}

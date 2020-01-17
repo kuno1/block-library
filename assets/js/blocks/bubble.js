@@ -40,7 +40,7 @@ registerBlockType( 'kunoichi/bubble', {
 
 	icon: 'format-chat',
 
-	category: 'layout',
+	category: 'formatting',
 
 	description: __( 'Speech bubble with avatar.', 'kbl' ),
 

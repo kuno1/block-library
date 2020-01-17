@@ -1,5 +1,5 @@
 /*!
- * wpdeps=wp-blocks,kbl,wp-editor, wp-components, wp-api-fetch
+ * wpdeps=wp-blocks,kbl,wp-editor, wp-components
  */
 
 const { registerBlockType } = wp.blocks;

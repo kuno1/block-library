@@ -42,7 +42,7 @@ class PostSelector extends ObjectSelector {
 					founds,
 				} );
 				if ( ! founds.length ) {
-					this.notice( __( 'Post not found.', 'kbl' ), 'error' );
+					this.notice( __( 'Post not fofund.', 'kbl' ), 'error' );
 				}
 			} ).catch( ( res ) => {
 				this.notice( res.message, 'error' );
