@@ -1,11 +1,11 @@
 /*!
- * wpdeps=wp-blocks, kbl, wp-editor, wp-components, kbl-price
+ * wpdeps=wp-blocks, kbl, wp-editor, wp-components, kbl-price, wp-data
  */
 
 const { registerBlockType } = wp.blocks;
 const { __ } = wp.i18n;
 const { RichText, InnerBlocks, InspectorControls } = wp.editor;
-const { G, Path, SVG, Rect, PanelBody, TextControl, TextareaControl } = wp.components;
+const { G, Path, SVG, Rect, PanelBody, Button, IconButton } = wp.components;
 
 
 registerBlockType( 'kunoichi/price-table', {
@@ -45,12 +45,29 @@ registerBlockType( 'kunoichi/price-table', {
 
 	},
 
-	edit( { attributes, setAttributes, className } ) {
+	edit( { attributes, setAttributes, className, clientId } ) {
 		className += ' kbl-price-table';
+		const addPriceTable = () => {
+			const block = wp.blocks.createBlock( 'kunoichi/price' );
+			const innerCount = wp.data.select('core/editor').getBlocksByClientId( clientId )[0].innerBlocks.length;
+			wp.data.dispatch( 'core/block-editor' ).insertBlocks( block, innerCount, clientId );
+		};
 		return (
 			<>
+				<InspectorControls>
+					<PanelBody title={ __( 'Price Table Setting', 'kbl' ) } defaultOpen={ true }>
+						<Button isPrimary={ true } onClick={ addPriceTable }>{ __( 'Add New Column', 'kbl' ) }</Button>
+					</PanelBody>
+				</InspectorControls>
 				<div className={ className }>
-					<InnerBlocks allowedBlocks={ [ 'kunoichi/price' ] } renderAppender={ false } />
+					<InnerBlocks allowedBlocks={ [ 'kunoichi/price' ] } renderAppender={ false } template={ [
+						[ 'kunoichi/price' ],
+						[ 'kunoichi/price' ],
+						[ 'kunoichi/price' ],
+					] } />
+					<div className="kbl-price-appender">
+						<IconButton icon="plus" onClick={ addPriceTable } label={ __( 'Add', 'kbl' ) } />
+					</div>
 				</div>
 			</>
 		);

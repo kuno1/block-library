@@ -4,21 +4,36 @@
 			display: flex;
 			margin: 0;
 			padding: 0;
+
 			& > div[data-type="kunoichi/price"] {
 				flex: 0 1 100%;
 			}
+
 			& > .block-list-appender {
 				flex: 1 1 100%;
 			}
 		}
 	}
+
 	&-detail {
 		text-align: center;
 	}
+
 	&-number {
 		display: inline-block;
 	}
+
 	&-help {
 		display: inline-block;
+	}
+
+	&-appender {
+		display: none;
+
+		.is-selected &,
+		.has-child-selected & {
+			display: flex;
+			justify-content: center;
+		}
 	}
 }
