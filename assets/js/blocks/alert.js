@@ -42,10 +42,13 @@ registerBlockType( 'kunoichi/alert', {
 		}
 	},
 
-	edit(  { attributes, setAttributes, className,  } ) {
+	edit(  { attributes, setAttributes, className } ) {
 		const classes = [ 'kbl-alert', 'alert' ];
 		if ( attributes.alignment ) {
 			classes.push( sprintf( 'has-text-align-%s', attributes.alignment ) );
+		}
+		if ( className ) {
+			classes.unshift( className )
 		}
 		const options = [
 			{ value: null, label: __( 'Not specify', 'kbl' ), disabled: true },
