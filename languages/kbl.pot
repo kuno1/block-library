@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Kunoichi Block Library\n"
-"POT-Creation-Date: 2020-01-14 02:54+0900\n"
+"POT-Creation-Date: 2020-01-21 15:46+0900\n"
 "PO-Revision-Date: 2020-01-10 13:36+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
@@ -24,13 +24,110 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
 "X-Poedit-SearchPathExcluded-3: dist\n"
 
+#: src/Kunoichi/BlockLibrary/Blocks/Alert.php:14
+msgid "Primary"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/Blocks/Alert.php:15
+msgid "Secondary"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/Blocks/Alert.php:16
+msgid "Success"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/Blocks/Alert.php:17
+msgid "Danger"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/Blocks/Alert.php:18
+msgid "Warning"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/Blocks/Alert.php:19
+msgid "Info"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/Blocks/Alert.php:20
+msgid "Light"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/Blocks/Alert.php:21
+msgid "Dark"
+msgstr ""
+
 #: src/Kunoichi/BlockLibrary/Blocks/BubbleBlock.php:100
 msgid "Post"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/Blocks/Testimonials.php:79
+#: assets/js/blocks/testimonials.js:12
+msgid "Testimonials"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/Blocks/Testimonials.php:80
+msgid "No testimonial matches your criteria."
 msgstr ""
 
 #: src/Kunoichi/BlockLibrary/Rest/PostSearch.php:84
 #: src/Kunoichi/BlockLibrary/Rest/UserSearch.php:75
 msgid "Parameter \"id\" or \"s\" is required."
+msgstr ""
+
+#: assets/js/blocks/alert.js:16
+msgid "Alert"
+msgstr ""
+
+#: assets/js/blocks/alert.js:22
+msgid "Styled alert blocks."
+msgstr ""
+
+#: assets/js/blocks/alert.js:54
+msgid "Not specify"
+msgstr ""
+
+#: assets/js/blocks/alert.js:55 assets/js/blocks/bubble.js:223
+msgid "Left"
+msgstr ""
+
+#: assets/js/blocks/alert.js:56
+msgid "Center"
+msgstr ""
+
+#: assets/js/blocks/alert.js:57 assets/js/blocks/bubble.js:224
+msgid "Right"
+msgstr ""
+
+#: assets/js/blocks/alert.js:62 assets/js/blocks/bubble.js:186
+msgid "Speaker"
+msgstr ""
+
+#: assets/js/blocks/alert.js:63
+msgid "Title"
+msgstr ""
+
+#: assets/js/blocks/alert.js:64
+msgid "If empty, omitted."
+msgstr ""
+
+#: assets/js/blocks/alert.js:66
+msgid "Text Alignment"
+msgstr ""
+
+#: assets/js/blocks/alert.js:69
+msgid "Closable"
+msgstr ""
+
+#: assets/js/blocks/alert.js:70
+msgid "This alert can be closed."
+msgstr ""
+
+#: assets/js/blocks/alert.js:70
+msgid "This alert stays opened."
+msgstr ""
+
+#: assets/js/blocks/alert.js:108
+msgid "Close"
 msgstr ""
 
 #: assets/js/blocks/bubble.js:39
@@ -49,7 +146,7 @@ msgstr ""
 msgid "Error"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:141 assets/js/components/post-selector.js:45
+#: assets/js/blocks/bubble.js:141
 msgid "Post not found."
 msgstr ""
 
@@ -59,10 +156,6 @@ msgstr ""
 
 #: assets/js/blocks/bubble.js:167
 msgid "Background Color"
-msgstr ""
-
-#: assets/js/blocks/bubble.js:186
-msgid "Speaker"
 msgstr ""
 
 #: assets/js/blocks/bubble.js:189
@@ -111,16 +204,214 @@ msgstr ""
 msgid "Position"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:223
-msgid "Left"
-msgstr ""
-
-#: assets/js/blocks/bubble.js:224
-msgid "Right"
-msgstr ""
-
 #: assets/js/blocks/bubble.js:229
 msgid "Color Setting"
+msgstr ""
+
+#: assets/js/blocks/bubble.js:243
+msgid "Enter speech here."
+msgstr ""
+
+#: assets/js/blocks/definition-list.js:12
+msgid "Term"
+msgstr ""
+
+#: assets/js/blocks/definition-list.js:25
+msgid "Definition Term."
+msgstr ""
+
+#: assets/js/blocks/definition-list.js:39
+msgid "Enter term name."
+msgstr ""
+
+#: assets/js/blocks/definition-list.js:51
+msgid "Description"
+msgstr ""
+
+#: assets/js/blocks/definition-list.js:64
+msgid "Definition Description."
+msgstr ""
+
+#: assets/js/blocks/definition-list.js:78
+msgid "Enter description here."
+msgstr ""
+
+#: assets/js/blocks/definition-list.js:90
+msgid "Definition List"
+msgstr ""
+
+#: assets/js/blocks/definition-list.js:105
+msgid "Definition list."
+msgstr ""
+
+#: assets/js/blocks/definition-list.js:120
+msgid "Definition List Setting"
+msgstr ""
+
+#: assets/js/blocks/definition-list.js:121
+msgid "Display as FAQ"
+msgstr ""
+
+#: assets/js/blocks/definition-list.js:123
+msgid "If checked, JSON-LD will be generated."
+msgstr ""
+
+#: assets/js/blocks/price-table.js:13
+msgid "Price Table"
+msgstr ""
+
+#: assets/js/blocks/price-table.js:42
+msgid "Display price table. Insert 3 or 4 items."
+msgstr ""
+
+#: assets/js/blocks/price-table.js:58
+msgid "Price Table Setting"
+msgstr ""
+
+#: assets/js/blocks/price-table.js:59
+msgid "Add New Column"
+msgstr ""
+
+#: assets/js/blocks/price-table.js:69
+msgid "Add"
+msgstr ""
+
+#: assets/js/blocks/price.js:20
+msgid "Price Item"
+msgstr ""
+
+#: assets/js/blocks/price.js:35
+msgid "Price item in price tables."
+msgstr ""
+
+#: assets/js/blocks/price.js:66
+msgid "Price Detail"
+msgstr ""
+
+#: assets/js/blocks/price.js:67
+msgid "Help"
+msgstr ""
+
+#: assets/js/blocks/price.js:68
+msgid "per 1 month"
+msgstr ""
+
+#: assets/js/blocks/price.js:69
+msgid ""
+"Help text displayed just after the price. For example, if this price is "
+"subscription plan, \"per 1 month\" is helpful"
+msgstr ""
+
+#: assets/js/blocks/price.js:72
+msgid "Featured"
+msgstr ""
+
+#: assets/js/blocks/price.js:73
+msgid "If this price is featured, check"
+msgstr ""
+
+#: assets/js/blocks/price.js:80
+msgid "e.g. Standard"
+msgstr ""
+
+#: assets/js/blocks/price.js:85
+msgid "Free"
+msgstr ""
+
+#: assets/js/blocks/step.js:32
+msgid "Step"
+msgstr ""
+
+#: assets/js/blocks/step.js:46
+msgid "Step Block"
+msgstr ""
+
+#: assets/js/blocks/step.js:81
+msgid "Step Number"
+msgstr ""
+
+#: assets/js/blocks/step.js:83
+msgid "If empty, automatic counter will be set."
+msgstr ""
+
+#: assets/js/blocks/step.js:85
+msgid "Tips"
+msgstr ""
+
+#: assets/js/blocks/step.js:86
+msgid "Enter special tips or notes for this step."
+msgstr ""
+
+#: assets/js/blocks/step.js:96
+msgid "e.g. Choose a necktie"
+msgstr ""
+
+#: assets/js/blocks/step.js:102
+msgid "e.g. Open your closet and choose a nice looking necktie."
+msgstr ""
+
+#: assets/js/blocks/steps.js:13
+msgid "How-to"
+msgstr ""
+
+#: assets/js/blocks/steps.js:25
+msgid "Step by step how-tos. Ready for JSON-LD."
+msgstr ""
+
+#: assets/js/blocks/steps.js:51
+msgid "How-to Setting"
+msgstr ""
+
+#: assets/js/blocks/steps.js:52
+msgid "Generate JSON-LD"
+msgstr ""
+
+#: assets/js/blocks/steps.js:59
+msgid "e.g. How to tie necktie."
+msgstr ""
+
+#: assets/js/blocks/steps.js:62
+msgid "e.g. This article will explain how to tie a necktie."
+msgstr ""
+
+#: assets/js/blocks/testimonials.js:18
+msgid "Display testimonials list."
+msgstr ""
+
+#: assets/js/blocks/testimonials.js:38
+msgid "Latest"
+msgstr ""
+
+#: assets/js/blocks/testimonials.js:42
+msgid "Menu Order"
+msgstr ""
+
+#: assets/js/blocks/testimonials.js:46
+msgid "Random"
+msgstr ""
+
+#: assets/js/blocks/testimonials.js:54
+msgid "Testimonials Setting"
+msgstr ""
+
+#: assets/js/blocks/testimonials.js:55
+msgid "Post IDs"
+msgstr ""
+
+#: assets/js/blocks/testimonials.js:57
+msgid "Write in CSV format. If set, order and number will be ignored."
+msgstr ""
+
+#: assets/js/blocks/testimonials.js:59
+msgid "Order"
+msgstr ""
+
+#: assets/js/blocks/testimonials.js:61
+msgid "Number to display"
+msgstr ""
+
+#: assets/js/components/media.js:65
+msgid "Failed to fetch image."
 msgstr ""
 
 #: assets/js/components/object-selector.js:73
@@ -134,6 +425,10 @@ msgstr ""
 
 #: assets/js/components/object-selector.js:78
 msgid "Enter search keywords..."
+msgstr ""
+
+#: assets/js/components/post-selector.js:45
+msgid "Post not fofund."
 msgstr ""
 
 #: assets/js/components/post-selector.js:66
