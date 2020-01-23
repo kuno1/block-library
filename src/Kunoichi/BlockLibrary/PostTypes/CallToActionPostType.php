@@ -4,6 +4,7 @@ namespace Kunoichi\BlockLibrary\PostTypes;
 
 
 use Hametuha\SingletonPattern\Singleton;
+use Kunoichi\BlockLibrary\Pattern\TemplateLoader;
 
 /**
  * Post type for
@@ -11,6 +12,8 @@ use Hametuha\SingletonPattern\Singleton;
  * @package kbl
  */
 class CallToActionPostType extends Singleton {
+
+	use TemplateLoader;
 
 	public $post_type = 'call-to-action';
 
@@ -157,8 +160,91 @@ class CallToActionPostType extends Singleton {
      *
 	 * @return array
 	 */
-	protected function get_predefined_positions() {
+	public static function get_predefined_positions() {
 		return apply_filters( 'kbl_cta_predefined_positions', [] );
+	}
+
+	/**
+     * Post order
+     *
+	 * @return array
+	 */
+	public static function orders() {
+	    return apply_filters( 'kbl_cta_orders', [
+			'' => __( 'Default', 'kbl' ),
+			'latest' => __( 'Latest', 'kbl' ),
+			'menu_order' => __( 'Menu Order', 'kbl' ),
+			'random' => __( 'Random', 'kbl' ),
+		] );
+	}
+
+	/**
+	 * Get queries.
+	 *
+	 * @param array $args
+	 * @return \WP_Query
+	 */
+	public static function get( $args = [] ) {
+		$args = self::parse( $args );
+		$self = self::get_instance();
+		$query_args = [
+			'post_type'      => $self->post_type,
+			'post_status'    => 'publish',
+			'posts_per_page' => $args['posts_per_page'],
+		];
+		// If position is set,
+		if ( $args['position'] ) {
+			$query_args['tax_query'] = [ [
+				'taxonomy' => 'cta-position',
+				'terms'    => array_map( 'intval', $args['position'] ),
+				'field'    => 'id',
+			] ];
+		}
+		// If predefined is set.
+		if ( $args['predefined_position'] ) {
+			$query_args['meta_query'] = [ [
+				'key'   => '_position',
+				'value' => $args['predefined_position'],
+				'compare' => 'IN'
+			] ];
+		}
+		// Order
+		switch ( $args['order'] ) {
+			case 'latest':
+				$query_args['orderby'] = [
+					'date' => 'DESC',
+				];
+				break;
+			case 'random':
+				$query_args['orderby'] = 'rand';
+				break;
+			default:
+				$query_args['orderby'] = [
+					'menu_order' => 'DESC',
+					'date'       => 'DESC',
+				];
+				break;
+		}
+		return new \WP_Query( $query_args );
+    }
+
+	/**
+	 * Load template.
+	 *
+	 * @param string $context
+	 * @return boolean
+	 */
+    public static function load( $context = '' ) {
+		return static::get_instance()->get_template_parts( 'cta', $context );
+	}
+
+    public static function parse( $args ) {
+		return wp_parse_args( $args, [
+			'order' => '',
+			'position' => [],
+			'predefined_position' => [],
+			'posts_per_page' => 1,
+		] );
 	}
 
 	/**
@@ -208,7 +294,7 @@ class CallToActionPostType extends Singleton {
                 <p>
 					<?php esc_html_e( 'If theme has predefined positions, specified CTA will be displayed there(e.g. After post content)', 'kbl' ); ?>
                 </p>
-                <?php if ( $predefined = $this->get_predefined_positions() ) : ?>
+                <?php if ( $predefined = self::get_predefined_positions() ) : ?>
                     <ol>
                         <?php foreach ( $predefined as $key => $label ) : ?>
                         <li>

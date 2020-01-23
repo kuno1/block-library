@@ -99,6 +99,37 @@ class BlockLibrary extends Singleton {
 	}
 
 	/**
+	 * Register widgets.
+	 */
+	protected function register_widgets() {
+		add_action( 'widgets_init', [ $this, 'widgets_init' ] );
+	}
+
+	/**
+	 * Register widgets hooks.
+	 */
+	public function widgets_init() {
+		$base = __DIR__ . '/BlockLibrary/Widgets';
+		foreach ( scandir( $base ) as $file ) {
+			if ( ! preg_match( '/^([^._].*)\.php$/u',$file, $matches ) ) {
+				continue;
+			}
+			$class_name = 'Kunoichi\BlockLibrary\Widgets\\' . $matches[1];
+			if ( ! class_exists( $class_name ) ) {
+				continue;
+			}
+			$reflection = new \ReflectionClass( $class_name );
+			if ( ! $reflection->isSubclassOf( 'WP_Widget' ) ) {
+				continue;
+			}
+			if ( $reflection->hasMethod( 'is_available' ) && ! $class_name::is_available() ) {
+				continue;
+			}
+			register_widget( $class_name );
+		}
+	}
+
+	/**
 	 * Initialize block library
 	 *
 	 * @param string[] $includes Absolute class name which you want to include explicitly.
@@ -108,5 +139,12 @@ class BlockLibrary extends Singleton {
 		self::$includes = $includes;
 		self::$excludes = $excludes;
 		self::get_instance();
+	}
+
+	/**
+	 * Register widgets.
+	 */
+	public static function widgets() {
+		self::get_instance()->register_widgets();
 	}
 }

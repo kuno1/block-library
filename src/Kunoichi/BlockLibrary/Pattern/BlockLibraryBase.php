@@ -13,20 +13,13 @@ use Hametuha\WpEnqueueManager;
  */
 abstract class BlockLibraryBase extends AbstractBlock {
 
+	use TemplateLoader;
+
 	protected $prefix = 'kunoichi';
 
 	protected $script = '';
 
-	protected $style  = '';
-
-	/**
-	 * Get base directory.
-	 *
-	 * @return string
-	 */
-	public function base_dir() {
-		return dirname( dirname( dirname( dirname( __DIR__ ) ) ) );
-	}
+	protected $style = '';
 
 	/**
 	 * Get URL from directory path.
@@ -50,7 +43,7 @@ abstract class BlockLibraryBase extends AbstractBlock {
 		if ( file_exists( $path ) ) {
 			$this->script = 'kbl-' . $this->get_block_base();
 			$version = filemtime( $path );
-			$deps    = WpEnqueueManager::grab_deps( $path );
+			$deps = WpEnqueueManager::grab_deps( $path );
 			wp_register_script( $this->script, $this->asset_url( 'js/blocks/' . $this->get_block_base() . '.js' ), $deps, $version, true );
 			// TODO: Translations.
 			$localize = $this->localize_script();
@@ -62,8 +55,8 @@ abstract class BlockLibraryBase extends AbstractBlock {
 		$css_path = apply_filters( 'kbl_css_path', $css_path, $this->get_block_name() );
 		if ( file_exists( $css_path ) ) {
 			$this->style = 'kbl-' . $this->get_block_base();
-			$version     = filemtime( $css_path );
-			$deps        = WpEnqueueManager::grab_deps( $css_path );
+			$version = filemtime( $css_path );
+			$deps = WpEnqueueManager::grab_deps( $css_path );
 			wp_register_style( $this->style, $this->asset_url( 'css/blocks/' . $this->get_block_base() . '.css' ), $deps, $version );
 		}
 	}
@@ -105,48 +98,18 @@ abstract class BlockLibraryBase extends AbstractBlock {
 	}
 
 	/**
-	 * Get root directory.
+	 * Render json.
 	 *
-	 * @return string
-	 */
-	protected function dir() {
-		return dirname( dirname( dirname( dirname( __DIR__ ) ) ) );
-	}
-
-	/**
-	 * Load template.
-	 *
-	 * @param string $name
-	 */
-	protected function get_template_parts( $name ) {
-		$name     = 'template-parts/' . ltrim( $name, '/' );
-		$rel_path = '/' . $name . '.php';
-		$path     =  $this->dir() . '/' . $rel_path;
-		foreach ( [ get_template_directory(), get_stylesheet_directory() ] as $theme_dir ) {
-			$theme_path = $theme_dir . '/' . $rel_path;
-			if ( file_exists( $theme_path ) ) {
-				$path = $theme_path;
-			}
-		}
-		$path = apply_filters( 'kbl_template_path', $path );
-		if ( file_exists( $path ) ) {
-			load_template( $path );
-		}
-	}
-
-	/**
-     * Render json.
-     *
 	 * @param array $json
 	 * @param string $type
 	 */
 	protected function json_ld( $json, $type ) {
-		$json['@context'] = 'https://schema.org/';
-		$json['@type']    = $type;
+		$json[ '@context' ] = 'https://schema.org/';
+		$json[ '@type' ] = $type;
 		?>
-        <script type="application/ld+json">
-            <?php echo json_encode( $json ); ?>
-        </script>
+		<script type="application/ld+json">
+			<?php echo json_encode( $json ); ?>
+		</script>
 		<?php
 	}
 }
