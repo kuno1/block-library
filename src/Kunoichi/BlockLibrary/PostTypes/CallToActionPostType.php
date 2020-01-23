@@ -238,6 +238,33 @@ class CallToActionPostType extends Singleton {
 		return static::get_instance()->get_template_parts( 'cta', $context );
 	}
 
+	/**
+	 * Render CTA from theme.
+	 *
+	 * @param string $position
+	 * @param string $before
+	 * @param string $after
+	 */
+	public static function render_predefined( $position, $before = '', $after = '' ) {
+    	$positions = self::get_predefined_positions();
+    	if ( ! array_key_exists( $position, $positions ) ) {
+    		return;
+		}
+    	$query = self::get( [
+    		'predefined_position' => [ $position ],
+		] );
+    	if ( ! $query->have_posts() ) {
+    		return;
+		}
+    	echo $before;
+    	while( $query->have_posts() ) {
+    		$query->the_post();
+    		self::load( 'position-' . $position );
+		}
+		echo $after;
+    	wp_reset_postdata();
+	}
+
     public static function parse( $args ) {
 		return wp_parse_args( $args, [
 			'order' => '',
@@ -246,6 +273,7 @@ class CallToActionPostType extends Singleton {
 			'posts_per_page' => 1,
 		] );
 	}
+
 
 	/**
 	 * Add admin menu to CTA

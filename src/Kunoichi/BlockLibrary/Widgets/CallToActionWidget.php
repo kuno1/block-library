@@ -19,9 +19,6 @@ class CallToActionWidget extends Widgets {
 		return __( 'Call To Action', 'kbl' );
 	}
 
-	protected function parse_args( $instance ) {
-	}
-
 	/**
 	 * @param array $args
 	 * @param array $instance
