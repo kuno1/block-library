@@ -57,7 +57,7 @@ class CallToActionPostType extends Singleton {
 			'supports'         => [ 'title', 'editor', 'page-attributes' ],
 			'public'           => false,
 			'show_ui'          => true,
-			'menu_icon'        => 'dashicons-warning',
+			'menu_icon'        => $this->asset_url( 'img/icons_cta.svg' ),
 			'menu_position'    => 50,
 			'show_in_nav_menu' => false,
 			'show_in_rest'     => true,
@@ -283,6 +283,9 @@ class CallToActionPostType extends Singleton {
 	        ?>
             <div class="wrap">
                 <h1><?php esc_html_e( 'About Call To Actions', 'kbl' ) ?></h1>
+				<p>
+					<img src="<?php echo $this->asset_url( 'img/icons_cta.svg' ) ?>" width="100" height="100" alt="" />
+				</p>
                 <p>
                     <?php esc_html_e( '"Call To Action" is the name of UIs which requires user to make a action. An abbreviation is "CTA"', 'kbl' ) ?>
                 </p>
@@ -293,7 +296,12 @@ class CallToActionPostType extends Singleton {
                 </ol>
                 <p><?php esc_html_e( 'This Call To Action can be displayed in widgets, blocks. The only newest one will be displayed. It is similar to ad rotating.', 'kbl' ) ?></p>
                 <hr />
-                <h3><?php esc_html_e( 'Positions', 'kbl' ) ?></h3>
+
+				<h2><?php esc_html_e( 'How It Works', 'kbl' ) ?></h2>
+
+				<hr />
+
+				<h2><?php esc_html_e( 'Positions', 'kbl' ) ?></h2>
                 <p>
                     <?php esc_html_e( 'You can register original positions. These are useful for filtering in widgets or blocks.', 'kbl' ); ?>
                 </p>
@@ -317,7 +325,6 @@ class CallToActionPostType extends Singleton {
                         <?php esc_html_e( 'Manage Positions', 'kbl' ) ?>
                     </a>
                 </p>
-                <hr />
                 <h3><?php esc_html_e( 'Predefined Positions', 'kbl' ) ?></h3>
                 <p>
 					<?php esc_html_e( 'If theme has predefined positions, specified CTA will be displayed there(e.g. After post content)', 'kbl' ); ?>

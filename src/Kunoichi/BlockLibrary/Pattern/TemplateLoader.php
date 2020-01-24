@@ -2,12 +2,28 @@
 
 namespace Kunoichi\BlockLibrary\Pattern;
 
+use Hametuha\StringUtility\Path;
+
 /**
  * Template loader
  *
  * @package Kunoichi\BlockLibrary\Pattern
  */
 trait TemplateLoader {
+
+	use Path;
+
+	/**
+	 * Get URL from directory path.
+	 *
+	 * @param string $path
+	 * @return string
+	 */
+	public function asset_url( $path ) {
+		$base = $this->base_dir() . '/dist/' . ltrim( $path, '/' );
+		return $this->path_to_url( $base );
+	}
+
 	/**
 	 * Load template.
 	 *

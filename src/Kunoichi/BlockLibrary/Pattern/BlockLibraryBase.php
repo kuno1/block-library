@@ -22,17 +22,6 @@ abstract class BlockLibraryBase extends AbstractBlock {
 	protected $style = '';
 
 	/**
-	 * Get URL from directory path.
-	 *
-	 * @param string $path
-	 * @return string
-	 */
-	public function asset_url( $path ) {
-		$base = $this->base_dir() . '/dist/' . ltrim( $path, '/' );
-		return $this->path_to_url( $base );
-	}
-
-	/**
 	 * Register assets for this block.
 	 */
 	public function register_assets() {
