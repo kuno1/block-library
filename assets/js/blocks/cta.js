@@ -22,7 +22,7 @@ registerBlockType( 'kunoichi/cta', {
 
 	category: 'embed',
 
-	description: __( 'Display Call To Actions.', 'kbl' ),
+	description: __( 'Display UI parts to invoke user\'s action.', 'kbl' ),
 
 	attributes: {
 		order: {
@@ -47,7 +47,7 @@ registerBlockType( 'kunoichi/cta', {
 		const { positions, predefineds, orders } = KblCta;
 		return <>
 			<InspectorControls>
-				<PanelBody title={ __( 'Testimonials Setting', 'kbl' ) } initialOpen={ true }>
+				<PanelBody title={ __( 'CTA Setting', 'kbl' ) } initialOpen={ true }>
 					<p>{ __( 'Positions', 'kbl' ) }</p>
 					<CheckboxGroup checked={ attributes.positions } options={ positions } onChange={ ( newPositions ) => setAttributes( { positions: newPositions } ) } />
 					<hr />
@@ -73,4 +73,5 @@ registerBlockType( 'kunoichi/cta', {
 	save() {
 		return null;
 	}
+
 } );

@@ -1,0 +1,21 @@
+.wp-block-kunoichi-cta {
+
+	div[data-block] & {
+		position: relative;
+		z-index: 1;
+
+		* {
+			pointer-events: none;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			z-index: 2;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+	}
+}

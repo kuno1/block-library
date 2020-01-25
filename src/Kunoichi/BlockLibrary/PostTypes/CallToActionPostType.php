@@ -42,7 +42,7 @@ class CallToActionPostType extends Singleton {
 				'view_item'                => __( 'View CTA', 'kbl' ),
 				'view_items'               => __( 'View CTA', 'kbl' ),
 				'search_items'             => __( 'Search Call To Actions', 'kbl' ),
-				'all_items'                => __( 'All CTA', 'kbl' ),
+				'all_items'                => __( 'All Call To Actions', 'kbl' ),
 				'attributes'               => __( 'Attributes', 'kbl' ),
 				'insert_into_item'         => __( 'Insert into CTA', 'kbl' ),
 				'uploaded_to_this_item'    => __( 'Upload to this CTA', 'kbl' ),
