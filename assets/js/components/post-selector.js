@@ -7,7 +7,6 @@ const { __, sprintf } = wp.i18n;
 const { ObjectSelector } = kbl;
 const { Button } = wp.components;
 
-
 class PostSelector extends ObjectSelector {
 
 	fetch( id ) {

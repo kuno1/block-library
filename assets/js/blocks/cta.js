@@ -1,4 +1,6 @@
 /*!
+ * Call To Action block.
+ *
  * wpdeps=wp-blocks,kbl,wp-block-editor, wp-components, wp-api-fetch, kbl-components-checkbox-group
  */
 

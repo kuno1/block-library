@@ -14,8 +14,6 @@ use Kunoichi\BlockLibrary\PostTypes\CallToActionPostType;
  */
 class CallToAction extends BlockLibraryBase {
 
-	public $post_type = 'call-to-action';
-
 	protected $block_name = 'cta';
 
 	protected function init() {

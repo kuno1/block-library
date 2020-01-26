@@ -56,11 +56,12 @@ registerBlockType( 'kunoichi/testimonials', {
 							onChange={ ( ids ) => setAttributes( { ids } ) }
 							help={ __( 'Write in CSV format. If set, order and number will be ignored.', 'kbl' ) }
 							placeholder="e.g. 1, 3, 5" />
-						<SelectControl value={ attributes.order } label={ __( 'Order', 'kbl' ) }
-							options={ options } onChange={ ( order ) => setAttributes( { order } ) } />
 						<TextControl label={ __( 'Number to display', 'kbl' ) } value={ attributes.number }
 									 type="number" min={ 1 }
 									 onChange={ (  number ) => setAttributes( { number: parseInt( number, 10 ) } ) } />
+						<SelectControl value={ attributes.order } label={ __( 'Order', 'kbl' ) }
+									   options={ options } onChange={ ( order ) => setAttributes( { order } ) } />\
+
 					</PanelBody>
 				</InspectorControls>
 				<div className={ className }>
