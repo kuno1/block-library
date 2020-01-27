@@ -126,7 +126,7 @@ SQL;
 			'ids'       => '',
 			's'         => '',
 			'term_ids'  => [],
-			'post_type' => '',
+			'post_type' => 'post',
 			'number'    => 5,
 			'orderby'   => 'date',
 			'order'     => 'DESC',
