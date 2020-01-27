@@ -25,6 +25,7 @@ const assocToArray = ( object ) => {
 
 const orderOptions = assocToArray( KblPostList.orderby );
 const postTypeOptions = assocToArray( KblPostList.post_types );
+const templateOptions = assocToArray( KblPostList.templates );
 
 registerBlockType( 'kunoichi/posts', {
 
@@ -38,6 +39,14 @@ registerBlockType( 'kunoichi/posts', {
 
 	attributes: {
 		ids: {
+			type: 'string',
+			default: '',
+		},
+		template: {
+			type: 'string',
+			default: '',
+		},
+		s: {
 			type: 'string',
 			default: '',
 		},
@@ -75,20 +84,27 @@ registerBlockType( 'kunoichi/posts', {
 		return (
 			<>
 				<InspectorControls>
+					<PanelBody title={ __( 'Template Setting', 'kbl' ) }>
+						<RadioControl selected={ attributes.template } onChange={ ( template ) => setAttributes( { template } ) }
+							options={ templateOptions } />
+					</PanelBody>
 					<PanelBody title={ __( 'Query Setting', 'kbl' ) }>
 						<SelectControl selected={ attributes.post_type }
 							label={ __( 'Post Type', 'kbl' ) }
 							options={ postTypeOptions }
 							onChange={ ( post_type ) => setAttributes( { post_type } ) } />
+						<TextControl label={ __( 'Search String', 'kbl' ) } value={ attributes.s }
+							onChange={ ( s ) => setAttributes( { s } ) }
+							placeholder={ __( 'Keywords', 'kbl' ) } />
 						<TaxonomySelector selected={ attributes.term_ids } onChange={ ( ids ) => setAttributes( { term_ids: ids } ) } />
 						<TextControl type="number" label={ __( 'Number of Posts', 'kbl' ) } value={ attributes.number }
-									 onChange={ ( number ) => setAttributes( { number } ) }
-									 help={ __( 'Max posts number to display.', 'kbl' ) }/>
+							onChange={ ( number ) => setAttributes( { number } ) }
+							help={ __( 'Max posts number to display.', 'kbl' ) }/>
 						<hr />
 						<TextControl label={ __( 'Post IDs', 'kbl' ) } value={ attributes.ids }
-									 onChange={ ( ids ) => setAttributes( { ids } ) }
-									 help={ __( 'Write in CSV format. If set, all other settings will be ignored.', 'kbl' ) }
-									 placeholder="e.g. 1, 3, 5" />
+							onChange={ ( ids ) => setAttributes( { ids } ) }
+							help={ __( 'Write in CSV format. If set, all other settings will be ignored.', 'kbl' ) }
+							placeholder="e.g. 1, 3, 5" />
 					</PanelBody>
 					<PanelBody title={ __( 'Order', 'kbl' ) } initialOpen={ false }>
 						<SelectControl label={ __( 'Order By', 'kbl' ) } selected={ attributes.post_type }
@@ -113,8 +129,10 @@ registerBlockType( 'kunoichi/posts', {
 							placeholder={ __( 'More', 'kbl' ) } />
 					</PanelBody>
 				</InspectorControls>
-				<div className={ className }>
-					ああああ
+				<div className="kbl-post-list-admin">
+					<ServerSideRender
+						block="kunoichi/posts"
+						attributes={ attributes } />
 				</div>
 			</>
 		);

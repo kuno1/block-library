@@ -4,7 +4,7 @@
 
 const React = wp.element;
 const { __, sprintf } = wp.i18n;
-const { TextControl, Button, Spinner } = wp.components;
+const { TextControl, Button, Tooltip, Spinner } = wp.components;
 
 class Term extends React.Component {
 
@@ -39,10 +39,12 @@ class Term extends React.Component {
 
 	render() {
 		return (
-			<span className="kbl-taxonomy-selector-button kbl-taxonomy-selector-term" onClick={ () => this.remove() }>
-				<small>{ this.state.taxonomy }</small>
-				{ this.state.name }
-			</span>
+			<Tooltip text={ __( 'Click to remove', 'kbl' ) }>
+				<span className="kbl-taxonomy-selector-button" onClick={ () => this.remove() }>
+					<small>{ this.state.taxonomy }</small>
+					{ this.state.name }
+				</span>
+			</Tooltip>
 		);
 	}
 
@@ -148,11 +150,14 @@ class TaxonomySelector extends React.Component {
 					<Spinner />
 				) }
 				{ ( ! this.state.loading ) && this.state.found && this.state.found.map( ( term ) => {
-					return <span className="kbl-taxonomy-selector-button" onClick={ () => this.select( term.id ) }>
-						<strong>{ term.name }</strong>
-						- { term.taxonomy }
-						<small>{ sprintf( __( '(%d)', 'kbl' ), term.count ) }</small>
-					</span>;
+					return (
+						<Tooltip text={ __( 'Click to add', 'kbl' ) }>
+							<span className="kbl-taxonomy-selector-button kbl-taxonomy-selector-button-secondary" onClick={ () => this.select( term.id ) }>
+								<small>{ term.taxonomy }</small>
+								{ term.name }{ sprintf( __( '(%d)', 'kbl' ), term.count ) }
+							</span>
+						</Tooltip>
+					);
 				} ) }
 			</div>
 		);

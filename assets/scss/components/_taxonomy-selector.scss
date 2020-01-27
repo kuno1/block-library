@@ -1,32 +1,23 @@
 .kbl-taxonomy-selector {
 
 	$color: #0075af;
+	$shade: rgba( 139, 139, 150, .1 );
+	$black: #222;
 
 	&-button {
 		cursor: pointer;
+		position: relative;
 		display: inline-block;
 		border: 1px solid $color;
 		border-radius: 3px;
 		color: $color;
-		padding: 5px;
+		padding: 11px 5px 3px 5px;
+		margin-right: 10px;
 		margin-bottom: 10px;
 		&:hover {
 			color: #fff;
 			background-color: $color;
 		}
-	}
-
-	&-selected {
-		margin-bottom: 1em;
-	}
-
-	&-term {
-		position: relative;
-		border-radius: 0;
-		margin-right: 10px;
-		padding-top: 11px;
-		padding-bottom: 3px;
-
 		small {
 			position: absolute;
 			display: block;
@@ -41,7 +32,25 @@
 			overflow-x: hidden;
 			text-overflow: ellipsis;
 		}
+
+		&-secondary {
+			border-color: $black;
+			color: $black;
+
+			&:hover {
+				background-color: $shade;
+				color: $black;
+			}
+
+			small {
+				color: $black;
+				background-color: $shade;
+			}
+		}
 	}
 
+	&-selected {
+		margin-bottom: 1em;
+	}
 
 }

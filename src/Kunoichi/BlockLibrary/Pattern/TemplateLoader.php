@@ -40,14 +40,14 @@ trait TemplateLoader {
 		foreach ( $rel_paths as $rel_path ) {
 			$path = $this->dir() . '/' . $rel_path;
 			foreach ( [ get_template_directory(), get_stylesheet_directory() ] as $theme_dir ) {
-				$theme_path = $theme_dir . '/' . $rel_path;
+				$theme_path = $theme_dir . '/' . str_replace( 'template-parts/', 'template-parts/kbl/', $rel_path );
 				if ( file_exists( $theme_path ) ) {
 					$path = $theme_path;
 				}
 			}
 			$path = apply_filters( 'kbl_template_path', $path );
 			if ( file_exists( $path ) ) {
-				load_template( $path );
+				load_template( $path, false );
 				return true;
 			}
 		}
