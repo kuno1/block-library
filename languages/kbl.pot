@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Kunoichi Block Library\n"
-"POT-Creation-Date: 2020-01-21 15:46+0900\n"
+"POT-Creation-Date: 2020-01-28 20:00+0900\n"
 "PO-Revision-Date: 2020-01-10 13:36+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
@@ -60,6 +60,55 @@ msgstr ""
 msgid "Post"
 msgstr ""
 
+#: src/Kunoichi/BlockLibrary/Blocks/CallToAction.php:101
+msgid "No Call To Action"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/Blocks/CallToAction.php:102
+#, php-format
+msgid ""
+"Nothing matches your criteria.<br />Change condition or create <a href=\"%s"
+"\" target=\"_blank\">new one</a>."
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/Blocks/PostList.php:72
+msgid "Undefined Post Type"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/Blocks/PostList.php:80
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:174
+msgid "Default"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/Blocks/PostList.php:84
+msgid "Date"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/Blocks/PostList.php:85
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:176
+#: assets/js/blocks/testimonials.js:42
+msgid "Menu Order"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/Blocks/PostList.php:86
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:177
+#: assets/js/blocks/testimonials.js:46
+msgid "Random"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/Blocks/PostList.php:162
+msgid "No Post Found"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/Blocks/PostList.php:163
+msgid "Nothing matches your criteria.<br />Please change conditions."
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/Blocks/PostList.php:218
+#: assets/js/blocks/posts.js:123 assets/js/blocks/posts.js:129
+msgid "More"
+msgstr ""
+
 #: src/Kunoichi/BlockLibrary/Blocks/Testimonials.php:79
 #: assets/js/blocks/testimonials.js:12
 msgid "Testimonials"
@@ -69,9 +118,221 @@ msgstr ""
 msgid "No testimonial matches your criteria."
 msgstr ""
 
+#: src/Kunoichi/BlockLibrary/Pattern/Widgets.php:54
+#: assets/js/blocks/alert.js:63
+msgid "Title"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:37
+msgid "Call To Actions"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:39
+#: src/Kunoichi/BlockLibrary/Widgets/CallToActionWidget.php:19
+#: assets/js/blocks/cta.js:15
+msgid "Call To Action"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:40
+msgid "Edit CTA"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:41
+msgid "New CTA"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:42
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:43
+msgid "View CTA"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:44
+msgid "Search Call To Actions"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:45
+msgid "All Call To Actions"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:46
+msgid "Attributes"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:47
+msgid "Insert into CTA"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:48
+msgid "Upload to this CTA"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:49
+msgid "Actions"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:50
+msgid "Filter Call To Actions list"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:51
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:52
+msgid "Call To Action has been published."
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:53
+msgid "Call To Action became draft."
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:54
+msgid "Call To Action has been scheduled."
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:55
+msgid "Call To Action has been updated."
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:71
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:73
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:304
+#: src/Kunoichi/BlockLibrary/Widgets/CallToActionWidget.php:64
+#: assets/js/blocks/cta.js:53
+msgid "Positions"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:74
+msgid "All Positions"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:75
+msgid "Edit Position"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:76
+msgid "View Position"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:77
+msgid "Parent Position"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:78
+msgid "Update Position"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:79
+msgid "Add New Position"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:80
+msgid "New Position Name"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:81
+msgid "Search Positions"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:82
+msgid "Add or Remove Position"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:100
+msgid "Enter Action name(e.g. Buy Now Button）"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:134
+#: assets/js/blocks/cta.js:52
+msgid "CTA Setting"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:138
+msgid "Predefined Position"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:148
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:341
+msgid "This theme has no predefined position."
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:152
+msgid "Predefined positions are set by themes."
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:175
+#: assets/js/blocks/testimonials.js:38
+msgid "Latest"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:282
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:285
+msgid "About Call To Actions"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:282
+msgid "About CTA"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:290
+msgid ""
+"\"Call To Action\" is the name of UIs which requires user to make a "
+"action. An abbreviation is \"CTA\""
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:293
+msgid ""
+"Buttons for login, registration, subscription, downloading, and so on."
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:294
+msgid "Clickable banners"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:295
+msgid "Ads"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:297
+msgid ""
+"This Call To Action can be displayed in widgets, blocks. The only newest "
+"one will be displayed. It is similar to ad rotating."
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:300
+msgid "How It Works"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:306
+msgid ""
+"You can register original positions. These are useful for filtering in "
+"widgets or blocks."
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:320
+msgid "You have no position."
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:325
+msgid "Manage Positions"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:328
+#: src/Kunoichi/BlockLibrary/Widgets/CallToActionWidget.php:65
+#: assets/js/blocks/cta.js:56
+msgid "Predefined Positions"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:330
+msgid ""
+"If theme has predefined positions, specified CTA will be displayed there(e."
+"g. After post content)"
+msgstr ""
+
 #: src/Kunoichi/BlockLibrary/Rest/PostSearch.php:84
 #: src/Kunoichi/BlockLibrary/Rest/UserSearch.php:75
 msgid "Parameter \"id\" or \"s\" is required."
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/Rest/Taxonomy.php:46
+msgid "No term found."
 msgstr ""
 
 #: assets/js/blocks/alert.js:16
@@ -100,10 +361,6 @@ msgstr ""
 
 #: assets/js/blocks/alert.js:62 assets/js/blocks/bubble.js:186
 msgid "Speaker"
-msgstr ""
-
-#: assets/js/blocks/alert.js:63
-msgid "Title"
 msgstr ""
 
 #: assets/js/blocks/alert.js:64
@@ -212,6 +469,63 @@ msgstr ""
 msgid "Enter speech here."
 msgstr ""
 
+#: assets/js/blocks/card.js:26
+msgid "Link Card"
+msgstr ""
+
+#: assets/js/blocks/card.js:39
+msgid "Card style link."
+msgstr ""
+
+#: assets/js/blocks/card.js:88
+msgid "Link Setting"
+msgstr ""
+
+#: assets/js/blocks/card.js:89
+msgid "Link URL"
+msgstr ""
+
+#: assets/js/blocks/card.js:91
+msgid "Image URL"
+msgstr ""
+
+#: assets/js/blocks/card.js:105
+msgid "Click to change image."
+msgstr ""
+
+#: assets/js/blocks/card.js:111
+msgid "e.g. Category Name"
+msgstr ""
+
+#: assets/js/blocks/cards.js:22
+msgid "Cards"
+msgstr ""
+
+#: assets/js/blocks/cards.js:26
+msgid "Display card style links. Helpful as category link list and so on."
+msgstr ""
+
+#: assets/js/blocks/cards.js:41
+msgid "Layout Setting"
+msgstr ""
+
+#: assets/js/blocks/cards.js:42
+msgid "Column Count"
+msgstr ""
+
+#: assets/js/blocks/cta.js:27
+msgid "Display UI parts to invoke user's action."
+msgstr ""
+
+#: assets/js/blocks/cta.js:59 assets/js/blocks/posts.js:109
+#: assets/js/blocks/posts.js:115 assets/js/blocks/testimonials.js:62
+msgid "Order"
+msgstr ""
+
+#: assets/js/blocks/cta.js:62 assets/js/blocks/testimonials.js:59
+msgid "Number to display"
+msgstr ""
+
 #: assets/js/blocks/definition-list.js:12
 msgid "Term"
 msgstr ""
@@ -256,6 +570,78 @@ msgstr ""
 msgid "If checked, JSON-LD will be generated."
 msgstr ""
 
+#: assets/js/blocks/posts.js:32
+msgid "Post List"
+msgstr ""
+
+#: assets/js/blocks/posts.js:38
+msgid "Display post list in various format."
+msgstr ""
+
+#: assets/js/blocks/posts.js:87
+msgid "Template Setting"
+msgstr ""
+
+#: assets/js/blocks/posts.js:91
+msgid "Query Setting"
+msgstr ""
+
+#: assets/js/blocks/posts.js:93
+msgid "Post Type"
+msgstr ""
+
+#: assets/js/blocks/posts.js:96
+msgid "Search String"
+msgstr ""
+
+#: assets/js/blocks/posts.js:98
+msgid "Keywords"
+msgstr ""
+
+#: assets/js/blocks/posts.js:100
+msgid "Number of Posts"
+msgstr ""
+
+#: assets/js/blocks/posts.js:102
+msgid "Max posts number to display."
+msgstr ""
+
+#: assets/js/blocks/posts.js:104 assets/js/blocks/testimonials.js:55
+msgid "Post IDs"
+msgstr ""
+
+#: assets/js/blocks/posts.js:106
+msgid "Write in CSV format. If set, all other settings will be ignored."
+msgstr ""
+
+#: assets/js/blocks/posts.js:110
+msgid "Order By"
+msgstr ""
+
+#: assets/js/blocks/posts.js:112
+msgid "If you select random, Order will be ignored."
+msgstr ""
+
+#: assets/js/blocks/posts.js:117
+msgid "Descending"
+msgstr ""
+
+#: assets/js/blocks/posts.js:118
+msgid "Ascending"
+msgstr ""
+
+#: assets/js/blocks/posts.js:124
+msgid "Display more link"
+msgstr ""
+
+#: assets/js/blocks/posts.js:126
+msgid "Display more link if possible. It depends on theme compatibility."
+msgstr ""
+
+#: assets/js/blocks/posts.js:127
+msgid "More Label"
+msgstr ""
+
 #: assets/js/blocks/price-table.js:13
 msgid "Price Table"
 msgstr ""
@@ -264,16 +650,12 @@ msgstr ""
 msgid "Display price table. Insert 3 or 4 items."
 msgstr ""
 
-#: assets/js/blocks/price-table.js:58
+#: assets/js/blocks/price-table.js:53
 msgid "Price Table Setting"
 msgstr ""
 
-#: assets/js/blocks/price-table.js:59
+#: assets/js/blocks/price-table.js:54
 msgid "Add New Column"
-msgstr ""
-
-#: assets/js/blocks/price-table.js:69
-msgid "Add"
 msgstr ""
 
 #: assets/js/blocks/price.js:20
@@ -378,36 +760,16 @@ msgstr ""
 msgid "Display testimonials list."
 msgstr ""
 
-#: assets/js/blocks/testimonials.js:38
-msgid "Latest"
-msgstr ""
-
-#: assets/js/blocks/testimonials.js:42
-msgid "Menu Order"
-msgstr ""
-
-#: assets/js/blocks/testimonials.js:46
-msgid "Random"
-msgstr ""
-
 #: assets/js/blocks/testimonials.js:54
 msgid "Testimonials Setting"
-msgstr ""
-
-#: assets/js/blocks/testimonials.js:55
-msgid "Post IDs"
 msgstr ""
 
 #: assets/js/blocks/testimonials.js:57
 msgid "Write in CSV format. If set, order and number will be ignored."
 msgstr ""
 
-#: assets/js/blocks/testimonials.js:59
-msgid "Order"
-msgstr ""
-
-#: assets/js/blocks/testimonials.js:61
-msgid "Number to display"
+#: assets/js/components/add-child.js:20
+msgid "Add"
 msgstr ""
 
 #: assets/js/components/media.js:65
@@ -427,18 +789,47 @@ msgstr ""
 msgid "Enter search keywords..."
 msgstr ""
 
-#: assets/js/components/post-selector.js:45
+#: assets/js/components/post-selector.js:44
 msgid "Post not fofund."
 msgstr ""
 
-#: assets/js/components/post-selector.js:66
+#: assets/js/components/post-selector.js:65
 #: assets/js/components/user-selector.js:61
 msgid "Choose"
 msgstr ""
 
-#: assets/js/components/post-selector.js:70
+#: assets/js/components/post-selector.js:69
 #: assets/js/components/user-selector.js:65
 msgid "Remove"
+msgstr ""
+
+#: assets/js/components/taxonomy-selector.js:29
+msgid "ERROR"
+msgstr ""
+
+#: assets/js/components/taxonomy-selector.js:42
+msgid "Click to remove"
+msgstr ""
+
+#: assets/js/components/taxonomy-selector.js:139
+msgid "Taxonomy"
+msgstr ""
+
+#: assets/js/components/taxonomy-selector.js:145
+msgid "Search..."
+msgstr ""
+
+#: assets/js/components/taxonomy-selector.js:147
+msgid "If taxonomy is set, post list will be filtered."
+msgstr ""
+
+#: assets/js/components/taxonomy-selector.js:154
+msgid "Click to add"
+msgstr ""
+
+#: assets/js/components/taxonomy-selector.js:157
+#, python-format
+msgid "(%d)"
 msgstr ""
 
 #: assets/js/components/user-selector.js:43
