@@ -1,0 +1,9 @@
+.kbl-child-insert {
+	display: none;
+
+	.is-selected &,
+	.has-child-selected & {
+		display: flex;
+		justify-content: center;
+	}
+}

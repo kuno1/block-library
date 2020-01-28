@@ -27,13 +27,5 @@
 		display: inline-block;
 	}
 
-	&-appender {
-		display: none;
 
-		.is-selected &,
-		.has-child-selected & {
-			display: flex;
-			justify-content: center;
-		}
-	}
 }
