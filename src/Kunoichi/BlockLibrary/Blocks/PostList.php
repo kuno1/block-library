@@ -151,7 +151,7 @@ SQL;
 			// Number
 			$args['posts_per_page'] = $attributes['number'];
 			// Order
-			$args['orderby'] = $attributes['rand'];
+			$args['orderby'] = $attributes['orderby'];
 			if ( 'rand' !== $attributes['orderby'] ) {
 				$args['order'] = $attributes['order'];
 			}
