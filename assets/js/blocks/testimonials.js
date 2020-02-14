@@ -32,6 +32,10 @@ registerBlockType( 'kunoichi/testimonials', {
 		},
 	},
 
+	supports: {
+		align: [ 'wide', 'full' ],
+	},
+
 	edit( { attributes, setAttributes, className } ) {
 		const options = [
 			{

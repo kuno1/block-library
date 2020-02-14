@@ -37,6 +37,10 @@ registerBlockType( 'kunoichi/posts', {
 
 	description: __( 'Display post list in various format.', 'kbl' ),
 
+	supports: {
+		align: [ 'wide', 'full' ],
+	},
+
 	attributes: {
 		ids: {
 			type: 'string',

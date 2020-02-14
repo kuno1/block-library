@@ -61,6 +61,10 @@ class PostList extends BlockLibraryBase {
 				'type'    => 'boolean',
 				'default' => true,
 			],
+			'align' => [
+				'type'    => 'string',
+				'default' => 'none',
+			],
 		];
 		return $args;
 	}

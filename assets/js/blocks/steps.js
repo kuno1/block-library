@@ -43,6 +43,10 @@ registerBlockType( 'kunoichi/steps', {
 		},
 	},
 
+	supports: {
+		align: [ 'wide', 'full' ],
+	},
+
 	edit( { attributes, setAttributes, className } ) {
 		className += ' kbl-step-wrap';
 		return (

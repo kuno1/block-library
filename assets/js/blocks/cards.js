@@ -34,6 +34,10 @@ registerBlockType( 'kunoichi/cards', {
 		},
 	},
 
+	supports: {
+		align: [ 'wide', 'full' ],
+	},
+
 	edit( { attributes, setAttributes, className, clientId } ) {
 		return (
 			<>

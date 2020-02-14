@@ -45,6 +45,10 @@ registerBlockType( 'kunoichi/cta', {
 		},
 	},
 
+	supports: {
+		align: [ 'wide', 'full' ],
+	},
+
 	edit( { attributes, setAttributes, className } ) {
 		const { positions, predefineds, orders } = KblCta;
 		return <>

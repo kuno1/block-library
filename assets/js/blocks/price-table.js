@@ -45,6 +45,10 @@ registerBlockType( 'kunoichi/price-table', {
 
 	},
 
+	supports: {
+		align: [ 'wide', 'full' ],
+	},
+
 	edit( { attributes, setAttributes, className, clientId } ) {
 		className += ' kbl-price-table';
 		return (
