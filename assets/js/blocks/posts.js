@@ -78,6 +78,10 @@ registerBlockType( 'kunoichi/posts', {
 			type: 'string',
 			default: '',
 		},
+		ignore_sticky: {
+			type: 'boolean',
+			default: true,
+		},
 	},
 
 	edit( { attributes, setAttributes, className } ) {
@@ -93,10 +97,13 @@ registerBlockType( 'kunoichi/posts', {
 							label={ __( 'Post Type', 'kbl' ) }
 							options={ postTypeOptions }
 							onChange={ ( post_type ) => setAttributes( { post_type } ) } />
+						<hr />
 						<TextControl label={ __( 'Search String', 'kbl' ) } value={ attributes.s }
 							onChange={ ( s ) => setAttributes( { s } ) }
 							placeholder={ __( 'Keywords', 'kbl' ) } />
+						<hr />
 						<TaxonomySelector selected={ attributes.term_ids } onChange={ ( ids ) => setAttributes( { term_ids: ids } ) } />
+						<hr />
 						<TextControl type="number" label={ __( 'Number of Posts', 'kbl' ) } value={ attributes.number }
 							onChange={ ( number ) => setAttributes( { number } ) }
 							help={ __( 'Max posts number to display.', 'kbl' ) }/>
@@ -105,6 +112,9 @@ registerBlockType( 'kunoichi/posts', {
 							onChange={ ( ids ) => setAttributes( { ids } ) }
 							help={ __( 'Write in CSV format. If set, all other settings will be ignored.', 'kbl' ) }
 							placeholder="e.g. 1, 3, 5" />
+						<ToggleControl label={ __( 'Ignore Sticky Posts', 'kbl' ) }
+							onChange={ ( ignore_sticky ) => setAttributes( { ignore_sticky } ) }
+							checked={ attributes.ignore_sticky } />
 					</PanelBody>
 					<PanelBody title={ __( 'Order', 'kbl' ) } initialOpen={ false }>
 						<SelectControl label={ __( 'Order By', 'kbl' ) } selected={ attributes.post_type }

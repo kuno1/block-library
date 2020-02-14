@@ -57,6 +57,10 @@ class PostList extends BlockLibraryBase {
 				'type'    => 'string',
 				'default' => '',
 			],
+			'ignore_sticky' => [
+				'type'    => 'boolean',
+				'default' => true,
+			],
 		];
 		return $args;
 	}
@@ -122,17 +126,18 @@ SQL;
 
 	public function render_callback( $attributes = [], $content = '' ) {
 		$attributes = wp_parse_args( $attributes, [
-			'template'  => '',
-			'ids'       => '',
-			's'         => '',
-			'term_ids'  => [],
-			'post_type' => 'post',
-			'number'    => 5,
-			'orderby'   => 'date',
-			'order'     => 'DESC',
-			'showMore'  => true,
-			'moreLabel' => '',
-			'className' => '',
+			'template'      => '',
+			'ids'           => '',
+			's'             => '',
+			'term_ids'      => [],
+			'post_type'     => 'post',
+			'number'        => 5,
+			'orderby'       => 'date',
+			'order'         => 'DESC',
+			'showMore'      => true,
+			'moreLabel'     => '',
+			'className'     => '',
+			'ignore_sticky' => true,
 		] );
 		$args = [
 			'post_type' => $attributes['post_type']
@@ -155,6 +160,9 @@ SQL;
 			if ( 'rand' !== $attributes['orderby'] ) {
 				$args['order'] = $attributes['order'];
 			}
+		}
+		if ( $attributes['ignore_sticky'] ) {
+			$args['ignore_sticky_posts'] = true;
 		}
 		$query = new \WP_Query( $args );
 		if ( ! $query->have_posts() ) {
