@@ -21,7 +21,7 @@ class Alert extends BlockLibraryBase {
 			'dark'      => __( 'Dark', 'kbl' ),
 		];
 		return apply_filters( 'kbl_alert_styles', [
-			'styles'      => apply_filters( 'kbl_alert_styles', $styles ),
+			'styles'      => $styles,
 		] );
 	}
 }

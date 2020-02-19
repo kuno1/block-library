@@ -18,6 +18,10 @@ class BlockLibrary extends Singleton {
 
 	private static $excludes = [];
 
+	private static $included_widgets = [];
+
+	private static $excluded_widgets = [];
+
 	/**
 	 * Constructor
 	 */
@@ -100,6 +104,7 @@ class BlockLibrary extends Singleton {
 
 	/**
 	 * Register widgets.
+	 *
 	 */
 	protected function register_widgets() {
 		add_action( 'widgets_init', [ $this, 'widgets_init' ] );
@@ -116,6 +121,14 @@ class BlockLibrary extends Singleton {
 			}
 			$class_name = 'Kunoichi\BlockLibrary\Widgets\\' . $matches[1];
 			if ( ! class_exists( $class_name ) ) {
+				continue;
+			}
+			// If includes specified, check it's inclued.
+			if ( self::$included_widgets && ! in_array( $class_name, self::$included_widgets ) ) {
+				continue;
+			}
+			// If excluded, skip.
+			if ( self::$excluded_widgets && in_array( $class_name, self::$excluded_widgets ) ) {
 				continue;
 			}
 			$reflection = new \ReflectionClass( $class_name );
@@ -143,8 +156,13 @@ class BlockLibrary extends Singleton {
 
 	/**
 	 * Register widgets.
+	 *
+	 * @param array $includes Widgets to be included.
+	 * @param array $excludes Widgets to be excluded.
 	 */
-	public static function widgets() {
+	public static function widgets( $includes = [], $excludes = [] ) {
+		self::$included_widgets = $includes;
+		self::$excluded_widgets = $excludes;
 		self::get_instance()->register_widgets();
 	}
 }

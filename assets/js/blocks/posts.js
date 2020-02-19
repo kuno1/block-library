@@ -1,4 +1,6 @@
 /*!
+ * Post list block.
+ *
  * wpdeps=wp-blocks,kbl,wp-block-editor, wp-components, kbl-components-taxonomy-selector
  */
 
@@ -97,7 +99,7 @@ registerBlockType( 'kunoichi/posts', {
 							options={ templateOptions } />
 					</PanelBody>
 					<PanelBody title={ __( 'Query Setting', 'kbl' ) }>
-						<SelectControl selected={ attributes.post_type }
+						<SelectControl value={ attributes.post_type }
 							label={ __( 'Post Type', 'kbl' ) }
 							options={ postTypeOptions }
 							onChange={ ( post_type ) => setAttributes( { post_type } ) } />
