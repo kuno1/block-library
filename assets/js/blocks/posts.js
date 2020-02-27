@@ -111,7 +111,7 @@ registerBlockType( 'kunoichi/posts', {
 						<TaxonomySelector selected={ attributes.term_ids } onChange={ ( ids ) => setAttributes( { term_ids: ids } ) } />
 						<hr />
 						<TextControl type="number" label={ __( 'Number of Posts', 'kbl' ) } value={ attributes.number }
-							onChange={ ( number ) => setAttributes( { number } ) }
+							onChange={ ( number ) => setAttributes( { number: parseInt( number, 10 ) } ) }
 							help={ __( 'Max posts number to display.', 'kbl' ) }/>
 						<hr />
 						<TextControl label={ __( 'Post IDs', 'kbl' ) } value={ attributes.ids }

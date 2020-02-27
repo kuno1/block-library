@@ -65,12 +65,12 @@ class CallToActionPostType extends Singleton {
 		register_post_type( $this->post_type, $args );
 		// Taxonomies.
 		$tax_args = apply_filters( 'kbl_cta_taxonomy_args', [
-			'public'       => false,
-			'show_ui'      => true,
-			'show_in_rest' => true,
-			'label'        => __( 'Positions', 'kbl' ),
-			'labels'       => [
-				'singular_name' => __( 'Positions', 'kbl' ),
+			'public'            => false,
+			'show_ui'           => true,
+			'show_in_rest'      => true,
+			'label'             => __( 'Positions', 'kbl' ),
+			'labels'            => [
+				'singular_name'       => __( 'Positions', 'kbl' ),
 				'all_items'           => __( 'All Positions', 'kbl' ),
 				'edit_item'           => __( 'Edit Position', 'kbl' ),
 				'view_item'           => __( 'View Position', 'kbl' ),
@@ -81,9 +81,52 @@ class CallToActionPostType extends Singleton {
 				'search_items'        => __( 'Search Positions', 'kbl' ),
 				'add_or_remove_items' => __( 'Add or Remove Position', 'kbl' ),
 			],
-			'hierarchical' => true,
+			'hierarchical'      => true,
+			'show_admin_column' => true,
 		] );
 		register_taxonomy( 'cta-position', [ $this->post_type ], $tax_args );
+
+		// Add registered positions.
+		add_filter( 'manage_' . $this->post_type . '_posts_columns', function( $columns ) {
+			$new_columns = [];
+			foreach ( $columns as $column => $label ) {
+				$new_columns[ $column ] = $label;
+				if ( 'taxonomy-cta-position' === $column ) {
+					$new_columns[ 'predefined-position' ] = __( 'Predefined', 'kbl' );
+				}
+			}
+			return $new_columns;
+		} );
+		// Register custom colunmns.
+		add_action( 'manage_' . $this->post_type . '_posts_custom_column', [ $this, 'manage_custom_columns' ], 10, 2 );
+	}
+
+	/**
+	 * Render post's custom column.
+	 *
+	 * @param string $column
+	 * @param int    $post_id
+	 */
+	public function manage_custom_columns( $column, $post_id ) {
+		switch ( $column ) {
+			case 'predefined-position':
+				$found = [];
+				$positions = get_post_meta( $post_id, '_position' );
+				foreach ( self::get_predefined_positions() as $position => $label ) {
+					if ( in_array( $position, $positions ) ) {
+						$found[] = $label;
+					}
+				}
+				if ( ! $positions ) {
+					echo '---';
+				} else {
+					echo implode( ', ', array_map( 'esc_html', $found ) );
+				}
+				break;
+			default:
+				// Do nothing.
+				break;
+		}
 	}
 
 	/**
@@ -298,6 +341,11 @@ class CallToActionPostType extends Singleton {
                 <hr />
 
 				<h2><?php esc_html_e( 'How It Works', 'kbl' ) ?></h2>
+
+				<p>
+					<?php esc_html_e( 'CTA is a custom post type which can include few blocks.', 'kbl' ) ?>
+					<?php esc_html_e( 'If you need "Subscribe Newsletter" button, create block which includes a button, text and so on.', 'kbl' ) ?>
+				</p>
 
 				<hr />
 

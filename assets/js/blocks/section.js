@@ -181,7 +181,7 @@ registerBlockType( 'kunoichi/section', {
 	} ),
 
 	save( { className, attributes } ) {
-		let bgClass = 'wp-block-kumag-section-bg';
+		let bgClass = 'wp-block-kunoichi-section-bg';
 		if ( attributes.backgroundColor ) {
 			bgClass += ' has-background-color has-' + attributes.backgroundColor + '-background-color';
 		}
@@ -195,7 +195,7 @@ registerBlockType( 'kunoichi/section', {
 			backgroundImage: sprintf( 'url(\'%s\')', attributes.backgroundImage ),
 		}}>
 			{ hasBlur ? (
-				<div className='wp-block-kumag-section-blur' style={ getBlurStyle( attributes ) } />
+				<div className='wp-block-kunoichi-section-blur' style={ getBlurStyle( attributes ) } />
 			) : null }
 			<div className={ bgClass } style={ { opacity: attributes.opacity / 100 } } />
 			<div className={ ! attributes.full ? 'container' : 'no-container'}>

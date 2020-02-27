@@ -33,9 +33,9 @@ trait TemplateLoader {
 	 */
 	protected function get_template_parts( $name, $suffix = '' ) {
 		$name     = 'template-parts/' . ltrim( $name, '/' );
-		$rel_paths = [ '/' . $name . '.php' ];
+		$rel_paths = [ $name . '.php' ];
 		if ( $suffix ) {
-			array_unshift( $rel_paths, sprintf( '/%s-%s.php', $name, $suffix ) );
+			array_unshift( $rel_paths, sprintf( '%s-%s.php', $name, $suffix ) );
 		}
 		foreach ( $rel_paths as $rel_path ) {
 			$path = $this->dir() . '/' . $rel_path;

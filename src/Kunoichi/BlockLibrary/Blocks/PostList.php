@@ -203,7 +203,7 @@ HTML;
 		echo apply_filters( 'kbl_post_list_after', '</div>', $attributes, $query );
 		if ( $attributes['showMore'] ) {
 			$more_url = '';
-			$post_type = $attributes['post_type'];
+			$post_type = $attributes['post_type'] ?: 'post';
 			$post_type_object = get_post_type_object( $post_type );
 			if ( 'post' === $post_type ) {
 				$more_url = ( $page_for_posts = get_option( 'page_for_posts' ) ) ? get_permalink( $page_for_posts ) : home_url();
