@@ -1,0 +1,25 @@
+#
+# Exclude these files from release archives.
+#
+/.phpcs.xml.dist export-ignore
+/.browserlistrc export-ignore
+/.eslintrc export-ignore
+/.github export-ignore
+/.git export-ignore
+/.gitignore export-ignore
+/.gitignore export-ignore
+/bin export-ignore
+/composer.lock export-ignore
+/phpunit.xml.dist export-ignore
+/stylelint.config.js export-ignore
+/tests export-ignore
+/webpack.config.js export-ignore
+/
+#
+# Auto detect text files and perform LF normalization
+# http://davidlaing.com/2012/09/19/customise-your-gitattributes-to-become-a-git-ninja/
+#
+* text=auto
+*.md text
+*.php text
+*.json text
