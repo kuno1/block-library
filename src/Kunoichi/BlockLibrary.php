@@ -5,6 +5,7 @@ namespace Kunoichi;
 
 use Hametuha\SingletonPattern\BulkRegister;
 use Hametuha\SingletonPattern\Singleton;
+use Hametuha\StringUtility\Path;
 use Hametuha\WpEnqueueManager;
 use Kunoichi\BlockLibrary\Pattern\RestBase;
 
@@ -13,6 +14,8 @@ use Kunoichi\BlockLibrary\Pattern\RestBase;
  * @package kbl
  */
 class BlockLibrary extends Singleton {
+
+	use Path;
 
 	private static $includes = [];
 
@@ -89,11 +92,11 @@ class BlockLibrary extends Singleton {
 		$base_dir = dirname( dirname( __DIR__ ) );
 		// Register kbl.
 		$kbl = $base_dir . '/dist/js/kbl.js';
-		wp_register_script( 'kbl', str_replace( ABSPATH, home_url( '/' ), $kbl ), [ 'wp-i18n' ], filemtime( $kbl ), true );
+		wp_register_script( 'kbl', $this->path_to_url( $kbl ), [ 'wp-i18n' ], filemtime( $kbl ), true );
 		wp_set_script_translations( 'kbl', 'kbl', $base_dir . '/languages' );
 		// Register componnets css
 		$kbl_style = $base_dir . '/dist/css/editor.css';
-		wp_register_style( 'kbl-components', str_replace( ABSPATH, home_url( '/' ), $kbl_style ), [], filemtime( $kbl_style ) );
+		wp_register_style( 'kbl-components', $this->path_to_url( $kbl_style ), [], filemtime( $kbl_style ) );
 		// Load components.
 		WpEnqueueManager::register_js( $base_dir . '/dist/js/components', 'kbl-components-' );
 	}
