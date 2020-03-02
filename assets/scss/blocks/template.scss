@@ -1,0 +1,20 @@
+.wp-block-kunoichi-template {
+
+	> .editor-inner-blocks > .editor-block-list__layout {
+		display: flex;
+		position: relative;
+		padding-bottom: 62px;
+
+		> div {
+			width: 100%;
+		}
+
+		> .block-list-appender {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			right: 0;
+		}
+	}
+
+}
