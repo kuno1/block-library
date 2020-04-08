@@ -74,7 +74,7 @@ class BlockLibrary extends Singleton {
 				continue;
 			}
 			if ( self::$includes ) {
-				if ( in_array( $matches[1], self::$includes ) ) {
+				if ( in_array( $class_name, self::$includes ) ) {
 					$class_name::get_instance();
 				} else {
 					continue;
