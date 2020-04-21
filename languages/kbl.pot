@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Kunoichi Block Library\n"
-"POT-Creation-Date: 2020-02-19 19:57+0900\n"
+"POT-Creation-Date: 2020-04-21 17:36+0900\n"
 "PO-Revision-Date: 2020-01-10 13:36+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
@@ -76,7 +76,7 @@ msgid "Undefined Post Type"
 msgstr ""
 
 #: src/Kunoichi/BlockLibrary/Blocks/PostList.php:88
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:174
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:217
 msgid "Default"
 msgstr ""
 
@@ -85,13 +85,13 @@ msgid "Date"
 msgstr ""
 
 #: src/Kunoichi/BlockLibrary/Blocks/PostList.php:93
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:176
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:219
 #: assets/js/blocks/testimonials.js:46
 msgid "Menu Order"
 msgstr ""
 
 #: src/Kunoichi/BlockLibrary/Blocks/PostList.php:94
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:177
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:220
 #: assets/js/blocks/testimonials.js:50
 msgid "Random"
 msgstr ""
@@ -193,7 +193,7 @@ msgstr ""
 
 #: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:71
 #: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:73
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:304
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:352
 #: src/Kunoichi/BlockLibrary/Widgets/CallToActionWidget.php:64
 #: assets/js/blocks/cta.js:57
 msgid "Positions"
@@ -235,92 +235,106 @@ msgstr ""
 msgid "Add or Remove Position"
 msgstr ""
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:100
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:95
+msgid "Predefined"
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:143
 msgid "Enter Action name(e.g. Buy Now Button）"
 msgstr ""
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:134
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:177
 #: assets/js/blocks/cta.js:56
 msgid "CTA Setting"
 msgstr ""
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:138
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:181
 msgid "Predefined Position"
 msgstr ""
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:148
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:341
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:191
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:389
 msgid "This theme has no predefined position."
 msgstr ""
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:152
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:195
 msgid "Predefined positions are set by themes."
 msgstr ""
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:175
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:218
 #: assets/js/blocks/testimonials.js:42
 msgid "Latest"
 msgstr ""
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:282
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:285
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:325
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:328
 msgid "About Call To Actions"
 msgstr ""
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:282
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:325
 msgid "About CTA"
 msgstr ""
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:290
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:333
 msgid ""
 "\"Call To Action\" is the name of UIs which requires user to make a "
 "action. An abbreviation is \"CTA\""
 msgstr ""
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:293
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:336
 msgid ""
 "Buttons for login, registration, subscription, downloading, and so on."
 msgstr ""
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:294
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:337
 msgid "Clickable banners"
 msgstr ""
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:295
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:338
 msgid "Ads"
 msgstr ""
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:297
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:340
 msgid ""
 "This Call To Action can be displayed in widgets, blocks. The only newest "
 "one will be displayed. It is similar to ad rotating."
 msgstr ""
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:300
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:343
 msgid "How It Works"
 msgstr ""
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:306
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:346
+msgid "CTA is a custom post type which can include few blocks."
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:347
+msgid ""
+"If you need \"Subscribe Newsletter\" button, create block which includes a "
+"button, text and so on."
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:354
 msgid ""
 "You can register original positions. These are useful for filtering in "
 "widgets or blocks."
 msgstr ""
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:320
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:368
 msgid "You have no position."
 msgstr ""
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:325
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:373
 msgid "Manage Positions"
 msgstr ""
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:328
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:376
 #: src/Kunoichi/BlockLibrary/Widgets/CallToActionWidget.php:65
 #: assets/js/blocks/cta.js:60
 msgid "Predefined Positions"
 msgstr ""
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:330
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:378
 msgid ""
 "If theme has predefined positions, specified CTA will be displayed there(e."
 "g. After post content)"
@@ -407,11 +421,12 @@ msgstr ""
 msgid "Post not found."
 msgstr ""
 
-#: assets/js/blocks/bubble.js:162
+#: assets/js/blocks/bubble.js:162 assets/js/blocks/tile.js:54
 msgid "Text Color"
 msgstr ""
 
 #: assets/js/blocks/bubble.js:167 assets/js/blocks/section.js:118
+#: assets/js/blocks/tile.js:60
 msgid "Background Color"
 msgstr ""
 
@@ -509,8 +524,36 @@ msgstr ""
 msgid "Layout Setting"
 msgstr ""
 
-#: assets/js/blocks/cards.js:46
+#: assets/js/blocks/cards.js:46 assets/js/blocks/tiled-grid.js:67
 msgid "Column Count"
+msgstr ""
+
+#: assets/js/blocks/clipboard.js:15
+msgid "Clipboard"
+msgstr ""
+
+#: assets/js/blocks/clipboard.js:21
+msgid "Clipboard button for copying text."
+msgstr ""
+
+#: assets/js/blocks/clipboard.js:45
+msgid "Setting"
+msgstr ""
+
+#: assets/js/blocks/clipboard.js:46
+msgid "Alignment"
+msgstr ""
+
+#: assets/js/blocks/clipboard.js:56
+msgid "Click here to copy..."
+msgstr ""
+
+#: assets/js/blocks/clipboard.js:59
+msgid "Enter text to copy."
+msgstr ""
+
+#: assets/js/blocks/clipboard.js:73
+msgid "Text to be copied."
 msgstr ""
 
 #: assets/js/blocks/cta.js:27
@@ -824,8 +867,44 @@ msgstr ""
 msgid "Write in CSV format. If set, order and number will be ignored."
 msgstr ""
 
+#: assets/js/blocks/tile.js:28
+msgid "Tile"
+msgstr ""
+
+#: assets/js/blocks/tile.js:34
+msgid "Tile item in tiled grid."
+msgstr ""
+
+#: assets/js/blocks/tile.js:69
+msgid "Tile Colors"
+msgstr ""
+
+#: assets/js/blocks/tiled-grid.js:33
+msgid "Tiled Grid"
+msgstr ""
+
+#: assets/js/blocks/tiled-grid.js:39
+msgid "Grid style layout of panel items. Ready for text & background colors."
+msgstr ""
+
+#: assets/js/blocks/tiled-grid.js:64
+msgid "Tiled Grid Setting"
+msgstr ""
+
+#: assets/js/blocks/tiled-grid.js:65
+msgid "Add New Tile"
+msgstr ""
+
+#: assets/js/blocks/tiled-grid.js:69
+msgid "Mobile Max Columns"
+msgstr ""
+
 #: assets/js/components/add-child.js:20
 msgid "Add"
+msgstr ""
+
+#: assets/js/components/clipboard-helper.js:39
+msgid "Data is copied to clipboard."
 msgstr ""
 
 #: assets/js/components/media.js:65
