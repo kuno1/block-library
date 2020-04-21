@@ -4,7 +4,6 @@
  * wpdeps=wp-blocks, kbl, wp-block-editor, wp-components
  */
 
-
 const { registerBlockType } = wp.blocks;
 const { __, sprintf } = wp.i18n;
 const { RichText, InnerBlocks, InspectorControls, withColors, PanelColorSettings } = wp.blockEditor;
@@ -70,7 +69,9 @@ registerBlockType( 'kunoichi/tile', {
 						colorSettings={ colorSettings } />
 				</InspectorControls>
 				<div className={ tileClass( className, attributes ) }>
-					<InnerBlocks />
+					<div className="kbl-tiled-grid-inner">
+						<InnerBlocks />
+					</div>
 				</div>
 			</>
 		);
@@ -79,7 +80,9 @@ registerBlockType( 'kunoichi/tile', {
 	save( { attributes } ) {
 		return (
 			<div className={ tileClass( null, attributes ) }>
-				<InnerBlocks.Content />
+				<div className="kbl-tiled-grid-inner">
+					<InnerBlocks.Content />
+				</div>
 			</div>
 		);
 	},
