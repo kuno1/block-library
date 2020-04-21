@@ -94,9 +94,22 @@ class BlockLibrary extends Singleton {
 		$kbl = $base_dir . '/dist/js/kbl.js';
 		wp_register_script( 'kbl', $this->path_to_url( $kbl ), [ 'wp-i18n' ], filemtime( $kbl ), true );
 		wp_set_script_translations( 'kbl', 'kbl', $base_dir . '/languages' );
-		// Register componnets css
-		$kbl_style = $base_dir . '/dist/css/editor.css';
-		wp_register_style( 'kbl-components', $this->path_to_url( $kbl_style ), [], filemtime( $kbl_style ) );
+		// Register components css
+		$kbl_style = $base_dir . '/dist/css';
+		foreach ( scandir( $kbl_style)  as $css ) {
+			if ( ! preg_match( '/^([^._].*)\.css$/u', $css, $match ) ) {
+				continue;
+			}
+			list( $file, $handle ) = $match;
+			if ( 'editor' === $handle ) {
+				$handle = 'kbl-components';
+			} else {
+				$handle = 'kbl-' . $handle;
+			}
+			$path = $base_dir . '/dist/css/' . $file;
+			wp_register_style( $handle, $this->path_to_url( $path ), WpEnqueueManager::grab_deps( $path ), filemtime( $path ) );
+		}
+
 		// Load components.
 		WpEnqueueManager::register_js( $base_dir . '/dist/js/components', 'kbl-components-' );
 	}
