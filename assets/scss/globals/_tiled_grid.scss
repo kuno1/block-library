@@ -1,0 +1,31 @@
+$kbl-mobile-break-point: 767px !default;
+
+%grid-parent {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+%grid-item {
+	flex-basis: 50%;
+
+	> * {
+		flex-basis: 100%;
+	}
+
+	@for $i from 1 through 4 {
+
+		.has-#{$i}-columns & {
+			flex-basis: 100% / $i;
+		}
+	}
+
+	@media screen and ( max-width: $kbl-mobile-break-point ) {
+
+		@for $i from 1 through 2 {
+
+			.has-#{$i}-mobile-columns & {
+				flex-basis: 100% / $i !important;
+			}
+		}
+	}
+}

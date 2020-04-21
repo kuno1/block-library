@@ -1,0 +1,14 @@
+/*!
+ * This CSS is loaded from public section.
+ */
+@import "globals/tiled_grid";
+
+.kbl-tiled-grid {
+
+	@extend %grid-parent;
+
+	&-item {
+
+		@extend %grid-item;
+	}
+}

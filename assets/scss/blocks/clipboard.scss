@@ -1,0 +1,26 @@
+$kbl-clipboard-border: 2px dashed #eee !default;
+$kbl-clipboard-color: #888 !default;
+
+.kbl-clipboard {
+
+	&-button {
+		display: inline-block;
+	}
+
+	&-label {
+		display: inline-block;
+	}
+
+	&-content {
+		display: none;
+		padding: 1em;
+		margin-top: 1em;
+		border: $kbl-clipboard-border;
+		color: $kbl-clipboard-color;
+
+		.is-selected & {
+			display: block;
+			opacity: 0.8;
+		}
+	}
+}

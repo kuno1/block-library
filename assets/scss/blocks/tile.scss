@@ -1,0 +1,42 @@
+@import "../globals/tiled_grid";
+
+.kbl-tiled-grid {
+
+	> .block-editor-inner-blocks > div {
+
+		@extend %grid-parent;
+
+	}
+
+}
+
+div[data-type="kunoichi/tiled-grid"] {
+
+	> div > div[data-block] {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+}
+
+div[data-type="kunoichi/tile"] {
+
+	@extend %grid-item;
+
+	margin-right: 0 !important;
+	margin-left: 0 !important;
+
+	> .block-editor-block-list__block-edit {
+		height: 100%;
+
+		> div[data-block]{
+			height: 100%;
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		.kbl-tiled-grid-item {
+			height: 100%;
+			padding: 1em;
+		}
+	}
+}
