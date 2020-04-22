@@ -57,7 +57,7 @@ const sectionStyle = ( attributes ) => {
 
 registerBlockType( 'kunoichi/section', {
 
-	title: __( 'Section', 'hakama' ),
+	title: __( 'Section', 'ku-mag' ),
 
 	icon: 'grid-view',
 
@@ -96,7 +96,19 @@ registerBlockType( 'kunoichi/section', {
 		blur: {
 			type: 'integer',
 			default: 0,
-		}
+		},
+		more: {
+			type: 'boolean',
+			default: false,
+		},
+		height: {
+			type: 'number',
+			default: 200,
+		},
+		label: {
+			type: 'string',
+			default: '',
+		},
 	},
 
 	edit: withColors( 'backgroundColor' )( ( { attributes, setAttributes, className, backgroundColor, setBackgroundColor } ) => {
@@ -126,7 +138,7 @@ registerBlockType( 'kunoichi/section', {
 									  onChange={ val => setAttributes( { opacity: val } ) }
 						/>
 					</PanelColorSettings>
-					<PanelBody title={ __( 'Background Image' ) } initialOpen={ true }>
+					<PanelBody title={ __( 'Background Image', 'kbl' ) } initialOpen={ true }>
 						{ attributes.backgroundImage ? (
 							<p style={ { textAlign: 'center' } }>
 								<img style={{ maxWidth: '100%', width: 'auto', height: 'auto' }} className='kbl-section-background-sample' src={ attributes.backgroundImage } alt='' />
@@ -166,6 +178,17 @@ registerBlockType( 'kunoichi/section', {
 									  onChange={ val => setAttributes( { blur: val } ) }
 						/>
 					</PanelBody>
+					<PanelBody title={ __( 'Hidden Contents', 'kbl' ) }>
+						<ToggleControl checked={ attributes.more } label={ __( 'Hide Contents', 'kbl' ) }
+							onChange={ ( more ) => setAttributes( { more } ) }
+							help={ __( 'If checked, contents will be hidden.', 'kbl' ) } />
+						<TextControl type="number" value={ attributes.height } label={ __( 'Preview Height', 'kbl' ) }
+					 		onChange={ ( height ) => setAttributes( { height } ) } />
+						<TextControl type="text" value={ attributes.label } label={ __( 'Label for revealing button.', 'kbl' ) }
+							onChange={ ( label ) => setAttributes( { label} ) }
+							placeholder={ __( 'e.g. Read More', 'kbl' ) }/>
+
+					</PanelBody>
 				</InspectorControls>
 				<section className={ classNameFromAttributes( className, attributes ) } style={ sectionStyle( attributes ) }>
 					{ attributes.blur ? (
@@ -175,6 +198,11 @@ registerBlockType( 'kunoichi/section', {
 					<div className={ attributes.hasContainer? KblSection.container_class : KblSection.no_container_class }>
 						<InnerBlocks />
 					</div>
+					{ attributes.more && (
+						<button className="kbl-section-more">
+							<span className="kbl-section-more-label">{ attributes.label || __( 'Read More', 'kbl' ) }</span>
+						</button>
+					) }
 				</section>
 			</>
 		);
@@ -190,10 +218,15 @@ registerBlockType( 'kunoichi/section', {
 		if ( hasBlur ) {
 			className += ' blur';
 		}
-		return <section className={ className } style={{
+		const styles = {
 			padding: sprintf( '%dpx %dpx', attributes.paddingVertical, attributes.paddingHorizontal ),
 			backgroundImage: sprintf( 'url(\'%s\')', attributes.backgroundImage ),
-		}}>
+		};
+		if ( attributes.more ) {
+			className += ' has-more-button';
+			styles.maxHeight = sprintf( '%dpx', attributes.height );
+		}
+		return <section className={ className } style={ styles }>
 			{ hasBlur ? (
 				<div className='wp-block-kunoichi-section-blur' style={ getBlurStyle( attributes ) } />
 			) : null }
@@ -201,6 +234,11 @@ registerBlockType( 'kunoichi/section', {
 			<div className={ ! attributes.full ? 'container' : 'no-container'}>
 				<InnerBlocks.Content />
 			</div>
+			{ attributes.more && (
+				<button className="kbl-section-more">
+					<span className="kbl-section-more-label">{ attributes.label || __( 'Read More', 'kbl' ) }</span>
+				</button>
+			) }
 		</section>;
 	}
 } );

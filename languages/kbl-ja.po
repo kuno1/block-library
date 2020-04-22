@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kunoichi Block Library\n"
-"POT-Creation-Date: 2020-04-22 11:27+0900\n"
-"PO-Revision-Date: 2020-04-22 11:27+0900\n"
+"POT-Creation-Date: 2020-04-22 20:11+0900\n"
+"PO-Revision-Date: 2020-04-22 20:12+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language: ja\n"
@@ -437,7 +437,7 @@ msgstr "投稿は見つかりませんでした。"
 msgid "Text Color"
 msgstr "文字色"
 
-#: assets/js/blocks/bubble.js:167 assets/js/blocks/section.js:118
+#: assets/js/blocks/bubble.js:167 assets/js/blocks/section.js:130
 #: assets/js/blocks/tile.js:59
 msgid "Background Color"
 msgstr "背景色"
@@ -480,7 +480,7 @@ msgstr "%sを指定"
 msgid "Search from %s"
 msgstr "%sから探す"
 
-#: assets/js/blocks/bubble.js:218 assets/js/blocks/section.js:106
+#: assets/js/blocks/bubble.js:218 assets/js/blocks/section.js:118
 msgid "Layout"
 msgstr "レイアウト"
 
@@ -718,27 +718,27 @@ msgstr "価格表設定"
 msgid "Add New Column"
 msgstr "新しい列を追加"
 
-#: assets/js/blocks/price.js:20
+#: assets/js/blocks/price.js:40
 msgid "Price Item"
 msgstr "価格"
 
-#: assets/js/blocks/price.js:35
+#: assets/js/blocks/price.js:55
 msgid "Price item in price tables."
 msgstr "価格表の価格です。"
 
-#: assets/js/blocks/price.js:66
+#: assets/js/blocks/price.js:86
 msgid "Price Detail"
 msgstr "価格詳細"
 
-#: assets/js/blocks/price.js:67
+#: assets/js/blocks/price.js:87
 msgid "Help"
 msgstr "ヘルプ"
 
-#: assets/js/blocks/price.js:68
+#: assets/js/blocks/price.js:88
 msgid "per 1 month"
 msgstr "毎月"
 
-#: assets/js/blocks/price.js:69
+#: assets/js/blocks/price.js:89
 msgid ""
 "Help text displayed just after the price. For example, if this price is "
 "subscription plan, \"per 1 month\" is helpful"
@@ -746,19 +746,19 @@ msgstr ""
 "価格のあとに表示される補足です。たとえば、この価格が定期購入プランの場合は"
 "「毎月」と書いておくとわかりやすいでしょう。"
 
-#: assets/js/blocks/price.js:72
+#: assets/js/blocks/price.js:92
 msgid "Featured"
 msgstr "おすすめ"
 
-#: assets/js/blocks/price.js:73
+#: assets/js/blocks/price.js:93
 msgid "If this price is featured, check"
 msgstr "この価格がオススメの場合はチェック"
 
-#: assets/js/blocks/price.js:80
+#: assets/js/blocks/price.js:100
 msgid "e.g. Standard"
 msgstr "例・スタンダード"
 
-#: assets/js/blocks/price.js:85
+#: assets/js/blocks/price.js:105
 msgid "Free"
 msgstr "無料"
 
@@ -770,49 +770,77 @@ msgstr "セクション"
 msgid "Enhanced group block which supports background."
 msgstr "背景デザインをサポートする一歩進んだグループブロック。"
 
-#: assets/js/blocks/section.js:107
+#: assets/js/blocks/section.js:119
 msgid "Container inside"
 msgstr "中にコンテナを入れる"
 
-#: assets/js/blocks/section.js:109
+#: assets/js/blocks/section.js:121
 msgid "If checked, container will be inside."
 msgstr "チェックを入れると、コンテナが中に入ります。"
 
-#: assets/js/blocks/section.js:110
+#: assets/js/blocks/section.js:122
 msgid "Vertical Padding"
 msgstr "上下の余白"
 
-#: assets/js/blocks/section.js:111
+#: assets/js/blocks/section.js:123
 msgid "Horizontal Padding"
 msgstr "左右の余白"
 
-#: assets/js/blocks/section.js:113
+#: assets/js/blocks/section.js:125
 msgid "Background Color Setting"
 msgstr "背景色設定"
 
-#: assets/js/blocks/section.js:123
+#: assets/js/blocks/section.js:135
 msgid "Opacity"
 msgstr "不透明度"
 
-#: assets/js/blocks/section.js:129
+#: assets/js/blocks/section.js:141
 msgid "Background Image"
 msgstr "背景画像"
 
-#: assets/js/blocks/section.js:136
+#: assets/js/blocks/section.js:148
 msgid "Set background image for section."
 msgstr "セクションに背景画像を追加。"
 
-#: assets/js/blocks/section.js:152
+#: assets/js/blocks/section.js:164
 msgid "Select Image"
 msgstr "画像を選択"
 
-#: assets/js/blocks/section.js:156
+#: assets/js/blocks/section.js:168
 msgid "Clear"
 msgstr "クリア"
 
-#: assets/js/blocks/section.js:163
+#: assets/js/blocks/section.js:175
 msgid "Blur"
 msgstr "ぼかし"
+
+#: assets/js/blocks/section.js:181
+msgid "Hidden Contents"
+msgstr "隠しコンテンツ"
+
+#: assets/js/blocks/section.js:182
+msgid "Hide Contents"
+msgstr "コンテンツを隠す"
+
+#: assets/js/blocks/section.js:184
+msgid "If checked, contents will be hidden."
+msgstr "チェックを入れると、コンテンツが一部隠れます。"
+
+#: assets/js/blocks/section.js:185
+msgid "Preview Height"
+msgstr "見える部分のの高さ"
+
+#: assets/js/blocks/section.js:187
+msgid "Label for revealing button."
+msgstr "オープンするボタンのラベル。"
+
+#: assets/js/blocks/section.js:189
+msgid "e.g. Read More"
+msgstr "例・続きを読む"
+
+#: assets/js/blocks/section.js:203 assets/js/blocks/section.js:239
+msgid "Read More"
+msgstr "続きを読む"
 
 #: assets/js/blocks/step.js:32
 msgid "Step"

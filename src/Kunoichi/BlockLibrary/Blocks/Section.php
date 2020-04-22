@@ -16,5 +16,18 @@ class Section extends BlockLibraryBase {
 		] );
 	}
 
+	/**
+	 * Render content
+	 *
+	 * @param array $attributes
+	 * @param string $content
+	 * @return string
+	 */
+	public function render_callback( $attributes = [], $content = '' ) {
+		if ( ! empty( $attributes['more'] ) ) {
+			wp_enqueue_script( 'kbl-components-section-helper' );
+		}
+		return $content;
+	}
 
 }

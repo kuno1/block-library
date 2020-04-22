@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Kunoichi Block Library\n"
-"POT-Creation-Date: 2020-04-22 11:27+0900\n"
+"POT-Creation-Date: 2020-04-22 20:11+0900\n"
 "PO-Revision-Date: 2020-01-10 13:36+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
@@ -425,7 +425,7 @@ msgstr ""
 msgid "Text Color"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:167 assets/js/blocks/section.js:118
+#: assets/js/blocks/bubble.js:167 assets/js/blocks/section.js:130
 #: assets/js/blocks/tile.js:59
 msgid "Background Color"
 msgstr ""
@@ -468,7 +468,7 @@ msgstr ""
 msgid "Search from %s"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:218 assets/js/blocks/section.js:106
+#: assets/js/blocks/bubble.js:218 assets/js/blocks/section.js:118
 msgid "Layout"
 msgstr ""
 
@@ -705,45 +705,45 @@ msgstr ""
 msgid "Add New Column"
 msgstr ""
 
-#: assets/js/blocks/price.js:20
+#: assets/js/blocks/price.js:40
 msgid "Price Item"
 msgstr ""
 
-#: assets/js/blocks/price.js:35
+#: assets/js/blocks/price.js:55
 msgid "Price item in price tables."
 msgstr ""
 
-#: assets/js/blocks/price.js:66
+#: assets/js/blocks/price.js:86
 msgid "Price Detail"
 msgstr ""
 
-#: assets/js/blocks/price.js:67
+#: assets/js/blocks/price.js:87
 msgid "Help"
 msgstr ""
 
-#: assets/js/blocks/price.js:68
+#: assets/js/blocks/price.js:88
 msgid "per 1 month"
 msgstr ""
 
-#: assets/js/blocks/price.js:69
+#: assets/js/blocks/price.js:89
 msgid ""
 "Help text displayed just after the price. For example, if this price is "
 "subscription plan, \"per 1 month\" is helpful"
 msgstr ""
 
-#: assets/js/blocks/price.js:72
+#: assets/js/blocks/price.js:92
 msgid "Featured"
 msgstr ""
 
-#: assets/js/blocks/price.js:73
+#: assets/js/blocks/price.js:93
 msgid "If this price is featured, check"
 msgstr ""
 
-#: assets/js/blocks/price.js:80
+#: assets/js/blocks/price.js:100
 msgid "e.g. Standard"
 msgstr ""
 
-#: assets/js/blocks/price.js:85
+#: assets/js/blocks/price.js:105
 msgid "Free"
 msgstr ""
 
@@ -755,48 +755,76 @@ msgstr ""
 msgid "Enhanced group block which supports background."
 msgstr ""
 
-#: assets/js/blocks/section.js:107
+#: assets/js/blocks/section.js:119
 msgid "Container inside"
 msgstr ""
 
-#: assets/js/blocks/section.js:109
+#: assets/js/blocks/section.js:121
 msgid "If checked, container will be inside."
 msgstr ""
 
-#: assets/js/blocks/section.js:110
+#: assets/js/blocks/section.js:122
 msgid "Vertical Padding"
 msgstr ""
 
-#: assets/js/blocks/section.js:111
+#: assets/js/blocks/section.js:123
 msgid "Horizontal Padding"
 msgstr ""
 
-#: assets/js/blocks/section.js:113
+#: assets/js/blocks/section.js:125
 msgid "Background Color Setting"
 msgstr ""
 
-#: assets/js/blocks/section.js:123
+#: assets/js/blocks/section.js:135
 msgid "Opacity"
 msgstr ""
 
-#: assets/js/blocks/section.js:129
+#: assets/js/blocks/section.js:141
 msgid "Background Image"
 msgstr ""
 
-#: assets/js/blocks/section.js:136
+#: assets/js/blocks/section.js:148
 msgid "Set background image for section."
 msgstr ""
 
-#: assets/js/blocks/section.js:152
+#: assets/js/blocks/section.js:164
 msgid "Select Image"
 msgstr ""
 
-#: assets/js/blocks/section.js:156
+#: assets/js/blocks/section.js:168
 msgid "Clear"
 msgstr ""
 
-#: assets/js/blocks/section.js:163
+#: assets/js/blocks/section.js:175
 msgid "Blur"
+msgstr ""
+
+#: assets/js/blocks/section.js:181
+msgid "Hidden Contents"
+msgstr ""
+
+#: assets/js/blocks/section.js:182
+msgid "Hide Contents"
+msgstr ""
+
+#: assets/js/blocks/section.js:184
+msgid "If checked, contents will be hidden."
+msgstr ""
+
+#: assets/js/blocks/section.js:185
+msgid "Preview Height"
+msgstr ""
+
+#: assets/js/blocks/section.js:187
+msgid "Label for revealing button."
+msgstr ""
+
+#: assets/js/blocks/section.js:189
+msgid "e.g. Read More"
+msgstr ""
+
+#: assets/js/blocks/section.js:203 assets/js/blocks/section.js:239
+msgid "Read More"
 msgstr ""
 
 #: assets/js/blocks/step.js:32
