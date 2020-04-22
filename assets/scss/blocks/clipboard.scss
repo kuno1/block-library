@@ -5,6 +5,10 @@ $kbl-clipboard-color: #888 !default;
 
 	&-button {
 		display: inline-block;
+
+		.editor-rich-text {
+			display: inline-block;
+		}
 	}
 
 	&-label {

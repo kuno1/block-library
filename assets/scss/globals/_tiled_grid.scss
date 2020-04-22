@@ -7,9 +7,20 @@ $kbl-mobile-break-point: 767px !default;
 
 %grid-item {
 	flex-basis: 50%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
 
-	> * {
+	> div {
 		flex-basis: 100%;
+
+		> *:first-child {
+			margin-top: 0;
+		}
+
+		> *:last-child {
+			margin-bottom: 0;
+		}
 	}
 
 	@for $i from 1 through 4 {

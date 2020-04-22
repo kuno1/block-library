@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Kunoichi Block Library\n"
-"POT-Creation-Date: 2020-04-21 17:36+0900\n"
+"POT-Creation-Date: 2020-04-22 11:27+0900\n"
 "PO-Revision-Date: 2020-01-10 13:36+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
@@ -421,12 +421,12 @@ msgstr ""
 msgid "Post not found."
 msgstr ""
 
-#: assets/js/blocks/bubble.js:162 assets/js/blocks/tile.js:54
+#: assets/js/blocks/bubble.js:162 assets/js/blocks/tile.js:53
 msgid "Text Color"
 msgstr ""
 
 #: assets/js/blocks/bubble.js:167 assets/js/blocks/section.js:118
-#: assets/js/blocks/tile.js:60
+#: assets/js/blocks/tile.js:59
 msgid "Background Color"
 msgstr ""
 
@@ -545,7 +545,7 @@ msgid "Alignment"
 msgstr ""
 
 #: assets/js/blocks/clipboard.js:56
-msgid "Click here to copy..."
+msgid "e.g. Click to Copy"
 msgstr ""
 
 #: assets/js/blocks/clipboard.js:59
@@ -867,15 +867,15 @@ msgstr ""
 msgid "Write in CSV format. If set, order and number will be ignored."
 msgstr ""
 
-#: assets/js/blocks/tile.js:28
+#: assets/js/blocks/tile.js:27
 msgid "Tile"
 msgstr ""
 
-#: assets/js/blocks/tile.js:34
+#: assets/js/blocks/tile.js:33
 msgid "Tile item in tiled grid."
 msgstr ""
 
-#: assets/js/blocks/tile.js:69
+#: assets/js/blocks/tile.js:68
 msgid "Tile Colors"
 msgstr ""
 

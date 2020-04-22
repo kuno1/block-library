@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kunoichi Block Library\n"
-"POT-Creation-Date: 2020-04-21 17:36+0900\n"
-"PO-Revision-Date: 2020-04-21 17:41+0900\n"
+"POT-Creation-Date: 2020-04-22 11:27+0900\n"
+"PO-Revision-Date: 2020-04-22 11:27+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language: ja\n"
@@ -433,12 +433,12 @@ msgstr "エラー"
 msgid "Post not found."
 msgstr "投稿は見つかりませんでした。"
 
-#: assets/js/blocks/bubble.js:162 assets/js/blocks/tile.js:54
+#: assets/js/blocks/bubble.js:162 assets/js/blocks/tile.js:53
 msgid "Text Color"
 msgstr "文字色"
 
 #: assets/js/blocks/bubble.js:167 assets/js/blocks/section.js:118
-#: assets/js/blocks/tile.js:60
+#: assets/js/blocks/tile.js:59
 msgid "Background Color"
 msgstr "背景色"
 
@@ -558,8 +558,8 @@ msgid "Alignment"
 msgstr "テキスト位置"
 
 #: assets/js/blocks/clipboard.js:56
-msgid "Click here to copy..."
-msgstr "クリックしてコピー"
+msgid "e.g. Click to Copy"
+msgstr "例・クリックしてコピー"
 
 #: assets/js/blocks/clipboard.js:59
 msgid "Enter text to copy."
@@ -882,15 +882,15 @@ msgstr "推薦文設定"
 msgid "Write in CSV format. If set, order and number will be ignored."
 msgstr "CSV形式で書いてください。設定された場合、順番と数は無視されます。"
 
-#: assets/js/blocks/tile.js:28
+#: assets/js/blocks/tile.js:27
 msgid "Tile"
 msgstr "タイル"
 
-#: assets/js/blocks/tile.js:34
+#: assets/js/blocks/tile.js:33
 msgid "Tile item in tiled grid."
 msgstr "タイルグリッドのアイテム。"
 
-#: assets/js/blocks/tile.js:69
+#: assets/js/blocks/tile.js:68
 msgid "Tile Colors"
 msgstr "タイルの色"
 
