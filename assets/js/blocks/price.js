@@ -1,18 +1,38 @@
 /*!
- * wpdeps=wp-blocks, kbl, wp-editor, kbl, wp-components
+ * wpdeps=wp-blocks, kbl, wp-editor, kbl, wp-components, wp-hooks
  */
 
 const { registerBlockType } = wp.blocks;
 const { __ } = wp.i18n;
+const { applyFilters } = wp.hooks;
 const { RichText, InnerBlocks, InspectorControls } = wp.editor;
 const { G, Path, SVG, Rect, PanelBody, TextControl, ToggleControl } = wp.components;
 
-const getClassName = ( className, featured = false ) => {
+const getClassName = ( className, attributes ) => {
 	className = className ? className += ' kbl-price-item' : 'kbl-price-item';
-	if ( featured ) {
+	if ( attributes.featured ) {
 		className += ' kbl-price-item-featured';
 	}
 	return className;
+};
+
+const getPriceTemplate = () => {
+	return applyFilters( 'kbl_price_template', [
+		[
+			'core/list', {
+				ordered: false,
+			},
+		],
+		[
+			'core/button', {
+				align: 'center',
+			},
+		]
+	] );
+};
+
+const getPriceBlock = () => {
+	return applyFilters( 'kbl_allowed_blocks_in_price', [ 'core/heading', 'core/list', 'core/button', 'core/paragraph' ] );
 };
 
 registerBlockType( 'kunoichi/price', {
@@ -74,7 +94,7 @@ registerBlockType( 'kunoichi/price', {
 							onChange={ ( featured ) => setAttributes( { featured } ) } />
 					</PanelBody>
 				</InspectorControls>
-				<div className={ getClassName( className ) }>
+				<div className={ getClassName( className, attributes ) }>
 					<RichText tagName="h3" className="kbl-price-plan" value={ attributes.title }
 						multiline={ false }
 						keepPlaceholderOnFocus={ true } placeholder={ __( 'e.g. Standard', 'kbl' ) }
@@ -88,18 +108,7 @@ registerBlockType( 'kunoichi/price', {
 							<p className="kbl-price-help">{ attributes.help }</p>
 						) }
 					</div>
-					<InnerBlocks templateLock="all" template={ [
-						[
-							'core/list', {
-								ordered: false,
-							},
-						],
-						[
-							'core/button', {
-								align: 'center',
-							},
-						]
-					] } />
+					<InnerBlocks allowedBlocks={ getPriceBlock() } template={ getPriceTemplate() } />
 				</div>
 			</>
 		);
@@ -107,7 +116,7 @@ registerBlockType( 'kunoichi/price', {
 
 	save( { attributes } ) {
 		return (
-			<li className={ getClassName( null ) }>
+			<li className={ getClassName( null, attributes ) }>
 				<RichText.Content tagName="h3" className="kbl-price-plan" value={ attributes.title }
 						  multiline={ false } />
 				<div className="kbl-price-detail">
