@@ -7,8 +7,11 @@ const { __, sprintf } = wp.i18n;
 const { RichText, InnerBlocks, InspectorControls, withColors, PanelColorSettings } = wp.editor;
 const { G, Path, SVG, Rect, PanelBody, TextControl, SelectControl, ToggleControl } = wp.components;
 
-const getClassName = ( attributes ) => {
+const getClassName = ( attributes, className = '' ) => {
 	const classes = [ 'kbl-panel' ];
+	if ( className ) {
+		classes.push( className );
+	}
 	if ( attributes.icon ) {
 		classes.push( 'has-icon' );
 	}
@@ -87,7 +90,7 @@ registerBlockType( 'kunoichi/panel', {
 							onChange={ ( level ) => setAttributes( { level: parseInt( level ) } ) }/>
 					</PanelColorSettings>
 				</InspectorControls>
-				<div className={ getClassName( attributes ) }>
+				<div className={ getClassName( attributes, className ) }>
 					<header className='kbl-panel-heading'>
 						<RichText tagName={ 'h' + attributes.level } className="kbl-panel-title"
 								  value={ attributes.title }
