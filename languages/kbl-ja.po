@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kunoichi Block Library\n"
-"POT-Creation-Date: 2020-04-22 20:11+0900\n"
-"PO-Revision-Date: 2020-04-22 20:12+0900\n"
+"POT-Creation-Date: 2020-05-01 21:02+0900\n"
+"PO-Revision-Date: 2020-05-01 21:03+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language: ja\n"
@@ -625,6 +625,30 @@ msgstr "FAQとして表示"
 #: assets/js/blocks/definition-list.js:123
 msgid "If checked, JSON-LD will be generated."
 msgstr "チェックした場合、JSON-LDが出力されます。"
+
+#: assets/js/blocks/panel.js:26
+msgid "Panel"
+msgstr "パネル"
+
+#: assets/js/blocks/panel.js:46
+msgid "Panel block for emphasized and separated contents."
+msgstr "コンテンツを強調し目立たせるためのパネルブロック。"
+
+#: assets/js/blocks/panel.js:73
+msgid "Panel Options"
+msgstr "パネルオプション"
+
+#: assets/js/blocks/panel.js:75
+msgid "Panel Color"
+msgstr "パネルの色"
+
+#: assets/js/blocks/panel.js:86
+msgid "Heading Level"
+msgstr "見出しレベル"
+
+#: assets/js/blocks/panel.js:95
+msgid "Panel Heading"
+msgstr "パネルの見出し"
 
 #: assets/js/blocks/posts.js:34
 msgid "Post List"

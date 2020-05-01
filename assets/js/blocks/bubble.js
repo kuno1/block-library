@@ -66,11 +66,11 @@ registerBlockType( 'kunoichi/bubble', {
 			default: 0,
 		},
 		textColor: {
-			'type': 'string',
+			type: 'string',
 			default: '',
 		},
 		backgroundColor: {
-			'type': 'string',
+			type: 'string',
 			default: '',
 		},
 		content: {
