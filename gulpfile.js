@@ -258,6 +258,7 @@ gulp.task( 'doc', ( done ) => {
 	if ( ! blocks.length ) {
 		console.error( 'No blocks found. Extractor might be broken.' );
 	}
+	console.log( `${ blocks.length } blocks are available.` + "\n\n" );
 	console.log( blocks.map( ( block ) => {
 		const row = [ `#### ${ block.title } \`${ block.blockName }\`` ];
 		row.push( block.desc || 'No description provided.' );

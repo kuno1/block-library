@@ -52,6 +52,8 @@ PHP files are located at [src/Kunoichi/BlockLibrary/Blocks](./src/Kunoichi/Block
 
 ### Registered Blocks
 
+18 blocks are available.
+
 #### Alert `kunoichi/alert`  
 Styled alert blocks.
 
