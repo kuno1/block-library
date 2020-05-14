@@ -55,10 +55,6 @@ registerBlockType( 'kunoichi/panel', {
 			selector: '.kbl-panel-title',
 			default: [],
 		},
-		level: {
-			type: 'number',
-			default: 3,
-		},
 		icon: {
 			type: 'string',
 			default: '',
@@ -78,25 +74,14 @@ registerBlockType( 'kunoichi/panel', {
 						label: __( 'Panel Color', 'kbl' ),
 						onChange: setPanelColor,
 					} ] } initialOpen={ true }>
-
-						<SelectControl value={ attributes.level }
-							options={ [ 1, 2, 3, 4, 5, 6 ].map( ( level ) => {
-								return {
-									label: sprintf( 'H%d', level ),
-									value: level,
-								};
-							} ) }
-							label={ __( 'Heading Level', 'kbl' ) }
-							onChange={ ( level ) => setAttributes( { level: parseInt( level ) } ) }/>
 					</PanelColorSettings>
 				</InspectorControls>
 				<div className={ getClassName( attributes, className ) }>
 					<header className='kbl-panel-heading'>
-						<RichText tagName={ 'h' + attributes.level } className="kbl-panel-title"
-								  value={ attributes.title }
-								  multiline={ false }
-								  keepPlaceholderOnFocus={ true } placeholder={ __( 'Panel Heading', 'kbl' ) }
-								  onChange={ ( title ) => setAttributes( { title } ) }/>
+						<RichText tagName='p' className="kbl-panel-title"
+							value={ attributes.title } multiline={ false }
+							keepPlaceholderOnFocus={ true } placeholder={ __( 'Panel Heading', 'kbl' ) }
+							onChange={ ( title ) => setAttributes( { title } ) }/>
 					</header>
 					<div className="kbl-panel-body">
 						<InnerBlocks />
@@ -110,7 +95,7 @@ registerBlockType( 'kunoichi/panel', {
 		return (
 			<div className={ getClassName( attributes ) }>
 				<header className='kbl-panel-heading'>
-					<RichText.Content tagName={ 'h' + attributes.level } className="kbl-panel-title"
+					<RichText.Content tagName='p' className="kbl-panel-title"
 						value={ attributes.title }
 						multiline={ false } />
 				</header>
