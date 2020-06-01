@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Kunoichi Block Library\n"
-"POT-Creation-Date: 2020-05-01 21:02+0900\n"
+"POT-Creation-Date: 2020-06-01 21:23+0900\n"
 "PO-Revision-Date: 2020-01-10 13:36+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
@@ -81,6 +81,7 @@ msgid "Default"
 msgstr ""
 
 #: src/Kunoichi/BlockLibrary/Blocks/PostList.php:92
+#: assets/js/components/post-placeholder.js:21
 msgid "Date"
 msgstr ""
 
@@ -118,8 +119,8 @@ msgstr ""
 msgid "No testimonial matches your criteria."
 msgstr ""
 
-#: src/Kunoichi/BlockLibrary/Pattern/Widgets.php:54
-#: assets/js/blocks/alert.js:63
+#: src/Kunoichi/BlockLibrary/Pattern/Widgets.php:56
+#: assets/js/blocks/alert.js:63 assets/js/components/placeholder.js:118
 msgid "Title"
 msgstr ""
 
@@ -340,7 +341,7 @@ msgid ""
 "g. After post content)"
 msgstr ""
 
-#: src/Kunoichi/BlockLibrary/Rest/PostSearch.php:84
+#: src/Kunoichi/BlockLibrary/Rest/PostSearch.php:87
 #: src/Kunoichi/BlockLibrary/Rest/UserSearch.php:75
 msgid "Parameter \"id\" or \"s\" is required."
 msgstr ""
@@ -613,27 +614,23 @@ msgstr ""
 msgid "If checked, JSON-LD will be generated."
 msgstr ""
 
-#: assets/js/blocks/panel.js:26
+#: assets/js/blocks/panel.js:29
 msgid "Panel"
 msgstr ""
 
-#: assets/js/blocks/panel.js:46
+#: assets/js/blocks/panel.js:49
 msgid "Panel block for emphasized and separated contents."
 msgstr ""
 
-#: assets/js/blocks/panel.js:73
+#: assets/js/blocks/panel.js:72
 msgid "Panel Options"
 msgstr ""
 
-#: assets/js/blocks/panel.js:75
+#: assets/js/blocks/panel.js:74
 msgid "Panel Color"
 msgstr ""
 
-#: assets/js/blocks/panel.js:86
-msgid "Heading Level"
-msgstr ""
-
-#: assets/js/blocks/panel.js:95
+#: assets/js/blocks/panel.js:83
 msgid "Panel Heading"
 msgstr ""
 
@@ -959,6 +956,19 @@ msgstr ""
 msgid "Data is copied to clipboard."
 msgstr ""
 
+#: assets/js/components/dynamic-widget.js:32
+#, python-format
+msgid "Please specify renderer of dynamic widget %s."
+msgstr ""
+
+#: assets/js/components/incremental-search.js:32
+msgid "Type and search..."
+msgstr ""
+
+#: assets/js/components/incremental-search.js:50
+msgid "Searching..."
+msgstr ""
+
 #: assets/js/components/media.js:65
 msgid "Failed to fetch image."
 msgstr ""
@@ -976,8 +986,16 @@ msgstr ""
 msgid "Enter search keywords..."
 msgstr ""
 
+#: assets/js/components/post-placeholder.js:20
+msgid "Post ID"
+msgstr ""
+
+#: assets/js/components/post-placeholder.js:50
+msgid "Post Title"
+msgstr ""
+
 #: assets/js/components/post-selector.js:44
-msgid "Post not fofund."
+msgid "No post found."
 msgstr ""
 
 #: assets/js/components/post-selector.js:65

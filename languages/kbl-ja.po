@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kunoichi Block Library\n"
-"POT-Creation-Date: 2020-05-01 21:02+0900\n"
-"PO-Revision-Date: 2020-05-01 21:03+0900\n"
+"POT-Creation-Date: 2020-06-01 21:23+0900\n"
+"PO-Revision-Date: 2020-06-01 21:24+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language: ja\n"
@@ -82,6 +82,7 @@ msgid "Default"
 msgstr "デフォルト"
 
 #: src/Kunoichi/BlockLibrary/Blocks/PostList.php:92
+#: assets/js/components/post-placeholder.js:21
 msgid "Date"
 msgstr "日付"
 
@@ -120,8 +121,8 @@ msgstr "推薦文"
 msgid "No testimonial matches your criteria."
 msgstr "条件に合う推薦文が見つかりませんでした。"
 
-#: src/Kunoichi/BlockLibrary/Pattern/Widgets.php:54
-#: assets/js/blocks/alert.js:63
+#: src/Kunoichi/BlockLibrary/Pattern/Widgets.php:56
+#: assets/js/blocks/alert.js:63 assets/js/components/placeholder.js:118
 msgid "Title"
 msgstr "タイトル"
 
@@ -352,7 +353,7 @@ msgstr ""
 "テーマが定義済みポジションを設定している場合、指定されたCTAはそこ（例・投稿本"
 "文直後）に表示されます。"
 
-#: src/Kunoichi/BlockLibrary/Rest/PostSearch.php:84
+#: src/Kunoichi/BlockLibrary/Rest/PostSearch.php:87
 #: src/Kunoichi/BlockLibrary/Rest/UserSearch.php:75
 msgid "Parameter \"id\" or \"s\" is required."
 msgstr "パラメーター\"id\"または\"s\"が必須です。"
@@ -626,27 +627,23 @@ msgstr "FAQとして表示"
 msgid "If checked, JSON-LD will be generated."
 msgstr "チェックした場合、JSON-LDが出力されます。"
 
-#: assets/js/blocks/panel.js:26
+#: assets/js/blocks/panel.js:29
 msgid "Panel"
 msgstr "パネル"
 
-#: assets/js/blocks/panel.js:46
+#: assets/js/blocks/panel.js:49
 msgid "Panel block for emphasized and separated contents."
 msgstr "コンテンツを強調し目立たせるためのパネルブロック。"
 
-#: assets/js/blocks/panel.js:73
+#: assets/js/blocks/panel.js:72
 msgid "Panel Options"
 msgstr "パネルオプション"
 
-#: assets/js/blocks/panel.js:75
+#: assets/js/blocks/panel.js:74
 msgid "Panel Color"
 msgstr "パネルの色"
 
-#: assets/js/blocks/panel.js:86
-msgid "Heading Level"
-msgstr "見出しレベル"
-
-#: assets/js/blocks/panel.js:95
+#: assets/js/blocks/panel.js:83
 msgid "Panel Heading"
 msgstr "パネルの見出し"
 
@@ -976,6 +973,19 @@ msgstr "追加"
 msgid "Data is copied to clipboard."
 msgstr "クリップボードにデータがコピーされました。"
 
+#: assets/js/components/dynamic-widget.js:32
+#, python-format
+msgid "Please specify renderer of dynamic widget %s."
+msgstr "ダイナミックウィジェット%sのレンダラーを指定してください。"
+
+#: assets/js/components/incremental-search.js:32
+msgid "Type and search..."
+msgstr "タイプして検索…"
+
+#: assets/js/components/incremental-search.js:50
+msgid "Searching..."
+msgstr "検索中…"
+
 #: assets/js/components/media.js:65
 msgid "Failed to fetch image."
 msgstr "画像の取得に失敗しました。"
@@ -993,9 +1003,17 @@ msgstr "検索"
 msgid "Enter search keywords..."
 msgstr "検索キーワードを入力…"
 
+#: assets/js/components/post-placeholder.js:20
+msgid "Post ID"
+msgstr "投稿ID"
+
+#: assets/js/components/post-placeholder.js:50
+msgid "Post Title"
+msgstr "投稿タイトル"
+
 #: assets/js/components/post-selector.js:44
-msgid "Post not fofund."
-msgstr "投稿は見つかりませんでした。"
+msgid "No post found."
+msgstr "投稿が見つかりませんでした。"
 
 #: assets/js/components/post-selector.js:65
 #: assets/js/components/user-selector.js:61
@@ -1059,6 +1077,12 @@ msgstr "株式会社 KUNOICHI"
 #. Author URI of the plugin/theme
 msgid "https://kunoichiwp.com"
 msgstr "https://kunoichiwp.com"
+
+#~ msgid "Heading Level"
+#~ msgstr "見出しレベル"
+
+#~ msgid "Post not fofund."
+#~ msgstr "投稿は見つかりませんでした。"
 
 #~ msgid "Current User"
 #~ msgstr "現在のユーザー"
