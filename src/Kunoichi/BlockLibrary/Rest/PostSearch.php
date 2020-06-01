@@ -28,6 +28,9 @@ class PostSearch extends RestBase {
 				'type'              => 'string',
 				'default'           => 'post',
 				'validate_callback' => function( $var ) {
+					if ( in_array( $var, [ 'any', 'public' ] ) ) {
+						return true;
+					}
 					return post_type_exists( $var ) && in_array( $var, $this->allowed_post_types() );
 				}
 			],
@@ -85,8 +88,16 @@ class PostSearch extends RestBase {
 				'status' => 400,
 			] );
 		}
+		switch ( ( $post_type = $request->get_param( 'post_type' ) ) ) {
+			case 'public':
+				$post_types = get_post_types( [ 'public' => true ] );
+				break;
+			case 'any':
+			default:
+				$args[ 'post_type' ] = $post_type;
+				break;
+		}
 		$args = array_merge( $args, [
-			'post_type'   => $request->get_param( 'post_type' ),
 			'post_status' => 'publish',
 		] );
 		$args = apply_filters( 'kbl_rest_posts_search_args', $args, $request, get_current_user_id() );
@@ -108,9 +119,13 @@ class PostSearch extends RestBase {
 	 */
 	protected function to_array( $post ) {
 		return [
-			'id'        => $post->ID,
-			'title'     => get_the_title( $post ),
-			'thumbnail' => get_the_post_thumbnail_url( $post, 'thumbnail' ),
+			'id'             => $post->ID,
+			'title'          => get_the_title( $post ),
+			'thumbnail'      => get_the_post_thumbnail_url( $post, 'thumbnail' ),
+			'date'           => $post->post_date,
+			'date_formatted' => mysql2date( get_option( 'date_format' ), $post->post_date ),
+			'type'           => $post->post_type,
+			'type_formatted' => get_post_type_object( $post->post_type )->labels->singular_name,
 		];
 	}
 

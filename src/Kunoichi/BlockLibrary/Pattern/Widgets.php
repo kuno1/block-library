@@ -23,6 +23,8 @@ abstract class Widgets extends \WP_Widget {
 	 */
 	public function __construct() {
 		parent::__construct( $this->get_id_base(), $this->get_name(), $this->widget_options(), $this->control_options() );
+		add_action( 'init', [ $this, 'register_scripts' ] );
+		add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ] );
 	}
 
 	/**
@@ -68,7 +70,7 @@ abstract class Widgets extends \WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 		$content = $this->widget_content( $args, $instance );
-		if ( !$content ) {
+		if ( ! $content ) {
 			return;
 		}
 		echo $args[ 'before_widget' ];
@@ -91,20 +93,78 @@ abstract class Widgets extends \WP_Widget {
 	abstract protected function widget_content( $args, $instance );
 
 	/**
+	 * Get description.
+	 *
+	 * @return string
+	 */
+	protected function description() {
+		return '';
+	}
+
+	/**
 	 * Widget options.
 	 *
 	 * @return array
 	 */
 	protected function widget_options() {
-		return [];
+		$option = [];
+		if ( $description = $this->description() ) {
+			$option['description'] = $description;
+		}
+		return $option;
 	}
 
 	/**
 	 * Control options.
 	 *
-	 * @return array
+	 * @return array Default empty array.
 	 */
 	protected function control_options() {
+		return [];
+	}
+
+	/**
+	 * Register scripts
+	 *
+	 * If you need to register scripts or assets, override this function.
+	 */
+	public function register_scripts() {
+		// Do something.
+	}
+
+	/**
+	 * Enqueue scripts.
+	 *
+	 * By default, this enqueues scripts and styles from admin_
+	 */
+	public function admin_enqueue_scripts() {
+		if ( ! function_exists( 'get_current_screen' ) ) {
+			return;
+		}
+		$screen = get_current_screen();
+		if ( ! $screen || ! in_array( $screen->base, [ 'widgets', 'customize' ] ) ) {
+			return;
+		}
+		$scripts = $this->get_admin_scripts();
+		foreach ( $scripts as $script ) {
+			wp_enqueue_script( $script );
+		}
+		$styles = $this->get_admin_styles();
+		foreach ( $styles as $style ) {
+			wp_enqueue_style( $style );
+		}
+	}
+
+	/**
+	 * Enqueue scripts
+	 *
+	 * @return string[]
+	 */
+	protected function get_admin_scripts() {
+		return [];
+	}
+
+	protected function get_admin_styles() {
 		return [];
 	}
 }

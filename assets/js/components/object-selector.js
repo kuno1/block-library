@@ -41,11 +41,11 @@ class ObjectSelector extends React.Component {
 	}
 
 	fetch( id ) {
-		console.error( 'kbl.ObjectSelector:Override this method' );
+		window.console && console.error( 'kbl.ObjectSelector:Override this method' );
 	}
 
 	search() {
-		console.error( 'kbl.ObjectSelector:Override this method' );
+		window.console && console.error( 'kbl.ObjectSelector:Override this method' );
 	}
 
 	/**

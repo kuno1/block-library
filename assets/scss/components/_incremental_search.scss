@@ -1,0 +1,48 @@
+.kbl-incremental-search {
+	position: relative;
+
+	.components-text-control__input {
+		border-radius: 0;
+	}
+
+	&-result {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		background-color: #f9f9f9;
+		border: 1px solid #7e8993;
+		border-top: none;
+		z-index: 200;
+	}
+
+	&-summary {
+		padding: 5px;
+		text-align: right;
+		color: #888;
+		font-size: 0.8em;
+	}
+
+	&-list {
+		padding: 0;
+		margin: 0;
+		border-top: 1px solid #888;
+	}
+
+	&-item {
+		list-style: none;
+		margin: 0;
+		border-bottom: 1px solid #888;
+		padding: 5px 10px;
+		cursor: pointer;
+
+		&:hover {
+			background-color: #008ec2;
+			color: #fff;
+		}
+
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+}

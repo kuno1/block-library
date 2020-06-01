@@ -1,0 +1,33 @@
+.kbl-placeholder {
+
+	& + & {
+		border-top: 1px solid #ddd;
+	}
+
+	&-body {
+		display: flex;
+		padding: 10px 0;
+	}
+
+	&-img {
+		width: auto;
+		height: auto;
+		max-width: 60px;
+		margin-right: 20px;
+	}
+
+	&-meta {
+		font-size: 0.85em;
+		color: #888;
+	}
+
+	&-value {
+		display: inline-block;
+		margin-right: 0.5em;
+
+		strong {
+			color: #222;
+		}
+	}
+}
+

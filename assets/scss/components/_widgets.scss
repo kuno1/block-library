@@ -1,0 +1,42 @@
+.dynamic-widget {
+	.components-placeholder {
+		box-sizing: border-box;
+	}
+}
+
+.kbl-widget {
+
+	&-tab {
+
+		&-panel {
+			display: none;
+			padding: 1em 0;
+
+			&.active {
+				display: block;
+			}
+
+			.kbl-placeholder {
+				border-bottom: 1px solid #ddd;
+
+				&:first-child {
+					border-top: 1px solid #ddd;
+				}
+			}
+		}
+
+		&-meta {
+			margin-bottom: 1em;
+			padding: 1em;
+			transition: background-color 0.3s linear;
+
+			&.active {
+				background-color: #f9f9f9;
+			}
+
+			&-toggle {
+				margin-bottom: 1em;
+			}
+		}
+	}
+}
