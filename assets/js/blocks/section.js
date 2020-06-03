@@ -57,7 +57,7 @@ const sectionStyle = ( attributes ) => {
 
 registerBlockType( 'kunoichi/section', {
 
-	title: __( 'Section', 'ku-mag' ),
+	title: __( 'Section', 'kbl' ),
 
 	icon: 'grid-view',
 

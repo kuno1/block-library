@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kunoichi Block Library\n"
-"POT-Creation-Date: 2020-06-01 21:23+0900\n"
-"PO-Revision-Date: 2020-06-01 21:24+0900\n"
+"POT-Creation-Date: 2020-06-03 16:28+0900\n"
+"PO-Revision-Date: 2020-06-03 16:31+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language: ja\n"
@@ -72,6 +72,16 @@ msgstr ""
 "お探しの条件に合うものはありませんでした。<br />条件を変更するか、<a href="
 "\"%s\" target=\"_blank\">新規作成</a>してください。"
 
+#: src/Kunoichi/BlockLibrary/Blocks/InternalLink.php:39
+#: assets/js/blocks/internal-link.js:60
+msgid "No post is specified."
+msgstr "投稿が指定されていません"
+
+#: src/Kunoichi/BlockLibrary/Blocks/InternalLink.php:48
+#: assets/js/blocks/bubble.js:141
+msgid "Post not found."
+msgstr "投稿は見つかりませんでした。"
+
 #: src/Kunoichi/BlockLibrary/Blocks/PostList.php:80
 msgid "Undefined Post Type"
 msgstr "不明な投稿タイプ"
@@ -122,7 +132,8 @@ msgid "No testimonial matches your criteria."
 msgstr "条件に合う推薦文が見つかりませんでした。"
 
 #: src/Kunoichi/BlockLibrary/Pattern/Widgets.php:56
-#: assets/js/blocks/alert.js:63 assets/js/components/placeholder.js:118
+#: assets/js/blocks/alert.js:63 assets/js/blocks/internal-link.js:71
+#: assets/js/components/placeholder.js:118
 msgid "Title"
 msgstr "タイトル"
 
@@ -410,7 +421,7 @@ msgstr "このアラートは閉じることができます。"
 msgid "This alert stays opened."
 msgstr "このアラートは開いたままです。"
 
-#: assets/js/blocks/alert.js:108
+#: assets/js/blocks/alert.js:108 assets/js/blocks/internal-link.js:111
 msgid "Close"
 msgstr "閉じる"
 
@@ -429,10 +440,6 @@ msgstr "ユーザーが見つかりません。"
 #: assets/js/blocks/bubble.js:120 assets/js/blocks/bubble.js:150
 msgid "Error"
 msgstr "エラー"
-
-#: assets/js/blocks/bubble.js:141
-msgid "Post not found."
-msgstr "投稿は見つかりませんでした。"
 
 #: assets/js/blocks/bubble.js:162 assets/js/blocks/tile.js:53
 msgid "Text Color"
@@ -626,6 +633,69 @@ msgstr "FAQとして表示"
 #: assets/js/blocks/definition-list.js:123
 msgid "If checked, JSON-LD will be generated."
 msgstr "チェックした場合、JSON-LDが出力されます。"
+
+#: assets/js/blocks/internal-link.js:16
+msgid "Internal Link"
+msgstr "内部リンク"
+
+#: assets/js/blocks/internal-link.js:20
+msgid "Same as Oembed link block, but this link is referred as post ID."
+msgstr "Oembedリンクブロックと同じですが、投稿IDを参照したリンクを作成します。"
+
+#: assets/js/blocks/internal-link.js:24
+msgid "Related Articles"
+msgstr "関連記事"
+
+#: assets/js/blocks/internal-link.js:47
+msgid "Post Setting"
+msgstr "投稿設定"
+
+#: assets/js/blocks/internal-link.js:51
+#: assets/js/components/post-selector.js:69
+#: assets/js/components/user-selector.js:65
+msgid "Remove"
+msgstr "削除"
+
+#: assets/js/blocks/internal-link.js:65 assets/js/blocks/internal-link.js:101
+msgid "Search Post"
+msgstr "投稿を検索"
+
+#: assets/js/blocks/internal-link.js:70
+msgid "Override Setting"
+msgstr "上書き設定"
+
+#: assets/js/blocks/internal-link.js:72
+msgid "If set, title will be overridden."
+msgstr "設定すると、タイトルが上書きされます。"
+
+#: assets/js/blocks/internal-link.js:75
+msgid "Excerpt"
+msgstr "抜粋文"
+
+#: assets/js/blocks/internal-link.js:76
+msgid "If set, excerpt will be overridden."
+msgstr "設定すると、抜粋文が上書きされます。"
+
+#: assets/js/blocks/internal-link.js:85
+msgid "No Post Specified."
+msgstr "投稿が指定されていません"
+
+#: assets/js/blocks/internal-link.js:86
+msgid "Please specify post to link."
+msgstr "リンクする投稿を指定してください。"
+
+#: assets/js/blocks/internal-link.js:94
+#: assets/js/components/post-placeholder.js:20
+msgid "Post ID"
+msgstr "投稿ID"
+
+#: assets/js/blocks/internal-link.js:108
+msgid "Reset"
+msgstr "リセット"
+
+#: assets/js/blocks/internal-link.js:120
+msgid "Edit"
+msgstr "編集"
 
 #: assets/js/blocks/panel.js:29
 msgid "Panel"
@@ -1003,13 +1073,17 @@ msgstr "検索"
 msgid "Enter search keywords..."
 msgstr "検索キーワードを入力…"
 
-#: assets/js/components/post-placeholder.js:20
-msgid "Post ID"
-msgstr "投稿ID"
-
 #: assets/js/components/post-placeholder.js:50
 msgid "Post Title"
 msgstr "投稿タイトル"
+
+#: assets/js/components/post-searcher.js:28
+msgid "Post Selector"
+msgstr "投稿選択"
+
+#: assets/js/components/post-searcher.js:68
+msgid "Failed to search posts. Please try again later."
+msgstr "投稿の検索に失敗しました。のちほどやり直してください。"
 
 #: assets/js/components/post-selector.js:44
 msgid "No post found."
@@ -1019,11 +1093,6 @@ msgstr "投稿が見つかりませんでした。"
 #: assets/js/components/user-selector.js:61
 msgid "Choose"
 msgstr "選択"
-
-#: assets/js/components/post-selector.js:69
-#: assets/js/components/user-selector.js:65
-msgid "Remove"
-msgstr "削除"
 
 #: assets/js/components/taxonomy-selector.js:29
 msgid "ERROR"

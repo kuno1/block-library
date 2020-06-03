@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Kunoichi Block Library\n"
-"POT-Creation-Date: 2020-06-01 21:23+0900\n"
+"POT-Creation-Date: 2020-06-03 16:28+0900\n"
 "PO-Revision-Date: 2020-01-10 13:36+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
@@ -71,6 +71,16 @@ msgid ""
 "\" target=\"_blank\">new one</a>."
 msgstr ""
 
+#: src/Kunoichi/BlockLibrary/Blocks/InternalLink.php:39
+#: assets/js/blocks/internal-link.js:60
+msgid "No post is specified."
+msgstr ""
+
+#: src/Kunoichi/BlockLibrary/Blocks/InternalLink.php:48
+#: assets/js/blocks/bubble.js:141
+msgid "Post not found."
+msgstr ""
+
 #: src/Kunoichi/BlockLibrary/Blocks/PostList.php:80
 msgid "Undefined Post Type"
 msgstr ""
@@ -120,7 +130,8 @@ msgid "No testimonial matches your criteria."
 msgstr ""
 
 #: src/Kunoichi/BlockLibrary/Pattern/Widgets.php:56
-#: assets/js/blocks/alert.js:63 assets/js/components/placeholder.js:118
+#: assets/js/blocks/alert.js:63 assets/js/blocks/internal-link.js:71
+#: assets/js/components/placeholder.js:118
 msgid "Title"
 msgstr ""
 
@@ -398,7 +409,7 @@ msgstr ""
 msgid "This alert stays opened."
 msgstr ""
 
-#: assets/js/blocks/alert.js:108
+#: assets/js/blocks/alert.js:108 assets/js/blocks/internal-link.js:111
 msgid "Close"
 msgstr ""
 
@@ -416,10 +427,6 @@ msgstr ""
 
 #: assets/js/blocks/bubble.js:120 assets/js/blocks/bubble.js:150
 msgid "Error"
-msgstr ""
-
-#: assets/js/blocks/bubble.js:141
-msgid "Post not found."
 msgstr ""
 
 #: assets/js/blocks/bubble.js:162 assets/js/blocks/tile.js:53
@@ -612,6 +619,69 @@ msgstr ""
 
 #: assets/js/blocks/definition-list.js:123
 msgid "If checked, JSON-LD will be generated."
+msgstr ""
+
+#: assets/js/blocks/internal-link.js:16
+msgid "Internal Link"
+msgstr ""
+
+#: assets/js/blocks/internal-link.js:20
+msgid "Same as Oembed link block, but this link is referred as post ID."
+msgstr ""
+
+#: assets/js/blocks/internal-link.js:24
+msgid "Related Articles"
+msgstr ""
+
+#: assets/js/blocks/internal-link.js:47
+msgid "Post Setting"
+msgstr ""
+
+#: assets/js/blocks/internal-link.js:51
+#: assets/js/components/post-selector.js:69
+#: assets/js/components/user-selector.js:65
+msgid "Remove"
+msgstr ""
+
+#: assets/js/blocks/internal-link.js:65 assets/js/blocks/internal-link.js:101
+msgid "Search Post"
+msgstr ""
+
+#: assets/js/blocks/internal-link.js:70
+msgid "Override Setting"
+msgstr ""
+
+#: assets/js/blocks/internal-link.js:72
+msgid "If set, title will be overridden."
+msgstr ""
+
+#: assets/js/blocks/internal-link.js:75
+msgid "Excerpt"
+msgstr ""
+
+#: assets/js/blocks/internal-link.js:76
+msgid "If set, excerpt will be overridden."
+msgstr ""
+
+#: assets/js/blocks/internal-link.js:85
+msgid "No Post Specified."
+msgstr ""
+
+#: assets/js/blocks/internal-link.js:86
+msgid "Please specify post to link."
+msgstr ""
+
+#: assets/js/blocks/internal-link.js:94
+#: assets/js/components/post-placeholder.js:20
+msgid "Post ID"
+msgstr ""
+
+#: assets/js/blocks/internal-link.js:108
+msgid "Reset"
+msgstr ""
+
+#: assets/js/blocks/internal-link.js:120
+msgid "Edit"
 msgstr ""
 
 #: assets/js/blocks/panel.js:29
@@ -986,12 +1056,16 @@ msgstr ""
 msgid "Enter search keywords..."
 msgstr ""
 
-#: assets/js/components/post-placeholder.js:20
-msgid "Post ID"
-msgstr ""
-
 #: assets/js/components/post-placeholder.js:50
 msgid "Post Title"
+msgstr ""
+
+#: assets/js/components/post-searcher.js:28
+msgid "Post Selector"
+msgstr ""
+
+#: assets/js/components/post-searcher.js:68
+msgid "Failed to search posts. Please try again later."
 msgstr ""
 
 #: assets/js/components/post-selector.js:44
@@ -1001,11 +1075,6 @@ msgstr ""
 #: assets/js/components/post-selector.js:65
 #: assets/js/components/user-selector.js:61
 msgid "Choose"
-msgstr ""
-
-#: assets/js/components/post-selector.js:69
-#: assets/js/components/user-selector.js:65
-msgid "Remove"
 msgstr ""
 
 #: assets/js/components/taxonomy-selector.js:29

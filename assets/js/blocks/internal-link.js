@@ -83,11 +83,19 @@ registerBlockType( 'kunoichi/internal-link', {
 						<ServerSideRender block="kunoichi/internal-link" attributes={ attributes } />
 					) : (
 						<Placeholder icon="warning" label={ __( 'No Post Specified.', 'kbl' ) }
-									 instructions={ __( 'Please specify post to link.', 'ku-mag' ) }/>
+									 instructions={ __( 'Please specify post to link.', 'kbl' ) }/>
 					) }
 					<div className="kbl-internal-link-filter">
+						{ ! editing && (
+							<Button isSecondary={ true } className="kbl-internal-link-toggle" icon="welcome-write-blog"
+									onClick={ () => {
+										setState( { editing: true } )
+									} }>
+								{ __( 'Edit', 'kbl' ) }
+							</Button>
+						) }
 					</div>
-					{ editing ? (
+					{ editing && (
 						<div className="kbl-internal-link-editor">
 							<div className="kbl-intern-link-editor-column">
 								<div className="kbl-internal-link-editor-id">
@@ -112,13 +120,6 @@ registerBlockType( 'kunoichi/internal-link', {
 								setState( { editing: false } );
 							} }/>
 						</div>
-					) : (
-						<Button isSecondary={ true } className="kbl-internal-link-toggle" icon="edit-large"
-							onClick={ () => {
-								setState( { editing: true } )
-							} }>
-							{ __( 'Edit', 'kbl' ) }
-						</Button>
 					) }
 				</div>
 			</>
