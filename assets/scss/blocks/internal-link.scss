@@ -1,0 +1,44 @@
+.wp-block-kunoichi-internal-link {
+	position: relative;
+
+	.kbl-internal-link-filter {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+
+	.kbl-internal-link-toggle {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50% -50%);
+		display: none;
+	}
+
+	.kbl-internal-link-editor {
+		position: absolute;
+		padding: 48px 24px;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(255, 255, 255, .8);
+
+		&-column {
+			max-width: 600px;
+			margin: 0 auto;
+		}
+
+		&-close {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+	}
+}
+
+.is-selected .kbl-internal-link-toggle {
+	display: inline-block;
+}
