@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kunoichi Block Library\n"
-"POT-Creation-Date: 2020-06-03 16:28+0900\n"
-"PO-Revision-Date: 2020-06-03 16:31+0900\n"
+"POT-Creation-Date: 2020-06-15 16:23+0900\n"
+"PO-Revision-Date: 2020-06-15 16:24+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language: ja\n"
@@ -421,7 +421,7 @@ msgstr "このアラートは閉じることができます。"
 msgid "This alert stays opened."
 msgstr "このアラートは開いたままです。"
 
-#: assets/js/blocks/alert.js:108 assets/js/blocks/internal-link.js:111
+#: assets/js/blocks/alert.js:108 assets/js/blocks/internal-link.js:119
 msgid "Close"
 msgstr "閉じる"
 
@@ -445,7 +445,7 @@ msgstr "エラー"
 msgid "Text Color"
 msgstr "文字色"
 
-#: assets/js/blocks/bubble.js:167 assets/js/blocks/section.js:130
+#: assets/js/blocks/bubble.js:167 assets/js/blocks/section.js:138
 #: assets/js/blocks/tile.js:59
 msgid "Background Color"
 msgstr "背景色"
@@ -488,7 +488,7 @@ msgstr "%sを指定"
 msgid "Search from %s"
 msgstr "%sから探す"
 
-#: assets/js/blocks/bubble.js:218 assets/js/blocks/section.js:118
+#: assets/js/blocks/bubble.js:218 assets/js/blocks/section.js:124
 msgid "Layout"
 msgstr "レイアウト"
 
@@ -656,7 +656,7 @@ msgstr "投稿設定"
 msgid "Remove"
 msgstr "削除"
 
-#: assets/js/blocks/internal-link.js:65 assets/js/blocks/internal-link.js:101
+#: assets/js/blocks/internal-link.js:65 assets/js/blocks/internal-link.js:109
 msgid "Search Post"
 msgstr "投稿を検索"
 
@@ -685,35 +685,39 @@ msgid "Please specify post to link."
 msgstr "リンクする投稿を指定してください。"
 
 #: assets/js/blocks/internal-link.js:94
+msgid "Edit"
+msgstr "編集"
+
+#: assets/js/blocks/internal-link.js:102
 #: assets/js/components/post-placeholder.js:20
 msgid "Post ID"
 msgstr "投稿ID"
 
-#: assets/js/blocks/internal-link.js:108
+#: assets/js/blocks/internal-link.js:116
 msgid "Reset"
 msgstr "リセット"
 
-#: assets/js/blocks/internal-link.js:120
-msgid "Edit"
-msgstr "編集"
-
-#: assets/js/blocks/panel.js:29
+#: assets/js/blocks/panel.js:35
 msgid "Panel"
 msgstr "パネル"
 
-#: assets/js/blocks/panel.js:49
+#: assets/js/blocks/panel.js:55
 msgid "Panel block for emphasized and separated contents."
 msgstr "コンテンツを強調し目立たせるためのパネルブロック。"
 
-#: assets/js/blocks/panel.js:72
+#: assets/js/blocks/panel.js:82
 msgid "Panel Options"
 msgstr "パネルオプション"
 
-#: assets/js/blocks/panel.js:74
+#: assets/js/blocks/panel.js:84
 msgid "Panel Color"
 msgstr "パネルの色"
 
-#: assets/js/blocks/panel.js:83
+#: assets/js/blocks/panel.js:88
+msgid "Title Color"
+msgstr "タイトルの色"
+
+#: assets/js/blocks/panel.js:97
 msgid "Panel Heading"
 msgstr "パネルの見出し"
 
@@ -853,83 +857,83 @@ msgstr "例・スタンダード"
 msgid "Free"
 msgstr "無料"
 
-#: assets/js/blocks/section.js:60
+#: assets/js/blocks/section.js:65
 msgid "Section"
 msgstr "セクション"
 
-#: assets/js/blocks/section.js:66
+#: assets/js/blocks/section.js:71
 msgid "Enhanced group block which supports background."
 msgstr "背景デザインをサポートする一歩進んだグループブロック。"
 
-#: assets/js/blocks/section.js:119
+#: assets/js/blocks/section.js:126
 msgid "Container inside"
 msgstr "中にコンテナを入れる"
 
-#: assets/js/blocks/section.js:121
+#: assets/js/blocks/section.js:128
 msgid "If checked, container will be inside."
 msgstr "チェックを入れると、コンテナが中に入ります。"
 
-#: assets/js/blocks/section.js:122
+#: assets/js/blocks/section.js:129
 msgid "Vertical Padding"
 msgstr "上下の余白"
 
-#: assets/js/blocks/section.js:123
+#: assets/js/blocks/section.js:130
 msgid "Horizontal Padding"
 msgstr "左右の余白"
 
-#: assets/js/blocks/section.js:125
+#: assets/js/blocks/section.js:133
 msgid "Background Color Setting"
 msgstr "背景色設定"
 
-#: assets/js/blocks/section.js:135
+#: assets/js/blocks/section.js:143
 msgid "Opacity"
 msgstr "不透明度"
 
-#: assets/js/blocks/section.js:141
+#: assets/js/blocks/section.js:149
 msgid "Background Image"
 msgstr "背景画像"
 
-#: assets/js/blocks/section.js:148
+#: assets/js/blocks/section.js:156
 msgid "Set background image for section."
 msgstr "セクションに背景画像を追加。"
 
-#: assets/js/blocks/section.js:164
+#: assets/js/blocks/section.js:172
 msgid "Select Image"
 msgstr "画像を選択"
 
-#: assets/js/blocks/section.js:168
+#: assets/js/blocks/section.js:176
 msgid "Clear"
 msgstr "クリア"
 
-#: assets/js/blocks/section.js:175
+#: assets/js/blocks/section.js:183
 msgid "Blur"
 msgstr "ぼかし"
 
-#: assets/js/blocks/section.js:181
+#: assets/js/blocks/section.js:189
 msgid "Hidden Contents"
 msgstr "隠しコンテンツ"
 
-#: assets/js/blocks/section.js:182
+#: assets/js/blocks/section.js:190
 msgid "Hide Contents"
 msgstr "コンテンツを隠す"
 
-#: assets/js/blocks/section.js:184
+#: assets/js/blocks/section.js:192
 msgid "If checked, contents will be hidden."
 msgstr "チェックを入れると、コンテンツが一部隠れます。"
 
-#: assets/js/blocks/section.js:185
+#: assets/js/blocks/section.js:193
 msgid "Preview Height"
 msgstr "見える部分のの高さ"
 
-#: assets/js/blocks/section.js:187
+#: assets/js/blocks/section.js:195
 msgid "Label for revealing button."
 msgstr "オープンするボタンのラベル。"
 
-#: assets/js/blocks/section.js:189
+#: assets/js/blocks/section.js:197
 msgid "e.g. Read More"
 msgstr "例・続きを読む"
 
-#: assets/js/blocks/section.js:203 assets/js/blocks/section.js:239
+#: assets/js/blocks/section.js:211 assets/js/blocks/section.js:243
 msgid "Read More"
 msgstr "続きを読む"
 

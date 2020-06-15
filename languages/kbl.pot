@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Kunoichi Block Library\n"
-"POT-Creation-Date: 2020-06-03 16:28+0900\n"
+"POT-Creation-Date: 2020-06-15 16:23+0900\n"
 "PO-Revision-Date: 2020-01-10 13:36+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
@@ -409,7 +409,7 @@ msgstr ""
 msgid "This alert stays opened."
 msgstr ""
 
-#: assets/js/blocks/alert.js:108 assets/js/blocks/internal-link.js:111
+#: assets/js/blocks/alert.js:108 assets/js/blocks/internal-link.js:119
 msgid "Close"
 msgstr ""
 
@@ -433,7 +433,7 @@ msgstr ""
 msgid "Text Color"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:167 assets/js/blocks/section.js:130
+#: assets/js/blocks/bubble.js:167 assets/js/blocks/section.js:138
 #: assets/js/blocks/tile.js:59
 msgid "Background Color"
 msgstr ""
@@ -476,7 +476,7 @@ msgstr ""
 msgid "Search from %s"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:218 assets/js/blocks/section.js:118
+#: assets/js/blocks/bubble.js:218 assets/js/blocks/section.js:124
 msgid "Layout"
 msgstr ""
 
@@ -643,7 +643,7 @@ msgstr ""
 msgid "Remove"
 msgstr ""
 
-#: assets/js/blocks/internal-link.js:65 assets/js/blocks/internal-link.js:101
+#: assets/js/blocks/internal-link.js:65 assets/js/blocks/internal-link.js:109
 msgid "Search Post"
 msgstr ""
 
@@ -672,35 +672,39 @@ msgid "Please specify post to link."
 msgstr ""
 
 #: assets/js/blocks/internal-link.js:94
+msgid "Edit"
+msgstr ""
+
+#: assets/js/blocks/internal-link.js:102
 #: assets/js/components/post-placeholder.js:20
 msgid "Post ID"
 msgstr ""
 
-#: assets/js/blocks/internal-link.js:108
+#: assets/js/blocks/internal-link.js:116
 msgid "Reset"
 msgstr ""
 
-#: assets/js/blocks/internal-link.js:120
-msgid "Edit"
-msgstr ""
-
-#: assets/js/blocks/panel.js:29
+#: assets/js/blocks/panel.js:35
 msgid "Panel"
 msgstr ""
 
-#: assets/js/blocks/panel.js:49
+#: assets/js/blocks/panel.js:55
 msgid "Panel block for emphasized and separated contents."
 msgstr ""
 
-#: assets/js/blocks/panel.js:72
+#: assets/js/blocks/panel.js:82
 msgid "Panel Options"
 msgstr ""
 
-#: assets/js/blocks/panel.js:74
+#: assets/js/blocks/panel.js:84
 msgid "Panel Color"
 msgstr ""
 
-#: assets/js/blocks/panel.js:83
+#: assets/js/blocks/panel.js:88
+msgid "Title Color"
+msgstr ""
+
+#: assets/js/blocks/panel.js:97
 msgid "Panel Heading"
 msgstr ""
 
@@ -838,83 +842,83 @@ msgstr ""
 msgid "Free"
 msgstr ""
 
-#: assets/js/blocks/section.js:60
+#: assets/js/blocks/section.js:65
 msgid "Section"
 msgstr ""
 
-#: assets/js/blocks/section.js:66
+#: assets/js/blocks/section.js:71
 msgid "Enhanced group block which supports background."
 msgstr ""
 
-#: assets/js/blocks/section.js:119
+#: assets/js/blocks/section.js:126
 msgid "Container inside"
 msgstr ""
 
-#: assets/js/blocks/section.js:121
+#: assets/js/blocks/section.js:128
 msgid "If checked, container will be inside."
 msgstr ""
 
-#: assets/js/blocks/section.js:122
+#: assets/js/blocks/section.js:129
 msgid "Vertical Padding"
 msgstr ""
 
-#: assets/js/blocks/section.js:123
+#: assets/js/blocks/section.js:130
 msgid "Horizontal Padding"
 msgstr ""
 
-#: assets/js/blocks/section.js:125
+#: assets/js/blocks/section.js:133
 msgid "Background Color Setting"
 msgstr ""
 
-#: assets/js/blocks/section.js:135
+#: assets/js/blocks/section.js:143
 msgid "Opacity"
 msgstr ""
 
-#: assets/js/blocks/section.js:141
+#: assets/js/blocks/section.js:149
 msgid "Background Image"
 msgstr ""
 
-#: assets/js/blocks/section.js:148
+#: assets/js/blocks/section.js:156
 msgid "Set background image for section."
 msgstr ""
 
-#: assets/js/blocks/section.js:164
+#: assets/js/blocks/section.js:172
 msgid "Select Image"
 msgstr ""
 
-#: assets/js/blocks/section.js:168
+#: assets/js/blocks/section.js:176
 msgid "Clear"
 msgstr ""
 
-#: assets/js/blocks/section.js:175
+#: assets/js/blocks/section.js:183
 msgid "Blur"
 msgstr ""
 
-#: assets/js/blocks/section.js:181
+#: assets/js/blocks/section.js:189
 msgid "Hidden Contents"
 msgstr ""
 
-#: assets/js/blocks/section.js:182
+#: assets/js/blocks/section.js:190
 msgid "Hide Contents"
 msgstr ""
 
-#: assets/js/blocks/section.js:184
+#: assets/js/blocks/section.js:192
 msgid "If checked, contents will be hidden."
 msgstr ""
 
-#: assets/js/blocks/section.js:185
+#: assets/js/blocks/section.js:193
 msgid "Preview Height"
 msgstr ""
 
-#: assets/js/blocks/section.js:187
+#: assets/js/blocks/section.js:195
 msgid "Label for revealing button."
 msgstr ""
 
-#: assets/js/blocks/section.js:189
+#: assets/js/blocks/section.js:197
 msgid "e.g. Read More"
 msgstr ""
 
-#: assets/js/blocks/section.js:203 assets/js/blocks/section.js:239
+#: assets/js/blocks/section.js:211 assets/js/blocks/section.js:243
 msgid "Read More"
 msgstr ""
 

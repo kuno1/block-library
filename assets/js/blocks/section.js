@@ -1,10 +1,11 @@
 /*!
  * Enhanced section blocks.
- * wpdeps=wp-blocks,kbl,wp-block-editor, wp-components
+ * wpdeps=wp-blocks,kbl,wp-block-editor, wp-components, wp-hooks
  */
 
 const { registerBlockType } = wp.blocks;
 const { __, sprintf } = wp.i18n;
+const { applyFilters } = wp.hooks;
 const { PanelBody, ToggleControl, TextControl, Button, RangeControl } = wp.components;
 const { InnerBlocks, withColors, InspectorControls, PanelColorSettings, MediaUpload } = wp.blockEditor;
 
@@ -32,6 +33,10 @@ const classNameFromAttributes = ( className, attributes ) => {
 	if ( attributes.blur ) {
 		className.push( 'has-blur' );
 	}
+	if ( attributes.more ) {
+		className.push( 'has-more-button' );
+	}
+	className = applyFilters( 'kbl.section.className', className, attributes );
 	return className.join( ' ' );
 };
 
@@ -111,16 +116,19 @@ registerBlockType( 'kunoichi/section', {
 		},
 	},
 
-	edit: withColors( 'backgroundColor' )( ( { attributes, setAttributes, className, backgroundColor, setBackgroundColor } ) => {
+	edit: withColors( 'backgroundColor' )( ( props ) => {
+		const { attributes, setAttributes, className, backgroundColor, setBackgroundColor } = props;
 		return (
 			<>
 				<InspectorControls>
 					<PanelBody title={ __( 'Layout', 'kbl' ) } initialOpen={ false }>
-						<ToggleControl label={ __( 'Container inside', 'kbl' ) } checked={ attributes.hasContainer }
-							onChange={ ( hasContainer ) => setAttributes( { hasContainer } ) }
-							help={ __( 'If checked, container will be inside.', 'kbl' ) }/>
-						<TextControl label={ __( 'Vertical Padding', 'kbl' ) } value={ attributes.paddingVertical } type='number' onChange={ value => setAttributes( { paddingVertical: parseInt( value, 10 ) } ) } />
-						<TextControl label={ __( 'Horizontal Padding', 'kbl' ) } value={ attributes.paddingHorizontal } type='number' onChange={ value => setAttributes( { paddingHorizontal: parseInt( value, 10 ) } ) } />
+						{ applyFilters( 'kbl.section.layout', <>
+							<ToggleControl label={ __( 'Container inside', 'kbl' ) } checked={ attributes.hasContainer }
+								onChange={ ( hasContainer ) => setAttributes( { hasContainer } ) }
+								help={ __( 'If checked, container will be inside.', 'kbl' ) } />
+							<TextControl label={ __( 'Vertical Padding', 'kbl' ) } value={ attributes.paddingVertical } type='number' onChange={ value => setAttributes( { paddingVertical: parseInt( value, 10 ) } ) } />
+							<TextControl label={ __( 'Horizontal Padding', 'kbl' ) } value={ attributes.paddingHorizontal } type='number' onChange={ value => setAttributes( { paddingHorizontal: parseInt( value, 10 ) } ) } />
+						</>, props ) }
 					</PanelBody>
 					<PanelColorSettings title={ __( 'Background Color Setting', 'kbl' ) }
 						initialOpen={ true }
@@ -208,30 +216,26 @@ registerBlockType( 'kunoichi/section', {
 		);
 	} ),
 
-	save( { className, attributes } ) {
+	save( { attributes } ) {
 		let bgClass = 'wp-block-kunoichi-section-bg';
 		if ( attributes.backgroundColor ) {
 			bgClass += ' has-background-color has-' + attributes.backgroundColor + '-background-color';
 		}
-		className += attributes.full ? ' section-full' : ' section-not-full';
-		const hasBlur   = attributes.blur && attributes.backgroundImage;
-		if ( hasBlur ) {
-			className += ' blur';
-		}
+		const classNames = classNameFromAttributes( null, attributes );
 		const styles = {
 			padding: sprintf( '%dpx %dpx', attributes.paddingVertical, attributes.paddingHorizontal ),
 			backgroundImage: sprintf( 'url(\'%s\')', attributes.backgroundImage ),
 		};
 		if ( attributes.more ) {
-			className += ' has-more-button';
 			styles.maxHeight = sprintf( '%dpx', attributes.height );
 		}
-		return <section className={ className } style={ styles }>
-			{ hasBlur ? (
+
+		return <section className={ classNames } style={ styles }>
+			{ attributes.blur ? (
 				<div className='wp-block-kunoichi-section-blur' style={ getBlurStyle( attributes ) } />
 			) : null }
 			<div className={ bgClass } style={ { opacity: attributes.opacity / 100 } } />
-			<div className={ ! attributes.full ? 'container' : 'no-container'}>
+			<div className={ attributes.hasContainer? KblSection.container_class : KblSection.no_container_class }>
 				<InnerBlocks.Content />
 			</div>
 			{ attributes.more && (

@@ -21,6 +21,12 @@ const getClassName = ( attributes, className = '' ) => {
 	} else {
 		classes.push( 'no-panel-color' );
 	}
+	if ( attributes.titleColor ) {
+		classes.push( 'has-panel-title-color' );
+		classes.push( sprintf( 'has-%s-panel-title-color', attributes.titleColor ) );
+	} else {
+		classes.push( 'no-panel-title-color' );
+	}
 	return classes.join( ' ' );
 };
 
@@ -62,14 +68,22 @@ registerBlockType( 'kunoichi/panel', {
 		panelColor: {
 			type: 'string',
 		},
+		titleColor: {
+			type: 'string',
+			default: '',
+		},
 	},
 
-	edit: withColors( 'panelColor' )( ( { attributes, setAttributes, className, panelColor, setPanelColor } ) => {
+	edit: withColors( 'panelColor', 'titleColor' )( ( { attributes, setAttributes, className, panelColor, setPanelColor, titleColor, setTitleColor } ) => {
 		return (
 			<>
 				<InspectorControls>
 
 					<PanelColorSettings title={ __( 'Panel Options', 'kbl' ) } colorSettings={ [ {
+						value: titleColor.color,
+						label: __( 'Title Color', 'kbl' ),
+						onChange: setTitleColor,
+					}, {
 						value: panelColor.color,
 						label: __( 'Panel Color', 'kbl' ),
 						onChange: setPanelColor,
@@ -81,7 +95,7 @@ registerBlockType( 'kunoichi/panel', {
 						<RichText tagName='p' className="kbl-panel-title"
 							value={ attributes.title } multiline={ false }
 							keepPlaceholderOnFocus={ true } placeholder={ __( 'Panel Heading', 'kbl' ) }
-							onChange={ ( title ) => setAttributes( { title } ) }/>
+							onChange={ ( title ) => setAttributes( { title } ) } />
 					</header>
 					<div className="kbl-panel-body">
 						<InnerBlocks />
