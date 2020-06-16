@@ -4,7 +4,7 @@
  */
 
 const React = wp.element;
-const { __, numberFormat } = wp.i18n;
+const { __ } = wp.i18n;
 const { ObjectPlaceholder } = kbl;
 
 class PostPlaceholder extends ObjectPlaceholder {
@@ -13,9 +13,9 @@ class PostPlaceholder extends ObjectPlaceholder {
 		const { data } = this.state;
 		return (
 			<>
-				{ data.img && <img className="kbl-placeholder-img" src={ data.img } /> }
+				{ data.img && <img className="kbl-placeholder-img" src={ data.img } alt="" /> }
 				<div className="kbl-placeholder-content">
-					<div className="kbl-placeholder-title"><strong>{ data.type}</strong> { data.title }</div>
+					<div className="kbl-placeholder-title"><strong>{ data.type }</strong> { data.title }</div>
 					<div className="kbl-placeholder-meta">
 						<span className="kbl-placeholder-value"> { __( 'Post ID', 'kbl' ) }: <strong>{ data.id }</strong></span>
 						<span className="kbl-placeholder-value"> { __( 'Date', 'kbl' ) }: <strong>{ data.date }</strong></span>

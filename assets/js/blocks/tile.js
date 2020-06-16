@@ -6,7 +6,7 @@
 
 const { registerBlockType } = wp.blocks;
 const { __, sprintf } = wp.i18n;
-const { RichText, InnerBlocks, InspectorControls, withColors, PanelColorSettings } = wp.blockEditor;
+const { InnerBlocks, InspectorControls, withColors, PanelColorSettings } = wp.blockEditor;
 
 const tileClass = ( className, attributes ) => {
 	const c = ['kbl-tiled-grid-item'];
@@ -45,7 +45,7 @@ registerBlockType( 'kunoichi/tile', {
 		},
 	},
 
-	edit: withColors( 'backgroundColor', 'color' )( ( { attributes, setAttributes, className, backgroundColor, setBackgroundColor, color, setColor } ) =>  {
+	edit: withColors( 'backgroundColor', 'color' )( ( { attributes, className, backgroundColor, setBackgroundColor, color, setColor } ) =>  {
 
 		const colorSettings = [
 			{

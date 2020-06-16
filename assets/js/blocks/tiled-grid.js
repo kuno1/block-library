@@ -6,16 +6,16 @@
 
 const { registerBlockType } = wp.blocks;
 const { __, sprintf } = wp.i18n;
-const { RichText, InnerBlocks, InspectorControls } = wp.blockEditor;
-const { G, Path, SVG, Rect, PanelBody, Button, IconButton, RangeControl } = wp.components;
+const { InnerBlocks, InspectorControls } = wp.blockEditor;
+const { PanelBody, Button, RangeControl } = wp.components;
 const { addChild, ChildInsert } = kbl;
 
 /**
  * Get class name.
  *
- * @param {String} classes
+ * @param {string} classes
  * @param {Object} attributes
- * @returns {string}
+ * @return {string} Class attribute values.
  */
 const classNames = ( classes, attributes ) => {
 	const c = [ 'kbl-tiled-grid' ];
@@ -67,7 +67,7 @@ registerBlockType( 'kunoichi/tiled-grid', {
 						<RangeControl label={ __( 'Column Count', 'kbl' ) } value={ attributes.columns } min={ 1 } max={ 4 }
 							onChange={ ( columns ) => setAttributes( { columns } ) } />
 						<RangeControl label={ __( 'Mobile Max Columns', 'kbl' ) } value={ attributes.mobile } min={ 1 } max={ 2 }
-									  onChange={ ( mobile ) => setAttributes( { mobile } ) } />
+							onChange={ ( mobile ) => setAttributes( { mobile } ) } />
 					</PanelBody>
 				</InspectorControls>
 				<div className={ classNames( className, attributes ) }>

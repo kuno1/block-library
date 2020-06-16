@@ -21,7 +21,7 @@ class PostSelector extends ObjectSelector {
 				} else {
 					throw new Error( 'Post not found.' );
 				}
-			} ).catch( ( res ) => {
+			} ).catch( () => {
 				// Error.
 				this.handleChange( 0 );
 			} ).finally( () => {
@@ -58,7 +58,7 @@ class PostSelector extends ObjectSelector {
 	renderObject( post, adding = true ) {
 		return (
 			<div ref={ post.id } className="kbl-user">
-				<img src={ post.thumbnail } className="kbl-user-avatar" />
+				<img src={ post.thumbnail } className="kbl-user-avatar" alt="" />
 				<span className="kbl-user-name">{ post.title }</span>
 				{ adding ? (
 					<Button isLink={ true } onClick={ () => this.setCurrent( post ) }>

@@ -1,11 +1,11 @@
 /*!
- * wpdeps=wp-blocks, kbl, wp-editor, wp-components, kbl-price, wp-data, kbl-components-add-child
+ * wpdeps=wp-blocks, kbl, wp-block-editor, wp-components, kbl-price, wp-data, kbl-components-add-child
  */
 
 const { registerBlockType } = wp.blocks;
 const { __ } = wp.i18n;
-const { RichText, InnerBlocks, InspectorControls } = wp.editor;
-const { G, Path, SVG, Rect, PanelBody, Button, IconButton } = wp.components;
+const { InnerBlocks, InspectorControls } = wp.blockEditor;
+const { G, Path, SVG, Rect, PanelBody, Button } = wp.components;
 const { addChild, ChildInsert } = kbl;
 
 registerBlockType( 'kunoichi/price-table', {
@@ -49,7 +49,7 @@ registerBlockType( 'kunoichi/price-table', {
 		align: [ 'wide', 'full' ],
 	},
 
-	edit( { attributes, setAttributes, className, clientId } ) {
+	edit( { className, clientId } ) {
 		className += ' kbl-price-table';
 		return (
 			<>
@@ -70,7 +70,7 @@ registerBlockType( 'kunoichi/price-table', {
 		);
 	},
 
-	save( { attributes } ) {
+	save() {
 		return (
 			<ul className="kbl-price-table">
 				<InnerBlocks.Content />

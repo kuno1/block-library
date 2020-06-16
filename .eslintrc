@@ -5,7 +5,8 @@
     "jquery": true
   },
   "globals": {
-    "Vue": false
+    "Vue": false,
+	"kbl": true
   },
   "extends": [ "plugin:@wordpress/eslint-plugin/recommended" ],
   "rules": {

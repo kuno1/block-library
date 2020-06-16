@@ -1,11 +1,11 @@
 /*!
- * wpdeps=wp-blocks,kbl,wp-editor, wp-components, wp-api-fetch
+ * wpdeps=wp-blocks,kbl,wp-block-editor, wp-components, wp-api-fetch
  */
 
 const { registerBlockType } = wp.blocks;
 const { __ } = wp.i18n;
-const { RichText, InspectorControls } = wp.editor;
-const { Button, PanelBody, SelectControl, TextControl, ServerSideRender } = wp.components;
+const { InspectorControls } = wp.blockEditor;
+const { PanelBody, SelectControl, TextControl, ServerSideRender } = wp.components;
 
 registerBlockType( 'kunoichi/testimonials', {
 
@@ -61,10 +61,10 @@ registerBlockType( 'kunoichi/testimonials', {
 							help={ __( 'Write in CSV format. If set, order and number will be ignored.', 'kbl' ) }
 							placeholder="e.g. 1, 3, 5" />
 						<TextControl label={ __( 'Number to display', 'kbl' ) } value={ attributes.number }
-									 type="number" min={ 1 }
-									 onChange={ (  number ) => setAttributes( { number: parseInt( number, 10 ) } ) } />
+							type="number" min={ 1 }
+							onChange={ (  number ) => setAttributes( { number: parseInt( number, 10 ) } ) } />
 						<SelectControl value={ attributes.order } label={ __( 'Order', 'kbl' ) }
-									   options={ options } onChange={ ( order ) => setAttributes( { order } ) } />\
+							options={ options } onChange={ ( order ) => setAttributes( { order } ) } />\
 
 					</PanelBody>
 				</InspectorControls>

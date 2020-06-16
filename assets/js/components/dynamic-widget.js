@@ -6,19 +6,20 @@
 
 const $ = jQuery;
 const React = wp.element;
+const { render } = wp.element;
 const { __, sprintf } = wp.i18n;
 
 /**
  * Detect if element is placeholder.
  *
  * @param {jQuery} $widget
- * @returns {Boolean}
+ * @return {boolean} If widgets exists.
  */
 const isPlaceholder = ( $widget ) => {
 	return 0 < $widget.parents( '#available-widgets' ).length;
 };
 
-$.fn.dynamicWidget = function( options ) {
+$.fn.dynamicWidget = function ( options ) {
 	// Setup options.
 	const settings = $.extend( {
 		selector: '.dynamic-widget',
@@ -29,7 +30,9 @@ $.fn.dynamicWidget = function( options ) {
 	const selector = this.selector;
 	// If renderer not specified, do nothing.
 	if ( ! settings.renderer ) {
-		window.console && console.error( sprintf( __( 'Please specify renderer of dynamic widget %s.', 'kbl' ), this.selector ) );
+		if ( window.console ) {
+			console.error( sprintf( __( 'Please specify renderer of dynamic widget %s.', 'kbl' ), this.selector ) ); // eslint-disable-line no-console
+		}
 		return this;
 	}
 	/**
@@ -45,23 +48,22 @@ $.fn.dynamicWidget = function( options ) {
 		// Mount element.
 		const Renderer = settings.renderer;
 		const props = {
-			el: $widget[0],
+			el: $widget[ 0 ],
 		};
 		props[ settings.propName ] = $widget.find( selector ).val();
-		React.render( React.createElement( Renderer, props ), $widget.find( settings.selector )[0] );
+		render( React.createElement( Renderer, props ), $widget.find( settings.selector )[ 0 ] );
 		// Bind event listener
-		$widget.on( 'widget-value-updated', function( event, value ) {
+		$widget.on( 'widget-value-updated', function ( event, value ) {
 			$widget.find( selector ).val( value ).trigger( 'change' );
 		} );
 	};
 	// Initialize dynamic widgets.
-	return this.each( function( int, input ) {
-		const $widget    = $( input ).parents( '.widget' );
-		const $container = $widget.find( settings.selector );
+	return this.each( function ( int, input ) {
+		const $widget = $( input ).parents( '.widget' );
 		// Register widget change.
-		$( document ).on( 'widget-updated widget-added', function( event, widget ) {
+		$( document ).on( 'widget-updated widget-added', function ( event, widget ) {
 			// If widget doesn't have any input, skip.
-			if ( ! widget.find( selector ).length ) {
+			if ( !widget.find( selector ).length ) {
 				return;
 			}
 			widgetInit( widget );

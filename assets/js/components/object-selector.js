@@ -40,12 +40,21 @@ class ObjectSelector extends React.Component {
 		}
 	}
 
+	/**
+	 * Override method.
+	 *
+	 * @param {number} id
+	 */
 	fetch( id ) {
-		window.console && console.error( 'kbl.ObjectSelector:Override this method' );
+		if ( console ) {
+			console.error( `[${ id }]kbl.ObjectSelector:Override this method` ); // eslint-disable-line no-console
+		}
 	}
 
 	search() {
-		window.console && console.error( 'kbl.ObjectSelector:Override this method' );
+		if ( console ) {
+			console.error( 'kbl.ObjectSelector:Override this method' ); // eslint-disable-line no-console
+		}
 	}
 
 	/**
@@ -64,7 +73,6 @@ class ObjectSelector extends React.Component {
 	}
 
 	render() {
-		const tags = [];
 		const { term, loading, searching, object, founds } = this.state;
 		return (
 			<div className="kbl-user-search">
@@ -76,9 +84,9 @@ class ObjectSelector extends React.Component {
 					) }
 				</div>
 				<TextControl label={ this.props.label || __( 'Search', 'kbl' ) } value={ term } placeholder={ __( 'Enter search keywords...', 'kbl' ) }
-							 onChange={ ( value ) => this.setState( { term: value } ) } />
+					onChange={ ( value ) => this.setState( { term: value } ) } />
 				<Button className="button" isSecondary={ true } disabled={ ! term.length } isBusy={ searching }
-						onClick={ () => this.search() }>
+					onClick={ () => this.search() }>
 					{ __( 'Search', 'kbl' ) }
 				</Button>
 				{ !! founds.length && (
@@ -91,7 +99,7 @@ class ObjectSelector extends React.Component {
 	}
 
 	renderObject( object, adding = true ) {
-		console.error( 'kbl.ObjectSelector.renderObject: override this method.' )
+		console.error( 'kbl.ObjectSelector.renderObject: override this method.', adding ); // eslint-disable-line no-console
 	}
 }
 

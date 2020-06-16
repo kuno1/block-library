@@ -25,7 +25,7 @@ class IncrementalSearch extends React.Component {
 	}
 
 	render() {
-		const { searching, onSelect, suggestions, total, focus } = this.props;
+		const { searching, onSelect, suggestions, total } = this.props;
 		const hasResult = !! ( suggestions && suggestions.length );
 		return (
 			<div className="kbl-incremental-search">
@@ -58,11 +58,15 @@ class IncrementalSearch extends React.Component {
 						) }
 						<ul className="kbl-incremental-search-list">
 							{ suggestions.map( ( suggestion ) => {
-								return <li key={ `kbl-incremental-search-suggestion-${ suggestion.id }` }
-										   className="kbl-incremental-search-item"
-										   onClick={ () => {
-											   onSelect && onSelect( suggestion.id );
-										   } }>{ suggestion.title }</li>
+								return (
+									<li key={ `kbl-incremental-search-suggestion-${ suggestion.id }` }
+										className="kbl-incremental-search-item" tabIndex={ 0 }
+										onClick={ () => {
+											if ( onSelect ) {
+												onSelect( suggestion.id );
+											}
+										} }>{ suggestion.title }</li>
+								);
 							} ) }
 						</ul>
 					</div>
@@ -84,14 +88,18 @@ class IncrementalSearch extends React.Component {
 
 	fetch() {
 		if ( this.state.term.length ) {
-			this.props.onSearch && this.props.onSearch( this.state.term );
+			if ( this.props.onSearch ) {
+				this.props.onSearch( this.state.term );
+			}
 		} else {
 			this.flush();
 		}
 	}
 
 	flush() {
-		this.props.onClear && this.props.onClear();
+		if ( this.props.onClear ) {
+			this.props.onClear();
+		}
 	}
 
 	clearCountDown( reset = true ) {

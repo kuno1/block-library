@@ -4,7 +4,7 @@
 
 const React = wp.element;
 const { __, sprintf } = wp.i18n;
-const { TextControl, Button, Tooltip, Spinner } = wp.components;
+const { TextControl, Tooltip, Spinner } = wp.components;
 
 class Term extends React.Component {
 
@@ -40,7 +40,7 @@ class Term extends React.Component {
 	render() {
 		return (
 			<Tooltip text={ __( 'Click to remove', 'kbl' ) }>
-				<span className="kbl-taxonomy-selector-button" onClick={ () => this.remove() }>
+				<span className="kbl-taxonomy-selector-button" onClick={ () => this.remove() } role="button" tabIndex={ 0 }>
 					<small>{ this.state.taxonomy }</small>
 					{ this.state.name }
 				</span>
@@ -67,13 +67,13 @@ class TaxonomySelector extends React.Component {
 			clearTimeout( this.timer );
 		}
 		this.setState( { found: [] }, () => {
-			if ( ! text.length ) {
+			if ( !text.length ) {
 				return;
 			}
 			this.setState( { loading: true }, () => {
 				this.timer = setTimeout( () => {
 					wp.apiFetch( {
-						path: `kbl/v1/terms?s=${text}`,
+						path: `kbl/v1/terms?s=${ text }`,
 					} ).then( ( res ) => {
 						this.setState( {
 							found: res.map( ( term ) => {
@@ -85,9 +85,9 @@ class TaxonomySelector extends React.Component {
 								};
 							} ),
 						}, () => {
-							console.log( this.state );
+							// console.log( this.state );
 						} );
-						console.log( res );
+						// console.log( res );
 					} ).catch().finally( () => {
 						this.setState( { loading: false } );
 					} );
@@ -98,9 +98,9 @@ class TaxonomySelector extends React.Component {
 
 	remove( id ) {
 		const selected = [];
-		for ( const term_id of this.state.selected ) {
-			if ( id !== term_id ) {
-				selected.push( term_id );
+		for ( const termId of this.state.selected ) {
+			if ( id !== termId ) {
+				selected.push( termId );
 			}
 		}
 		this.setState( {
@@ -118,10 +118,10 @@ class TaxonomySelector extends React.Component {
 			ids.push( id );
 		}
 		const selected = [];
-		for ( let id of ids ) {
-			id = parseInt( id, 10 );
-			if ( 0 > selected.indexOf( id ) ) {
-				selected.push( id );
+		for ( let i of ids ) {
+			i = parseInt( i, 10 );
+			if ( 0 > selected.indexOf( i ) ) {
+				selected.push( i );
 			}
 		}
 		this.setState( {
@@ -149,10 +149,11 @@ class TaxonomySelector extends React.Component {
 				{ this.state.loading && (
 					<Spinner />
 				) }
-				{ ( ! this.state.loading ) && this.state.found && this.state.found.map( ( term ) => {
+				{ ( !this.state.loading ) && this.state.found && this.state.found.map( ( term ) => {
 					return (
-						<Tooltip text={ __( 'Click to add', 'kbl' ) }>
-							<span className="kbl-taxonomy-selector-button kbl-taxonomy-selector-button-secondary" onClick={ () => this.select( term.id ) }>
+						<Tooltip text={ __( 'Click to add', 'kbl' ) } key={ term.id }>
+							<span className="kbl-taxonomy-selector-button kbl-taxonomy-selector-button-secondary"
+								  onClick={ () => this.select( term.id ) } tabIndex={ 0 } role="button">
 								<small>{ term.taxonomy }</small>
 								{ term.name }{ sprintf( __( '(%d)', 'kbl' ), term.count ) }
 							</span>

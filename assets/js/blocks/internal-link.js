@@ -5,7 +5,7 @@
  */
 
 const { registerBlockType } = wp.blocks;
-const { __, sprintf } = wp.i18n;
+const { __ } = wp.i18n;
 const { withState } = wp.compose;
 const { PanelBody, TextControl, TextareaControl, Notice, ServerSideRender, Placeholder, Button } = wp.components;
 const { InspectorControls } = wp.blockEditor;
@@ -50,21 +50,21 @@ registerBlockType( 'kunoichi/internal-link', {
 								{
 									label: __( 'Remove', 'kbl' ),
 									icon: 'no',
-									handler: ( id ) => {
+									handler: () => {
 										setAttributes( { id: 0 } );
 									},
 								}
-							] }/>
+							] } />
 						) : (
 							<Notice status="warning" isDismissible={ false }>
 								<p style={ { margin: 0 } }>{ __( 'No post is specified.', 'kbl' ) }</p>
 							</Notice>
 						) }
 						{ ( 0 === attributes.id ) && <>
-						<hr />
-						<PostSearcher label={ __( 'Search Post', 'kbl' ) } onSelect={ ( id ) => {
-							setAttributes( { id } );
-						} } />
+							<hr />
+							<PostSearcher label={ __( 'Search Post', 'kbl' ) } onSelect={ ( id ) => {
+								setAttributes( { id } );
+							} } />
 						</> }
 					</PanelBody>
 					<PanelBody title={ __( 'Override Setting', 'kbl' ) } initialOpen={ false }>
@@ -83,14 +83,14 @@ registerBlockType( 'kunoichi/internal-link', {
 						<ServerSideRender block="kunoichi/internal-link" attributes={ attributes } />
 					) : (
 						<Placeholder icon="warning" label={ __( 'No Post Specified.', 'kbl' ) }
-									 instructions={ __( 'Please specify post to link.', 'kbl' ) }/>
+							instructions={ __( 'Please specify post to link.', 'kbl' ) } />
 					) }
 					<div className="kbl-internal-link-filter">
 						{ ! editing && (
 							<Button isSecondary={ true } className="kbl-internal-link-toggle" icon="welcome-write-blog"
-									onClick={ () => {
-										setState( { editing: true } )
-									} }>
+								onClick={ () => {
+									setState( { editing: true } )
+								} }>
 								{ __( 'Edit', 'kbl' ) }
 							</Button>
 						) }
@@ -99,7 +99,8 @@ registerBlockType( 'kunoichi/internal-link', {
 						<div className="kbl-internal-link-editor">
 							<div className="kbl-intern-link-editor-column">
 								<div className="kbl-internal-link-editor-id">
-									<TextControl type="number" label={ __( 'Post ID', 'kbl' ) } value={ attributes.id } placeholder={ __( 'Post ID', 'kbl' ) } onChange={ ( id ) => {
+									<TextControl type="number" label={ __( 'Post ID', 'kbl' ) } value={ attributes.id }
+										placeholder={ __( 'Post ID', 'kbl' ) } onChange={ ( id ) => {
 										setAttributes( {
 											id: parseInt( id, 10 ),
 										} )
@@ -108,17 +109,18 @@ registerBlockType( 'kunoichi/internal-link', {
 								<div className="kbl-internal-link-editor-search">
 									<PostSearcher label={ __( 'Search Post', 'kbl' ) } onSelect={ ( id ) => {
 										setAttributes( { id } );
-									} }/>
+									} } />
 								</div>
 								{ ( 0 < attributes.id ) && (
 									<Button isSecondary={ true } icon="editor-unlink" onClick={ () => {
 										setAttributes( { id: 0 } );
-									} } >{ __( 'Reset', 'kbl' ) }</Button>
+									} }>{ __( 'Reset', 'kbl' ) }</Button>
 								) }
 							</div>
-							<Button className="kbl-internal-link-editor-close" icon="no" label={ __( 'Close', 'kbl' ) } onClick={ () => {
-								setState( { editing: false } );
-							} }/>
+							<Button className="kbl-internal-link-editor-close" icon="no" label={ __( 'Close', 'kbl' ) }
+								onClick={ () => {
+									setState( { editing: false } );
+								} } />
 						</div>
 					) }
 				</div>
@@ -126,7 +128,7 @@ registerBlockType( 'kunoichi/internal-link', {
 		);
 	} ),
 
-	save( { attributes } ) {
+	save() {
 		return null;
 	}
 } );

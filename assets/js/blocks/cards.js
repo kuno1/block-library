@@ -1,11 +1,11 @@
 /*!
- * wpdeps=wp-blocks, kbl, wp-editor, wp-components, kbl-card, wp-data, kbl-components-add-child
+ * wpdeps=wp-blocks, kbl, wp-block-editor, wp-components, kbl-card, wp-data, kbl-components-add-child
  */
 
 const { registerBlockType } = wp.blocks;
 const { __, sprintf } = wp.i18n;
-const { RichText, InnerBlocks, InspectorControls } = wp.editor;
-const { Button, PanelBody, RangeControl } = wp.components;
+const { InnerBlocks, InspectorControls } = wp.blockEditor;
+const { PanelBody, RangeControl } = wp.components;
 const { ChildInsert } = kbl;
 
 const setClassName = ( className, attributes ) => {

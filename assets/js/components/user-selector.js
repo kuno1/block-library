@@ -21,7 +21,7 @@ class UserSelector extends ObjectSelector {
 				} else {
 					throw new Error( 'User not found.' );
 				}
-			} ).catch( ( res ) => {
+			} ).catch( () => {
 				this.handleChange( 0 );
 			} ).finally( () => {
 				this.setState( { loading: false } );
@@ -54,7 +54,7 @@ class UserSelector extends ObjectSelector {
 	renderObject( object, adding = true ) {
 		return (
 			<div ref={ object.id } className="kbl-user">
-				<img src={ object.avatar } className="kbl-user-avatar" />
+				<img src={ object.avatar } className="kbl-user-avatar" alt="" />
 				<span className="kbl-user-name">{ object.display_name }</span>
 				{ adding ? (
 					<Button isLink={ true } onClick={ () => this.setCurrent( object ) }>

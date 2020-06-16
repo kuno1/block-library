@@ -1,13 +1,13 @@
 /*!
  * Alert blocks.
- * wpdeps=wp-blocks,kbl,wp-editor, wp-components, wp-api-fetch
+ * wpdeps=wp-blocks,kbl,wp-block-editor, wp-components, wp-api-fetch
  */
 
 /* global KblAlert:false */
 
 const { registerBlockType, registerBlockStyle } = wp.blocks;
 const { __, sprintf } = wp.i18n;
-const { RichText, InspectorControls } = wp.editor;
+const { RichText, InspectorControls } = wp.blockEditor;
 const { PanelBody, SelectControl, TextControl, ToggleControl } = wp.components;
 
 
@@ -59,13 +59,13 @@ registerBlockType( 'kunoichi/alert', {
 		return (
 			<>
 				<InspectorControls>
-					<PanelBody title={ __( 'Speaker', 'kbl' ) } initialOpen={true}>
+					<PanelBody title={ __( 'Speaker', 'kbl' ) } initialOpen={ true }>
 						<TextControl label={ __( 'Title', 'kbl' ) } value={ attributes.title }
 							help={ __( 'If empty, omitted.', 'kbl' ) }
 							onChange={ ( title ) => setAttributes( { title } ) } />
 						<SelectControl label={ __( 'Text Alignment', 'kbl' ) } value={ attributes.alignment }
-									   options={ options }
-									   onChange={ ( alignment ) => setAttributes( { alignment } ) } />
+							options={ options }
+							onChange={ ( alignment ) => setAttributes( { alignment } ) } />
 						<ToggleControl label={ __( 'Closable', 'kbl' ) }
 							help={ attributes.closable ? __( 'This alert can be closed.', 'kbl' ) : __( 'This alert stays opened.', 'kbl' ) }
 							checked={ attributes.closable }
@@ -84,9 +84,9 @@ registerBlockType( 'kunoichi/alert', {
 						</button>
 					) }
 					<RichText className="kbl-alert-body"
-							  tagName={ 'div' } value={ attributes.content }
-							  multiline="p"
-							  onChange={ content => setAttributes( { content } ) } />
+						tagName={ 'div' } value={ attributes.content }
+						multiline="p"
+						onChange={ content => setAttributes( { content } ) } />
 				</div>
 			</>
 		);
@@ -122,7 +122,7 @@ registerBlockType( 'kunoichi/alert', {
 
 let isDefault = true;
 if ( KblAlert && KblAlert.styles ) {
-	for( const prop in KblAlert.styles ) {
+	for ( const prop in KblAlert.styles ) {
 		if ( ! KblAlert.styles.hasOwnProperty( prop ) ) {
 			continue;
 		}
@@ -131,6 +131,6 @@ if ( KblAlert && KblAlert.styles ) {
 			label: KblAlert.styles[ prop ],
 			isDefault: isDefault,
 		} );
-		initialized = false;
+		isDefault = false;
 	}
 }

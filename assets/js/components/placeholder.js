@@ -26,28 +26,29 @@ class ObjectPlaceholder extends React.Component {
 
 	fetch() {
 		if ( this.hasCache() ) {
-			return getCache();
-		} else {
-			this.setState( {
-				loading: true,
-			}, () => {
-				this.apiFetch().then( ( response ) => {
-					return this.handleSuccess( response );
-				} ).catch( () => {
-					if ( this.props.errorHandler instanceof Function ) {
-						this.props.errorHandler( this.props.id );
-					}
-				} ).finally( () => {
-					this.setState( {
-						loading: false,
-					} );
+			return this.getCache();
+		}
+		this.setState( {
+			loading: true,
+		}, () => {
+			this.apiFetch().then( ( response ) => {
+				return this.handleSuccess( response );
+			} ).catch( () => {
+				if ( this.props.errorHandler instanceof Function ) {
+					this.props.errorHandler( this.props.id );
+				}
+			} ).finally( () => {
+				this.setState( {
+					loading: false,
 				} );
 			} );
-		}
+		} );
 	}
 
 	apiFetch() {
-		console && console.error( 'You must override this method to returns wp-api-fetch object.' );
+		if ( console ) {
+			console.error( 'You must override this method to returns wp-api-fetch object.' ); // eslint-disable-line no-console
+		}
 	}
 
 	handleSuccess( response ) {
@@ -71,8 +72,8 @@ class ObjectPlaceholder extends React.Component {
 				{ this.props.actions && (
 					<div style={ { textAlign: 'right' } }>
 						<ButtonGroup className="kbl-placeholder-actions">
-							{ this.props.actions.map( ( action ) => {
-								return <Button iconSize={ 16 } isSmall={ true } label={ action.label } icon={ action.icon || 'plus' } onClick={ () => {
+							{ this.props.actions.map( ( action, i ) => {
+								return <Button key={ `action-${ i }` } iconSize={ 16 } isSmall={ true } label={ action.label } icon={ action.icon || 'plus' } onClick={ () => {
 									action.handler( this.props.id );
 								} } />
 							} ) }
@@ -89,7 +90,8 @@ class ObjectPlaceholder extends React.Component {
 
 	/**
 	 * Check if cache exists.
-	 * @returns {boolean}
+	 *
+	 * @return {boolean} If cache exists.
 	 */
 	hasCache() {
 		if ( ! caches[ this.constructor.name ] ) {
@@ -101,9 +103,8 @@ class ObjectPlaceholder extends React.Component {
 	getCache() {
 		if ( this.hasCache() ) {
 			return caches[ this.constructor.name ][ this.props.id ];
-		} else {
-			return null;
 		}
+		return null;
 	}
 
 	setCache( data ) {

@@ -7,8 +7,7 @@
 const { registerBlockType } = wp.blocks;
 const { __, sprintf } = wp.i18n;
 const { InspectorControls, AlignmentToolbar, RichText } = wp.blockEditor;
-const { PanelBody, SelectControl, TextControl, ToggleControl } = wp.components;
-
+const { PanelBody } = wp.components;
 
 registerBlockType( 'kunoichi/clipboard', {
 
@@ -51,12 +50,15 @@ registerBlockType( 'kunoichi/clipboard', {
 				</InspectorControls>
 				<div className={ className }>
 					<div className="kbl-clipboard-button">
-						<span className="kbl-clipboard-icon"></span>
-						<RichText value={ attributes.label } className="kbl-clipboard-label" tagName="div" keepPlaceholderOnFocus={ true }
-								  onChange={ ( label ) => setAttributes( { label } ) } placeholder={ __( 'e.g. Click to Copy', 'kbl' ) } />
+						<span className="kbl-clipboard-icon" />
+						<RichText value={ attributes.label } className="kbl-clipboard-label" tagName="div"
+							keepPlaceholderOnFocus={ true }
+							onChange={ ( label ) => setAttributes( { label } ) }
+							placeholder={ __( 'e.g. Click to Copy', 'kbl' ) } />
 					</div>
 					<RichText value={ attributes.content } tagName="div" className="kbl-clipboard-content"
-							  onChange={ ( content ) => setAttributes( { content } ) } placeholder={ __( 'Enter text to copy.', 'kbl' ) } />
+						onChange={ ( content ) => setAttributes( { content } ) }
+						placeholder={ __( 'Enter text to copy.', 'kbl' ) } />
 				</div>
 			</>
 		);
@@ -67,10 +69,11 @@ registerBlockType( 'kunoichi/clipboard', {
 		return (
 			<div className={ className }>
 				<button className="kbl-clipboard-button">
-					<span className="kbl-clipboard-icon"></span>
+					<span className="kbl-clipboard-icon" />
 					<span className="kbl-clipboard-label">{ attributes.label }</span>
 				</button>
-				<RichText.Content value={ attributes.content } tagName="div" className="kbl-clipboard-content" style={ { display: 'none' } } aria-label={ __( 'Text to be copied.', 'kbl' ) } />
+				<RichText.Content value={ attributes.content } tagName="div" className="kbl-clipboard-content"
+					style={ { display: 'none' } } aria-label={ __( 'Text to be copied.', 'kbl' ) } />
 			</div>
 		);
 	},

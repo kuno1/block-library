@@ -8,7 +8,7 @@
 
 const { registerBlockType } = wp.blocks;
 const { __ } = wp.i18n;
-const { RichText, InspectorControls } = wp.blockEditor;
+const { InspectorControls } = wp.blockEditor;
 const { ServerSideRender, PanelBody, SelectControl, TextControl, RadioControl, ToggleControl } = wp.components;
 const { TaxonomySelector } = kbl;
 
@@ -90,7 +90,7 @@ registerBlockType( 'kunoichi/posts', {
 		},
 	},
 
-	edit( { attributes, setAttributes, className } ) {
+	edit( { attributes, setAttributes } ) {
 		return (
 			<>
 				<InspectorControls>
@@ -102,7 +102,7 @@ registerBlockType( 'kunoichi/posts', {
 						<SelectControl value={ attributes.post_type }
 							label={ __( 'Post Type', 'kbl' ) }
 							options={ postTypeOptions }
-							onChange={ ( post_type ) => setAttributes( { post_type } ) } />
+							onChange={ ( postType ) => setAttributes( { post_type: postType } ) } />
 						<hr />
 						<TextControl label={ __( 'Search String', 'kbl' ) } value={ attributes.s }
 							onChange={ ( s ) => setAttributes( { s } ) }
@@ -112,14 +112,14 @@ registerBlockType( 'kunoichi/posts', {
 						<hr />
 						<TextControl type="number" label={ __( 'Number of Posts', 'kbl' ) } value={ attributes.number }
 							onChange={ ( number ) => setAttributes( { number: parseInt( number, 10 ) } ) }
-							help={ __( 'Max posts number to display.', 'kbl' ) }/>
+							help={ __( 'Max posts number to display.', 'kbl' ) } />
 						<hr />
 						<TextControl label={ __( 'Post IDs', 'kbl' ) } value={ attributes.ids }
 							onChange={ ( ids ) => setAttributes( { ids } ) }
 							help={ __( 'Write in CSV format. If set, all other settings will be ignored.', 'kbl' ) }
 							placeholder="e.g. 1, 3, 5" />
 						<ToggleControl label={ __( 'Ignore Sticky Posts', 'kbl' ) }
-							onChange={ ( ignore_sticky ) => setAttributes( { ignore_sticky } ) }
+							onChange={ ( ignoreSticky ) => setAttributes( { ignore_sticky: ignoreSticky } ) }
 							checked={ attributes.ignore_sticky } />
 					</PanelBody>
 					<PanelBody title={ __( 'Order', 'kbl' ) } initialOpen={ false }>

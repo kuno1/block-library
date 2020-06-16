@@ -7,9 +7,6 @@ const React = wp.element;
 const { __ } = wp.i18n;
 const { IncrementalSearch } = kbl;
 const { Snackbar } = wp.components;
-const { applyFilters } = wp.hooks;
-
-/*global kbl:false*/
 
 class PostSearcher extends React.Component {
 
@@ -30,7 +27,9 @@ class PostSearcher extends React.Component {
 			<>
 				<IncrementalSearch suggestions={ suggestions } total={ total } searching={ searching } label={ label }
 					onSelect={ ( id ) => {
-						this.props.onSelect && this.props.onSelect( id );
+						if ( this.props.onSelect ) {
+							this.props.onSelect( id );
+						}
 					} }
 					onSearch={ ( term ) => {
 						this.search( term );

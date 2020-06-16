@@ -4,9 +4,7 @@
 
 const React = wp.element;
 const { __ } = wp.i18n;
-const { TextControl, Button, Spinner } = wp.components;
-
-const MediaCaches = [];
+const { Spinner } = wp.components;
 
 class MediaWithId extends React.Component {
 
@@ -56,7 +54,7 @@ class MediaWithId extends React.Component {
 					src: this.extract( res ),
 				} );
 			} ).catch( ( res ) => {
-				console.log( 'error' );
+				console.log( 'error: %o', res ); // eslint-disable-line no-console
 				this.setState( {
 					src: '',
 					alt: '',

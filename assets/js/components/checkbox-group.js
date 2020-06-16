@@ -17,9 +17,10 @@ class CheckboxGroup extends React.Component {
 
 	render() {
 		return this.props.options.map( ( option ) => {
-			return  <CheckboxControl key={ option.value } label={ option.label } checked={ this.isChecked( option.value ) }
-									 onChange={ ( checked ) => this.onChangeHandler( option.value, checked ) } />
-
+			return (
+				<CheckboxControl key={ option.value } label={ option.label } checked={ this.isChecked( option.value ) }
+					onChange={ ( checked ) => this.onChangeHandler( option.value, checked ) } />
+			);
 		} );
 	}
 

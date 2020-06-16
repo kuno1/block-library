@@ -1,6 +1,7 @@
 /*!
  * wpdeps=jquery, kbl, wp-hooks
  */
+/*eslint no-alert: "off"*/
 
 const $ = jQuery;
 const { __ } = wp.i18n;

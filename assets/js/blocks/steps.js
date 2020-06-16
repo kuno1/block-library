@@ -1,12 +1,11 @@
 /*!
- * wpdeps=wp-blocks, kbl, wp-editor, wp-components, kbl-components-media, kbl-step
+ * wpdeps=wp-blocks, kbl, wp-block-editor, wp-components, kbl-components-media, kbl-step
  */
 
 const { registerBlockType } = wp.blocks;
 const { __ } = wp.i18n;
-const { RichText, InnerBlocks, InspectorControls } = wp.editor;
-const { G, SVG, Polygon, PanelBody, TextControl, ToggleControl } = wp.components;
-
+const { RichText, InnerBlocks, InspectorControls } = wp.blockEditor;
+const { G, SVG, Polygon, PanelBody, ToggleControl } = wp.components;
 
 registerBlockType( 'kunoichi/steps', {
 
@@ -54,7 +53,7 @@ registerBlockType( 'kunoichi/steps', {
 				<InspectorControls>
 					<PanelBody title={ __( 'How-to Setting', 'kbl' ) } defaultOpen={ true }>
 						<ToggleControl checked={ !attributes.nojson } label={ __( 'Generate JSON-LD', 'kbl' ) }
-							onChange={ ( nojson ) =>  setAttributes( { nojson: !nojson } ) }/>
+							onChange={ ( nojson ) =>  setAttributes( { nojson: !nojson } ) } />
 					</PanelBody>
 				</InspectorControls>
 				<div className={ className } data-step-type={ attributes.type }>
@@ -63,7 +62,7 @@ registerBlockType( 'kunoichi/steps', {
 						value={ attributes.title } placeholder={ __( 'e.g. How to tie necktie.', 'kbl' ) }
 						onChange={ ( title ) => setAttributes( { title } ) } />
 					<RichText className="kbl-step-description" tagName="p" multiline={ false }
-						value={ attributes.description } placeholder={ __( 'e.g. This article will explain how to tie a necktie.', 'kbl' )}
+						value={ attributes.description } placeholder={ __( 'e.g. This article will explain how to tie a necktie.', 'kbl' ) }
 						onChange={ ( description) => setAttributes( { description } ) } />
 					<div className="kbl-step-list">
 						<InnerBlocks allowedBlocks={ [ 'kunoichi/step' ] } templateLock={ false } />
