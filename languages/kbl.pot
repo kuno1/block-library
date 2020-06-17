@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Kunoichi Block Library\n"
-"POT-Creation-Date: 2020-06-15 16:23+0900\n"
+"POT-Creation-Date: 2020-06-17 16:56+0900\n"
 "PO-Revision-Date: 2020-01-10 13:36+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
@@ -77,7 +77,7 @@ msgid "No post is specified."
 msgstr ""
 
 #: src/Kunoichi/BlockLibrary/Blocks/InternalLink.php:48
-#: assets/js/blocks/bubble.js:141
+#: assets/js/blocks/bubble.js:137
 msgid "Post not found."
 msgstr ""
 
@@ -131,7 +131,7 @@ msgstr ""
 
 #: src/Kunoichi/BlockLibrary/Pattern/Widgets.php:56
 #: assets/js/blocks/alert.js:63 assets/js/blocks/internal-link.js:71
-#: assets/js/components/placeholder.js:118
+#: assets/js/components/placeholder.js:119
 msgid "Title"
 msgstr ""
 
@@ -141,7 +141,7 @@ msgstr ""
 
 #: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:39
 #: src/Kunoichi/BlockLibrary/Widgets/CallToActionWidget.php:19
-#: assets/js/blocks/cta.js:15
+#: assets/js/blocks/cta.js:17
 msgid "Call To Action"
 msgstr ""
 
@@ -207,7 +207,7 @@ msgstr ""
 #: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:73
 #: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:352
 #: src/Kunoichi/BlockLibrary/Widgets/CallToActionWidget.php:64
-#: assets/js/blocks/cta.js:57
+#: assets/js/blocks/cta.js:62
 msgid "Positions"
 msgstr ""
 
@@ -256,7 +256,7 @@ msgid "Enter Action name(e.g. Buy Now Button）"
 msgstr ""
 
 #: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:177
-#: assets/js/blocks/cta.js:56
+#: assets/js/blocks/cta.js:61
 msgid "CTA Setting"
 msgstr ""
 
@@ -342,7 +342,7 @@ msgstr ""
 
 #: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:376
 #: src/Kunoichi/BlockLibrary/Widgets/CallToActionWidget.php:65
-#: assets/js/blocks/cta.js:60
+#: assets/js/blocks/cta.js:66
 msgid "Predefined Positions"
 msgstr ""
 
@@ -373,19 +373,19 @@ msgstr ""
 msgid "Not specify"
 msgstr ""
 
-#: assets/js/blocks/alert.js:55 assets/js/blocks/bubble.js:223
+#: assets/js/blocks/alert.js:55 assets/js/blocks/bubble.js:227
 msgid "Left"
 msgstr ""
 
-#: assets/js/blocks/alert.js:56
+#: assets/js/blocks/alert.js:56 assets/js/blocks/tiled-grid.js:85
 msgid "Center"
 msgstr ""
 
-#: assets/js/blocks/alert.js:57 assets/js/blocks/bubble.js:224
+#: assets/js/blocks/alert.js:57 assets/js/blocks/bubble.js:228
 msgid "Right"
 msgstr ""
 
-#: assets/js/blocks/alert.js:62 assets/js/blocks/bubble.js:186
+#: assets/js/blocks/alert.js:62 assets/js/blocks/bubble.js:182
 msgid "Speaker"
 msgstr ""
 
@@ -409,44 +409,44 @@ msgstr ""
 msgid "This alert stays opened."
 msgstr ""
 
-#: assets/js/blocks/alert.js:108 assets/js/blocks/internal-link.js:119
+#: assets/js/blocks/alert.js:108 assets/js/blocks/internal-link.js:120
 msgid "Close"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:39
+#: assets/js/blocks/bubble.js:35
 msgid "Speech Bubble"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:45
+#: assets/js/blocks/bubble.js:41
 msgid "Speech bubble with avatar."
 msgstr ""
 
-#: assets/js/blocks/bubble.js:111
+#: assets/js/blocks/bubble.js:107
 msgid "User not found."
 msgstr ""
 
-#: assets/js/blocks/bubble.js:120 assets/js/blocks/bubble.js:150
+#: assets/js/blocks/bubble.js:116 assets/js/blocks/bubble.js:146
 msgid "Error"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:162 assets/js/blocks/tile.js:53
+#: assets/js/blocks/bubble.js:158 assets/js/blocks/tile.js:53
 msgid "Text Color"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:167 assets/js/blocks/section.js:138
+#: assets/js/blocks/bubble.js:163 assets/js/blocks/section.js:142
 #: assets/js/blocks/tile.js:59
 msgid "Background Color"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:189
+#: assets/js/blocks/bubble.js:185
 msgid "Input Directly"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:191
+#: assets/js/blocks/bubble.js:187
 msgid "Name"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:192
+#: assets/js/blocks/bubble.js:188
 msgid "If name is empty, this will be just omitted."
 msgstr ""
 
@@ -454,41 +454,41 @@ msgstr ""
 msgid "Select Avatar"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:200
+#: assets/js/blocks/bubble.js:202
 msgid "Clear Avatar"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:205
+#: assets/js/blocks/bubble.js:208
 msgid "Specify WordPress User"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:205
+#: assets/js/blocks/bubble.js:209
 msgid "Search from WordPress users"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:211
+#: assets/js/blocks/bubble.js:215
 #, python-format
 msgid "Specify %s"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:212
+#: assets/js/blocks/bubble.js:216
 #, python-format
 msgid "Search from %s"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:218 assets/js/blocks/section.js:124
+#: assets/js/blocks/bubble.js:222 assets/js/blocks/section.js:124
 msgid "Layout"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:220
+#: assets/js/blocks/bubble.js:224
 msgid "Position"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:229
+#: assets/js/blocks/bubble.js:235
 msgid "Color Setting"
 msgstr ""
 
-#: assets/js/blocks/bubble.js:243
+#: assets/js/blocks/bubble.js:250
 msgid "Enter speech here."
 msgstr ""
 
@@ -496,27 +496,27 @@ msgstr ""
 msgid "Link Card"
 msgstr ""
 
-#: assets/js/blocks/card.js:39
+#: assets/js/blocks/card.js:42
 msgid "Card style link."
 msgstr ""
 
-#: assets/js/blocks/card.js:88
+#: assets/js/blocks/card.js:91
 msgid "Link Setting"
 msgstr ""
 
-#: assets/js/blocks/card.js:89
+#: assets/js/blocks/card.js:92
 msgid "Link URL"
 msgstr ""
 
-#: assets/js/blocks/card.js:91
+#: assets/js/blocks/card.js:94
 msgid "Image URL"
 msgstr ""
 
-#: assets/js/blocks/card.js:105
+#: assets/js/blocks/card.js:110
 msgid "Click to change image."
 msgstr ""
 
-#: assets/js/blocks/card.js:111
+#: assets/js/blocks/card.js:118
 msgid "e.g. Category Name"
 msgstr ""
 
@@ -532,48 +532,48 @@ msgstr ""
 msgid "Layout Setting"
 msgstr ""
 
-#: assets/js/blocks/cards.js:46 assets/js/blocks/tiled-grid.js:67
+#: assets/js/blocks/cards.js:46 assets/js/blocks/tiled-grid.js:78
 msgid "Column Count"
 msgstr ""
 
-#: assets/js/blocks/clipboard.js:15
+#: assets/js/blocks/clipboard.js:14
 msgid "Clipboard"
 msgstr ""
 
-#: assets/js/blocks/clipboard.js:21
+#: assets/js/blocks/clipboard.js:20
 msgid "Clipboard button for copying text."
 msgstr ""
 
-#: assets/js/blocks/clipboard.js:45
+#: assets/js/blocks/clipboard.js:44
 msgid "Setting"
 msgstr ""
 
-#: assets/js/blocks/clipboard.js:46
+#: assets/js/blocks/clipboard.js:45
 msgid "Alignment"
 msgstr ""
 
-#: assets/js/blocks/clipboard.js:56
+#: assets/js/blocks/clipboard.js:57
 msgid "e.g. Click to Copy"
 msgstr ""
 
-#: assets/js/blocks/clipboard.js:59
+#: assets/js/blocks/clipboard.js:61
 msgid "Enter text to copy."
 msgstr ""
 
-#: assets/js/blocks/clipboard.js:73
+#: assets/js/blocks/clipboard.js:76
 msgid "Text to be copied."
 msgstr ""
 
-#: assets/js/blocks/cta.js:27
+#: assets/js/blocks/cta.js:32
 msgid "Display UI parts to invoke user's action."
 msgstr ""
 
-#: assets/js/blocks/cta.js:63 assets/js/blocks/posts.js:125
+#: assets/js/blocks/cta.js:70 assets/js/blocks/posts.js:125
 #: assets/js/blocks/posts.js:131 assets/js/blocks/testimonials.js:66
 msgid "Order"
 msgstr ""
 
-#: assets/js/blocks/cta.js:66 assets/js/blocks/testimonials.js:63
+#: assets/js/blocks/cta.js:73 assets/js/blocks/testimonials.js:63
 msgid "Number to display"
 msgstr ""
 
@@ -581,43 +581,43 @@ msgstr ""
 msgid "Term"
 msgstr ""
 
-#: assets/js/blocks/definition-list.js:25
+#: assets/js/blocks/definition-list.js:29
 msgid "Definition Term."
 msgstr ""
 
-#: assets/js/blocks/definition-list.js:39
+#: assets/js/blocks/definition-list.js:43
 msgid "Enter term name."
 msgstr ""
 
-#: assets/js/blocks/definition-list.js:51
+#: assets/js/blocks/definition-list.js:56
 msgid "Description"
 msgstr ""
 
-#: assets/js/blocks/definition-list.js:64
+#: assets/js/blocks/definition-list.js:73
 msgid "Definition Description."
 msgstr ""
 
-#: assets/js/blocks/definition-list.js:78
+#: assets/js/blocks/definition-list.js:87
 msgid "Enter description here."
 msgstr ""
 
-#: assets/js/blocks/definition-list.js:90
+#: assets/js/blocks/definition-list.js:100
 msgid "Definition List"
 msgstr ""
 
-#: assets/js/blocks/definition-list.js:105
+#: assets/js/blocks/definition-list.js:119
 msgid "Definition list."
 msgstr ""
 
-#: assets/js/blocks/definition-list.js:120
+#: assets/js/blocks/definition-list.js:134
 msgid "Definition List Setting"
 msgstr ""
 
-#: assets/js/blocks/definition-list.js:121
+#: assets/js/blocks/definition-list.js:135
 msgid "Display as FAQ"
 msgstr ""
 
-#: assets/js/blocks/definition-list.js:123
+#: assets/js/blocks/definition-list.js:137
 msgid "If checked, JSON-LD will be generated."
 msgstr ""
 
@@ -643,7 +643,7 @@ msgstr ""
 msgid "Remove"
 msgstr ""
 
-#: assets/js/blocks/internal-link.js:65 assets/js/blocks/internal-link.js:109
+#: assets/js/blocks/internal-link.js:65 assets/js/blocks/internal-link.js:110
 msgid "Search Post"
 msgstr ""
 
@@ -676,11 +676,12 @@ msgid "Edit"
 msgstr ""
 
 #: assets/js/blocks/internal-link.js:102
+#: assets/js/blocks/internal-link.js:103
 #: assets/js/components/post-placeholder.js:20
 msgid "Post ID"
 msgstr ""
 
-#: assets/js/blocks/internal-link.js:116
+#: assets/js/blocks/internal-link.js:117
 msgid "Reset"
 msgstr ""
 
@@ -697,11 +698,11 @@ msgid "Panel Options"
 msgstr ""
 
 #: assets/js/blocks/panel.js:84
-msgid "Panel Color"
+msgid "Title Color"
 msgstr ""
 
 #: assets/js/blocks/panel.js:88
-msgid "Title Color"
+msgid "Panel Color"
 msgstr ""
 
 #: assets/js/blocks/panel.js:97
@@ -862,63 +863,63 @@ msgstr ""
 msgid "Vertical Padding"
 msgstr ""
 
-#: assets/js/blocks/section.js:130
+#: assets/js/blocks/section.js:132
 msgid "Horizontal Padding"
 msgstr ""
 
-#: assets/js/blocks/section.js:133
+#: assets/js/blocks/section.js:137
 msgid "Background Color Setting"
 msgstr ""
 
-#: assets/js/blocks/section.js:143
+#: assets/js/blocks/section.js:147
 msgid "Opacity"
 msgstr ""
 
-#: assets/js/blocks/section.js:149
+#: assets/js/blocks/section.js:153
 msgid "Background Image"
 msgstr ""
 
-#: assets/js/blocks/section.js:156
+#: assets/js/blocks/section.js:162
 msgid "Set background image for section."
 msgstr ""
 
-#: assets/js/blocks/section.js:172
+#: assets/js/blocks/section.js:178
 msgid "Select Image"
 msgstr ""
 
-#: assets/js/blocks/section.js:176
+#: assets/js/blocks/section.js:182
 msgid "Clear"
 msgstr ""
 
-#: assets/js/blocks/section.js:183
+#: assets/js/blocks/section.js:189
 msgid "Blur"
 msgstr ""
 
-#: assets/js/blocks/section.js:189
+#: assets/js/blocks/section.js:195
 msgid "Hidden Contents"
 msgstr ""
 
-#: assets/js/blocks/section.js:190
+#: assets/js/blocks/section.js:196
 msgid "Hide Contents"
 msgstr ""
 
-#: assets/js/blocks/section.js:192
+#: assets/js/blocks/section.js:198
 msgid "If checked, contents will be hidden."
 msgstr ""
 
-#: assets/js/blocks/section.js:193
+#: assets/js/blocks/section.js:199
 msgid "Preview Height"
 msgstr ""
 
-#: assets/js/blocks/section.js:195
+#: assets/js/blocks/section.js:202
 msgid "Label for revealing button."
 msgstr ""
 
-#: assets/js/blocks/section.js:197
+#: assets/js/blocks/section.js:204
 msgid "e.g. Read More"
 msgstr ""
 
-#: assets/js/blocks/section.js:211 assets/js/blocks/section.js:243
+#: assets/js/blocks/section.js:221 assets/js/blocks/section.js:253
 msgid "Read More"
 msgstr ""
 
@@ -926,55 +927,55 @@ msgstr ""
 msgid "Step"
 msgstr ""
 
-#: assets/js/blocks/step.js:46
+#: assets/js/blocks/step.js:48
 msgid "Step Block"
 msgstr ""
 
-#: assets/js/blocks/step.js:81
+#: assets/js/blocks/step.js:83
 msgid "Step Number"
 msgstr ""
 
-#: assets/js/blocks/step.js:83
+#: assets/js/blocks/step.js:85
 msgid "If empty, automatic counter will be set."
 msgstr ""
 
-#: assets/js/blocks/step.js:85
+#: assets/js/blocks/step.js:87
 msgid "Tips"
 msgstr ""
 
-#: assets/js/blocks/step.js:86
+#: assets/js/blocks/step.js:88
 msgid "Enter special tips or notes for this step."
 msgstr ""
 
-#: assets/js/blocks/step.js:96
+#: assets/js/blocks/step.js:98
 msgid "e.g. Choose a necktie"
 msgstr ""
 
-#: assets/js/blocks/step.js:102
+#: assets/js/blocks/step.js:104
 msgid "e.g. Open your closet and choose a nice looking necktie."
 msgstr ""
 
-#: assets/js/blocks/steps.js:13
+#: assets/js/blocks/steps.js:12
 msgid "How-to"
 msgstr ""
 
-#: assets/js/blocks/steps.js:25
+#: assets/js/blocks/steps.js:24
 msgid "Step by step how-tos. Ready for JSON-LD."
 msgstr ""
 
-#: assets/js/blocks/steps.js:55
+#: assets/js/blocks/steps.js:54
 msgid "How-to Setting"
 msgstr ""
 
-#: assets/js/blocks/steps.js:56
+#: assets/js/blocks/steps.js:55
 msgid "Generate JSON-LD"
 msgstr ""
 
-#: assets/js/blocks/steps.js:63
+#: assets/js/blocks/steps.js:62
 msgid "e.g. How to tie necktie."
 msgstr ""
 
-#: assets/js/blocks/steps.js:66
+#: assets/js/blocks/steps.js:65
 msgid "e.g. This article will explain how to tie a necktie."
 msgstr ""
 
@@ -1002,35 +1003,51 @@ msgstr ""
 msgid "Tile Colors"
 msgstr ""
 
-#: assets/js/blocks/tiled-grid.js:33
+#: assets/js/blocks/tiled-grid.js:41
 msgid "Tiled Grid"
 msgstr ""
 
-#: assets/js/blocks/tiled-grid.js:39
+#: assets/js/blocks/tiled-grid.js:47
 msgid "Grid style layout of panel items. Ready for text & background colors."
 msgstr ""
 
-#: assets/js/blocks/tiled-grid.js:64
+#: assets/js/blocks/tiled-grid.js:75
 msgid "Tiled Grid Setting"
 msgstr ""
 
-#: assets/js/blocks/tiled-grid.js:65
+#: assets/js/blocks/tiled-grid.js:76
 msgid "Add New Tile"
 msgstr ""
 
-#: assets/js/blocks/tiled-grid.js:69
+#: assets/js/blocks/tiled-grid.js:80
 msgid "Mobile Max Columns"
+msgstr ""
+
+#: assets/js/blocks/tiled-grid.js:82
+msgid "Vertical Alignment"
+msgstr ""
+
+#: assets/js/blocks/tiled-grid.js:89
+msgid "Top"
+msgstr ""
+
+#: assets/js/blocks/tiled-grid.js:93
+msgid "Bottom"
+msgstr ""
+
+#: assets/js/blocks/tiled-grid.js:97
+msgid "Global vertical alignment of child tiles."
 msgstr ""
 
 #: assets/js/components/add-child.js:20
 msgid "Add"
 msgstr ""
 
-#: assets/js/components/clipboard-helper.js:39
+#: assets/js/components/clipboard-helper.js:40
 msgid "Data is copied to clipboard."
 msgstr ""
 
-#: assets/js/components/dynamic-widget.js:32
+#: assets/js/components/dynamic-widget.js:34
 #, python-format
 msgid "Please specify renderer of dynamic widget %s."
 msgstr ""
@@ -1043,20 +1060,20 @@ msgstr ""
 msgid "Searching..."
 msgstr ""
 
-#: assets/js/components/media.js:65
+#: assets/js/components/media.js:63
 msgid "Failed to fetch image."
 msgstr ""
 
-#: assets/js/components/object-selector.js:73
+#: assets/js/components/object-selector.js:81
 msgid "Specify User"
 msgstr ""
 
-#: assets/js/components/object-selector.js:78
-#: assets/js/components/object-selector.js:82
+#: assets/js/components/object-selector.js:86
+#: assets/js/components/object-selector.js:90
 msgid "Search"
 msgstr ""
 
-#: assets/js/components/object-selector.js:78
+#: assets/js/components/object-selector.js:86
 msgid "Enter search keywords..."
 msgstr ""
 
@@ -1064,11 +1081,11 @@ msgstr ""
 msgid "Post Title"
 msgstr ""
 
-#: assets/js/components/post-searcher.js:28
+#: assets/js/components/post-searcher.js:25
 msgid "Post Selector"
 msgstr ""
 
-#: assets/js/components/post-searcher.js:68
+#: assets/js/components/post-searcher.js:67
 msgid "Failed to search posts. Please try again later."
 msgstr ""
 
@@ -1105,7 +1122,7 @@ msgstr ""
 msgid "Click to add"
 msgstr ""
 
-#: assets/js/components/taxonomy-selector.js:157
+#: assets/js/components/taxonomy-selector.js:158
 #, python-format
 msgid "(%d)"
 msgstr ""

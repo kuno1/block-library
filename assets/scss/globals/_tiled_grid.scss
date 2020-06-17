@@ -11,6 +11,14 @@ $kbl-mobile-break-point: 767px !default;
 	flex-wrap: wrap;
 	align-items: center;
 
+	@at-root .is-items-top & {
+		align-items: flex-start;
+	}
+
+	@at-root .is-items-bottom & {
+		align-items: flex-end;
+	}
+
 	> div {
 		flex-basis: 100%;
 

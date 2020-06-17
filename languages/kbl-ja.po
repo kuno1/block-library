@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kunoichi Block Library\n"
-"POT-Creation-Date: 2020-06-15 16:23+0900\n"
-"PO-Revision-Date: 2020-06-15 16:24+0900\n"
+"POT-Creation-Date: 2020-06-17 16:56+0900\n"
+"PO-Revision-Date: 2020-06-17 16:57+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language: ja\n"
@@ -78,7 +78,7 @@ msgid "No post is specified."
 msgstr "投稿が指定されていません"
 
 #: src/Kunoichi/BlockLibrary/Blocks/InternalLink.php:48
-#: assets/js/blocks/bubble.js:141
+#: assets/js/blocks/bubble.js:137
 msgid "Post not found."
 msgstr "投稿は見つかりませんでした。"
 
@@ -133,7 +133,7 @@ msgstr "条件に合う推薦文が見つかりませんでした。"
 
 #: src/Kunoichi/BlockLibrary/Pattern/Widgets.php:56
 #: assets/js/blocks/alert.js:63 assets/js/blocks/internal-link.js:71
-#: assets/js/components/placeholder.js:118
+#: assets/js/components/placeholder.js:119
 msgid "Title"
 msgstr "タイトル"
 
@@ -143,7 +143,7 @@ msgstr "コールトゥアクション"
 
 #: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:39
 #: src/Kunoichi/BlockLibrary/Widgets/CallToActionWidget.php:19
-#: assets/js/blocks/cta.js:15
+#: assets/js/blocks/cta.js:17
 msgid "Call To Action"
 msgstr "コールトゥアクション"
 
@@ -209,7 +209,7 @@ msgstr "コールトゥアクションが更新されました。"
 #: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:73
 #: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:352
 #: src/Kunoichi/BlockLibrary/Widgets/CallToActionWidget.php:64
-#: assets/js/blocks/cta.js:57
+#: assets/js/blocks/cta.js:62
 msgid "Positions"
 msgstr "ポジション"
 
@@ -258,7 +258,7 @@ msgid "Enter Action name(e.g. Buy Now Button）"
 msgstr "アクション名を入れてください（例・いますぐ購入ボタン）"
 
 #: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:177
-#: assets/js/blocks/cta.js:56
+#: assets/js/blocks/cta.js:61
 msgid "CTA Setting"
 msgstr "CTA設定"
 
@@ -352,7 +352,7 @@ msgstr "ポジションを管理"
 
 #: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:376
 #: src/Kunoichi/BlockLibrary/Widgets/CallToActionWidget.php:65
-#: assets/js/blocks/cta.js:60
+#: assets/js/blocks/cta.js:66
 msgid "Predefined Positions"
 msgstr "定義済みポジション"
 
@@ -385,19 +385,19 @@ msgstr "スタイル付きのアラートブロック。"
 msgid "Not specify"
 msgstr "指定しない"
 
-#: assets/js/blocks/alert.js:55 assets/js/blocks/bubble.js:223
+#: assets/js/blocks/alert.js:55 assets/js/blocks/bubble.js:227
 msgid "Left"
 msgstr "左"
 
-#: assets/js/blocks/alert.js:56
+#: assets/js/blocks/alert.js:56 assets/js/blocks/tiled-grid.js:85
 msgid "Center"
 msgstr "中央"
 
-#: assets/js/blocks/alert.js:57 assets/js/blocks/bubble.js:224
+#: assets/js/blocks/alert.js:57 assets/js/blocks/bubble.js:228
 msgid "Right"
 msgstr "右"
 
-#: assets/js/blocks/alert.js:62 assets/js/blocks/bubble.js:186
+#: assets/js/blocks/alert.js:62 assets/js/blocks/bubble.js:182
 msgid "Speaker"
 msgstr "発話者"
 
@@ -421,44 +421,44 @@ msgstr "このアラートは閉じることができます。"
 msgid "This alert stays opened."
 msgstr "このアラートは開いたままです。"
 
-#: assets/js/blocks/alert.js:108 assets/js/blocks/internal-link.js:119
+#: assets/js/blocks/alert.js:108 assets/js/blocks/internal-link.js:120
 msgid "Close"
 msgstr "閉じる"
 
-#: assets/js/blocks/bubble.js:39
+#: assets/js/blocks/bubble.js:35
 msgid "Speech Bubble"
 msgstr "吹き出し"
 
-#: assets/js/blocks/bubble.js:45
+#: assets/js/blocks/bubble.js:41
 msgid "Speech bubble with avatar."
 msgstr "アバター付きの吹き出しです。"
 
-#: assets/js/blocks/bubble.js:111
+#: assets/js/blocks/bubble.js:107
 msgid "User not found."
 msgstr "ユーザーが見つかりません。"
 
-#: assets/js/blocks/bubble.js:120 assets/js/blocks/bubble.js:150
+#: assets/js/blocks/bubble.js:116 assets/js/blocks/bubble.js:146
 msgid "Error"
 msgstr "エラー"
 
-#: assets/js/blocks/bubble.js:162 assets/js/blocks/tile.js:53
+#: assets/js/blocks/bubble.js:158 assets/js/blocks/tile.js:53
 msgid "Text Color"
 msgstr "文字色"
 
-#: assets/js/blocks/bubble.js:167 assets/js/blocks/section.js:138
+#: assets/js/blocks/bubble.js:163 assets/js/blocks/section.js:142
 #: assets/js/blocks/tile.js:59
 msgid "Background Color"
 msgstr "背景色"
 
-#: assets/js/blocks/bubble.js:189
+#: assets/js/blocks/bubble.js:185
 msgid "Input Directly"
 msgstr "直接入力"
 
-#: assets/js/blocks/bubble.js:191
+#: assets/js/blocks/bubble.js:187
 msgid "Name"
 msgstr "名前"
 
-#: assets/js/blocks/bubble.js:192
+#: assets/js/blocks/bubble.js:188
 msgid "If name is empty, this will be just omitted."
 msgstr "名前が空白の場合は省略されます。"
 
@@ -466,41 +466,41 @@ msgstr "名前が空白の場合は省略されます。"
 msgid "Select Avatar"
 msgstr "アバターを選択"
 
-#: assets/js/blocks/bubble.js:200
+#: assets/js/blocks/bubble.js:202
 msgid "Clear Avatar"
 msgstr "アバターを削除"
 
-#: assets/js/blocks/bubble.js:205
+#: assets/js/blocks/bubble.js:208
 msgid "Specify WordPress User"
 msgstr "WordPressユーザーを指定"
 
-#: assets/js/blocks/bubble.js:205
+#: assets/js/blocks/bubble.js:209
 msgid "Search from WordPress users"
 msgstr "WordPressユーザーから探す"
 
-#: assets/js/blocks/bubble.js:211
+#: assets/js/blocks/bubble.js:215
 #, python-format
 msgid "Specify %s"
 msgstr "%sを指定"
 
-#: assets/js/blocks/bubble.js:212
+#: assets/js/blocks/bubble.js:216
 #, python-format
 msgid "Search from %s"
 msgstr "%sから探す"
 
-#: assets/js/blocks/bubble.js:218 assets/js/blocks/section.js:124
+#: assets/js/blocks/bubble.js:222 assets/js/blocks/section.js:124
 msgid "Layout"
 msgstr "レイアウト"
 
-#: assets/js/blocks/bubble.js:220
+#: assets/js/blocks/bubble.js:224
 msgid "Position"
 msgstr "位置"
 
-#: assets/js/blocks/bubble.js:229
+#: assets/js/blocks/bubble.js:235
 msgid "Color Setting"
 msgstr "色設定"
 
-#: assets/js/blocks/bubble.js:243
+#: assets/js/blocks/bubble.js:250
 msgid "Enter speech here."
 msgstr "ここにセリフを入力"
 
@@ -508,27 +508,27 @@ msgstr "ここにセリフを入力"
 msgid "Link Card"
 msgstr "リンクカード"
 
-#: assets/js/blocks/card.js:39
+#: assets/js/blocks/card.js:42
 msgid "Card style link."
 msgstr "カード型のリンクです。"
 
-#: assets/js/blocks/card.js:88
+#: assets/js/blocks/card.js:91
 msgid "Link Setting"
 msgstr "リンク設定"
 
-#: assets/js/blocks/card.js:89
+#: assets/js/blocks/card.js:92
 msgid "Link URL"
 msgstr "リンクURL"
 
-#: assets/js/blocks/card.js:91
+#: assets/js/blocks/card.js:94
 msgid "Image URL"
 msgstr "画像URL"
 
-#: assets/js/blocks/card.js:105
+#: assets/js/blocks/card.js:110
 msgid "Click to change image."
 msgstr "クリックして画像を変更"
 
-#: assets/js/blocks/card.js:111
+#: assets/js/blocks/card.js:118
 msgid "e.g. Category Name"
 msgstr "例・カテゴリー名"
 
@@ -545,48 +545,48 @@ msgstr ""
 msgid "Layout Setting"
 msgstr "レイアウト設定"
 
-#: assets/js/blocks/cards.js:46 assets/js/blocks/tiled-grid.js:67
+#: assets/js/blocks/cards.js:46 assets/js/blocks/tiled-grid.js:78
 msgid "Column Count"
 msgstr "カラム数"
 
-#: assets/js/blocks/clipboard.js:15
+#: assets/js/blocks/clipboard.js:14
 msgid "Clipboard"
 msgstr "クリップボード"
 
-#: assets/js/blocks/clipboard.js:21
+#: assets/js/blocks/clipboard.js:20
 msgid "Clipboard button for copying text."
 msgstr "テキストをコピーするクリップボード。"
 
-#: assets/js/blocks/clipboard.js:45
+#: assets/js/blocks/clipboard.js:44
 msgid "Setting"
 msgstr "設定"
 
-#: assets/js/blocks/clipboard.js:46
+#: assets/js/blocks/clipboard.js:45
 msgid "Alignment"
 msgstr "テキスト位置"
 
-#: assets/js/blocks/clipboard.js:56
+#: assets/js/blocks/clipboard.js:57
 msgid "e.g. Click to Copy"
 msgstr "例・クリックしてコピー"
 
-#: assets/js/blocks/clipboard.js:59
+#: assets/js/blocks/clipboard.js:61
 msgid "Enter text to copy."
 msgstr "コピーするテキストを入力してください。"
 
-#: assets/js/blocks/clipboard.js:73
+#: assets/js/blocks/clipboard.js:76
 msgid "Text to be copied."
 msgstr "コピーするテキスト。"
 
-#: assets/js/blocks/cta.js:27
+#: assets/js/blocks/cta.js:32
 msgid "Display UI parts to invoke user's action."
 msgstr "ユーザーの行動を喚起するUIパーツを表示します。"
 
-#: assets/js/blocks/cta.js:63 assets/js/blocks/posts.js:125
+#: assets/js/blocks/cta.js:70 assets/js/blocks/posts.js:125
 #: assets/js/blocks/posts.js:131 assets/js/blocks/testimonials.js:66
 msgid "Order"
 msgstr "順番"
 
-#: assets/js/blocks/cta.js:66 assets/js/blocks/testimonials.js:63
+#: assets/js/blocks/cta.js:73 assets/js/blocks/testimonials.js:63
 msgid "Number to display"
 msgstr "表示する数"
 
@@ -594,43 +594,43 @@ msgstr "表示する数"
 msgid "Term"
 msgstr "用語"
 
-#: assets/js/blocks/definition-list.js:25
+#: assets/js/blocks/definition-list.js:29
 msgid "Definition Term."
 msgstr "定義用語"
 
-#: assets/js/blocks/definition-list.js:39
+#: assets/js/blocks/definition-list.js:43
 msgid "Enter term name."
 msgstr "用語の名前を入力。"
 
-#: assets/js/blocks/definition-list.js:51
+#: assets/js/blocks/definition-list.js:56
 msgid "Description"
 msgstr "﻿説明"
 
-#: assets/js/blocks/definition-list.js:64
+#: assets/js/blocks/definition-list.js:73
 msgid "Definition Description."
 msgstr "定義の説明"
 
-#: assets/js/blocks/definition-list.js:78
+#: assets/js/blocks/definition-list.js:87
 msgid "Enter description here."
 msgstr "説明文をここに入力。"
 
-#: assets/js/blocks/definition-list.js:90
+#: assets/js/blocks/definition-list.js:100
 msgid "Definition List"
 msgstr "定義リスト"
 
-#: assets/js/blocks/definition-list.js:105
+#: assets/js/blocks/definition-list.js:119
 msgid "Definition list."
 msgstr "定義リスト"
 
-#: assets/js/blocks/definition-list.js:120
+#: assets/js/blocks/definition-list.js:134
 msgid "Definition List Setting"
 msgstr "定義リスト設定"
 
-#: assets/js/blocks/definition-list.js:121
+#: assets/js/blocks/definition-list.js:135
 msgid "Display as FAQ"
 msgstr "FAQとして表示"
 
-#: assets/js/blocks/definition-list.js:123
+#: assets/js/blocks/definition-list.js:137
 msgid "If checked, JSON-LD will be generated."
 msgstr "チェックした場合、JSON-LDが出力されます。"
 
@@ -656,7 +656,7 @@ msgstr "投稿設定"
 msgid "Remove"
 msgstr "削除"
 
-#: assets/js/blocks/internal-link.js:65 assets/js/blocks/internal-link.js:109
+#: assets/js/blocks/internal-link.js:65 assets/js/blocks/internal-link.js:110
 msgid "Search Post"
 msgstr "投稿を検索"
 
@@ -688,12 +688,12 @@ msgstr "リンクする投稿を指定してください。"
 msgid "Edit"
 msgstr "編集"
 
-#: assets/js/blocks/internal-link.js:102
+#: assets/js/blocks/internal-link.js:102 assets/js/blocks/internal-link.js:103
 #: assets/js/components/post-placeholder.js:20
 msgid "Post ID"
 msgstr "投稿ID"
 
-#: assets/js/blocks/internal-link.js:116
+#: assets/js/blocks/internal-link.js:117
 msgid "Reset"
 msgstr "リセット"
 
@@ -710,12 +710,12 @@ msgid "Panel Options"
 msgstr "パネルオプション"
 
 #: assets/js/blocks/panel.js:84
-msgid "Panel Color"
-msgstr "パネルの色"
-
-#: assets/js/blocks/panel.js:88
 msgid "Title Color"
 msgstr "タイトルの色"
+
+#: assets/js/blocks/panel.js:88
+msgid "Panel Color"
+msgstr "パネルの色"
 
 #: assets/js/blocks/panel.js:97
 msgid "Panel Heading"
@@ -877,63 +877,63 @@ msgstr "チェックを入れると、コンテナが中に入ります。"
 msgid "Vertical Padding"
 msgstr "上下の余白"
 
-#: assets/js/blocks/section.js:130
+#: assets/js/blocks/section.js:132
 msgid "Horizontal Padding"
 msgstr "左右の余白"
 
-#: assets/js/blocks/section.js:133
+#: assets/js/blocks/section.js:137
 msgid "Background Color Setting"
 msgstr "背景色設定"
 
-#: assets/js/blocks/section.js:143
+#: assets/js/blocks/section.js:147
 msgid "Opacity"
 msgstr "不透明度"
 
-#: assets/js/blocks/section.js:149
+#: assets/js/blocks/section.js:153
 msgid "Background Image"
 msgstr "背景画像"
 
-#: assets/js/blocks/section.js:156
+#: assets/js/blocks/section.js:162
 msgid "Set background image for section."
 msgstr "セクションに背景画像を追加。"
 
-#: assets/js/blocks/section.js:172
+#: assets/js/blocks/section.js:178
 msgid "Select Image"
 msgstr "画像を選択"
 
-#: assets/js/blocks/section.js:176
+#: assets/js/blocks/section.js:182
 msgid "Clear"
 msgstr "クリア"
 
-#: assets/js/blocks/section.js:183
+#: assets/js/blocks/section.js:189
 msgid "Blur"
 msgstr "ぼかし"
 
-#: assets/js/blocks/section.js:189
+#: assets/js/blocks/section.js:195
 msgid "Hidden Contents"
 msgstr "隠しコンテンツ"
 
-#: assets/js/blocks/section.js:190
+#: assets/js/blocks/section.js:196
 msgid "Hide Contents"
 msgstr "コンテンツを隠す"
 
-#: assets/js/blocks/section.js:192
+#: assets/js/blocks/section.js:198
 msgid "If checked, contents will be hidden."
 msgstr "チェックを入れると、コンテンツが一部隠れます。"
 
-#: assets/js/blocks/section.js:193
+#: assets/js/blocks/section.js:199
 msgid "Preview Height"
 msgstr "見える部分のの高さ"
 
-#: assets/js/blocks/section.js:195
+#: assets/js/blocks/section.js:202
 msgid "Label for revealing button."
 msgstr "オープンするボタンのラベル。"
 
-#: assets/js/blocks/section.js:197
+#: assets/js/blocks/section.js:204
 msgid "e.g. Read More"
 msgstr "例・続きを読む"
 
-#: assets/js/blocks/section.js:211 assets/js/blocks/section.js:243
+#: assets/js/blocks/section.js:221 assets/js/blocks/section.js:253
 msgid "Read More"
 msgstr "続きを読む"
 
@@ -941,55 +941,55 @@ msgstr "続きを読む"
 msgid "Step"
 msgstr "ステップ"
 
-#: assets/js/blocks/step.js:46
+#: assets/js/blocks/step.js:48
 msgid "Step Block"
 msgstr "ステップブロック"
 
-#: assets/js/blocks/step.js:81
+#: assets/js/blocks/step.js:83
 msgid "Step Number"
 msgstr "ステップ数"
 
-#: assets/js/blocks/step.js:83
+#: assets/js/blocks/step.js:85
 msgid "If empty, automatic counter will be set."
 msgstr "空白の場合は自動カウントが利用されます。"
 
-#: assets/js/blocks/step.js:85
+#: assets/js/blocks/step.js:87
 msgid "Tips"
 msgstr "ティップス"
 
-#: assets/js/blocks/step.js:86
+#: assets/js/blocks/step.js:88
 msgid "Enter special tips or notes for this step."
 msgstr "このステップに関するティップスや注記を記載。"
 
-#: assets/js/blocks/step.js:96
+#: assets/js/blocks/step.js:98
 msgid "e.g. Choose a necktie"
 msgstr "例・ネクタイを選ぶ"
 
-#: assets/js/blocks/step.js:102
+#: assets/js/blocks/step.js:104
 msgid "e.g. Open your closet and choose a nice looking necktie."
 msgstr "例・クローゼットを開けて素敵なネクタイを選んでください。"
 
-#: assets/js/blocks/steps.js:13
+#: assets/js/blocks/steps.js:12
 msgid "How-to"
 msgstr "ハウツー"
 
-#: assets/js/blocks/steps.js:25
+#: assets/js/blocks/steps.js:24
 msgid "Step by step how-tos. Ready for JSON-LD."
 msgstr "ステップ・バイ・ステップのハウツーです。JSON-LDに対応しています。"
 
-#: assets/js/blocks/steps.js:55
+#: assets/js/blocks/steps.js:54
 msgid "How-to Setting"
 msgstr "ハウツー設定"
 
-#: assets/js/blocks/steps.js:56
+#: assets/js/blocks/steps.js:55
 msgid "Generate JSON-LD"
 msgstr "JSON-LDを生成する。"
 
-#: assets/js/blocks/steps.js:63
+#: assets/js/blocks/steps.js:62
 msgid "e.g. How to tie necktie."
 msgstr "例・ネクタイの結び方"
 
-#: assets/js/blocks/steps.js:66
+#: assets/js/blocks/steps.js:65
 msgid "e.g. This article will explain how to tie a necktie."
 msgstr "例・この記事ではネクタイの結び方を説明します。"
 
@@ -1017,37 +1017,53 @@ msgstr "タイルグリッドのアイテム。"
 msgid "Tile Colors"
 msgstr "タイルの色"
 
-#: assets/js/blocks/tiled-grid.js:33
+#: assets/js/blocks/tiled-grid.js:41
 msgid "Tiled Grid"
 msgstr "タイルグリッド"
 
-#: assets/js/blocks/tiled-grid.js:39
+#: assets/js/blocks/tiled-grid.js:47
 msgid "Grid style layout of panel items. Ready for text & background colors."
 msgstr ""
 "パネル型のコンテンツからなるグリッド型のレイアウトです。テキストと背景の色を"
 "変更できます。"
 
-#: assets/js/blocks/tiled-grid.js:64
+#: assets/js/blocks/tiled-grid.js:75
 msgid "Tiled Grid Setting"
 msgstr "タイルグリッド設定"
 
-#: assets/js/blocks/tiled-grid.js:65
+#: assets/js/blocks/tiled-grid.js:76
 msgid "Add New Tile"
 msgstr "新しいタイルを追加"
 
-#: assets/js/blocks/tiled-grid.js:69
+#: assets/js/blocks/tiled-grid.js:80
 msgid "Mobile Max Columns"
 msgstr "モバイルでの最大カラム数"
+
+#: assets/js/blocks/tiled-grid.js:82
+msgid "Vertical Alignment"
+msgstr "縦位置"
+
+#: assets/js/blocks/tiled-grid.js:89
+msgid "Top"
+msgstr "上"
+
+#: assets/js/blocks/tiled-grid.js:93
+msgid "Bottom"
+msgstr "下"
+
+#: assets/js/blocks/tiled-grid.js:97
+msgid "Global vertical alignment of child tiles."
+msgstr "中に入るタイルの縦位置設定です。"
 
 #: assets/js/components/add-child.js:20
 msgid "Add"
 msgstr "追加"
 
-#: assets/js/components/clipboard-helper.js:39
+#: assets/js/components/clipboard-helper.js:40
 msgid "Data is copied to clipboard."
 msgstr "クリップボードにデータがコピーされました。"
 
-#: assets/js/components/dynamic-widget.js:32
+#: assets/js/components/dynamic-widget.js:34
 #, python-format
 msgid "Please specify renderer of dynamic widget %s."
 msgstr "ダイナミックウィジェット%sのレンダラーを指定してください。"
@@ -1060,20 +1076,20 @@ msgstr "タイプして検索…"
 msgid "Searching..."
 msgstr "検索中…"
 
-#: assets/js/components/media.js:65
+#: assets/js/components/media.js:63
 msgid "Failed to fetch image."
 msgstr "画像の取得に失敗しました。"
 
-#: assets/js/components/object-selector.js:73
+#: assets/js/components/object-selector.js:81
 msgid "Specify User"
 msgstr "ユーザーを指定する"
 
-#: assets/js/components/object-selector.js:78
-#: assets/js/components/object-selector.js:82
+#: assets/js/components/object-selector.js:86
+#: assets/js/components/object-selector.js:90
 msgid "Search"
 msgstr "検索"
 
-#: assets/js/components/object-selector.js:78
+#: assets/js/components/object-selector.js:86
 msgid "Enter search keywords..."
 msgstr "検索キーワードを入力…"
 
@@ -1081,11 +1097,11 @@ msgstr "検索キーワードを入力…"
 msgid "Post Title"
 msgstr "投稿タイトル"
 
-#: assets/js/components/post-searcher.js:28
+#: assets/js/components/post-searcher.js:25
 msgid "Post Selector"
 msgstr "投稿選択"
 
-#: assets/js/components/post-searcher.js:68
+#: assets/js/components/post-searcher.js:67
 msgid "Failed to search posts. Please try again later."
 msgstr "投稿の検索に失敗しました。のちほどやり直してください。"
 
@@ -1122,7 +1138,7 @@ msgstr "タクソノミーが設定された場合、投稿リストは絞り込
 msgid "Click to add"
 msgstr "クリックして追加"
 
-#: assets/js/components/taxonomy-selector.js:157
+#: assets/js/components/taxonomy-selector.js:158
 #, python-format
 msgid "(%d)"
 msgstr "(%d)"

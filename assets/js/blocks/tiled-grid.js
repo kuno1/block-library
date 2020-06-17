@@ -7,7 +7,7 @@
 const { registerBlockType } = wp.blocks;
 const { __, sprintf } = wp.i18n;
 const { InnerBlocks, InspectorControls } = wp.blockEditor;
-const { PanelBody, Button, RangeControl } = wp.components;
+const { PanelBody, Button, RangeControl, SelectControl } = wp.components;
 const { addChild, ChildInsert } = kbl;
 
 /**
@@ -24,6 +24,14 @@ const classNames = ( classes, attributes ) => {
 	}
 	c.push( sprintf( 'has-%d-columns', attributes.columns ) );
 	c.push( sprintf( 'has-%d-mobile-columns', attributes.mobile ) );
+	switch ( attributes.verticalAlign ) {
+		case 'top':
+			c.push( 'is-items-top' );
+			break;
+		case 'bottom':
+			c.push( 'is-items-bottom' );
+			break;
+	}
 	return c.join( ' ' );
 };
 
@@ -50,12 +58,15 @@ registerBlockType( 'kunoichi/tiled-grid', {
 			default: 1,
 		},
 
+		verticalAlign: {
+			type: 'string',
+			default: '',
+		},
 	},
 
 	supports: {
 		align: [ 'wide', 'full' ],
 	},
-
 
 	edit( { attributes, setAttributes, className, clientId } ) {
 		return (
@@ -68,6 +79,22 @@ registerBlockType( 'kunoichi/tiled-grid', {
 							onChange={ ( columns ) => setAttributes( { columns } ) } />
 						<RangeControl label={ __( 'Mobile Max Columns', 'kbl' ) } value={ attributes.mobile } min={ 1 } max={ 2 }
 							onChange={ ( mobile ) => setAttributes( { mobile } ) } />
+						<SelectControl label={ __( 'Vertical Alignment', 'kbl' ) } value={ attributes.verticalAlign } onChange={ ( verticalAlign ) => setAttributes( { verticalAlign } ) }
+							options={ [
+								{
+									label: __( 'Center', 'kbl' ),
+									value: '',
+								},
+								{
+									label: __( 'Top', 'kbl' ),
+									value: 'top',
+								},
+								{
+									label: __( 'Bottom', 'kbl' ),
+									value: 'bottom',
+								},
+							] }
+							help={ __( 'Global vertical alignment of child tiles.', 'kbl' ) } />
 					</PanelBody>
 				</InspectorControls>
 				<div className={ classNames( className, attributes ) }>
