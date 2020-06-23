@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Kunoichi Block Library\n"
-"POT-Creation-Date: 2020-06-23 16:35+0900\n"
+"POT-Creation-Date: 2020-06-23 21:46+0900\n"
 "PO-Revision-Date: 2020-01-10 13:36+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
@@ -727,12 +727,17 @@ msgid ""
 "products."
 msgstr ""
 
-#: assets/js/blocks/offer.js:135
+#: assets/js/blocks/offer.js:139
 msgid "Offer Option"
 msgstr ""
 
-#: assets/js/blocks/offer.js:136 assets/js/blocks/price.js:92
+#: assets/js/blocks/offer.js:140 assets/js/blocks/offer.js:146
+#: assets/js/blocks/offer.js:167 assets/js/blocks/price.js:92
 msgid "Featured"
+msgstr ""
+
+#: assets/js/blocks/offer.js:141
+msgid "Featured Label"
 msgstr ""
 
 #: assets/js/blocks/panel.js:35

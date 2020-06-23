@@ -7,7 +7,7 @@
 const { registerBlockType } = wp.blocks;
 const { __ } = wp.i18n;
 const { InnerBlocks, InspectorControls } = wp.blockEditor;
-const { PanelBody, ToggleControl } = wp.components;
+const { PanelBody, ToggleControl, TextControl } = wp.components;
 
 const setClassName = ( attributes, className = '', defaultClassName = 'kbl-offer' ) => {
 	const classNames = [ defaultClassName ];
@@ -122,6 +122,10 @@ registerBlockType( 'kunoichi/offer', {
 			type: 'boolean',
 			default: false,
 		},
+		label: {
+			type: 'string',
+			default: '',
+		},
 		align: {
 			type: 'string',
 			default: 'left',
@@ -134,9 +138,13 @@ registerBlockType( 'kunoichi/offer', {
 				<InspectorControls>
 					<PanelBody initialOpen={ true } title={ __( 'Offer Option', 'kbl' ) }>
 						<ToggleControl label={ __( 'Featured', 'kbl' ) } onChange={ ( featured ) => setAttributes( { featured } ) } />
+						<TextControl label={ __( 'Featured Label', 'kbl' ) } onChange={ label => setAttributes( { label } ) } />
 					</PanelBody>
 				</InspectorControls>
 				<div className={ setClassName( attributes, className ) }>
+					{ attributes.featured && (
+						<span className="kbl-offer-featured-label">{ attributes.label || __( 'Featured', 'kbl' ) }</span>
+					) }
 					<InnerBlocks template={ [
 						[ 'core/image', {
 							className: 'kbl-offer-image',
@@ -155,6 +163,9 @@ registerBlockType( 'kunoichi/offer', {
 	save( { attributes } ) {
 		return (
 			<div className={ setClassName( attributes ) }>
+				{ attributes.featured && (
+					<span className="kbl-offer-featured-label">{ attributes.label || __( 'Featured', 'kbl' ) }</span>
+				) }
 				<InnerBlocks.Content />
 			</div>
 		);

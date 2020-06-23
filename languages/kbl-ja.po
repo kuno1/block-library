@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kunoichi Block Library\n"
-"POT-Creation-Date: 2020-06-23 16:35+0900\n"
-"PO-Revision-Date: 2020-06-23 16:36+0900\n"
+"POT-Creation-Date: 2020-06-23 21:46+0900\n"
+"PO-Revision-Date: 2020-06-23 21:46+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language: ja\n"
@@ -741,13 +741,18 @@ msgstr ""
 "価格、リンク、性能からなる商品オファー。外部の商品をプロモーションするのに役"
 "立ちます。"
 
-#: assets/js/blocks/offer.js:135
+#: assets/js/blocks/offer.js:139
 msgid "Offer Option"
 msgstr "オファーオプション"
 
-#: assets/js/blocks/offer.js:136 assets/js/blocks/price.js:92
+#: assets/js/blocks/offer.js:140 assets/js/blocks/offer.js:146
+#: assets/js/blocks/offer.js:167 assets/js/blocks/price.js:92
 msgid "Featured"
 msgstr "おすすめ"
+
+#: assets/js/blocks/offer.js:141
+msgid "Featured Label"
+msgstr "おすすめラベル"
 
 #: assets/js/blocks/panel.js:35
 msgid "Panel"
