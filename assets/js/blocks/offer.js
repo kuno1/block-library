@@ -74,7 +74,7 @@ registerBlockType( 'kunoichi/offer-action', {
 
 	category: 'common',
 
-	description: __( 'Aciton link for offer block.', 'kbl' ),
+	description: __( 'Action link for offer block.', 'kbl' ),
 
 	parent: [ 'kunoichi/offer' ],
 

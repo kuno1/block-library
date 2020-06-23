@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Kunoichi Block Library\n"
-"POT-Creation-Date: 2020-06-17 16:56+0900\n"
+"POT-Creation-Date: 2020-06-23 16:35+0900\n"
 "PO-Revision-Date: 2020-01-10 13:36+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
@@ -107,15 +107,15 @@ msgstr ""
 msgid "Random"
 msgstr ""
 
-#: src/Kunoichi/BlockLibrary/Blocks/PostList.php:174
+#: src/Kunoichi/BlockLibrary/Blocks/PostList.php:175
 msgid "No Post Found"
 msgstr ""
 
-#: src/Kunoichi/BlockLibrary/Blocks/PostList.php:175
+#: src/Kunoichi/BlockLibrary/Blocks/PostList.php:176
 msgid "Nothing matches your criteria.<br />Please change conditions."
 msgstr ""
 
-#: src/Kunoichi/BlockLibrary/Blocks/PostList.php:230
+#: src/Kunoichi/BlockLibrary/Blocks/PostList.php:231
 #: assets/js/blocks/posts.js:139 assets/js/blocks/posts.js:145
 msgid "More"
 msgstr ""
@@ -685,6 +685,56 @@ msgstr ""
 msgid "Reset"
 msgstr ""
 
+#: assets/js/blocks/offer-list.js:21
+msgid "Offer List"
+msgstr ""
+
+#: assets/js/blocks/offer-list.js:25
+msgid "Display offer list of products with price, links, and spec."
+msgstr ""
+
+#: assets/js/blocks/offer.js:26
+msgid "Offer Content"
+msgstr ""
+
+#: assets/js/blocks/offer.js:32
+msgid "Title, price, and specs of an offer."
+msgstr ""
+
+#: assets/js/blocks/offer.js:42 assets/js/blocks/offer.js:87
+msgid "Product Title"
+msgstr ""
+
+#: assets/js/blocks/offer.js:45
+msgid "e.g. $19.99"
+msgstr ""
+
+#: assets/js/blocks/offer.js:71
+msgid "Offer Action"
+msgstr ""
+
+#: assets/js/blocks/offer.js:77
+msgid "Action link for offer block."
+msgstr ""
+
+#: assets/js/blocks/offer.js:106
+msgid "Offer"
+msgstr ""
+
+#: assets/js/blocks/offer.js:112
+msgid ""
+"Product offer with price, link, and spec. Helpful for promoting external "
+"products."
+msgstr ""
+
+#: assets/js/blocks/offer.js:135
+msgid "Offer Option"
+msgstr ""
+
+#: assets/js/blocks/offer.js:136 assets/js/blocks/price.js:92
+msgid "Featured"
+msgstr ""
+
 #: assets/js/blocks/panel.js:35
 msgid "Panel"
 msgstr ""
@@ -825,10 +875,6 @@ msgstr ""
 msgid ""
 "Help text displayed just after the price. For example, if this price is "
 "subscription plan, \"per 1 month\" is helpful"
-msgstr ""
-
-#: assets/js/blocks/price.js:92
-msgid "Featured"
 msgstr ""
 
 #: assets/js/blocks/price.js:93
