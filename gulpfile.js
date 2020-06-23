@@ -8,42 +8,13 @@ const named = require( 'vinyl-named' );
 const webpack = require( 'webpack-stream' );
 const webpackBundle = require( 'webpack' );
 
-// Include Path for Scss
-const includesPaths = [
-	'assets/scss'
-];
-
-// Source directory
-const srcDir = {
-	scss: [
-		'assets/scss/**/*.scss',
-	],
-	js: [
-		'assets/js/**/*.js',
-		'!assets/js/**/_*.js',
-	],
-	jsHint: [
-		'assets/js/**/*.js',
-	],
-	img: [
-		'assets/img/**/*',
-	],
-};
-
-// Destination directory
-const destDir = {
-	scss: 'dist/css',
-	js: 'dist/js',
-	img: 'dist/img',
-};
-
 //
 // SCSS tasks
 // ================
 //
 
 // Lint SCSS
-gulp.task( 'scss:lint', ( done ) => {
+gulp.task( 'scss:lint', () => {
 	return gulp.src( './assets/scss/**/*.scss' )
 		.pipe( $.stylelint( {
 			failAfterError: false,
@@ -56,8 +27,9 @@ gulp.task( 'scss:lint', ( done ) => {
 		} ) );
 } );
 
+// Compile SCSS
 gulp.task( 'scss:generate', () => {
-	return gulp.src( srcDir.scss )
+	return gulp.src( './assets/scss/**/*.scss' )
 		.pipe( $.plumber( {
 			errorHandler: $.notify.onError( '<%= error.message %>' )
 		} ) )
@@ -68,11 +40,13 @@ gulp.task( 'scss:generate', () => {
 			outputStyle: 'compressed',
 			sourceComments: 'normal',
 			sourcemap: true,
-			includePaths: includesPaths,
+			includePaths: [
+				'assets/scss'
+			],
 		} ) )
 		.pipe( $.autoprefixer() )
 		.pipe( $.sourcemaps.write( './map' ) )
-		.pipe( gulp.dest( destDir.scss ) );
+		.pipe( gulp.dest( 'dist/css' ) );
 } );
 
 gulp.task( 'scss', gulp.parallel( 'scss:generate', 'scss:lint' ) );
@@ -172,13 +146,13 @@ gulp.task( 'imagemin', gulp.parallel( 'imagemin:misc', 'imagemin:svg' ) );
 //
 gulp.task( 'watch', ( done ) => {
 	// Make SASS
-	gulp.watch( srcDir.scss, gulp.task( 'scss' ) );
+	gulp.watch( 'assets/scss/**/*.scss', gulp.task( 'scss' ) );
 	// Javascripts.
 	gulp.watch( [
 		'assets/js/**/*.js',
 	], gulp.task( 'js' ) );
 	// Minify Image
-	gulp.watch( srcDir.img, gulp.task( 'imagemin' ) );
+	gulp.watch( 'assets/img/**/*', gulp.task( 'imagemin' ) );
 	done();
 } );
 

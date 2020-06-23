@@ -144,7 +144,8 @@ SQL;
 			'ignore_sticky' => true,
 		] );
 		$args = [
-			'post_type' => $attributes['post_type']
+			'post_type'   => $attributes['post_type'],
+			'post_status' => 'publish'
 		];
 		if ( $attributes['ids'] ) {
 			$args['post__in'] = array_map( 'trim', explode( ',', $attributes['ids'] ) );
