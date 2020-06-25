@@ -6,6 +6,7 @@ const { registerBlockType } = wp.blocks;
 const { __, sprintf } = wp.i18n;
 const { RichText, InnerBlocks, InspectorControls, withColors, PanelColorSettings } = wp.blockEditor;
 const { Path, SVG, Rect } = wp.components;
+const { applyFilters } = wp.hooks;
 
 const getClassName = ( attributes, className = '' ) => {
 	const classes = [ 'kbl-panel' ];
@@ -75,20 +76,25 @@ registerBlockType( 'kunoichi/panel', {
 	},
 
 	edit: withColors( 'panelColor', 'titleColor' )( ( { attributes, setAttributes, className, panelColor, setPanelColor, titleColor, setTitleColor } ) => {
+		const colors = []
+		colors.push( {
+			value: panelColor.color,
+			label: __( 'Panel Color', 'kbl' ),
+			onChange: setPanelColor,
+			disableCustomColors: true,
+		}, );
+		if ( applyFilters( 'kbl.supports.panelTitleColor', true ) ) {
+			colors.push( {
+				value: titleColor.color,
+				label: __( 'Title Color', 'kbl' ),
+				onChange: setTitleColor,
+				disableCustomColors: true,
+			} );
+		}
 		return (
 			<>
 				<InspectorControls>
-					<PanelColorSettings title={ __( 'Panel Options', 'kbl' ) } colorSettings={ [ {
-						value: titleColor.color,
-						label: __( 'Title Color', 'kbl' ),
-						onChange: setTitleColor,
-						disableCustomColors: true,
-					}, {
-						value: panelColor.color,
-						label: __( 'Panel Color', 'kbl' ),
-						onChange: setPanelColor,
-						disableCustomColors: true,
-					} ] } initialOpen={ true }>
+					<PanelColorSettings title={ __( 'Panel Options', 'kbl' ) } colorSettings={ colors } initialOpen={ true }>
 					</PanelColorSettings>
 				</InspectorControls>
 				<div className={ getClassName( attributes, className ) }>
