@@ -1,6 +1,6 @@
 
 .wp-block[data-type="kunoichi/offer"] {
-	align: none !important;
+	float: none !important;
 }
 
 .kbl-offer {
@@ -25,6 +25,7 @@
 }
 
 .wp-block[data-type="kunoichi/offer"][data-align="right"] {
+
 	.kbl-offer > .block-editor-inner-blocks > .block-editor-block-list__layout {
 		flex-direction: row-reverse;
 	}

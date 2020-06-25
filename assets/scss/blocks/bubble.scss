@@ -19,7 +19,7 @@ $bubble-name-color: #888 !default;
 		margin-top: 40px;
 	}
 
-	&[data-position='right'] {
+	&[data-position="right"] {
 		flex-direction: row-reverse;
 	}
 
@@ -40,11 +40,11 @@ $bubble-name-color: #888 !default;
 		width: 100%;
 		box-sizing: border-box;
 
-		[data-position='left'] & {
+		[data-position="left"] & {
 			margin-left: $bubble-pudding;
 		}
 
-		[data-position='right'] & {
+		[data-position="right"] & {
 			margin-right: $bubble-pudding;
 		}
 	}
@@ -65,17 +65,17 @@ $bubble-name-color: #888 !default;
 		background-color: $bubble-bg-default;
 		border-radius: $bubble-radius;
 
-		&[class*=-background-color],
-		&[style*=background-color] {
+		&[class*="-background-color"],
+		&[style*="background-color"] {
 			border: none;
 
-			&:before {
+			&::before {
 				content: none;
 			}
 		}
 
-		&:after,
-		&:before {
+		&::after,
+		&::before {
 			content: "";
 			display: block;
 			width: $bubble-arrow;
@@ -85,30 +85,30 @@ $bubble-name-color: #888 !default;
 			bottom: 40px;
 		}
 
-		&:after {
+		&::after {
 			z-index: 3;
 			background-color: inherit;
 		}
 
-		&:before {
+		&::before {
 			z-index: 1;
 			background-color: $bubble-border-color;
 		}
 
-		[data-position=left] &:after {
+		[data-position="left"] &::after {
 			left: -0.5 * $bubble-arrow;
 		}
 
-		[data-position=left] &:before {
+		[data-position="left"] &::before {
 			border-right-color: $bubble-border-color;
 			left: ($bubble-arrow * -0.5 ) - $bubble-border-width;
 		}
 
-		[data-position=right] &:after {
+		[data-position="right"] &::after {
 			right: -0.5 * $bubble-arrow;
 		}
 
-		[data-position=right] &:before {
+		[data-position="right"] &::before {
 			border-right-color: $bubble-border-color;
 			right: ($bubble-arrow * -0.5 ) - $bubble-border-width;
 		}

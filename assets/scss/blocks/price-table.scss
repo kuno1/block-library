@@ -1,15 +1,18 @@
 .kbl-price {
+
 	&-table {
-		& > .editor-inner-blocks > .editor-block-list__layout {
+
+		> .block-editor-inner-blocks > .block-editor-block-list__layout,
+		> .editor-inner-blocks > .editor-block-list__layout {
 			display: flex;
 			margin: 0;
 			padding: 0;
 
-			& > div[data-type="kunoichi/price"] {
+			> div[data-type="kunoichi/price"] {
 				flex: 0 1 100%;
 			}
 
-			& > .block-list-appender {
+			> .block-list-appender {
 				flex: 1 1 100%;
 			}
 		}
@@ -26,6 +29,4 @@
 	&-help {
 		display: inline-block;
 	}
-
-
 }

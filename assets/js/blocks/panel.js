@@ -78,15 +78,16 @@ registerBlockType( 'kunoichi/panel', {
 		return (
 			<>
 				<InspectorControls>
-
 					<PanelColorSettings title={ __( 'Panel Options', 'kbl' ) } colorSettings={ [ {
 						value: titleColor.color,
 						label: __( 'Title Color', 'kbl' ),
 						onChange: setTitleColor,
+						disableCustomColors: true,
 					}, {
 						value: panelColor.color,
 						label: __( 'Panel Color', 'kbl' ),
 						onChange: setPanelColor,
+						disableCustomColors: true,
 					} ] } initialOpen={ true }>
 					</PanelColorSettings>
 				</InspectorControls>

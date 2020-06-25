@@ -4,6 +4,6 @@ module.exports = {
 	],
 	rules: {
 		'font-weight-notation': 'named-where-possible',
-		'color-named': 'ignore'
+		'color-named': null,
 	},
 };

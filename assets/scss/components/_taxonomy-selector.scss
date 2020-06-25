@@ -1,7 +1,8 @@
+// Taxonomy selector components.
 .kbl-taxonomy-selector {
 
 	$color: #0075af;
-	$shade: rgba( 139, 139, 150, .1 );
+	$shade: rgba(139, 139, 150, 0.1);
 	$black: #222;
 
 	&-button {
@@ -14,10 +15,12 @@
 		padding: 11px 5px 3px 5px;
 		margin-right: 10px;
 		margin-bottom: 10px;
+
 		&:hover {
 			color: #fff;
 			background-color: $color;
 		}
+
 		small {
 			position: absolute;
 			display: block;
