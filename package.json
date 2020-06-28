@@ -12,7 +12,8 @@
     "package": "gulp build",
     "watch": "gulp watch",
     "gulp": "gulp",
-    "jed": "po2json languages/kbl-$LOCALE.po languages/kbl-$LOCALE-kbl.json -f jed"
+    "jed": "po2json languages/kbl-$LOCALE.po languages/kbl-$LOCALE-kbl.json -f jed",
+	"jed-ja": "po2json languages/kbl-ja.po languages/kbl-ja-kbl.json -f jed"
   },
   "repository": {
     "type": "git",
