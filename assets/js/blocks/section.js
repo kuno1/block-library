@@ -1,10 +1,11 @@
 /*!
  * Enhanced section blocks.
- * wpdeps=wp-blocks,kbl,wp-block-editor, wp-components, wp-hooks
+ * wpdeps=wp-blocks,kbl,wp-block-editor, wp-components, wp-hooks, wp-url
  */
 
 const { registerBlockType } = wp.blocks;
 const { __, sprintf } = wp.i18n;
+const { addQueryArgs } = wp.url;
 const { applyFilters } = wp.hooks;
 const { PanelBody, ToggleControl, TextControl, Button, RangeControl } = wp.components;
 const { InnerBlocks, withColors, InspectorControls, PanelColorSettings, MediaUpload } = wp.blockEditor;
@@ -58,6 +59,48 @@ const sectionStyle = ( attributes ) => {
 		styles.backgroundImage = sprintf( 'url(\'%s\')', attributes.backgroundImage );
 	}
 	return styles;
+};
+
+const getVideoTag = ( attributes ) => {
+	if ( ! attributes.movie ) {
+		return null;
+	}
+	let provider = '';
+	let id = '';
+	if ( attributes.movie.match( /https?:\/\/www.youtube.com.*v=(.*)/ ) ) {
+		provider = 'youtube';
+		id = RegExp.$1;
+	} else if ( attributes.movie.match( /https:\/\/youtu.be\/(.*[^?])/ ) ) {
+		provider = 'youtube';
+		id = RegExp.$1;
+	}
+
+	switch ( provider ) {
+		case 'youtube':
+			const playerUrl = addQueryArgs( sprintf( 'https://www.youtube.com/embed/%s', id ), {
+				autoplay: 1,
+				loop: attributes.loop ? 1 : 0,
+				playlist: id,
+				controls: 0,
+				enablejsapi: 1,
+				modestbranding: 1,
+				origin: window.location.hostname,
+				playsinline: 1,
+				fs: 0,
+				mute: 1,
+			} );
+			return (
+				<div className="kbl-section-youtube-container">
+					<iframe className="kbl-section-youtube"  name="movie" title="" src={ playerUrl} />
+				</div>
+			);
+		default:
+			return (
+				<video className="kbl-section-video" autoPlay={ true } muted={ true } poster={ attributes.backgroundImage || null } loop={ attributes.repeat }>
+					<source className="kbl-section-video-source" src={ attributes.movie } />
+				</video>
+			);
+	}
 };
 
 registerBlockType( 'kunoichi/section', {
@@ -114,6 +157,14 @@ registerBlockType( 'kunoichi/section', {
 			type: 'string',
 			default: '',
 		},
+		movie: {
+			type: 'string',
+			default: '',
+		},
+		repeat: {
+			type: 'boolean',
+			default: true,
+		}
 	},
 
 	edit: withColors( 'backgroundColor' )( ( props ) => {
@@ -170,11 +221,10 @@ registerBlockType( 'kunoichi/section', {
 								}
 								setAttributes( { backgroundImage: image } );
 							} }
-							type="image"
-							value={ attributes.backgroundImage }
+							allowedTypes={ [ 'image' ] }
 							render={ ( { open } ) => (
 								<p>
-									<Button isDefault onClick={ open }>
+									<Button isSecondary onClick={ open }>
 										{ __( 'Select Image', 'kbl' ) }
 									</Button>
 									{ attributes.backgroundImage ? (
@@ -191,6 +241,30 @@ registerBlockType( 'kunoichi/section', {
 							min={ 0 } max={ 20 }
 							onChange={ val => setAttributes( { blur: val } ) }
 						/>
+					</PanelBody>
+					<PanelBody title={ __( 'Background Movie', 'kbl' ) } initialOpen={ false }>
+						<TextControl label={ __( 'Movie URL', 'kbl' ) } value={ attributes.movie } placeholder="https://example.com/movie.mov"
+							type="url" help={ __( 'Enter movie file URL. YouTube is also supported.', 'kbl' ) }
+							onChange={ movie => setAttributes( { movie } ) } />
+						<MediaUpload
+							onSelect={ ( { url } ) => {
+								setAttributes( { movie: url } );
+							} }
+							allowedTypes={ [ 'video' ] }
+							render={ ( { open } ) => (
+								<p>
+									<Button isSecondary onClick={ open }>
+										{ __( 'Select Uploaded Video', 'kbl' ) }
+									</Button>
+									{ attributes.movie ? (
+										<Button isTertiary onClick={ () => setAttributes( { movie: '' } ) }>
+											{ __( 'Clear', 'kbl' ) }
+										</Button>
+									) : null }
+								</p>
+							) }
+						/>
+						<ToggleControl checked={ attributes.repeat } label={ __( 'Repeat', 'kbl' ) } onChange={ repeat => setAttributes( { repeat } ) } />
 					</PanelBody>
 					<PanelBody title={ __( 'Hidden Contents', 'kbl' ) }>
 						<ToggleControl checked={ attributes.more } label={ __( 'Hide Contents', 'kbl' ) }
@@ -210,6 +284,7 @@ registerBlockType( 'kunoichi/section', {
 					{ attributes.blur ? (
 						<div className='kbl-section-blur' style={ getBlurStyle( attributes ) } />
 					) : null }
+					{ getVideoTag( attributes ) }
 					<div className={ setBgClass( attributes ) } style={ { opacity: attributes.opacity / 100 } } />
 					<div
 						className={ attributes.hasContainer ? KblSection.container_class : KblSection.no_container_class }>
@@ -244,6 +319,7 @@ registerBlockType( 'kunoichi/section', {
 			{ attributes.blur ? (
 				<div className='wp-block-kunoichi-section-blur' style={ getBlurStyle( attributes ) } />
 			) : null }
+			{ getVideoTag( attributes ) }
 			<div className={ bgClass } style={ { opacity: attributes.opacity / 100 } } />
 			<div className={ attributes.hasContainer ? KblSection.container_class : KblSection.no_container_class }>
 				<InnerBlocks.Content />

@@ -21,7 +21,7 @@ const nl2br = ( text ) => {
 
 const getStepCounterClass = ( attributes ) => {
 	const classes = [ 'kbl-step-counter' ];
-	if ( !attributes.number ) {
+	if ( ! attributes.number ) {
 		classes.push( 'kbl-step-counter-empty' );
 	}
 	return classes.join( ' ' );
@@ -134,5 +134,5 @@ registerBlockType( 'kunoichi/step', {
 				</div>
 			</li>
 		);
-	}
+	},
 } );

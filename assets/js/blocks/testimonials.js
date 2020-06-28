@@ -62,7 +62,7 @@ registerBlockType( 'kunoichi/testimonials', {
 							placeholder="e.g. 1, 3, 5" />
 						<TextControl label={ __( 'Number to display', 'kbl' ) } value={ attributes.number }
 							type="number" min={ 1 }
-							onChange={ (  number ) => setAttributes( { number: parseInt( number, 10 ) } ) } />
+							onChange={ ( number ) => setAttributes( { number: parseInt( number, 10 ) } ) } />
 						<SelectControl value={ attributes.order } label={ __( 'Order', 'kbl' ) }
 							options={ options } onChange={ ( order ) => setAttributes( { order } ) } />\
 

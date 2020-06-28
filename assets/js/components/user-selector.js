@@ -8,11 +8,10 @@ const { ObjectSelector } = kbl;
 const { Button } = wp.components;
 
 class UserSelector extends ObjectSelector {
-
 	fetch( id ) {
 		this.setState( { loading: true }, () => {
 			wp.apiFetch( {
-				path: `kbl/v1/users/search?id=${ id }`
+				path: `kbl/v1/users/search?id=${ id }`,
 			} ).then( ( res ) => {
 				if ( res.length ) {
 					this.setState( {
@@ -34,7 +33,7 @@ class UserSelector extends ObjectSelector {
 			searching: true,
 		}, () => {
 			wp.apiFetch( {
-				path: `kbl/v1/users/search?s=${ this.state.term }`
+				path: `kbl/v1/users/search?s=${ this.state.term }`,
 			} ).then( ( userFound ) => {
 				this.setState( {
 					founds: userFound,

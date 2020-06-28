@@ -1,4 +1,18 @@
-.kbl-section {
+%kbl-section-video {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+.kbl-section,
+.wp-block-kunoichi-section {
+	overflow: hidden;
 	position: relative;
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -17,6 +31,27 @@
 		position: absolute;
 		background: inherit;
 		z-index: 1;
+	}
+
+	&-video {
+
+		@extend %kbl-section-video;
+	}
+
+	&-youtube {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		margin: 0 !important;
+		width: 100vw;
+		height: 100vw / 16 * 9;
+		object-fit: cover;
+
+		&-container {
+
+			@extend %kbl-section-video;
+		}
 	}
 
 	&-bg {
