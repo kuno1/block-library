@@ -96,7 +96,7 @@ const getVideoTag = ( attributes ) => {
 			);
 		default:
 			return (
-				<video className="kbl-section-video" autoPlay={ true } muted={ true } poster={ attributes.backgroundImage || null } loop={ attributes.repeat }>
+				<video className="kbl-section-video" autoPlay={ true } muted={ true } playsInline={ true } poster={ attributes.backgroundImage || null } loop={ attributes.repeat }>
 					<source className="kbl-section-video-source" src={ attributes.movie } />
 				</video>
 			);
