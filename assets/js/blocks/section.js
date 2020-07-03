@@ -37,6 +37,9 @@ const classNameFromAttributes = ( className, attributes ) => {
 	if ( attributes.more ) {
 		className.push( 'has-more-button' );
 	}
+	if ( attributes.minHeight ) {
+		className.push( 'has-min-height' );
+	}
 	className = applyFilters( 'kbl.section.className', className, attributes );
 	return className.join( ' ' );
 };
@@ -55,8 +58,11 @@ const sectionStyle = ( attributes ) => {
 	if ( attributes.paddingVertical || attributes.paddingHorizontal ) {
 		styles.padding = sprintf( '%dpx %dpx', attributes.paddingVertical, attributes.paddingHorizontal );
 	}
-	if ( attributes.backgroundImage ) {
+	if ( attributes.backgroundImage && attributes.backgroundImage.length ) {
 		styles.backgroundImage = sprintf( 'url(\'%s\')', attributes.backgroundImage );
+	}
+	if ( 0 < attributes.minHeight ) {
+		styles.minHeight = sprintf( '%dvh', attributes.minHeight );
 	}
 	return styles;
 };
@@ -122,6 +128,10 @@ registerBlockType( 'kunoichi/section', {
 			type: 'boolean',
 			default: true,
 		},
+		minHeight: {
+			type: 'number',
+			default: 0,
+		},
 		paddingVertical: {
 			type: 'integer',
 			default: 40,
@@ -178,11 +188,15 @@ registerBlockType( 'kunoichi/section', {
 								onChange={ ( hasContainer ) => setAttributes( { hasContainer } ) }
 								help={ __( 'If checked, container will be inside.', 'kbl' ) } />
 							<TextControl label={ __( 'Vertical Padding', 'kbl' ) } value={ attributes.paddingVertical }
-								type='number'
+								type="number"
 								onChange={ value => setAttributes( { paddingVertical: parseInt( value, 10 ) } ) } />
 							<TextControl label={ __( 'Horizontal Padding', 'kbl' ) }
-								value={ attributes.paddingHorizontal } type='number'
+								value={ attributes.paddingHorizontal } type="number"
 								onChange={ value => setAttributes( { paddingHorizontal: parseInt( value, 10 ) } ) } />
+							<TextControl label={ __( 'Vertical Height', 'kbl' ) }
+								value={ attributes.minHeight } type="number"
+								onChange={ minHeight => setAttributes( { minHeight: parseInt( minHeight, 10 ) } ) }
+								help={ __( 'Percentage of window height. For example, If set to 100, this block will have 100% of window height.', 'kbl' ) } />
 						</>, props ) }
 					</PanelBody>
 					<PanelColorSettings title={ __( 'Background Color Setting', 'kbl' ) }
@@ -307,10 +321,7 @@ registerBlockType( 'kunoichi/section', {
 			bgClass += ' has-background-color has-' + attributes.backgroundColor + '-background-color';
 		}
 		const classNames = classNameFromAttributes( null, attributes );
-		const styles = {
-			padding: sprintf( '%dpx %dpx', attributes.paddingVertical, attributes.paddingHorizontal ),
-			backgroundImage: sprintf( 'url(\'%s\')', attributes.backgroundImage ),
-		};
+		const styles = sectionStyle( attributes );
 		if ( attributes.more ) {
 			styles.maxHeight = sprintf( '%dpx', attributes.height );
 		}

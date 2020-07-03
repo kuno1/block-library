@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kunoichi Block Library\n"
-"POT-Creation-Date: 2020-06-28 22:31+0900\n"
-"PO-Revision-Date: 2020-06-28 22:32+0900\n"
+"POT-Creation-Date: 2020-07-03 09:54+0900\n"
+"PO-Revision-Date: 2020-07-03 10:14+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language: ja\n"
@@ -445,7 +445,7 @@ msgstr "エラー"
 msgid "Text Color"
 msgstr "文字色"
 
-#: assets/js/blocks/bubble.js:163 assets/js/blocks/section.js:193
+#: assets/js/blocks/bubble.js:163 assets/js/blocks/section.js:207
 #: assets/js/blocks/tile.js:59
 msgid "Background Color"
 msgstr "背景色"
@@ -488,7 +488,7 @@ msgstr "%sを指定"
 msgid "Search from %s"
 msgstr "%sから探す"
 
-#: assets/js/blocks/bubble.js:222 assets/js/blocks/section.js:175
+#: assets/js/blocks/bubble.js:222 assets/js/blocks/section.js:185
 msgid "Layout"
 msgstr "レイアウト"
 
@@ -910,103 +910,116 @@ msgstr "例・スタンダード"
 msgid "Free"
 msgstr "無料"
 
-#: assets/js/blocks/section.js:108
+#: assets/js/blocks/section.js:114
 msgid "Section"
 msgstr "セクション"
 
-#: assets/js/blocks/section.js:114
+#: assets/js/blocks/section.js:120
 msgid "Enhanced group block which supports background."
 msgstr "背景デザインをサポートする一歩進んだグループブロック。"
 
-#: assets/js/blocks/section.js:177
+#: assets/js/blocks/section.js:187
 msgid "Container inside"
 msgstr "中にコンテナを入れる"
 
-#: assets/js/blocks/section.js:179
+#: assets/js/blocks/section.js:189
 msgid "If checked, container will be inside."
 msgstr "チェックを入れると、コンテナが中に入ります。"
 
-#: assets/js/blocks/section.js:180
+#: assets/js/blocks/section.js:190
 msgid "Vertical Padding"
 msgstr "上下の余白"
 
-#: assets/js/blocks/section.js:183
+#: assets/js/blocks/section.js:193
 msgid "Horizontal Padding"
 msgstr "左右の余白"
 
-#: assets/js/blocks/section.js:188
+#: assets/js/blocks/section.js:196
+msgid "Vertical Height"
+msgstr "高さ"
+
+#: assets/js/blocks/section.js:199
+#, python-format
+msgid ""
+"Percentage of window height. For example, If set to 100, this block will "
+"have 100% of window height."
+msgstr ""
+"ウインドウの高さに対するパーセンテージ。100に設定した場合、このブロックはウィ"
+"ンドウ高の100%になります。"
+
+#: assets/js/blocks/section.js:202
 msgid "Background Color Setting"
 msgstr "背景色設定"
 
-#: assets/js/blocks/section.js:198
+#: assets/js/blocks/section.js:212
 msgid "Opacity"
 msgstr "不透明度"
 
-#: assets/js/blocks/section.js:204
+#: assets/js/blocks/section.js:218
 msgid "Background Image"
 msgstr "背景画像"
 
-#: assets/js/blocks/section.js:213
+#: assets/js/blocks/section.js:227
 msgid "Set background image for section."
 msgstr "セクションに背景画像を追加。"
 
-#: assets/js/blocks/section.js:228
+#: assets/js/blocks/section.js:242
 msgid "Select Image"
 msgstr "画像を選択"
 
-#: assets/js/blocks/section.js:232 assets/js/blocks/section.js:261
+#: assets/js/blocks/section.js:246 assets/js/blocks/section.js:275
 msgid "Clear"
 msgstr "クリア"
 
-#: assets/js/blocks/section.js:239
+#: assets/js/blocks/section.js:253
 msgid "Blur"
 msgstr "ぼかし"
 
-#: assets/js/blocks/section.js:245
+#: assets/js/blocks/section.js:259
 msgid "Background Movie"
 msgstr "背景動画"
 
-#: assets/js/blocks/section.js:246
+#: assets/js/blocks/section.js:260
 msgid "Movie URL"
 msgstr "動画URL"
 
-#: assets/js/blocks/section.js:247
+#: assets/js/blocks/section.js:261
 msgid "Enter movie file URL. YouTube is also supported."
 msgstr "動画ファイルのURLを入力してください。YouTubeもサポートされています。"
 
-#: assets/js/blocks/section.js:257
+#: assets/js/blocks/section.js:271
 msgid "Select Uploaded Video"
 msgstr "アップロードした動画を選択"
 
-#: assets/js/blocks/section.js:267
+#: assets/js/blocks/section.js:281
 msgid "Repeat"
 msgstr "繰り返し"
 
-#: assets/js/blocks/section.js:269
+#: assets/js/blocks/section.js:283
 msgid "Hidden Contents"
 msgstr "隠しコンテンツ"
 
-#: assets/js/blocks/section.js:270
+#: assets/js/blocks/section.js:284
 msgid "Hide Contents"
 msgstr "コンテンツを隠す"
 
-#: assets/js/blocks/section.js:272
+#: assets/js/blocks/section.js:286
 msgid "If checked, contents will be hidden."
 msgstr "チェックを入れると、コンテンツが一部隠れます。"
 
-#: assets/js/blocks/section.js:273
+#: assets/js/blocks/section.js:287
 msgid "Preview Height"
 msgstr "見える部分のの高さ"
 
-#: assets/js/blocks/section.js:276
+#: assets/js/blocks/section.js:290
 msgid "Label for revealing button."
 msgstr "オープンするボタンのラベル。"
 
-#: assets/js/blocks/section.js:278
+#: assets/js/blocks/section.js:292
 msgid "e.g. Read More"
 msgstr "例・続きを読む"
 
-#: assets/js/blocks/section.js:296 assets/js/blocks/section.js:329
+#: assets/js/blocks/section.js:310 assets/js/blocks/section.js:340
 msgid "Read More"
 msgstr "続きを読む"
 
