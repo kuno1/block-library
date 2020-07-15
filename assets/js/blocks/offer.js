@@ -36,7 +36,8 @@ registerBlockType( 'kunoichi/offer-content', {
 	edit( { attributes, className } ) {
 		return (
 			<div className={ setClassName( attributes, className, 'kbl-offer-body') }>
-				<InnerBlocks templateLock="all" template={ [
+				<InnerBlocks templateLock="false" allowedBlocks={ [ 'core/heading', 'core/paragraph', 'kunoichi/definition-list', 'kunoichi/dt', 'kunoichi/dd' ] }
+					template={ [
 					[ 'core/heading', {
 						className: 'kbl-offer-title',
 						placeholder: __( 'Product Title', 'kbl' ),
