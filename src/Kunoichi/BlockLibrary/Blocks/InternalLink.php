@@ -13,15 +13,15 @@ class InternalLink extends BlockLibraryBase {
 
 	protected function filter_attributes( $args ) {
 		$args['attributes'] = [
-			'id' => [
+			'id'        => [
 				'type'    => 'number',
 				'default' => 0,
 			],
-			'title' => [
+			'title'     => [
 				'type'    => 'string',
 				'default' => '',
 			],
-			'excerpt' => [
+			'excerpt'   => [
 				'type'    => 'string',
 				'default' => '',
 			],
@@ -53,7 +53,8 @@ class InternalLink extends BlockLibraryBase {
 			ob_start();
 			while ( $query->have_posts() ) {
 				$query->the_post();
-				if ( $template = apply_filters( 'kbl_internal_link_template', 'embed-content', $query, $attributes  ) ) {
+				$template = apply_filters( 'kbl_internal_link_template', 'embed-content', $query, $attributes );
+				if ( $template ) {
 					get_template_part( $template );
 				}
 				do_action( 'kbl_internal_link_display', $query, $attributes );
@@ -64,7 +65,7 @@ class InternalLink extends BlockLibraryBase {
 			remove_filter( 'the_title', [ $this, 'filter_title' ], 10 );
 			$content = sprintf( '<div class="kbl-internal-link %s">%s</div>', esc_attr( $attributes['className'] ), $content );
 			return apply_filters( 'kbl_internal_link_output', $content, $query, $attributes );
-		} catch( \Exception $e ) {
+		} catch ( \Exception $e ) {
 			$msg = '';
 			if ( $this->is_rest() ) {
 				$msg = sprintf( '<div class="components-placeholder is-large">%s</div>', $e->getMessage() );
@@ -81,7 +82,7 @@ class InternalLink extends BlockLibraryBase {
 	 * @return string
 	 */
 	public function filter_title( $title, $id ) {
-		if ( ( $this->attributes_store['id'] == $id ) && ( $this->attributes_store['title'] ) ) {
+		if ( ( $this->attributes_store['id'] === $id ) && ( $this->attributes_store['title'] ) ) {
 			$title = $this->attributes_store['title'];
 		}
 		return $title;
@@ -95,7 +96,7 @@ class InternalLink extends BlockLibraryBase {
 	 * @return string
 	 */
 	public function filter_excerpt( $excerpt, $post ) {
-		if ( ( $this->attributes_store['id'] == $post->ID ) && ( $this->attributes_store['excerpt'] ) ) {
+		if ( ( $this->attributes_store['id'] === $post->ID ) && ( $this->attributes_store['excerpt'] ) ) {
 			$excerpt = $this->attributes_store['excerpt'];
 		}
 		return $excerpt;

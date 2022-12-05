@@ -24,7 +24,7 @@ class CallToActionPostType extends Singleton {
 		add_action( 'init', [ $this, 'register_post_type' ] );
 		add_filter( 'enter_title_here', [ $this, 'enter_title_here' ], 10, 2 );
 		add_action( 'save_post', [ $this, 'save_post' ], 10, 2 );
-		add_action( 'add_meta_boxes', [ $this, 'add_meta_boxes'] );
+		add_action( 'add_meta_boxes', [ $this, 'add_meta_boxes' ] );
 		add_action( 'admin_menu', [ $this, 'add_admin_menu' ] );
 	}
 
@@ -34,8 +34,8 @@ class CallToActionPostType extends Singleton {
 	public function register_post_type() {
 		// Post type.
 		$args = apply_filters( 'kbl_cta_post_type_args', [
-			'label' => __( 'Call To Actions', 'kbl' ),
-			'labels' => [
+			'label'            => __( 'Call To Actions', 'kbl' ),
+			'labels'           => [
 				'singular_name'            => __( 'Call To Action', 'kbl' ),
 				'edit_item'                => __( 'Edit CTA', 'kbl' ),
 				'new_item'                 => __( 'New CTA', 'kbl' ),
@@ -92,7 +92,7 @@ class CallToActionPostType extends Singleton {
 			foreach ( $columns as $column => $label ) {
 				$new_columns[ $column ] = $label;
 				if ( 'taxonomy-cta-position' === $column ) {
-					$new_columns[ 'predefined-position' ] = __( 'Predefined', 'kbl' );
+					$new_columns['predefined-position'] = __( 'Predefined', 'kbl' );
 				}
 			}
 			return $new_columns;
@@ -110,10 +110,10 @@ class CallToActionPostType extends Singleton {
 	public function manage_custom_columns( $column, $post_id ) {
 		switch ( $column ) {
 			case 'predefined-position':
-				$found = [];
+				$found     = [];
 				$positions = get_post_meta( $post_id, '_position' );
 				foreach ( self::get_predefined_positions() as $position => $label ) {
-					if ( in_array( $position, $positions ) ) {
+					if ( in_array( $position, $positions, true ) ) {
 						$found[] = $label;
 					}
 				}
@@ -150,19 +150,19 @@ class CallToActionPostType extends Singleton {
 	 * @param \WP_Post $post
 	 */
 	public function save_post( $post_id, $post ) {
-        if ( $this->post_type !== $post->post_type ) {
-            return;
-        }
-        if ( ! wp_verify_nonce( filter_input( INPUT_POST, '_ctanonce' ), 'cta_update' ) ) {
-            return;
-        }
-        // Delete all first.
-        delete_post_meta( $post_id, '_position' );
-        $values = isset( $_POST['cta-position'] ) ? array_filter( array_map( 'trim', (array) $_POST['cta-position'] ) ) : [];
-        // Save all
-        foreach ( $values as $value ) {
-            add_post_meta( $post_id, '_position', $value );
-        }
+		if ( $this->post_type !== $post->post_type ) {
+			return;
+		}
+		if ( ! wp_verify_nonce( filter_input( INPUT_POST, '_ctanonce' ), 'cta_update' ) ) {
+			return;
+		}
+		// Delete all first.
+		delete_post_meta( $post_id, '_position' );
+		$values = isset( $_POST['cta-position'] ) ? array_filter( array_map( 'trim', (array) $_POST['cta-position'] ) ) : [];
+		// Save all
+		foreach ( $values as $value ) {
+			add_post_meta( $post_id, '_position', $value );
+		}
 	}
 
 	/**
@@ -178,29 +178,31 @@ class CallToActionPostType extends Singleton {
 			wp_nonce_field( 'cta_update', '_ctanonce', false );
 			?>
 			<p>
-				<label><?php __( 'Predefined Position', 'kbl' ) ?></label><br />
-				<?php if ( $positions = $this->get_predefined_positions() ) : ?>
-                    <?php foreach ( $positions as $key => $label ) :
-                        $saved_positions = get_post_meta( $post->ID, '_position' );
-                        ?>
-                    <label style="display: block">
-                        <input type="checkbox" name="cta-position[]" value="<?php echo esc_attr( $key ) ?>" <?php checked( in_array( $key, $saved_positions ) ) ?> /> <?php echo esc_html( $label ) ?>
-                    </label>
-                    <?php endforeach; ?>
+				<label><?php __( 'Predefined Position', 'kbl' ); ?></label><br />
+				<?php
+				$positions = $this->get_predefined_positions();
+				if ( $positions ) :
+					foreach ( $positions as $key => $label ) :
+						$saved_positions = get_post_meta( $post->ID, '_position' );
+						?>
+					<label style="display: block">
+						<input type="checkbox" name="cta-position[]" value="<?php echo esc_attr( $key ); ?>" <?php checked( in_array( $key, $saved_positions, true ) ); ?> /> <?php echo esc_html( $label ); ?>
+					</label>
+					<?php endforeach; ?>
 				<?php else : ?>
-				<span style="color: red;"><?php esc_html_e( 'This theme has no predefined position.', 'kbl' ) ?></span>
+					<span style="color: red;"><?php esc_html_e( 'This theme has no predefined position.', 'kbl' ); ?></span>
 				<?php endif; ?>
 			</p>
-            <p class="description">
-                <?php esc_html_e( 'Predefined positions are set by themes.', 'kbl' ) ?>
-            </p>
+			<p class="description">
+				<?php esc_html_e( 'Predefined positions are set by themes.', 'kbl' ); ?>
+			</p>
 			<?php
 		}, $this->post_type, 'side', 'high' );
 	}
 
 	/**
-     * Add CTA positions.
-     *
+	 * Add CTA positions.
+	 *
 	 * @return array
 	 */
 	public static function get_predefined_positions() {
@@ -208,16 +210,16 @@ class CallToActionPostType extends Singleton {
 	}
 
 	/**
-     * Post order
-     *
+	 * Post order
+	 *
 	 * @return array
 	 */
 	public static function orders() {
-	    return apply_filters( 'kbl_cta_orders', [
-			'' => __( 'Default', 'kbl' ),
-			'latest' => __( 'Latest', 'kbl' ),
+		return apply_filters( 'kbl_cta_orders', [
+			''           => __( 'Default', 'kbl' ),
+			'latest'     => __( 'Latest', 'kbl' ),
 			'menu_order' => __( 'Menu Order', 'kbl' ),
-			'random' => __( 'Random', 'kbl' ),
+			'random'     => __( 'Random', 'kbl' ),
 		] );
 	}
 
@@ -228,8 +230,8 @@ class CallToActionPostType extends Singleton {
 	 * @return \WP_Query
 	 */
 	public static function get( $args = [] ) {
-		$args = self::parse( $args );
-		$self = self::get_instance();
+		$args       = self::parse( $args );
+		$self       = self::get_instance();
 		$query_args = [
 			'post_type'      => $self->post_type,
 			'post_status'    => 'publish',
@@ -237,19 +239,23 @@ class CallToActionPostType extends Singleton {
 		];
 		// If position is set,
 		if ( $args['position'] ) {
-			$query_args['tax_query'] = [ [
-				'taxonomy' => 'cta-position',
-				'terms'    => array_map( 'intval', $args['position'] ),
-				'field'    => 'id',
-			] ];
+			$query_args['tax_query'] = [
+				[
+					'taxonomy' => 'cta-position',
+					'terms'    => array_map( 'intval', $args['position'] ),
+					'field'    => 'id',
+				],
+			];
 		}
 		// If predefined is set.
 		if ( $args['predefined_position'] ) {
-			$query_args['meta_query'] = [ [
-				'key'   => '_position',
-				'value' => $args['predefined_position'],
-				'compare' => 'IN'
-			] ];
+			$query_args['meta_query'] = [
+				[
+					'key'     => '_position',
+					'value'   => $args['predefined_position'],
+					'compare' => 'IN',
+				],
+			];
 		}
 		// Order
 		switch ( $args['order'] ) {
@@ -269,7 +275,7 @@ class CallToActionPostType extends Singleton {
 				break;
 		}
 		return new \WP_Query( $query_args );
-    }
+	}
 
 	/**
 	 * Load template.
@@ -277,7 +283,7 @@ class CallToActionPostType extends Singleton {
 	 * @param string $context
 	 * @return boolean
 	 */
-    public static function load( $context = '' ) {
+	public static function load( $context = '' ) {
 		return static::get_instance()->get_template_parts( 'cta', $context );
 	}
 
@@ -289,31 +295,31 @@ class CallToActionPostType extends Singleton {
 	 * @param string $after
 	 */
 	public static function render_predefined( $position, $before = '', $after = '' ) {
-    	$positions = self::get_predefined_positions();
-    	if ( ! array_key_exists( $position, $positions ) ) {
-    		return;
+		$positions = self::get_predefined_positions();
+		if ( ! array_key_exists( $position, $positions ) ) {
+			return;
 		}
-    	$query = self::get( [
-    		'predefined_position' => [ $position ],
+		$query = self::get( [
+			'predefined_position' => [ $position ],
 		] );
-    	if ( ! $query->have_posts() ) {
-    		return;
+		if ( ! $query->have_posts() ) {
+			return;
 		}
-    	echo $before;
-    	while( $query->have_posts() ) {
-    		$query->the_post();
-    		self::load( 'position-' . $position );
+		echo $before;
+		while ( $query->have_posts() ) {
+			$query->the_post();
+			self::load( 'position-' . $position );
 		}
 		echo $after;
-    	wp_reset_postdata();
+		wp_reset_postdata();
 	}
 
-    public static function parse( $args ) {
+	public static function parse( $args ) {
 		return wp_parse_args( $args, [
-			'order' => '',
-			'position' => [],
+			'order'               => '',
+			'position'            => [],
 			'predefined_position' => [],
-			'posts_per_page' => 1,
+			'posts_per_page'      => 1,
 		] );
 	}
 
@@ -322,74 +328,78 @@ class CallToActionPostType extends Singleton {
 	 * Add admin menu to CTA
 	 */
 	public function add_admin_menu() {
-	    add_submenu_page( 'edit.php?post_type=call-to-action', __( 'About Call To Actions', 'kbl' ), __( 'About CTA', 'kbl' ), 'edit_pages', 'about-cta', function() {
-	        ?>
-            <div class="wrap">
-                <h1><?php esc_html_e( 'About Call To Actions', 'kbl' ) ?></h1>
+		add_submenu_page( 'edit.php?post_type=call-to-action', __( 'About Call To Actions', 'kbl' ), __( 'About CTA', 'kbl' ), 'edit_pages', 'about-cta', function() {
+			?>
+			<div class="wrap">
+				<h1><?php esc_html_e( 'About Call To Actions', 'kbl' ); ?></h1>
 				<p>
-					<img src="<?php echo $this->asset_url( 'img/icons_cta.svg' ) ?>" width="100" height="100" alt="" />
+					<img src="<?php echo $this->asset_url( 'img/icons_cta.svg' ); ?>" width="100" height="100" alt="" />
 				</p>
-                <p>
-                    <?php esc_html_e( '"Call To Action" is the name of UIs which requires user to make a action. An abbreviation is "CTA"', 'kbl' ) ?>
-                </p>
-                <ol>
-                    <li><?php esc_html_e( 'Buttons for login, registration, subscription, downloading, and so on.', 'kbl' ) ?></li>
-                    <li><?php esc_html_e( 'Clickable banners', 'kbl' ) ?></li>
-                    <li><?php esc_html_e( 'Ads', 'kbl' ) ?></li>
-                </ol>
-                <p><?php esc_html_e( 'This Call To Action can be displayed in widgets, blocks. The only newest one will be displayed. It is similar to ad rotating.', 'kbl' ) ?></p>
-                <hr />
+				<p>
+					<?php esc_html_e( '"Call To Action" is the name of UIs which requires user to make a action. An abbreviation is "CTA"', 'kbl' ); ?>
+				</p>
+				<ol>
+					<li><?php esc_html_e( 'Buttons for login, registration, subscription, downloading, and so on.', 'kbl' ); ?></li>
+					<li><?php esc_html_e( 'Clickable banners', 'kbl' ); ?></li>
+					<li><?php esc_html_e( 'Ads', 'kbl' ); ?></li>
+				</ol>
+				<p><?php esc_html_e( 'This Call To Action can be displayed in widgets, blocks. The only newest one will be displayed. It is similar to ad rotating.', 'kbl' ); ?></p>
+				<hr />
 
-				<h2><?php esc_html_e( 'How It Works', 'kbl' ) ?></h2>
+				<h2><?php esc_html_e( 'How It Works', 'kbl' ); ?></h2>
 
 				<p>
-					<?php esc_html_e( 'CTA is a custom post type which can include few blocks.', 'kbl' ) ?>
-					<?php esc_html_e( 'If you need "Subscribe Newsletter" button, create block which includes a button, text and so on.', 'kbl' ) ?>
+					<?php esc_html_e( 'CTA is a custom post type which can include few blocks.', 'kbl' ); ?>
+					<?php esc_html_e( 'If you need "Subscribe Newsletter" button, create block which includes a button, text and so on.', 'kbl' ); ?>
 				</p>
 
 				<hr />
 
-				<h2><?php esc_html_e( 'Positions', 'kbl' ) ?></h2>
-                <p>
-                    <?php esc_html_e( 'You can register original positions. These are useful for filtering in widgets or blocks.', 'kbl' ); ?>
-                </p>
-                <?php
-                $positions = get_terms( [ 'taxonomy' => 'cta-position', 'hide_empty' => false, ] );
-                if ( $positions ) : ?>
-                    <ol>
-                        <?php foreach ( $positions as $position ) : ?>
-                            <li>
-                                <?php echo esc_html( $position->name ) ?>
-                            </li>
-                        <?php endforeach; ?>
-                    </ol>
-                <?php else : ?>
-                <p style="color: red;">
-                    <?php esc_html_e( 'You have no position.', 'kbl' ) ?>
-                </p>
-                <?php endif; ?>
-                <p>
-                    <a href="<?php echo admin_url( 'edit-tags.php?taxonomy=cta-position&post_type=call-to-action' ) ?>" class="button">
-                        <?php esc_html_e( 'Manage Positions', 'kbl' ) ?>
-                    </a>
-                </p>
-                <h3><?php esc_html_e( 'Predefined Positions', 'kbl' ) ?></h3>
-                <p>
+				<h2><?php esc_html_e( 'Positions', 'kbl' ); ?></h2>
+				<p>
+					<?php esc_html_e( 'You can register original positions. These are useful for filtering in widgets or blocks.', 'kbl' ); ?>
+				</p>
+				<?php
+				$positions = get_terms( [ 'taxonomy' => 'cta-position', 'hide_empty' => false ] );
+				if ( $positions ) :
+					?>
+					<ol>
+						<?php foreach ( $positions as $position ) : ?>
+							<li>
+								<?php echo esc_html( $position->name ); ?>
+							</li>
+						<?php endforeach; ?>
+					</ol>
+				<?php else : ?>
+				<p style="color: red;">
+					<?php esc_html_e( 'You have no position.', 'kbl' ); ?>
+				</p>
+				<?php endif; ?>
+				<p>
+					<a href="<?php echo admin_url( 'edit-tags.php?taxonomy=cta-position&post_type=call-to-action' ); ?>" class="button">
+						<?php esc_html_e( 'Manage Positions', 'kbl' ); ?>
+					</a>
+				</p>
+				<h3><?php esc_html_e( 'Predefined Positions', 'kbl' ); ?></h3>
+				<p>
 					<?php esc_html_e( 'If theme has predefined positions, specified CTA will be displayed there(e.g. After post content)', 'kbl' ); ?>
-                </p>
-                <?php if ( $predefined = self::get_predefined_positions() ) : ?>
-                    <ol>
-                        <?php foreach ( $predefined as $key => $label ) : ?>
-                        <li>
-                            <?php echo esc_html( $label ); ?>
-                        </li>
-                        <?php endforeach; ?>
-                    </ol>
-                <?php else : ?>
-                    <p style="color: red;"><?php esc_html_e( 'This theme has no predefined position.', 'kbl' ) ?></p>
-                <?php endif; ?>
-            </div>
-            <?php
-        } );
-    }
+				</p>
+				<?php
+				$predefined = self::get_predefined_positions();
+				if ( $predefined ) :
+					?>
+					<ol>
+						<?php foreach ( $predefined as $key => $label ) : ?>
+						<li>
+							<?php echo esc_html( $label ); ?>
+						</li>
+						<?php endforeach; ?>
+					</ol>
+				<?php else : ?>
+					<p style="color: red;"><?php esc_html_e( 'This theme has no predefined position.', 'kbl' ); ?></p>
+				<?php endif; ?>
+			</div>
+			<?php
+		} );
+	}
 }

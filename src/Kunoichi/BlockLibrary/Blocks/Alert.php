@@ -10,7 +10,7 @@ class Alert extends BlockLibraryBase {
 	protected $block_name = 'alert';
 
 	protected function localize_script() {
-		$styles  = [
+		$styles = [
 			'primary'   => __( 'Primary', 'kbl' ),
 			'secondary' => __( 'Secondary', 'kbl' ),
 			'success'   => __( 'Success', 'kbl' ),
@@ -21,7 +21,7 @@ class Alert extends BlockLibraryBase {
 			'dark'      => __( 'Dark', 'kbl' ),
 		];
 		return apply_filters( 'kbl_alert_styles', [
-			'styles'      => $styles,
+			'styles' => $styles,
 		] );
 	}
 }

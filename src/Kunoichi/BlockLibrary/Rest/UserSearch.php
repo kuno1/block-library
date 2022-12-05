@@ -16,16 +16,16 @@ class UserSearch extends RestBase {
 
 	protected function get_args( $http_method ) {
 		return [
-			's' => [
+			's'       => [
 				'type'              => 'string',
 				'description'       => 'Search terms for users.',
 				'validate_callback' => function( $var ) {
 					return ! empty( $var );
-				}
+				},
 			],
-			'id' => [
-				'type' => 'integer',
-				'description' => 'ID of user.',
+			'id'      => [
+				'type'              => 'integer',
+				'description'       => 'ID of user.',
 				'validate_callback' => [ $this, 'is_numeric' ],
 			],
 			'context' => [
@@ -33,21 +33,21 @@ class UserSearch extends RestBase {
 				'default'           => 'search',
 				'validate_callback' => function( $var ) {
 					return ! empty( $var );
-				}
+				},
 			],
-			'paged' => [
-				'type' => 'integer',
-				'default' => 1,
+			'paged'   => [
+				'type'              => 'integer',
+				'default'           => 1,
 				'validate_callback' => function( $var ) {
 					return is_numeric( $var ) && 0 < $var;
 				},
 			],
-			'number' => [
-				'type' => 'integer',
-				'default' => 10,
+			'number'  => [
+				'type'              => 'integer',
+				'default'           => 10,
 				'validate_callback' => function( $var ) {
 					return is_numeric( $var ) && -1 < $var;
-				}
+				},
 			],
 		];
 	}
@@ -59,27 +59,28 @@ class UserSearch extends RestBase {
 	 * @return \WP_REST_Response|\WP_Error
 	 */
 	public function handle_get( \WP_REST_Request $request ) {
-		if ( $id = $request->get_param( 'id' ) ) {
+		$id = $request->get_param( 'id' );
+		if ( $id ) {
 			$args = [
 				'include'     => [ (int) $id ],
 				'count_total' => false,
 			];
-		} elseif ( $s = $request->get_param( 's' ) ) {
+		} elseif ( $request->get_param( 's' ) ) {
 			$args = [
-				'search'         => '*' . $s . '*',
+				'search'         => '*' . $request->get_param( 's' ) . '*',
 				'search_columns' => [ 'user_login', 'display_name', 'user_email' ],
 				'number'         => $request->get_param( 'number' ),
 				'paged'          => $request->get_param( 'paged' ),
 			];
 		} else {
-			return new \WP_Error( 'invalid_search_operation', __( 'Parameter "id" or "s" is required.', 'kbl'  ), [
+			return new \WP_Error( 'invalid_search_operation', __( 'Parameter "id" or "s" is required.', 'kbl' ), [
 				'status' => 400,
 			] );
 		}
-		$args = apply_filters( 'kbl_rest_users_search_args', $args, $request->get_param( 'context' ), get_current_user_id(), $request );
-		$users = new \WP_User_Query( $args );
-		$result = array_map( [ $this, 'to_array' ], (array) $users->get_results() );
-		$result = apply_filters( 'kbl_rest_users_response', $result, $request->get_param( 'context' ), $request );
+		$args     = apply_filters( 'kbl_rest_users_search_args', $args, $request->get_param( 'context' ), get_current_user_id(), $request );
+		$users    = new \WP_User_Query( $args );
+		$result   = array_map( [ $this, 'to_array' ], (array) $users->get_results() );
+		$result   = apply_filters( 'kbl_rest_users_response', $result, $request->get_param( 'context' ), $request );
 		$response = new \WP_REST_Response( $result );
 		$response->set_headers( [
 			'X-WP-Total' => $users->get_total(),
@@ -95,11 +96,11 @@ class UserSearch extends RestBase {
 	 */
 	protected function to_array( $user ) {
 		return [
-			'id' => $user->ID,
+			'id'           => $user->ID,
 			'display_name' => $user->display_name,
-			'login' => $user->user_login,
-			'avatar' => get_avatar_url( $user->ID ),
-			'role'   => $user->roles,
+			'login'        => $user->user_login,
+			'avatar'       => get_avatar_url( $user->ID ),
+			'role'         => $user->roles,
 		];
 	}
 

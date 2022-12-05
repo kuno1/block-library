@@ -27,7 +27,7 @@ class DefinitionList extends BlockLibraryBase {
 		}
 		$blocks = parse_blocks( get_queried_object()->post_content );
 		foreach ( $blocks as $block ) {
-			if ( 'kunoichi/definition-list' !== $block[ 'blockName' ] ) {
+			if ( 'kunoichi/definition-list' !== $block['blockName'] ) {
 				continue;
 			}
 
@@ -43,10 +43,10 @@ class DefinitionList extends BlockLibraryBase {
 				if ( ! isset( $block['innerBlocks'][ $index + 1 ] ) || 'kunoichi/dd' !== $block['innerBlocks'][ $index + 1 ]['blockName'] ) {
 					continue;
 				}
-				$dd = $block['innerBlocks'][ $index + 1 ];
+				$dd     = $block['innerBlocks'][ $index + 1 ];
 				$faqs[] = [
-					'@type' => 'Question',
-					'name'  => trim( strip_tags( $dt['innerHTML'] ) ),
+					'@type'          => 'Question',
+					'name'           => trim( strip_tags( $dt['innerHTML'] ) ),
 					'acceptedAnswer' => [
 						'@type' => 'Answer',
 						'text'  => trim( strip_tags( $dd['innerHTML'] ) ),

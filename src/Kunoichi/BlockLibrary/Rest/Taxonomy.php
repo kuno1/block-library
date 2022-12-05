@@ -39,6 +39,7 @@ class Taxonomy extends RestBase {
 			ON t.term_id = tt.term_id
 			WHERE t.term_id = %d
 SQL;
+		// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
 		$result = $wpdb->get_row( $wpdb->prepare( $query, $request->get_param( 'id' ) ) );
 		if ( $result ) {
 			return new \WP_REST_Response( $this->add_taxonomy_label( $result ) );
