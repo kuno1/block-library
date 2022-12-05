@@ -33,6 +33,7 @@ class BlockLibrary extends Singleton {
 		$this->scan_and_enable( 'BlockLibrary/Blocks', 'Kunoichi\BlockLibrary\Pattern\BlockLibraryBase' );
 		// REST API
 		BulkRegister::enable( 'Kunoichi\BlockLibrary\Rest', __DIR__ . '/BlockLibrary/Rest', RestBase::class );
+		// Register components.
 		add_action( 'init', [ $this, 'register_components' ] );
 		// Register locale.
         add_action( 'init', function() {
@@ -114,6 +115,9 @@ class BlockLibrary extends Singleton {
 		WpEnqueueManager::register_js( $base_dir . '/dist/js/components', 'kbl-components-' );
 	}
 
+	/**
+	 * Register components.
+	 */
 	public function admin_enqueue_scripts() {
 		wp_enqueue_style( 'kbl-components' );
 	}

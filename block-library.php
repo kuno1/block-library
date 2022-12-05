@@ -16,3 +16,15 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Invalid request.' );
 }
+
+add_action( 'plugins_loaded', function() {
+	require __DIR__ . '/vendor/autoload.php';
+
+	\Kunoichi\BlockLibrary::enable();
+
+	// If virtual member exsits, start.
+	if ( class_exists( 'Kunoichi\\VirtualMember\\PostType' ) ) {
+		\Kunoichi\VirtualMember\PostType::register();
+	}
+} );
+

@@ -1,6 +1,6 @@
 module.exports = {
 	extends: [
-		'stylelint-config-wordpress/scss',
+		'@wordpress/stylelint-config/scss',
 	],
 	rules: {
 		'font-weight-notation': 'named-where-possible',

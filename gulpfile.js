@@ -7,6 +7,9 @@ const mergeStream = require( 'merge-stream' );
 const named = require( 'vinyl-named' );
 const webpack = require( 'webpack-stream' );
 const webpackBundle = require( 'webpack' );
+const { dumpSetting } = require( '@kunoichi/grab-deps' );
+
+let noplumber = true;
 
 //
 // SCSS tasks
@@ -17,7 +20,7 @@ const webpackBundle = require( 'webpack' );
 gulp.task( 'scss:lint', () => {
 	return gulp.src( './assets/scss/**/*.scss' )
 		.pipe( $.stylelint( {
-			failAfterError: false,
+			failAfterError: !noplumber,
 			reporters: [
 				{
 					formatter: 'string',
@@ -81,12 +84,18 @@ gulp.task( 'js:compile', () => {
 
 // ESLint
 gulp.task( 'js:eslint', () => {
-	return gulp.src( [
-		'assets/js/**/*.js',
-		'assets/js/**/*.jsx',
-	] )
-		.pipe( $.eslint( { useEslintrc: true } ) )
+	let task = gulp.src( [
+			'assets/js/**/*.js',
+			'assets/js/**/*.jsx',
+		] )
+		.pipe( $.eslint( {
+			useEslintrc: true,
+		} ) )
 		.pipe( $.eslint.format() );
+	if ( ! noplumber ) {
+		task = task.pipe( $.eslint.failOnError() );
+	}
+	return task;
 } );
 
 // JS task
@@ -156,11 +165,26 @@ gulp.task( 'watch', ( done ) => {
 	done();
 } );
 
+// Dump dependency setting.
+gulp.task( 'dump', function( done ) {
+	dumpSetting( 'dist' );
+	done();
+} );
+
 // Build
-gulp.task( 'build', gulp.parallel( 'js', 'scss', 'imagemin' ) );
+gulp.task( 'build', gulp.series( gulp.parallel( 'js', 'scss', 'imagemin' ), gulp.task( 'dump' ) ) );
 
 // Default Tasks
 gulp.task( 'default', gulp.parallel( 'watch' ) );
+
+// Noplumber
+gulp.task( 'noplumber', ( done ) => {
+	noplumber = false;
+	done();
+} );
+
+// Task
+gulp.task( 'lint', gulp.series( 'noplumber', gulp.parallel( 'js:eslint', 'scss:lint' ) ) );
 
 // Generate doc for README.md
 gulp.task( 'doc', ( done ) => {
