@@ -56,7 +56,8 @@ const setBgClass = ( attributes ) => {
 const sectionStyle = ( attributes ) => {
 	const styles = {};
 	if ( attributes.paddingVertical || attributes.paddingHorizontal ) {
-		styles.padding = sprintf( '%dpx %dpx', attributes.paddingVertical, attributes.paddingHorizontal );
+		// translators: %1$d is vertical height, %2$d is horizontal width.
+		styles.padding = sprintf( '%1$dpx %2$dpx', attributes.paddingVertical, attributes.paddingHorizontal );
 	}
 	if ( attributes.backgroundImage && attributes.backgroundImage.length ) {
 		styles.backgroundImage = sprintf( 'url(\'%s\')', attributes.backgroundImage );
@@ -97,7 +98,7 @@ const getVideoTag = ( attributes ) => {
 			} );
 			return (
 				<div className="kbl-section-youtube-container">
-					<iframe className="kbl-section-youtube"  name="movie" title="" src={ playerUrl} />
+					<iframe title={ __( 'Youtube', 'kbl' ) } className="kbl-section-youtube"  name="movie" src={ playerUrl} />
 				</div>
 			);
 		default:

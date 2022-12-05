@@ -5,5 +5,6 @@ module.exports = {
 	rules: {
 		'font-weight-notation': 'named-where-possible',
 		'color-named': null,
+		'selector-class-pattern': null,
 	},
 };

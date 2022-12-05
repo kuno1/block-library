@@ -29,7 +29,7 @@ class IncrementalSearch extends React.Component {
 		const hasResult = !! ( suggestions && suggestions.length );
 		return (
 			<div className="kbl-incremental-search">
-				<TextControl value={ this.state.term }  placeholder={ __( 'Type and search...', 'kbl' ) } label={ this.props.label || '' }
+				<TextControl value={ this.state.term }  placeholder={ __( 'Type and search…', 'kbl' ) } label={ this.props.label || '' }
 					onChange={ ( term ) => {
 						this.setState( { term }, () => {
 							this.enqueueSearch();
@@ -47,7 +47,7 @@ class IncrementalSearch extends React.Component {
 
 				{ searching && (
 					<div className="kbl-incremental-search-result">
-						<div className="kbl-incremental-search-summary"> { __( 'Searching...', 'kbl' ) }</div>
+						<div className="kbl-incremental-search-summary"> { __( 'Searching…', 'kbl' ) }</div>
 					</div>
 				) }
 
