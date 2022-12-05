@@ -4,7 +4,7 @@
     "type": "libary",
     "scripts": {
         "lint": [
-            "phpcs --config-set installed_paths $(pwd)/vendor/wp-coding-standards/wpcs,$(pwd)/vendor/php-compatibility/php-compatibility-wp",
+            "phpcs --config-set installed_paths $(pwd)/vendor/wp-coding-standards/wpcs",
             "phpcs --standard=phpcs.ruleset.xml $(find ./ -name '*.php')"
         ],
         "fix": [
