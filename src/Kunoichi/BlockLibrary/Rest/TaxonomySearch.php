@@ -14,16 +14,16 @@ class TaxonomySearch extends RestBase {
 
 	protected function get_args( $http_method ) {
 		return [
-			's' => [
-				'type' => 'string',
-				'description' => 'Search string',
+			's'     => [
+				'type'              => 'string',
+				'description'       => 'Search string',
 				'validate_callback' => function( $var ) {
 					return ! empty( $var );
 				},
 			],
 			'paged' => [
-				'type' => 'integer',
-				'default' => 1,
+				'type'              => 'integer',
+				'default'           => 1,
 				'validate_callback' => function( $var ) {
 					return is_numeric( $var );
 				},
@@ -50,8 +50,10 @@ class TaxonomySearch extends RestBase {
 			WHERE t.name LIKE %s
 			LIMIT %d, %d
 SQL;
+		// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
 		$query = $wpdb->prepare( $query, '%' . $s . '%', $offset, $per_page );
-		$terms = $wpdb->get_results( $query );
+		// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+		$terms    = $wpdb->get_results( $query );
 		$response = new \WP_REST_Response( array_map( [ $this, 'add_taxonomy_label' ], $terms ) );
 		$found    = $wpdb->get_var( 'SELECT FOUND_ROWS()' );
 		$response->set_headers( [

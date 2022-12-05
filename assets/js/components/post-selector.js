@@ -12,7 +12,7 @@ class PostSelector extends ObjectSelector {
 	fetch( id ) {
 		this.setState( { loading: true }, () => {
 			wp.apiFetch( {
-				path: sprintf( 'kbl/v1/search/%s?id=%d', this.postType(), id )
+				path: sprintf( 'kbl/v1/search/%1$s?id=%2$d', this.postType(), id )
 			} ).then( ( res ) => {
 				if ( res.length ) {
 					this.setState( {
@@ -35,7 +35,7 @@ class PostSelector extends ObjectSelector {
 			searching: true,
 		}, () => {
 			wp.apiFetch( {
-				path: sprintf( 'kbl/v1/search/%s?s=%s', this.postType(), this.state.term ),
+				path: sprintf( 'kbl/v1/search/%1$s?s=%2$s', this.postType(), this.state.term ),
 			} ).then( ( founds ) => {
 				this.setState( {
 					founds,

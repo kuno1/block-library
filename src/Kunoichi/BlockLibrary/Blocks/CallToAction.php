@@ -25,7 +25,7 @@ class CallToAction extends BlockLibraryBase {
 
 	protected function localize_script() {
 		$positions = [];
-		$terms = get_terms( [ 'taxonomy' => 'cta-position', 'hide_empty' => false ] );
+		$terms     = get_terms( [ 'taxonomy' => 'cta-position', 'hide_empty' => false ] );
 		if ( $terms && ! is_wp_error( $terms ) ) {
 			foreach ( $terms as $term ) {
 				$positions[] = [
@@ -57,20 +57,20 @@ class CallToAction extends BlockLibraryBase {
 
 	protected function filter_attributes( $args ) {
 		$args['attributes'] = [
-			'order' => [
-				'type' => 'string',
+			'order'               => [
+				'type'    => 'string',
 				'default' => '',
 			],
-			'number' => [
-				'type' => 'integer',
+			'number'              => [
+				'type'    => 'integer',
 				'default' => 1,
 			],
-			'positions' => [
-				'type' => 'array',
+			'positions'           => [
+				'type'    => 'array',
 				'default' => [],
 			],
 			'predefinedPositions' => [
-				'type' => 'array',
+				'type'    => 'array',
 				'default' => [],
 			],
 		];
@@ -85,12 +85,12 @@ class CallToAction extends BlockLibraryBase {
 	 */
 	public function render_callback( $attributes = [], $content = '' ) {
 		$attributes = wp_parse_args( $attributes, [
-			'order'                => '',
-			'number'               => 1,
-			'positions'            => [],
+			'order'               => '',
+			'number'              => 1,
+			'positions'           => [],
 			'predefinedPositions' => [],
 		] );
-		$query = CallToActionPostType::get( [
+		$query      = CallToActionPostType::get( [
 			'position'            => $attributes['positions'],
 			'order'               => $attributes['order'],
 			'predefined_position' => $attributes['predefinedPositions'],
@@ -99,7 +99,8 @@ class CallToAction extends BlockLibraryBase {
 		if ( ! $query->have_posts() ) {
 			if ( $this->is_rest() ) {
 				$label = esc_html__( 'No Call To Action', 'kbl' );
-				$desc  = wp_kses_post( sprintf( __( 'Nothing matches your criteria.<br />Change condition or create <a href="%s" target="_blank">new one</a>.', 'kbl' ), admin_url( 'post-new.php?post_type=call-to-action' ) ) );
+				// translators: %s is URL.
+				$desc = wp_kses_post( sprintf( __( 'Nothing matches your criteria.<br />Change condition or create <a href="%s" target="_blank">new one</a>.', 'kbl' ), admin_url( 'post-new.php?post_type=call-to-action' ) ) );
 				return <<<HTML
 					<div class="components-placeholder">
 						<div class="components-placeholder__label">
@@ -133,7 +134,7 @@ HTML;
 	 * @return mixed
 	 */
 	public function __get( $name ) {
-		switch( $name ) {
+		switch ( $name ) {
 			case 'post_type':
 				return CallToActionPostType::get_instance();
 			default:

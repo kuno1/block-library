@@ -21,39 +21,39 @@ class PostList extends BlockLibraryBase {
 
 
 	protected function filter_attributes( $args ) {
-		$args[ 'attributes' ] = [
-			'template' => [
-				'type' => 'string',
+		$args['attributes'] = [
+			'template'      => [
+				'type'    => 'string',
 				'default' => '',
 			],
-			'ids' => [
+			'ids'           => [
 				'type' => 'string',
 			],
-			's' => [
+			's'             => [
 				'type' => 'string',
 			],
-			'term_ids' => [
+			'term_ids'      => [
 				'type' => 'array',
 			],
-			'post_type' => [
+			'post_type'     => [
 				'type' => 'string',
 			],
-			'number' => [
+			'number'        => [
 				'type' => 'integer',
 			],
-			'orderby' => [
+			'orderby'       => [
 				'type' => 'string',
 			],
-			'order' => [
+			'order'         => [
 				'type' => 'string',
 			],
-			'showMore' => [
+			'showMore'      => [
 				'type' => 'boolean',
 			],
-			'moreLabel' => [
+			'moreLabel'     => [
 				'type' => 'string',
 			],
-			'className' => [
+			'className'     => [
 				'type'    => 'string',
 				'default' => '',
 			],
@@ -61,7 +61,7 @@ class PostList extends BlockLibraryBase {
 				'type'    => 'boolean',
 				'default' => true,
 			],
-			'align' => [
+			'align'         => [
 				'type'    => 'string',
 				'default' => 'none',
 			],
@@ -71,13 +71,13 @@ class PostList extends BlockLibraryBase {
 
 
 	protected function localize_script() {
-		$post_types = (array) apply_filters( 'kbl_post_list_post_types', get_post_types( [
+		$post_types          = (array) apply_filters( 'kbl_post_list_post_types', get_post_types( [
 			'public' => true,
 		] ) );
 		$post_type_supported = [];
 		foreach ( $post_types as $post_type ) {
 			$object = get_post_type_object( $post_type );
-			$label = __( 'Undefined Post Type', 'kbl' );
+			$label  = __( 'Undefined Post Type', 'kbl' );
 			if ( $object ) {
 				$label = $object->label;
 			}
@@ -89,9 +89,9 @@ class PostList extends BlockLibraryBase {
 			] ),
 			'post_types' => $post_type_supported,
 			'orderby'    => apply_filters( 'kbl_post_list_orders', [
-				'date' => __( 'Date', 'kbl' ),
+				'date'       => __( 'Date', 'kbl' ),
 				'menu_order' => __( 'Menu Order', 'kbl' ),
-				'rand' => __( 'Random', 'kbl' ),
+				'rand'       => __( 'Random', 'kbl' ),
 			] ),
 		] );
 	}
@@ -114,7 +114,7 @@ class PostList extends BlockLibraryBase {
 		}
 		global $wpdb;
 		$where_clause = implode( ',', $term_ids );
-		$where .= <<<SQL
+		$where       .= <<<SQL
 			AND (
 			    {$wpdb->posts}.ID IN (
 			    	SELECT DISTINCT {$wpdb->term_relationships}.object_id
@@ -143,9 +143,9 @@ SQL;
 			'className'     => '',
 			'ignore_sticky' => true,
 		] );
-		$args = [
+		$args       = [
 			'post_type'   => $attributes['post_type'],
-			'post_status' => 'publish'
+			'post_status' => 'publish',
 		];
 		if ( $attributes['ids'] ) {
 			$args['post__in'] = array_map( 'trim', explode( ',', $attributes['ids'] ) );
@@ -203,11 +203,12 @@ HTML;
 		wp_reset_postdata();
 		echo apply_filters( 'kbl_post_list_after', '</div>', $attributes, $query );
 		if ( $attributes['showMore'] ) {
-			$more_url = '';
-			$post_type = $attributes['post_type'] ?: 'post';
+			$more_url         = '';
+			$post_type        = $attributes['post_type'] ?: 'post';
 			$post_type_object = get_post_type_object( $post_type );
 			if ( 'post' === $post_type ) {
-				$more_url = ( $page_for_posts = get_option( 'page_for_posts' ) ) ? get_permalink( $page_for_posts ) : home_url();
+				$page_for_posts = get_option( 'page_for_posts' );
+				$more_url       = $page_for_posts ? get_permalink( $page_for_posts ) : home_url();
 			} elseif ( $post_type_object->has_archive ) {
 				$more_url = get_post_type_archive_link( $post_type );
 			} else {

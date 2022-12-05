@@ -142,7 +142,7 @@ class TaxonomySelector extends React.Component {
 						return <Term key={ term } id={ term } onRemove={ ( id ) => this.remove( id ) } />
 					} ) }
 				</div> }
-				<TextControl placeholder={ __( 'Search...', 'kbl' ) } onChange={ ( text ) => this.search( text ) } />
+				<TextControl placeholder={ __( 'Search…', 'kbl' ) } onChange={ ( text ) => this.search( text ) } />
 				<p className="components-base-control__help">
 					{ __( 'If taxonomy is set, post list will be filtered.', 'kbl' ) }
 				</p>
@@ -155,7 +155,7 @@ class TaxonomySelector extends React.Component {
 							<span className="kbl-taxonomy-selector-button kbl-taxonomy-selector-button-secondary"
 								  onClick={ () => this.select( term.id ) } tabIndex={ 0 } role="button">
 								<small>{ term.taxonomy }</small>
-								{ term.name }{ sprintf( __( '(%d)', 'kbl' ), term.count ) }
+								{ term.name }{ sprintf( /* translators: %d is term count. */ __( '(%d)', 'kbl' ), term.count ) }
 							</span>
 						</Tooltip>
 					);

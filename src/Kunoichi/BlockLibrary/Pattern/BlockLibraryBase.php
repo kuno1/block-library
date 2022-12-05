@@ -31,8 +31,8 @@ abstract class BlockLibraryBase extends AbstractBlock {
 		$path = apply_filters( 'kbl_js_path', $path, $this->get_block_name() );
 		if ( file_exists( $path ) ) {
 			$this->script = 'kbl-' . $this->get_block_base();
-			$version = filemtime( $path );
-			$deps = WpEnqueueManager::grab_deps( $path );
+			$version      = filemtime( $path );
+			$deps         = WpEnqueueManager::grab_deps( $path );
 			wp_register_script( $this->script, $this->asset_url( 'js/blocks/' . $this->get_block_base() . '.js' ), $deps, $version, true );
 			// TODO: Translations.
 			$localize = $this->localize_script();
@@ -44,8 +44,8 @@ abstract class BlockLibraryBase extends AbstractBlock {
 		$css_path = apply_filters( 'kbl_css_path', $css_path, $this->get_block_name() );
 		if ( file_exists( $css_path ) ) {
 			$this->style = 'kbl-' . $this->get_block_base();
-			$version = filemtime( $css_path );
-			$deps = WpEnqueueManager::grab_deps( $css_path );
+			$version     = filemtime( $css_path );
+			$deps        = WpEnqueueManager::grab_deps( $css_path );
 			wp_register_style( $this->style, $this->asset_url( 'css/blocks/' . $this->get_block_base() . '.css' ), $deps, $version );
 		}
 	}
@@ -93,8 +93,8 @@ abstract class BlockLibraryBase extends AbstractBlock {
 	 * @param string $type
 	 */
 	protected function json_ld( $json, $type ) {
-		$json[ '@context' ] = 'https://schema.org/';
-		$json[ '@type' ] = $type;
+		$json['@context'] = 'https://schema.org/';
+		$json['@type']    = $type;
 		?>
 		<script type="application/ld+json">
 			<?php echo json_encode( $json ); ?>

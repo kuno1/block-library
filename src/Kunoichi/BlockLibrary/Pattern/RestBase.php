@@ -11,7 +11,7 @@ use Hametuha\RestPattern\RestApiBase;
  * @package kbl
  */
 abstract class RestBase extends RestApiBase {
-	
+
 	protected $namespace = 'kbl';
-	
+
 }

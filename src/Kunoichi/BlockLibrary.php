@@ -33,13 +33,14 @@ class BlockLibrary extends Singleton {
 		$this->scan_and_enable( 'BlockLibrary/Blocks', 'Kunoichi\BlockLibrary\Pattern\BlockLibraryBase' );
 		// REST API
 		BulkRegister::enable( 'Kunoichi\BlockLibrary\Rest', __DIR__ . '/BlockLibrary/Rest', RestBase::class );
+		// Register components.
 		add_action( 'init', [ $this, 'register_components' ] );
 		// Register locale.
-        add_action( 'init', function() {
-            $file = sprintf(dirname( dirname( __DIR__ ) ) . '/languages/kbl-%s.mo', get_user_locale());
-            load_textdomain('kbl', $file );
-        }, 1 );
-        add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ] );
+		add_action( 'init', function() {
+			$file = sprintf( dirname( dirname( __DIR__ ) ) . '/languages/kbl-%s.mo', get_user_locale() );
+			load_textdomain( 'kbl', $file );
+		}, 1 );
+		add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ] );
 	}
 
 	/**
@@ -74,18 +75,18 @@ class BlockLibrary extends Singleton {
 				continue;
 			}
 			if ( self::$includes ) {
-				if ( in_array( $class_name, self::$includes ) ) {
+				if ( in_array( $class_name, self::$includes, true ) ) {
 					$class_name::get_instance();
 				} else {
 					continue;
 				}
-			} elseif ( ! in_array( $class_name, self::$excludes ) ) {
+			} elseif ( ! in_array( $class_name, self::$excludes, true ) ) {
 				$class_name::get_instance();
 			}
 		}
 	}
 
-    /**
+	/**
 	 * Register JS components.
 	 */
 	public function register_components() {
@@ -96,7 +97,7 @@ class BlockLibrary extends Singleton {
 		wp_set_script_translations( 'kbl', 'kbl', $base_dir . '/languages' );
 		// Register components css
 		$kbl_style = $base_dir . '/dist/css';
-		foreach ( scandir( $kbl_style)  as $css ) {
+		foreach ( scandir( $kbl_style )  as $css ) {
 			if ( ! preg_match( '/^([^._].*)\.css$/u', $css, $match ) ) {
 				continue;
 			}
@@ -114,6 +115,9 @@ class BlockLibrary extends Singleton {
 		WpEnqueueManager::register_js( $base_dir . '/dist/js/components', 'kbl-components-' );
 	}
 
+	/**
+	 * Register components.
+	 */
 	public function admin_enqueue_scripts() {
 		wp_enqueue_style( 'kbl-components' );
 	}
@@ -132,7 +136,7 @@ class BlockLibrary extends Singleton {
 	public function widgets_init() {
 		$base = __DIR__ . '/BlockLibrary/Widgets';
 		foreach ( scandir( $base ) as $file ) {
-			if ( ! preg_match( '/^([^._].*)\.php$/u',$file, $matches ) ) {
+			if ( ! preg_match( '/^([^._].*)\.php$/u', $file, $matches ) ) {
 				continue;
 			}
 			$class_name = 'Kunoichi\BlockLibrary\Widgets\\' . $matches[1];
@@ -140,11 +144,11 @@ class BlockLibrary extends Singleton {
 				continue;
 			}
 			// If includes specified, check it's inclued.
-			if ( self::$included_widgets && ! in_array( $class_name, self::$included_widgets ) ) {
+			if ( self::$included_widgets && ! in_array( $class_name, self::$included_widgets, true ) ) {
 				continue;
 			}
 			// If excluded, skip.
-			if ( self::$excluded_widgets && in_array( $class_name, self::$excluded_widgets ) ) {
+			if ( self::$excluded_widgets && in_array( $class_name, self::$excluded_widgets, true ) ) {
 				continue;
 			}
 			$reflection = new \ReflectionClass( $class_name );

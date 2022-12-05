@@ -28,37 +28,37 @@ class PostSearch extends RestBase {
 				'type'              => 'string',
 				'default'           => 'post',
 				'validate_callback' => function( $var ) {
-					if ( in_array( $var, [ 'any', 'public' ] ) ) {
+					if ( in_array( $var, [ 'any', 'public' ], true ) ) {
 						return true;
 					}
-					return post_type_exists( $var ) && in_array( $var, $this->allowed_post_types() );
-				}
+					return post_type_exists( $var ) && in_array( $var, $this->allowed_post_types(), true );
+				},
 			],
-			's' => [
+			's'         => [
 				'type'              => 'string',
 				'description'       => 'Search terms for posts.',
 				'validate_callback' => function( $var ) {
 					return ! empty( $var );
-				}
+				},
 			],
-			'id' => [
-				'type' => 'integer',
-				'description' => 'ID of post.',
+			'id'        => [
+				'type'              => 'integer',
+				'description'       => 'ID of post.',
 				'validate_callback' => [ $this, 'is_numeric' ],
 			],
-			'paged' => [
-				'type' => 'integer',
-				'default' => 1,
+			'paged'     => [
+				'type'              => 'integer',
+				'default'           => 1,
 				'validate_callback' => function( $var ) {
 					return is_numeric( $var ) && 0 < $var;
 				},
 			],
-			'number' => [
-				'type' => 'integer',
-				'default' => 10,
+			'number'    => [
+				'type'              => 'integer',
+				'default'           => 10,
 				'validate_callback' => function( $var ) {
 					return is_numeric( $var ) && -1 < $var;
-				}
+				},
 			],
 		];
 	}
@@ -70,40 +70,42 @@ class PostSearch extends RestBase {
 	 * @return \WP_REST_Response|\WP_Error
 	 */
 	public function handle_get( \WP_REST_Request $request ) {
-		if ( $id = $request->get_param( 'id' ) ) {
+		$id = $request->get_param( 'id' );
+		if ( $id ) {
 			// Single search.
 			$args = [
-				'p' => $id,
+				'p'              => $id,
 				'posts_per_page' => 1,
 			];
-		} elseif ( $s = $request->get_param( 's' ) ) {
+		} elseif ( $request->get_param( 's' ) ) {
 			// Multiple search.
 			$args = [
-				's'              => $s,
+				's'              => $request->get_param( 's' ),
 				'posts_per_page' => $request->get_param( 'number' ),
 				'paged'          => $request->get_param( 'paged' ),
 			];
 		} else {
-			return new \WP_Error( 'invalid_search_operation', __( 'Parameter "id" or "s" is required.', 'kbl'  ), [
+			return new \WP_Error( 'invalid_search_operation', __( 'Parameter "id" or "s" is required.', 'kbl' ), [
 				'status' => 400,
 			] );
 		}
-		switch ( ( $post_type = $request->get_param( 'post_type' ) ) ) {
+		$post_type = $request->get_param( 'post_type' );
+		switch ( $post_type ) {
 			case 'public':
 				$post_types = get_post_types( [ 'public' => true ] );
 				break;
 			case 'any':
 			default:
-				$args[ 'post_type' ] = $post_type;
+				$args['post_type'] = $post_type;
 				break;
 		}
-		$args = array_merge( $args, [
+		$args     = array_merge( $args, [
 			'post_status' => 'publish',
 		] );
-		$args = apply_filters( 'kbl_rest_posts_search_args', $args, $request, get_current_user_id() );
-		$query = new \WP_Query( $args );
-		$result = array_map( [ $this, 'to_array' ], (array) $query->posts );
-		$result = apply_filters( 'kbl_rest_post_response', $result, $request );
+		$args     = apply_filters( 'kbl_rest_posts_search_args', $args, $request, get_current_user_id() );
+		$query    = new \WP_Query( $args );
+		$result   = array_map( [ $this, 'to_array' ], (array) $query->posts );
+		$result   = apply_filters( 'kbl_rest_post_response', $result, $request );
 		$response = new \WP_REST_Response( $result );
 		$response->set_headers( [
 			'X-WP-Total' => $query->found_posts,

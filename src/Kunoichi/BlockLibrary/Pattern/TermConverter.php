@@ -12,7 +12,7 @@ trait TermConverter {
 	 * @return \stdClass
 	 */
 	public function add_taxonomy_label( $term ) {
-		$taxonomy = get_taxonomy( $term->taxonomy );
+		$taxonomy        = get_taxonomy( $term->taxonomy );
 		$term->tax_label = $taxonomy->label;
 		return $term;
 	}

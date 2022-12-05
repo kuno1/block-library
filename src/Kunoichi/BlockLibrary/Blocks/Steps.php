@@ -44,21 +44,19 @@ class Steps extends BlockLibraryBase {
 							break;
 						}
 						$step = [
-							'@type' => 'HowToStep',
-							'name'  => $matches[1],
-							'itemListElement' => [
-
-							],
+							'@type'           => 'HowToStep',
+							'name'            => $matches[1],
+							'itemListElement' => [],
 						];
 						// Extract direction.
-						if ( preg_match( '#<div class="kbl-step-direction">(.*?)</div>#u',$child['innerHTML'], $directions ) ) {
+						if ( preg_match( '#<div class="kbl-step-direction">(.*?)</div>#u', $child['innerHTML'], $directions ) ) {
 							$text = array_filter( array_map( function( $p ) {
 								$p = str_replace( '<p>', '', $p );
 								$p = trim( $p );
 								return $p;
 							}, explode( '</p>', $directions[1] ) ) );
 							foreach ( $text as $p ) {
-								$step[ 'itemListElement' ][] = [
+								$step['itemListElement'][] = [
 									'@type' => 'HowToDirection',
 									'text'  => $p,
 								];
@@ -67,21 +65,21 @@ class Steps extends BlockLibraryBase {
 						// Extract tip.
 						if ( preg_match( '#<p class="kbl-step-tip">(.*?)</p>#u', $child['innerHTML'], $tip ) ) {
 							$step['itemListElement'][] = [
-								'@type' =>  'HowToTip',
-      							'text'  => $tip[1],
+								'@type' => 'HowToTip',
+								'text'  => $tip[1],
 							];
 						}
 						// Parse images.
 						if ( ! empty( $child['innerBlocks'] ) ) {
 							foreach ( $child['innerBlocks'] as $img ) {
-								$id = $img['attrs']['id'];
+								$id  = $img['attrs']['id'];
 								$src = wp_get_attachment_image_src( $id, 'full' );
 								if ( ! $src ) {
 									continue;
 								}
 								list( $url, $width, $height ) = $src;
-								$step['image'] = [
-									'@type' => 'ImageObject',
+								$step['image']                = [
+									'@type'  => 'ImageObject',
 									'url'    => $url,
 									'width'  => $width,
 									'height' => $height,

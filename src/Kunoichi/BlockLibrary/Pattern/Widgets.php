@@ -53,10 +53,10 @@ abstract class Widgets extends \WP_Widget {
 		if ( $this->has_title ) {
 			?>
 			<p>
-				<label for="<?php echo $this->get_field_id( 'title' ) ?>"><?php esc_html_e( 'Title', 'kbl' ) ?></label>
-				<input name="<?php echo $this->get_field_name( 'title' ) ?>"
-					   id="<?php echo $this->get_field_id( 'title' ) ?>" class="widefat"
-					   value="<?php echo esc_attr( isset( $instance[ 'title' ] ) ? $instance[ 'title' ] : '' ) ?>"/>
+				<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Title', 'kbl' ); ?></label>
+				<input name="<?php echo $this->get_field_name( 'title' ); ?>"
+					id="<?php echo $this->get_field_id( 'title' ); ?>" class="widefat"
+					value="<?php echo esc_attr( isset( $instance['title'] ) ? $instance['title'] : '' ); ?>"/>
 			</p>
 			<?php
 		}
@@ -73,14 +73,14 @@ abstract class Widgets extends \WP_Widget {
 		if ( ! $content ) {
 			return;
 		}
-		echo $args[ 'before_widget' ];
-		if ( $this->has_title && isset( $instance[ 'title' ] ) && $instance[ 'title' ] ) {
-			echo apply_filters( 'kbl_widget_title', sprintf( '%s%s%s', $args[ 'before_title' ], esc_html( $instance[ 'title' ] ), $args[ 'after_title' ] ), $args, $instance );
+		echo $args['before_widget'];
+		if ( $this->has_title && isset( $instance['title'] ) && $instance['title'] ) {
+			echo apply_filters( 'kbl_widget_title', sprintf( '%s%s%s', $args['before_title'], esc_html( $instance['title'] ), $args['after_title'] ), $args, $instance );
 		}
 		do_action( 'kbl_before_widget_content', $args, $instance );
 		echo $content;
 		do_action( 'kbl_after_widget_content', $args, $instance );
-		echo $args[ 'after_widget' ];
+		echo $args['after_widget'];
 	}
 
 	/**
@@ -107,8 +107,9 @@ abstract class Widgets extends \WP_Widget {
 	 * @return array
 	 */
 	protected function widget_options() {
-		$option = [];
-		if ( $description = $this->description() ) {
+		$option      = [];
+		$description = $this->description();
+		if ( $description ) {
 			$option['description'] = $description;
 		}
 		return $option;
@@ -142,7 +143,7 @@ abstract class Widgets extends \WP_Widget {
 			return;
 		}
 		$screen = get_current_screen();
-		if ( ! $screen || ! in_array( $screen->base, [ 'widgets', 'customize' ] ) ) {
+		if ( ! $screen || ! in_array( $screen->base, [ 'widgets', 'customize' ], true ) ) {
 			return;
 		}
 		$scripts = $this->get_admin_scripts();

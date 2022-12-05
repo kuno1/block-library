@@ -83,7 +83,7 @@ class ObjectSelector extends React.Component {
 						this.renderObject( object, false )
 					) }
 				</div>
-				<TextControl label={ this.props.label || __( 'Search', 'kbl' ) } value={ term } placeholder={ __( 'Enter search keywords...', 'kbl' ) }
+				<TextControl label={ this.props.label || __( 'Search', 'kbl' ) } value={ term } placeholder={ __( 'Enter search keywords…', 'kbl' ) }
 					onChange={ ( value ) => this.setState( { term: value } ) } />
 				<Button className="button" isSecondary={ true } disabled={ ! term.length } isBusy={ searching }
 					onClick={ () => this.search() }>

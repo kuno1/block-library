@@ -2,7 +2,7 @@
 # Exclude these files from release archives.
 #
 /.phpcs.xml.dist export-ignore
-/.browserlistrc export-ignore
+/.browserslistrc export-ignore
 /.eslintrc export-ignore
 /.github export-ignore
 /.git export-ignore
@@ -14,7 +14,7 @@
 /stylelint.config.js export-ignore
 /tests export-ignore
 /webpack.config.js export-ignore
-/
+/.wp-env.json export-ignore
 #
 # Auto detect text files and perform LF normalization
 # http://davidlaing.com/2012/09/19/customise-your-gitattributes-to-become-a-git-ninja/

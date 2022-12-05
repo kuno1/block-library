@@ -32,7 +32,7 @@ trait TemplateLoader {
 	 * @return bool
 	 */
 	protected function get_template_parts( $name, $suffix = '' ) {
-		$name     = 'template-parts/' . ltrim( $name, '/' );
+		$name      = 'template-parts/' . ltrim( $name, '/' );
 		$rel_paths = [ $name . '.php' ];
 		if ( $suffix ) {
 			array_unshift( $rel_paths, sprintf( '%s-%s.php', $name, $suffix ) );

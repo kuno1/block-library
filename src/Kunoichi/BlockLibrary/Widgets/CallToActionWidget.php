@@ -30,7 +30,7 @@ class CallToActionWidget extends Widgets {
 			return '';
 		}
 		ob_start();
-		while( $query->have_posts() ) {
+		while ( $query->have_posts() ) {
 			$query->the_post();
 			CallToActionPostType::load( 'widget' );
 		}
@@ -45,41 +45,42 @@ class CallToActionWidget extends Widgets {
 		$instance = CallToActionPostType::parse( $instance );
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'order' ) ?>"><?php ?></label>
-	        <select id="<?php echo $this->get_field_id( 'order' ) ?>" name="<?php echo $this->get_field_name( 'order' ) ?>">
-                <?php foreach ( CallToActionPostType::orders() as $value => $label ) : ?>
-                    <option value="<?php echo esc_attr( $value ) ?>"<?php selected( $value, $instance['order'] ) ?>><?php echo esc_html( $label ) ?></option>
-                <?php endforeach; ?>
-            </select>
+			<label for="<?php echo $this->get_field_id( 'order' ); ?>"></label>
+			<select id="<?php echo $this->get_field_id( 'order' ); ?>" name="<?php echo $this->get_field_name( 'order' ); ?>">
+				<?php foreach ( CallToActionPostType::orders() as $value => $label ) : ?>
+					<option value="<?php echo esc_attr( $value ); ?>"<?php selected( $value, $instance['order'] ); ?>><?php echo esc_html( $label ); ?></option>
+				<?php endforeach; ?>
+			</select>
 		</p>
 		<?php
 		$positions = [];
-		$terms = get_terms( [ 'taxonomy' => 'cta-position', 'hide_empty' => false, ] );
+		$terms     = get_terms( [ 'taxonomy' => 'cta-position', 'hide_empty' => false ] );
 		if ( $terms && ! is_wp_error( $terms ) ) {
 			foreach ( $terms as $term ) {
 				$positions[ $term->term_id ] = $term->name;
 			}
 		}
 		foreach ( [
-					  [ 'position', __( 'Positions', 'kbl' ), $positions ],
-					  [ 'predefined_position', __( 'Predefined Positions', 'kbl' ), CallToActionPostType::get_predefined_positions() ]
-				  ] as list( $field, $label, $options ) ) :
+			[ 'position', __( 'Positions', 'kbl' ), $positions ],
+			[ 'predefined_position', __( 'Predefined Positions', 'kbl' ), CallToActionPostType::get_predefined_positions() ],
+		] as list( $field, $label, $options ) ) :
 			if ( ! $options || is_wp_error( $options ) ) {
 				continue;
 			}
 			$values = $instance[ $field ];
 			?>
 			<p>
-				<label><?php echo esc_html_e( $$label ) ?></label>
+				<label><?php echo esc_html( $label ); ?></label>
 				<?php foreach ( $options as $value => $name ) : ?>
 					<label style="display: block;">
-						<input type="checkbox" name="<?php echo $this->get_field_name( $field ) ?>[]"
-							<?php checked( in_array( $value, $values ) ) ?>
-							   value="<?php echo esc_attr( $value ) ?>" />
-						<?php echo esc_html( $name ) ?>
+						<input type="checkbox" name="<?php echo $this->get_field_name( $field ); ?>[]"
+							<?php checked( in_array( $value, $values, true ) ); ?>
+							value="<?php echo esc_attr( $value ); ?>" />
+						<?php echo esc_html( $name ); ?>
 					</label>
 				<?php endforeach; ?>
 			</p>
-		<?php endforeach;
+			<?php
+		endforeach;
 	}
 }

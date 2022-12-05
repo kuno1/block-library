@@ -105,6 +105,8 @@ registerBlockType( 'kunoichi/card', {
 								}
 								setAttributes( { src } );
 							} } allowedTypes={ [ 'image' ] } render={ ( { open } ) => {
+								/* eslint-disable jsx-a11y/click-events-have-key-events */
+								/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 								return (
 									<img src={ mediaSrc } alt="" style={ { cursor: 'pointer' } }
 										title={ __( 'Click to change image.', 'kbl' ) } className="kbl-link-card-img"

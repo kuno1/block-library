@@ -1,9 +1,10 @@
 module.exports = {
 	extends: [
-		'stylelint-config-wordpress/scss',
+		'@wordpress/stylelint-config/scss',
 	],
 	rules: {
 		'font-weight-notation': 'named-where-possible',
 		'color-named': null,
+		'selector-class-pattern': null,
 	},
 };

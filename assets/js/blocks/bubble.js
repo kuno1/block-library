@@ -129,7 +129,8 @@ registerBlockType( 'kunoichi/bubble', {
 				newState.src = attributes.avatar ? attributes.avatar : postCache.thumbnail;
 			} else {
 				wp.apiFetch( {
-					path: sprintf( 'kbl/v1/search/%s?id=%d', KblBubble.virtual_member, attributes.writer ),
+					// translators: %1$s is slug, %2$d is user id.
+					path: sprintf( 'kbl/v1/search/%1$s?id=%2$d', KblBubble.virtual_member, attributes.writer ),
 				} ).then( ( res ) => {
 					if ( !res.length ) {
 						// User not found.
@@ -212,8 +213,8 @@ registerBlockType( 'kunoichi/bubble', {
 							<>
 								<hr />
 								<PostSelector id={ attributes.writer } postType={ KblBubble.virtual_member }
-									currentLabel={ sprintf( __( 'Specify %s', 'kbl' ), KblBubble.virtual_member_label ) }
-									label={ sprintf( __( 'Search from %s', 'kbl' ), KblBubble.virtual_member_label ) }
+									currentLabel={ sprintf( /* translators: %s is label. */ __( 'Specify %s', 'kbl' ), KblBubble.virtual_member_label ) }
+									label={ sprintf( /* translators: %s is label. */ __( 'Search from %s', 'kbl' ), KblBubble.virtual_member_label ) }
 									onChange={ ( writer ) => setAttributes( { writer, user: 0 } ) } />
 							</>
 						) }

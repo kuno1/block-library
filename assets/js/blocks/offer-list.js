@@ -5,7 +5,7 @@
  */
 
 const { registerBlockType } = wp.blocks;
-const { __, sprintf } = wp.i18n;
+const { __ } = wp.i18n;
 const { InnerBlocks } = wp.blockEditor;
 
 const setClassName = ( attributes, className = '' ) => {
@@ -26,7 +26,7 @@ registerBlockType( 'kunoichi/offer-list', {
 
 	category: 'formatting',
 
-	edit( { attributes, className } ) {
+	edit( { className } ) {
 		return (
 			<>
 				<div className={ setClassName( className ) }>

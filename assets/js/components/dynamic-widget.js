@@ -31,6 +31,7 @@ $.fn.dynamicWidget = function ( options ) {
 	// If renderer not specified, do nothing.
 	if ( ! settings.renderer ) {
 		if ( window.console ) {
+			// translators: %s is widget name.
 			console.error( sprintf( __( 'Please specify renderer of dynamic widget %s.', 'kbl' ), this.selector ) ); // eslint-disable-line no-console
 		}
 		return this;
