@@ -17,7 +17,7 @@ jobs:
       matrix:
         os: [ ubuntu-latest ]  # OS. ubuntu-18.04 is also available.
         php: [ '7.4', '8.0' ] # PHP versions to check.
-        tools: composer
+        tools: [ composer ]
         include:
           - os: ubuntu-20.04
             php: 5.6
