@@ -7,6 +7,10 @@
 	<exclude-pattern>/vendor/</exclude-pattern>
 	<exclude-pattern>/node_modules/</exclude-pattern>
 	<exclude-pattern>/wordpress/</exclude-pattern>
+	<exclude-pattern>/assets/</exclude-pattern>
+	<exclude-pattern>/dist/</exclude-pattern>
+	<exclude-pattern>/languages/</exclude-pattern>
+	<exclude-pattern>/bin/</exclude-pattern>
 
 	<!-- How to scan -->
 	<!-- Usage instructions: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Usage -->
@@ -47,4 +51,10 @@
 			<property name="blank_line_check" value="true"/>
 		</properties>
 	</rule>
+
+
+	<rule ref="PHPCompatibility">
+		<config name="testVersion" value="5.6-"/>
+	</rule>
+
 </ruleset>

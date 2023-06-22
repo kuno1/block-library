@@ -1,13 +1,14 @@
 /*!
  * Internal link
  *
- * wpdeps=kbl-components-post-searcher,kbl-components-post-placeholder,wp-blocks,wp-components,wp-block-editor, wp-compose
+ * wpdeps=kbl-components-post-searcher,kbl-components-post-placeholder,wp-blocks,wp-components,wp-block-editor, wp-compose, wp-server-side-render
  */
 
 const { registerBlockType } = wp.blocks;
 const { __ } = wp.i18n;
 const { withState } = wp.compose;
-const { PanelBody, TextControl, TextareaControl, Notice, ServerSideRender, Placeholder, Button } = wp.components;
+const { PanelBody, TextControl, TextareaControl, Notice, Placeholder, Button } = wp.components;
+const { serverSideRender: ServerSideRender } = wp;
 const { InspectorControls } = wp.blockEditor;
 const { PostPlaceholder, PostSearcher } = kbl;
 

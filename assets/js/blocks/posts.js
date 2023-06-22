@@ -1,7 +1,7 @@
 /*!
  * Post list block.
  *
- * wpdeps=wp-blocks,kbl,wp-block-editor, wp-components, kbl-components-taxonomy-selector
+ * wpdeps=wp-blocks,kbl,wp-block-editor, wp-components, wp-server-side-render, kbl-components-taxonomy-selector
  */
 
 /* global KblPostList:false */
@@ -9,7 +9,8 @@
 const { registerBlockType } = wp.blocks;
 const { __ } = wp.i18n;
 const { InspectorControls } = wp.blockEditor;
-const { ServerSideRender, PanelBody, SelectControl, TextControl, RadioControl, ToggleControl } = wp.components;
+const { PanelBody, SelectControl, TextControl, RadioControl, ToggleControl } = wp.components;
+const { serverSideRender: ServerSideRender } = wp;
 const { TaxonomySelector } = kbl;
 
 const assocToArray = ( object ) => {
