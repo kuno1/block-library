@@ -1,7 +1,7 @@
 /*!
  * Call To Action block.
  *
- * wpdeps=wp-blocks,kbl,wp-block-editor, wp-components, wp-api-fetch, kbl-components-checkbox-group
+ * wpdeps=wp-blocks,kbl,wp-block-editor, wp-components, wp-api-fetch, kbl-components-checkbox-group, wp-server-side-render
  */
 
 /* global KblCta: false */
@@ -9,7 +9,8 @@
 const { registerBlockType } = wp.blocks;
 const { __ } = wp.i18n;
 const { InspectorControls } = wp.blockEditor;
-const { ServerSideRender, PanelBody, SelectControl, TextControl, SVG, Rect, Path, Polygon } = wp.components;
+const { PanelBody, SelectControl, TextControl, SVG, Rect, Path, Polygon } = wp.components;
+const { serverSideRender: ServerSideRender } = wp;
 const { CheckboxGroup } = kbl;
 
 registerBlockType( 'kunoichi/cta', {

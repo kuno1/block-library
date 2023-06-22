@@ -17,8 +17,9 @@ jobs:
       matrix:
         os: [ ubuntu-latest ]  # OS. ubuntu-18.04 is also available.
         php: [ '7.4', '8.0' ] # PHP versions to check.
+        tools: [ composer ]
         include:
-          - os: ubuntu-18.04
+          - os: ubuntu-20.04
             php: 5.6
             tools: composer:v2.2
     name: Test in PHP ${{ matrix.php }} UnitTest
@@ -30,6 +31,8 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           tools: ${{ matrix.tools }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Validate composer.json and composer.lock
         run: composer validate
@@ -47,7 +50,7 @@ jobs:
       - uses: actions/checkout@master
 
       - name: Install Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: '14'
 
@@ -57,11 +60,19 @@ jobs:
       - name: Check JS & CSS syntax
         run: npm run lint
 
+  status-check:
+    name: Display Status
+    needs: [ test, assets ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Status
+        run: echo "All Green!"
+
   release:
     name: Deploy GitHub Release
-    needs: [ test, assets ]
+    needs: [ status-check ]
     if: contains(github.ref, 'tags/')
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@master
 

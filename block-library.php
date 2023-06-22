@@ -22,7 +22,7 @@ add_action( 'plugins_loaded', function() {
 
 	\Kunoichi\BlockLibrary::enable();
 
-	// If virtual member exsits, start.
+	// If virtual member exists, add suport.
 	if ( class_exists( 'Kunoichi\\VirtualMember\\PostType' ) ) {
 		\Kunoichi\VirtualMember\PostType::register();
 	}

@@ -1,11 +1,12 @@
 /*!
- * wpdeps=wp-blocks,kbl,wp-block-editor, wp-components, wp-api-fetch
+ * wpdeps=wp-blocks,kbl,wp-block-editor, wp-components, wp-api-fetch, wp-server-side-render
  */
 
 const { registerBlockType } = wp.blocks;
 const { __ } = wp.i18n;
 const { InspectorControls } = wp.blockEditor;
-const { PanelBody, SelectControl, TextControl, ServerSideRender } = wp.components;
+const { PanelBody, SelectControl, TextControl } = wp.components;
+const { serverSideRender: ServerSideRender } = wp;
 
 registerBlockType( 'kunoichi/testimonials', {
 
