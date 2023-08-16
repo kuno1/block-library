@@ -5,6 +5,9 @@ namespace Kunoichi\BlockLibrary\Blocks;
 
 use Kunoichi\BlockLibrary\Pattern\BlockLibraryBase;
 
+/**
+ * How to block supporting JSON-LD.
+ */
 class Steps extends BlockLibraryBase {
 
 	protected $block_name = 'steps';
@@ -35,8 +38,40 @@ class Steps extends BlockLibraryBase {
 			}
 			$json = [
 				'name'  => $match[1],
-				'steps' => [],
+				'step' => [],
 			];
+			// Total Time,
+			if ( ! empty( $block['attrs']['totalTime'] ) ) {
+				$total_time = $block['attrs']['totalTime'];
+				if ( preg_match( '/d$/', $total_time ) ) {
+					$total_time = sprintf( 'P%dD', str_replace( 'd', '', $total_time ) );
+				} else {
+					if ( 59 < $total_time ) {
+						$total_time = sprintf( 'PT%dH%dM', floor( $total_time / 60 ), $total_time % 60 );
+					} else {
+						$total_time = sprintf( 'PT%dM', $total_time );
+					}
+				}
+				$json['totalTime'] = $total_time;
+			}
+			// Tools and supplies.
+			foreach ( [
+				'tools'    => 'tool',
+				'supplies' => 'supply',
+			] as $attr => $key ) {
+				if ( empty( $block['attrs'][ $attr ] ) ) {
+					continue 1;
+				}
+				if ( ! isset( $json[ $key ] ) ) {
+					$json[ $key ] = [];
+				}
+				foreach ( array_filter( preg_split( '/\r?\n/', $block['attrs'][ $attr ] ) ) as $name ) {
+					$json[ $key ][] = [
+						'@type' => 'HowTo' . ucfirst( $key ),
+						'name'  => $name,
+					];
+				}
+			}
 			foreach ( $block['innerBlocks'] as $child ) {
 				switch ( $child['blockName'] ) {
 					case 'kunoichi/step':

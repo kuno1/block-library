@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kunoichi Block Library\n"
-"POT-Creation-Date: 2020-07-03 09:54+0900\n"
-"PO-Revision-Date: 2020-07-03 10:14+0900\n"
+"POT-Creation-Date: 2023-08-16 12:22+0900\n"
+"PO-Revision-Date: 2023-08-16 12:29+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language: ja\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 3.3.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: block-library.php\n"
@@ -63,22 +63,22 @@ msgstr "投稿"
 msgid "No Call To Action"
 msgstr "コールトゥアクションはありません。"
 
-#: src/Kunoichi/BlockLibrary/Blocks/CallToAction.php:102
+#: src/Kunoichi/BlockLibrary/Blocks/CallToAction.php:103
 #, php-format
 msgid ""
-"Nothing matches your criteria.<br />Change condition or create <a href=\"%s"
-"\" target=\"_blank\">new one</a>."
+"Nothing matches your criteria.<br />Change condition or create <a "
+"href=\"%s\" target=\"_blank\">new one</a>."
 msgstr ""
-"お探しの条件に合うものはありませんでした。<br />条件を変更するか、<a href="
-"\"%s\" target=\"_blank\">新規作成</a>してください。"
+"お探しの条件に合うものはありませんでした。<br />条件を変更するか、<a "
+"href=\"%s\" target=\"_blank\">新規作成</a>してください。"
 
 #: src/Kunoichi/BlockLibrary/Blocks/InternalLink.php:39
-#: assets/js/blocks/internal-link.js:60
+#: assets/js/blocks/internal-link.js:61
 msgid "No post is specified."
 msgstr "投稿が指定されていません"
 
 #: src/Kunoichi/BlockLibrary/Blocks/InternalLink.php:48
-#: assets/js/blocks/bubble.js:137
+#: assets/js/blocks/bubble.js:140
 msgid "Post not found."
 msgstr "投稿は見つかりませんでした。"
 
@@ -87,7 +87,7 @@ msgid "Undefined Post Type"
 msgstr "不明な投稿タイプ"
 
 #: src/Kunoichi/BlockLibrary/Blocks/PostList.php:88
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:217
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:219
 msgid "Default"
 msgstr "デフォルト"
 
@@ -97,14 +97,14 @@ msgid "Date"
 msgstr "日付"
 
 #: src/Kunoichi/BlockLibrary/Blocks/PostList.php:93
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:219
-#: assets/js/blocks/testimonials.js:46
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:221
+#: assets/js/blocks/testimonials.js:47
 msgid "Menu Order"
 msgstr "優先順位"
 
 #: src/Kunoichi/BlockLibrary/Blocks/PostList.php:94
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:220
-#: assets/js/blocks/testimonials.js:50
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:222
+#: assets/js/blocks/testimonials.js:51
 msgid "Random"
 msgstr "ランダム"
 
@@ -117,13 +117,13 @@ msgid "Nothing matches your criteria.<br />Please change conditions."
 msgstr ""
 "お探しの条件に合うものはありませんでした。<br />条件を変更してください。"
 
-#: src/Kunoichi/BlockLibrary/Blocks/PostList.php:231
-#: assets/js/blocks/posts.js:139 assets/js/blocks/posts.js:145
+#: src/Kunoichi/BlockLibrary/Blocks/PostList.php:232
+#: assets/js/blocks/posts.js:140 assets/js/blocks/posts.js:146
 msgid "More"
 msgstr "続きを読む"
 
 #: src/Kunoichi/BlockLibrary/Blocks/Testimonials.php:79
-#: assets/js/blocks/testimonials.js:12
+#: assets/js/blocks/testimonials.js:13
 msgid "Testimonials"
 msgstr "推薦文"
 
@@ -132,7 +132,7 @@ msgid "No testimonial matches your criteria."
 msgstr "条件に合う推薦文が見つかりませんでした。"
 
 #: src/Kunoichi/BlockLibrary/Pattern/Widgets.php:56
-#: assets/js/blocks/alert.js:63 assets/js/blocks/internal-link.js:71
+#: assets/js/blocks/alert.js:63 assets/js/blocks/internal-link.js:72
 #: assets/js/components/placeholder.js:119
 msgid "Title"
 msgstr "タイトル"
@@ -143,7 +143,7 @@ msgstr "コールトゥアクション"
 
 #: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:39
 #: src/Kunoichi/BlockLibrary/Widgets/CallToActionWidget.php:19
-#: assets/js/blocks/cta.js:17
+#: assets/js/blocks/cta.js:18
 msgid "Call To Action"
 msgstr "コールトゥアクション"
 
@@ -207,9 +207,9 @@ msgstr "コールトゥアクションが更新されました。"
 
 #: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:71
 #: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:73
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:352
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:358
 #: src/Kunoichi/BlockLibrary/Widgets/CallToActionWidget.php:64
-#: assets/js/blocks/cta.js:62
+#: assets/js/blocks/cta.js:63
 msgid "Positions"
 msgstr "ポジション"
 
@@ -258,7 +258,7 @@ msgid "Enter Action name(e.g. Buy Now Button）"
 msgstr "アクション名を入れてください（例・いますぐ購入ボタン）"
 
 #: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:177
-#: assets/js/blocks/cta.js:61
+#: assets/js/blocks/cta.js:62
 msgid "CTA Setting"
 msgstr "CTA設定"
 
@@ -266,30 +266,30 @@ msgstr "CTA設定"
 msgid "Predefined Position"
 msgstr "定義済みポジション"
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:191
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:389
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:193
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:399
 msgid "This theme has no predefined position."
 msgstr "このテーマには定義済みポジションがありません。"
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:195
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:197
 msgid "Predefined positions are set by themes."
 msgstr "定義済みポジションはテーマによって設定されます。"
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:218
-#: assets/js/blocks/testimonials.js:42
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:220
+#: assets/js/blocks/testimonials.js:43
 msgid "Latest"
 msgstr "最新"
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:325
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:328
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:331
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:334
 msgid "About Call To Actions"
 msgstr "コールトゥアクションについて"
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:325
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:331
 msgid "About CTA"
 msgstr "CTAについて"
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:333
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:339
 msgid ""
 "\"Call To Action\" is the name of UIs which requires user to make a action. "
 "An abbreviation is \"CTA\""
@@ -297,20 +297,20 @@ msgstr ""
 "「コールトゥアクション」はユーザーに行動を要求するユーザーインターフェースの"
 "名前です。略語は\"CTA\"です。"
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:336
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:342
 msgid "Buttons for login, registration, subscription, downloading, and so on."
 msgstr ""
 "ログインボタン、新規登録ボタン、定期購読ボタン、ダウンロードボタンなど。"
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:337
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:343
 msgid "Clickable banners"
 msgstr "クリックできるバナー"
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:338
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:344
 msgid "Ads"
 msgstr "広告"
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:340
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:346
 msgid ""
 "This Call To Action can be displayed in widgets, blocks. The only newest one "
 "will be displayed. It is similar to ad rotating."
@@ -318,15 +318,15 @@ msgstr ""
 "このコールトゥアクションはウィジェットやブロックに表示できます。アドローテー"
 "ションのように最新のものだけが表示されます。"
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:343
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:349
 msgid "How It Works"
 msgstr "どのように動作するか"
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:346
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:352
 msgid "CTA is a custom post type which can include few blocks."
 msgstr "CTAはいくつかのブロックからなるカスタム投稿タイプです。"
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:347
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:353
 msgid ""
 "If you need \"Subscribe Newsletter\" button, create block which includes a "
 "button, text and so on."
@@ -334,7 +334,7 @@ msgstr ""
 "もし「メルマガ登録」ボタンが必要なら、ボタンやテキストを含んだブロックを作成"
 "してください。"
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:354
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:360
 msgid ""
 "You can register original positions. These are useful for filtering in "
 "widgets or blocks."
@@ -342,21 +342,21 @@ msgstr ""
 "独自のポジションを定義することもできます。ウィジェットやブロック内でフィルタ"
 "リングするときに便利です。"
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:368
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:375
 msgid "You have no position."
 msgstr "ポジションは登録されていません。"
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:373
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:380
 msgid "Manage Positions"
 msgstr "ポジションを管理"
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:376
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:383
 #: src/Kunoichi/BlockLibrary/Widgets/CallToActionWidget.php:65
-#: assets/js/blocks/cta.js:66
+#: assets/js/blocks/cta.js:67
 msgid "Predefined Positions"
 msgstr "定義済みポジション"
 
-#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:378
+#: src/Kunoichi/BlockLibrary/PostTypes/CallToActionPostType.php:385
 msgid ""
 "If theme has predefined positions, specified CTA will be displayed there(e."
 "g. After post content)"
@@ -364,12 +364,12 @@ msgstr ""
 "テーマが定義済みポジションを設定している場合、指定されたCTAはそこ（例・投稿本"
 "文直後）に表示されます。"
 
-#: src/Kunoichi/BlockLibrary/Rest/PostSearch.php:87
-#: src/Kunoichi/BlockLibrary/Rest/UserSearch.php:75
+#: src/Kunoichi/BlockLibrary/Rest/PostSearch.php:88
+#: src/Kunoichi/BlockLibrary/Rest/UserSearch.php:76
 msgid "Parameter \"id\" or \"s\" is required."
 msgstr "パラメーター\"id\"または\"s\"が必須です。"
 
-#: src/Kunoichi/BlockLibrary/Rest/Taxonomy.php:46
+#: src/Kunoichi/BlockLibrary/Rest/Taxonomy.php:47
 msgid "No term found."
 msgstr "用語は見つかりませんでした。"
 
@@ -385,7 +385,7 @@ msgstr "スタイル付きのアラートブロック。"
 msgid "Not specify"
 msgstr "指定しない"
 
-#: assets/js/blocks/alert.js:55 assets/js/blocks/bubble.js:227
+#: assets/js/blocks/alert.js:55 assets/js/blocks/bubble.js:237
 msgid "Left"
 msgstr "左"
 
@@ -393,11 +393,11 @@ msgstr "左"
 msgid "Center"
 msgstr "中央"
 
-#: assets/js/blocks/alert.js:57 assets/js/blocks/bubble.js:228
+#: assets/js/blocks/alert.js:57 assets/js/blocks/bubble.js:238
 msgid "Right"
 msgstr "右"
 
-#: assets/js/blocks/alert.js:62 assets/js/blocks/bubble.js:182
+#: assets/js/blocks/alert.js:62 assets/js/blocks/bubble.js:192
 msgid "Speaker"
 msgstr "発話者"
 
@@ -421,86 +421,86 @@ msgstr "このアラートは閉じることができます。"
 msgid "This alert stays opened."
 msgstr "このアラートは開いたままです。"
 
-#: assets/js/blocks/alert.js:108 assets/js/blocks/internal-link.js:120
+#: assets/js/blocks/alert.js:108 assets/js/blocks/internal-link.js:121
 msgid "Close"
 msgstr "閉じる"
 
-#: assets/js/blocks/bubble.js:35
+#: assets/js/blocks/bubble.js:47
 msgid "Speech Bubble"
 msgstr "吹き出し"
 
-#: assets/js/blocks/bubble.js:41
+#: assets/js/blocks/bubble.js:53
 msgid "Speech bubble with avatar."
 msgstr "アバター付きの吹き出しです。"
 
-#: assets/js/blocks/bubble.js:107
+#: assets/js/blocks/bubble.js:110
 msgid "User not found."
 msgstr "ユーザーが見つかりません。"
 
-#: assets/js/blocks/bubble.js:116 assets/js/blocks/bubble.js:146
+#: assets/js/blocks/bubble.js:119 assets/js/blocks/bubble.js:149
 msgid "Error"
 msgstr "エラー"
 
-#: assets/js/blocks/bubble.js:158 assets/js/blocks/tile.js:53
+#: assets/js/blocks/bubble.js:168 assets/js/blocks/tile.js:53
 msgid "Text Color"
 msgstr "文字色"
 
-#: assets/js/blocks/bubble.js:163 assets/js/blocks/section.js:207
+#: assets/js/blocks/bubble.js:173 assets/js/blocks/section.js:208
 #: assets/js/blocks/tile.js:59
 msgid "Background Color"
 msgstr "背景色"
 
-#: assets/js/blocks/bubble.js:185
+#: assets/js/blocks/bubble.js:195
 msgid "Input Directly"
 msgstr "直接入力"
 
-#: assets/js/blocks/bubble.js:187
+#: assets/js/blocks/bubble.js:197
 msgid "Name"
 msgstr "名前"
 
-#: assets/js/blocks/bubble.js:188
+#: assets/js/blocks/bubble.js:198
 msgid "If name is empty, this will be just omitted."
 msgstr "名前が空白の場合は省略されます。"
 
-#: assets/js/blocks/bubble.js:199
+#: assets/js/blocks/bubble.js:209
 msgid "Select Avatar"
 msgstr "アバターを選択"
 
-#: assets/js/blocks/bubble.js:202
+#: assets/js/blocks/bubble.js:212
 msgid "Clear Avatar"
 msgstr "アバターを削除"
 
-#: assets/js/blocks/bubble.js:208
+#: assets/js/blocks/bubble.js:218
 msgid "Specify WordPress User"
 msgstr "WordPressユーザーを指定"
 
-#: assets/js/blocks/bubble.js:209
+#: assets/js/blocks/bubble.js:219
 msgid "Search from WordPress users"
 msgstr "WordPressユーザーから探す"
 
-#: assets/js/blocks/bubble.js:215
+#: assets/js/blocks/bubble.js:225
 #, python-format
 msgid "Specify %s"
 msgstr "%sを指定"
 
-#: assets/js/blocks/bubble.js:216
+#: assets/js/blocks/bubble.js:226
 #, python-format
 msgid "Search from %s"
 msgstr "%sから探す"
 
-#: assets/js/blocks/bubble.js:222 assets/js/blocks/section.js:185
+#: assets/js/blocks/bubble.js:232 assets/js/blocks/section.js:186
 msgid "Layout"
 msgstr "レイアウト"
 
-#: assets/js/blocks/bubble.js:224
+#: assets/js/blocks/bubble.js:234
 msgid "Position"
 msgstr "位置"
 
-#: assets/js/blocks/bubble.js:235
+#: assets/js/blocks/bubble.js:245
 msgid "Color Setting"
 msgstr "色設定"
 
-#: assets/js/blocks/bubble.js:250
+#: assets/js/blocks/bubble.js:260
 msgid "Enter speech here."
 msgstr "ここにセリフを入力"
 
@@ -524,11 +524,11 @@ msgstr "リンクURL"
 msgid "Image URL"
 msgstr "画像URL"
 
-#: assets/js/blocks/card.js:110
+#: assets/js/blocks/card.js:112
 msgid "Click to change image."
 msgstr "クリックして画像を変更"
 
-#: assets/js/blocks/card.js:118
+#: assets/js/blocks/card.js:120
 msgid "e.g. Category Name"
 msgstr "例・カテゴリー名"
 
@@ -577,16 +577,16 @@ msgstr "コピーするテキストを入力してください。"
 msgid "Text to be copied."
 msgstr "コピーするテキスト。"
 
-#: assets/js/blocks/cta.js:32
+#: assets/js/blocks/cta.js:33
 msgid "Display UI parts to invoke user's action."
 msgstr "ユーザーの行動を喚起するUIパーツを表示します。"
 
-#: assets/js/blocks/cta.js:70 assets/js/blocks/posts.js:125
-#: assets/js/blocks/posts.js:131 assets/js/blocks/testimonials.js:66
+#: assets/js/blocks/cta.js:71 assets/js/blocks/posts.js:126
+#: assets/js/blocks/posts.js:132 assets/js/blocks/testimonials.js:67
 msgid "Order"
 msgstr "順番"
 
-#: assets/js/blocks/cta.js:73 assets/js/blocks/testimonials.js:63
+#: assets/js/blocks/cta.js:74 assets/js/blocks/testimonials.js:64
 msgid "Number to display"
 msgstr "表示する数"
 
@@ -634,66 +634,66 @@ msgstr "FAQとして表示"
 msgid "If checked, JSON-LD will be generated."
 msgstr "チェックした場合、JSON-LDが出力されます。"
 
-#: assets/js/blocks/internal-link.js:16
+#: assets/js/blocks/internal-link.js:17
 msgid "Internal Link"
 msgstr "内部リンク"
 
-#: assets/js/blocks/internal-link.js:20
+#: assets/js/blocks/internal-link.js:21
 msgid "Same as Oembed link block, but this link is referred as post ID."
 msgstr "Oembedリンクブロックと同じですが、投稿IDを参照したリンクを作成します。"
 
-#: assets/js/blocks/internal-link.js:24
+#: assets/js/blocks/internal-link.js:25
 msgid "Related Articles"
 msgstr "関連記事"
 
-#: assets/js/blocks/internal-link.js:47
+#: assets/js/blocks/internal-link.js:48
 msgid "Post Setting"
 msgstr "投稿設定"
 
-#: assets/js/blocks/internal-link.js:51
+#: assets/js/blocks/internal-link.js:52
 #: assets/js/components/post-selector.js:69
 #: assets/js/components/user-selector.js:64
 msgid "Remove"
 msgstr "削除"
 
-#: assets/js/blocks/internal-link.js:65 assets/js/blocks/internal-link.js:110
+#: assets/js/blocks/internal-link.js:66 assets/js/blocks/internal-link.js:111
 msgid "Search Post"
 msgstr "投稿を検索"
 
-#: assets/js/blocks/internal-link.js:70
+#: assets/js/blocks/internal-link.js:71
 msgid "Override Setting"
 msgstr "上書き設定"
 
-#: assets/js/blocks/internal-link.js:72
+#: assets/js/blocks/internal-link.js:73
 msgid "If set, title will be overridden."
 msgstr "設定すると、タイトルが上書きされます。"
 
-#: assets/js/blocks/internal-link.js:75
+#: assets/js/blocks/internal-link.js:76
 msgid "Excerpt"
 msgstr "抜粋文"
 
-#: assets/js/blocks/internal-link.js:76
+#: assets/js/blocks/internal-link.js:77
 msgid "If set, excerpt will be overridden."
 msgstr "設定すると、抜粋文が上書きされます。"
 
-#: assets/js/blocks/internal-link.js:85
+#: assets/js/blocks/internal-link.js:86
 msgid "No Post Specified."
 msgstr "投稿が指定されていません"
 
-#: assets/js/blocks/internal-link.js:86
+#: assets/js/blocks/internal-link.js:87
 msgid "Please specify post to link."
 msgstr "リンクする投稿を指定してください。"
 
-#: assets/js/blocks/internal-link.js:94
+#: assets/js/blocks/internal-link.js:95
 msgid "Edit"
 msgstr "編集"
 
-#: assets/js/blocks/internal-link.js:102 assets/js/blocks/internal-link.js:103
+#: assets/js/blocks/internal-link.js:103 assets/js/blocks/internal-link.js:104
 #: assets/js/components/post-placeholder.js:20
 msgid "Post ID"
 msgstr "投稿ID"
 
-#: assets/js/blocks/internal-link.js:117
+#: assets/js/blocks/internal-link.js:118
 msgid "Reset"
 msgstr "リセット"
 
@@ -713,27 +713,27 @@ msgstr "オファーコンテンツ"
 msgid "Title, price, and specs of an offer."
 msgstr "オファーのタイトル、価格、性能。"
 
-#: assets/js/blocks/offer.js:42 assets/js/blocks/offer.js:87
+#: assets/js/blocks/offer.js:43 assets/js/blocks/offer.js:88
 msgid "Product Title"
 msgstr "商品名"
 
-#: assets/js/blocks/offer.js:45
+#: assets/js/blocks/offer.js:46
 msgid "e.g. $19.99"
 msgstr "例・1900円"
 
-#: assets/js/blocks/offer.js:71
+#: assets/js/blocks/offer.js:72
 msgid "Offer Action"
 msgstr "オファーアクション"
 
-#: assets/js/blocks/offer.js:77
+#: assets/js/blocks/offer.js:78
 msgid "Action link for offer block."
 msgstr "オファーブロック用のアクションリンク。"
 
-#: assets/js/blocks/offer.js:106
+#: assets/js/blocks/offer.js:107
 msgid "Offer"
 msgstr "オファー"
 
-#: assets/js/blocks/offer.js:112
+#: assets/js/blocks/offer.js:113
 msgid ""
 "Product offer with price, link, and spec. Helpful for promoting external "
 "products."
@@ -741,16 +741,16 @@ msgstr ""
 "価格、リンク、性能からなる商品オファー。外部の商品をプロモーションするのに役"
 "立ちます。"
 
-#: assets/js/blocks/offer.js:139
+#: assets/js/blocks/offer.js:140
 msgid "Offer Option"
 msgstr "オファーオプション"
 
-#: assets/js/blocks/offer.js:140 assets/js/blocks/offer.js:146
-#: assets/js/blocks/offer.js:167 assets/js/blocks/price.js:92
+#: assets/js/blocks/offer.js:141 assets/js/blocks/offer.js:147
+#: assets/js/blocks/offer.js:168 assets/js/blocks/price.js:92
 msgid "Featured"
 msgstr "おすすめ"
 
-#: assets/js/blocks/offer.js:141
+#: assets/js/blocks/offer.js:142
 msgid "Featured Label"
 msgstr "おすすめラベル"
 
@@ -778,79 +778,79 @@ msgstr "パネルオプション"
 msgid "Panel Heading"
 msgstr "パネルの見出し"
 
-#: assets/js/blocks/posts.js:34
+#: assets/js/blocks/posts.js:35
 msgid "Post List"
 msgstr "投稿リスト"
 
-#: assets/js/blocks/posts.js:40
+#: assets/js/blocks/posts.js:41
 msgid "Display post list in various format."
 msgstr "様々な形式の投稿リストを表示します。"
 
-#: assets/js/blocks/posts.js:97
+#: assets/js/blocks/posts.js:98
 msgid "Template Setting"
 msgstr "テンプレート設定"
 
-#: assets/js/blocks/posts.js:101
+#: assets/js/blocks/posts.js:102
 msgid "Query Setting"
 msgstr "クエリ設定"
 
-#: assets/js/blocks/posts.js:103
+#: assets/js/blocks/posts.js:104
 msgid "Post Type"
 msgstr "投稿タイプ"
 
-#: assets/js/blocks/posts.js:107
+#: assets/js/blocks/posts.js:108
 msgid "Search String"
 msgstr "検索文字列"
 
-#: assets/js/blocks/posts.js:109
+#: assets/js/blocks/posts.js:110
 msgid "Keywords"
 msgstr "キーワード"
 
-#: assets/js/blocks/posts.js:113
+#: assets/js/blocks/posts.js:114
 msgid "Number of Posts"
 msgstr "表示件数"
 
-#: assets/js/blocks/posts.js:115
+#: assets/js/blocks/posts.js:116
 msgid "Max posts number to display."
 msgstr "表示する最大の数"
 
-#: assets/js/blocks/posts.js:117 assets/js/blocks/testimonials.js:59
+#: assets/js/blocks/posts.js:118 assets/js/blocks/testimonials.js:60
 msgid "Post IDs"
 msgstr "投稿ID"
 
-#: assets/js/blocks/posts.js:119
+#: assets/js/blocks/posts.js:120
 msgid "Write in CSV format. If set, all other settings will be ignored."
 msgstr "CSV形式で書いてください。設定された場合、その他の設定は無視されます。"
 
-#: assets/js/blocks/posts.js:121
+#: assets/js/blocks/posts.js:122
 msgid "Ignore Sticky Posts"
 msgstr "先頭固定の投稿を無視する"
 
-#: assets/js/blocks/posts.js:126
+#: assets/js/blocks/posts.js:127
 msgid "Order By"
 msgstr "順番"
 
-#: assets/js/blocks/posts.js:128
+#: assets/js/blocks/posts.js:129
 msgid "If you select random, Order will be ignored."
 msgstr "ランダムを選択した場合、順序は無視されます。"
 
-#: assets/js/blocks/posts.js:133
+#: assets/js/blocks/posts.js:134
 msgid "Descending"
 msgstr "降順"
 
-#: assets/js/blocks/posts.js:134
+#: assets/js/blocks/posts.js:135
 msgid "Ascending"
 msgstr "昇順"
 
-#: assets/js/blocks/posts.js:140
+#: assets/js/blocks/posts.js:141
 msgid "Display more link"
 msgstr "続きを読むリンクを表示します。"
 
-#: assets/js/blocks/posts.js:142
+#: assets/js/blocks/posts.js:143
 msgid "Display more link if possible. It depends on theme compatibility."
 msgstr "可能ならば続きを読むリンクを表示します。テーマの対応状況によります。"
 
-#: assets/js/blocks/posts.js:143
+#: assets/js/blocks/posts.js:144
 msgid "More Label"
 msgstr "続きを読むラベル"
 
@@ -910,35 +910,39 @@ msgstr "例・スタンダード"
 msgid "Free"
 msgstr "無料"
 
-#: assets/js/blocks/section.js:114
+#: assets/js/blocks/section.js:101
+msgid "Youtube"
+msgstr "Youtube"
+
+#: assets/js/blocks/section.js:115
 msgid "Section"
 msgstr "セクション"
 
-#: assets/js/blocks/section.js:120
+#: assets/js/blocks/section.js:121
 msgid "Enhanced group block which supports background."
 msgstr "背景デザインをサポートする一歩進んだグループブロック。"
 
-#: assets/js/blocks/section.js:187
+#: assets/js/blocks/section.js:188
 msgid "Container inside"
 msgstr "中にコンテナを入れる"
 
-#: assets/js/blocks/section.js:189
+#: assets/js/blocks/section.js:190
 msgid "If checked, container will be inside."
 msgstr "チェックを入れると、コンテナが中に入ります。"
 
-#: assets/js/blocks/section.js:190
+#: assets/js/blocks/section.js:191
 msgid "Vertical Padding"
 msgstr "上下の余白"
 
-#: assets/js/blocks/section.js:193
+#: assets/js/blocks/section.js:194
 msgid "Horizontal Padding"
 msgstr "左右の余白"
 
-#: assets/js/blocks/section.js:196
+#: assets/js/blocks/section.js:197
 msgid "Vertical Height"
 msgstr "高さ"
 
-#: assets/js/blocks/section.js:199
+#: assets/js/blocks/section.js:200
 #, python-format
 msgid ""
 "Percentage of window height. For example, If set to 100, this block will "
@@ -947,147 +951,196 @@ msgstr ""
 "ウインドウの高さに対するパーセンテージ。100に設定した場合、このブロックはウィ"
 "ンドウ高の100%になります。"
 
-#: assets/js/blocks/section.js:202
+#: assets/js/blocks/section.js:203
 msgid "Background Color Setting"
 msgstr "背景色設定"
 
-#: assets/js/blocks/section.js:212
+#: assets/js/blocks/section.js:213
 msgid "Opacity"
 msgstr "不透明度"
 
-#: assets/js/blocks/section.js:218
+#: assets/js/blocks/section.js:219
 msgid "Background Image"
 msgstr "背景画像"
 
-#: assets/js/blocks/section.js:227
+#: assets/js/blocks/section.js:228
 msgid "Set background image for section."
 msgstr "セクションに背景画像を追加。"
 
-#: assets/js/blocks/section.js:242
+#: assets/js/blocks/section.js:243
 msgid "Select Image"
 msgstr "画像を選択"
 
-#: assets/js/blocks/section.js:246 assets/js/blocks/section.js:275
+#: assets/js/blocks/section.js:247 assets/js/blocks/section.js:276
 msgid "Clear"
 msgstr "クリア"
 
-#: assets/js/blocks/section.js:253
+#: assets/js/blocks/section.js:254
 msgid "Blur"
 msgstr "ぼかし"
 
-#: assets/js/blocks/section.js:259
+#: assets/js/blocks/section.js:260
 msgid "Background Movie"
 msgstr "背景動画"
 
-#: assets/js/blocks/section.js:260
+#: assets/js/blocks/section.js:261
 msgid "Movie URL"
 msgstr "動画URL"
 
-#: assets/js/blocks/section.js:261
+#: assets/js/blocks/section.js:262
 msgid "Enter movie file URL. YouTube is also supported."
 msgstr "動画ファイルのURLを入力してください。YouTubeもサポートされています。"
 
-#: assets/js/blocks/section.js:271
+#: assets/js/blocks/section.js:272
 msgid "Select Uploaded Video"
 msgstr "アップロードした動画を選択"
 
-#: assets/js/blocks/section.js:281
+#: assets/js/blocks/section.js:282
 msgid "Repeat"
 msgstr "繰り返し"
 
-#: assets/js/blocks/section.js:283
+#: assets/js/blocks/section.js:284
 msgid "Hidden Contents"
 msgstr "隠しコンテンツ"
 
-#: assets/js/blocks/section.js:284
+#: assets/js/blocks/section.js:285
 msgid "Hide Contents"
 msgstr "コンテンツを隠す"
 
-#: assets/js/blocks/section.js:286
+#: assets/js/blocks/section.js:287
 msgid "If checked, contents will be hidden."
 msgstr "チェックを入れると、コンテンツが一部隠れます。"
 
-#: assets/js/blocks/section.js:287
+#: assets/js/blocks/section.js:288
 msgid "Preview Height"
 msgstr "見える部分のの高さ"
 
-#: assets/js/blocks/section.js:290
+#: assets/js/blocks/section.js:291
 msgid "Label for revealing button."
 msgstr "オープンするボタンのラベル。"
 
-#: assets/js/blocks/section.js:292
+#: assets/js/blocks/section.js:293
 msgid "e.g. Read More"
 msgstr "例・続きを読む"
 
-#: assets/js/blocks/section.js:310 assets/js/blocks/section.js:340
+#: assets/js/blocks/section.js:311 assets/js/blocks/section.js:341
 msgid "Read More"
 msgstr "続きを読む"
 
-#: assets/js/blocks/step.js:32
+#: assets/js/blocks/step.js:22
 msgid "Step"
 msgstr "ステップ"
 
-#: assets/js/blocks/step.js:48
+#: assets/js/blocks/step.js:38
 msgid "Step Block"
 msgstr "ステップブロック"
 
-#: assets/js/blocks/step.js:83
+#: assets/js/blocks/step.js:73
+msgid "Step Detail"
+msgstr "ステップ詳細"
+
+#: assets/js/blocks/step.js:74
 msgid "Step Number"
 msgstr "ステップ数"
 
-#: assets/js/blocks/step.js:85
+#: assets/js/blocks/step.js:76
 msgid "If empty, automatic counter will be set."
 msgstr "空白の場合は自動カウントが利用されます。"
 
-#: assets/js/blocks/step.js:87
+#: assets/js/blocks/step.js:78
 msgid "Tips"
 msgstr "ティップス"
 
-#: assets/js/blocks/step.js:88
+#: assets/js/blocks/step.js:79
 msgid "Enter special tips or notes for this step."
 msgstr "このステップに関するティップスや注記を記載。"
 
-#: assets/js/blocks/step.js:98
+#: assets/js/blocks/step.js:89
 msgid "e.g. Choose a necktie"
 msgstr "例・ネクタイを選ぶ"
 
-#: assets/js/blocks/step.js:104
+#: assets/js/blocks/step.js:95
 msgid "e.g. Open your closet and choose a nice looking necktie."
 msgstr "例・クローゼットを開けて素敵なネクタイを選んでください。"
 
-#: assets/js/blocks/steps.js:12
+#: assets/js/blocks/steps.js:44
+#, python-format
+msgid "%d min."
+msgstr "%d分"
+
+#: assets/js/blocks/steps.js:50
+#, python-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] "%d日"
+
+#: assets/js/blocks/steps.js:57
 msgid "How-to"
 msgstr "ハウツー"
 
-#: assets/js/blocks/steps.js:24
+#: assets/js/blocks/steps.js:69
 msgid "Step by step how-tos. Ready for JSON-LD."
 msgstr "ステップ・バイ・ステップのハウツーです。JSON-LDに対応しています。"
 
-#: assets/js/blocks/steps.js:54
+#: assets/js/blocks/steps.js:111
 msgid "How-to Setting"
 msgstr "ハウツー設定"
 
-#: assets/js/blocks/steps.js:55
+#: assets/js/blocks/steps.js:112
 msgid "Generate JSON-LD"
 msgstr "JSON-LDを生成する。"
 
-#: assets/js/blocks/steps.js:62
+#: assets/js/blocks/steps.js:114
+msgid "Total Time"
+msgstr "所要時間"
+
+#: assets/js/blocks/steps.js:115
+msgid ""
+"A digit in minutes. 30d will be considered as days. Only minutes(no unit) "
+"and days(**d) are supported."
+msgstr ""
+"数値を「分」で入力してください。30dは日数として解釈します。分（単位なし）と日"
+"（**d）がサポートされています。"
+
+#: assets/js/blocks/steps.js:119 assets/js/blocks/steps.js:138
+#: assets/js/blocks/steps.js:159
+msgid "Materials"
+msgstr "材料"
+
+#: assets/js/blocks/steps.js:120
+msgid "Enter materials or ingredients for this How-to. Enter 1 in each line."
+msgstr "このハウツーの材料または食材を入力してください。1行につき1つです。"
+
+#: assets/js/blocks/steps.js:124 assets/js/blocks/steps.js:139
+#: assets/js/blocks/steps.js:160
+msgid "Tools"
+msgstr "道具"
+
+#: assets/js/blocks/steps.js:125
+msgid "Enter tools required for this How-to. Enter 1 in each line."
+msgstr "このハウツーに必要な道具を入力してください。1行につき1つです。"
+
+#: assets/js/blocks/steps.js:133
 msgid "e.g. How to tie necktie."
 msgstr "例・ネクタイの結び方"
 
-#: assets/js/blocks/steps.js:65
+#: assets/js/blocks/steps.js:136 assets/js/blocks/steps.js:157
+msgid "Total Time: "
+msgstr "所要時間："
+
+#: assets/js/blocks/steps.js:141
 msgid "e.g. This article will explain how to tie a necktie."
 msgstr "例・この記事ではネクタイの結び方を説明します。"
 
-#: assets/js/blocks/testimonials.js:18
+#: assets/js/blocks/testimonials.js:19
 msgid "Display testimonials list."
 msgstr "推薦文リストを表示します。"
 
-#: assets/js/blocks/testimonials.js:58
+#: assets/js/blocks/testimonials.js:59
 msgid "Testimonials Setting"
 msgstr "推薦文設定"
 
-#: assets/js/blocks/testimonials.js:61
+#: assets/js/blocks/testimonials.js:62
 msgid "Write in CSV format. If set, order and number will be ignored."
 msgstr "CSV形式で書いてください。設定された場合、順番と数は無視されます。"
 
@@ -1149,18 +1202,20 @@ msgstr "追加"
 msgid "Data is copied to clipboard."
 msgstr "クリップボードにデータがコピーされました。"
 
-#: assets/js/components/dynamic-widget.js:34
+#: assets/js/components/dynamic-widget.js:35
 #, python-format
 msgid "Please specify renderer of dynamic widget %s."
 msgstr "ダイナミックウィジェット%sのレンダラーを指定してください。"
 
 #: assets/js/components/incremental-search.js:32
-msgid "Type and search..."
-msgstr "タイプして検索…"
+#| msgid "Type and search..."
+msgid "Type and search…"
+msgstr "Type and search…"
 
 #: assets/js/components/incremental-search.js:50
-msgid "Searching..."
-msgstr "検索中…"
+#| msgid "Searching..."
+msgid "Searching…"
+msgstr "Searching…"
 
 #: assets/js/components/media.js:63
 msgid "Failed to fetch image."
@@ -1176,8 +1231,9 @@ msgid "Search"
 msgstr "検索"
 
 #: assets/js/components/object-selector.js:86
-msgid "Enter search keywords..."
-msgstr "検索キーワードを入力…"
+#| msgid "Enter search keywords..."
+msgid "Enter search keywords…"
+msgstr "Enter search keywords…"
 
 #: assets/js/components/post-placeholder.js:50
 msgid "Post Title"
@@ -1213,7 +1269,7 @@ msgid "Taxonomy"
 msgstr "タクソノミー"
 
 #: assets/js/components/taxonomy-selector.js:145
-msgid "Search..."
+msgid "Search…"
 msgstr "検索…"
 
 #: assets/js/components/taxonomy-selector.js:147
@@ -1252,6 +1308,9 @@ msgstr "株式会社 KUNOICHI"
 #. Author URI of the plugin/theme
 msgid "https://kunoichiwp.com"
 msgstr "https://kunoichiwp.com"
+
+#~ msgid "Search..."
+#~ msgstr "検索…"
 
 #~ msgid "Heading Level"
 #~ msgstr "見出しレベル"

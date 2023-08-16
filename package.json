@@ -9,6 +9,7 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "wp-env start",
+		"stop": "wp-env stop",
 		"update": "wp-env start --update",
 		"start:debug": "wp-env start --xdebug",
 		"package": "gulp build",

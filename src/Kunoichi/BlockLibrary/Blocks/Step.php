@@ -5,6 +5,11 @@ namespace Kunoichi\BlockLibrary\Blocks;
 
 use Kunoichi\BlockLibrary\Pattern\BlockLibraryBase;
 
+/**
+ * Step block.
+ *
+ * Should be inside kunoichi/steps block.
+ */
 class Step extends BlockLibraryBase {
 
 	protected $block_name = 'step';
