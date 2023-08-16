@@ -5,19 +5,9 @@
 const { registerBlockType } = wp.blocks;
 const { __ } = wp.i18n;
 const { RichText, InnerBlocks, InspectorControls } = wp.blockEditor;
-const { G, Path, SVG, Rect, TextControl, TextareaControl } = wp.components;
+const { G, Path, SVG, Rect, PanelBody, TextControl, TextareaControl } = wp.components;
+const { nl2br } = kbl;
 
-const nl2br = ( text ) => {
-	const segments = text.split( /\r?\n/ );
-	const BRed = [];
-	for ( let i = 0, l = segments.length; i < l; i++ ) {
-		if ( i ) {
-			BRed.push( <br /> );
-		}
-		BRed.push( segments[ i ] );
-	}
-	return BRed;
-};
 
 const getStepCounterClass = ( attributes ) => {
 	const classes = [ 'kbl-step-counter' ];
@@ -80,21 +70,22 @@ registerBlockType( 'kunoichi/step', {
 		return (
 			<>
 				<InspectorControls>
-					<TextControl label={ __( 'Step Number', 'kbl' ) } value={ attributes.number }
-						onChange={ ( number ) => setAttributes( { number } ) }
-						help={ __( 'If empty, automatic counter will be set.', 'kbl' ) } />
-					<hr />
-					<TextareaControl label={ __( 'Tips', 'kbl' ) }
-						help={ __( 'Enter special tips or notes for this step.', 'kbl' ) }
-						value={ attributes.tips }
-						onChange={ ( tips ) => setAttributes( { tips } ) }
-					/>
+					<PanelBody title={ __( 'Step Detail', 'kbl' ) } initialOpen={ true }>
+						<TextControl label={ __( 'Step Number', 'kbl' ) } value={ attributes.number }
+							onChange={ ( number ) => setAttributes( { number } ) }
+							help={ __( 'If empty, automatic counter will be set.', 'kbl' ) } />
+						<hr />
+						<TextareaControl label={ __( 'Tips', 'kbl' ) }
+							help={ __( 'Enter special tips or notes for this step.', 'kbl' ) }
+							value={ attributes.tips }
+							onChange={ ( tips ) => setAttributes( { tips } ) }
+						/>
+					</PanelBody>
 				</InspectorControls>
 				<div className={ className }>
 					<div className="kbl-step-header">
 						<span className={ getStepCounterClass( attributes ) }>{ attributes.number }</span>
 						<RichText tagName={ 'h3' } multiline={ false } className="kbl-step-name"
-							keepPlaceholderOnFocus={ true }
 							value={ attributes.title } placeholder={ __( 'e.g. Choose a necktie', 'kbl' ) }
 							onChange={ ( title ) => setAttributes( { title } ) } />
 					</div>

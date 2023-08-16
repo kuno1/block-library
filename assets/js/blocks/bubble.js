@@ -14,6 +14,12 @@ const { UserSelector, PostSelector } = kbl;
 const userResults = {};
 const postResults = {};
 
+/**
+ * Extract avatar URL from image object.
+ *
+ * @param {Object} image
+ * @return {string} URL of an image.
+ */
 const extractAvatar = ( image ) => {
 	let src = '';
 	for ( const size of [ 'thumbnail', KblBubble.size ] ) {
@@ -24,6 +30,12 @@ const extractAvatar = ( image ) => {
 	return src;
 };
 
+/**
+ * Display error message.
+ *
+ * @param {string} message Error message.
+ * @param {string} style   Style of notice.
+ */
 const displayError = ( message, style = 'success' ) => {
 	wp.data.dispatch( 'core/notices' ).createNotice( style, message, {
 		isDismissible: true,
@@ -79,38 +91,29 @@ registerBlockType( 'kunoichi/bubble', {
 	edit: withState( {
 		src: KblBubble.avatar,
 		name: '',
-	} )( withColors( 'backgroundColor', 'textColor' )( ( { attributes, setAttributes, backgroundColor, setBackgroundColor, textColor, setTextColor, name, src, setState } ) => {
-		const newState = {
-			name: '',
-			avatar: KblBubble.avatar,
-		};
-		// If attributes are set, assign them.
-		if ( attributes.name ) {
-			newState.name = attributes.name;
-		}
-		if ( attributes.avatar ) {
-			newState.src = attributes.avatar;
-		}
+	} )( withColors( 'backgroundColor', 'textColor' )( ( { attributes, setAttributes, backgroundColor, setBackgroundColor, textColor, setTextColor, src, setState } ) => {
+		let displayName = name;
+		let imageSrc = src;
 		if ( attributes.user ) {
-			// If user is set, try to get it.
+			// If user is set, try to get it if cache doesn't exist.
 			const userCache = userResults[ attributes.user ];
 			if ( userCache ) {
-				newState.name = attributes.name ? attributes.name : userCache.display_name;
-				newState.src = attributes.avatar ? attributes.avatar : userCache.avatar;
+				displayName = userCache.display_name;
+				imageSrc = userCache.avatar;
 			} else {
 				wp.apiFetch( {
 					path: sprintf( 'kbl/v1/users/search?id=%d', attributes.user ),
 				} ).then( res => {
-					if ( !res.length ) {
+					if ( ! res.length ) {
 						// User not found.
 						setAttributes( { user: 0 } );
 						displayError( __( 'User not found.', 'kbl' ), 'error' );
 					} else {
-						setState( {
-							name: attributes.name ? attributes.name : res[ 0 ].display_name,
-							src: attributes.avatar ? attributes.avatar : res[ 0 ].avatar,
-						} );
 						userResults[ attributes.user ] = res[ 0 ];
+						setState( {
+							name: res[ 0 ].display_name,
+							src: res[ 0 ].avatar,
+						} );
 					}
 				} ).catch( res => {
 					let message = __( 'Error', 'kbl' );
@@ -121,27 +124,26 @@ registerBlockType( 'kunoichi/bubble', {
 				} );
 			}
 		} else if ( attributes.writer ) {
-			// If writer is set, try to get it.
-			// If user is set, try to get it.
+			// If writer is set, try to get it if cache doesn't exist.
 			const postCache = postResults[ attributes.writer ];
 			if ( postCache ) {
-				newState.name = attributes.name ? attributes.name : postCache.title;
-				newState.src = attributes.avatar ? attributes.avatar : postCache.thumbnail;
+				displayName = postCache.title;
+				imageSrc = postCache.thumbnail;
 			} else {
 				wp.apiFetch( {
 					// translators: %1$s is slug, %2$d is user id.
 					path: sprintf( 'kbl/v1/search/%1$s?id=%2$d', KblBubble.virtual_member, attributes.writer ),
 				} ).then( ( res ) => {
-					if ( !res.length ) {
+					if ( ! res.length ) {
 						// User not found.
 						setAttributes( { writer: 0 } );
 						displayError( __( 'Post not found.', 'kbl' ), 'error' );
 					} else {
+						postResults[ attributes.writer ] = res[ 0 ];
 						setState( {
 							name: attributes.name ? attributes.name : res[ 0 ].title,
 							src: attributes.avatar ? attributes.avatar : res[ 0 ].thumbnail,
 						} );
-						postResults[ attributes.writer ] = res[ 0 ];
 					}
 				} ).catch( res => {
 					let message = __( 'Error', 'kbl' );
@@ -152,7 +154,14 @@ registerBlockType( 'kunoichi/bubble', {
 				} );
 			}
 		}
-		setState( newState );
+		// If name or avatar attributes are set, assign them and override all.
+		if ( attributes.name.length ) {
+			displayName = attributes.name;
+		}
+		if ( attributes.avatar ) {
+			imageSrc = attributes.avatar;
+		}
+		// Color and style Settings.
 		const colorSettings = [
 			{
 				value: textColor.color,
@@ -237,11 +246,11 @@ registerBlockType( 'kunoichi/bubble', {
 						initialOpen={ false } />
 				</InspectorControls>
 				<div className='kbl-bubble' data-position={ attributes.position }>
-					{ src ? (
+					{ imageSrc ? (
 						<div className='kbl-bubble-avatar'>
-							<img className='kbl-bubble-image' src={ src } alt={ name } width={ 96 } height={ 96 } />
-							{ name.length ? (
-								<span className='kbl-bubble-name'>{ name }</span>
+							<img className='kbl-bubble-image' src={ imageSrc } alt={ displayName } width={ 96 } height={ 96 } />
+							{ displayName.length ? (
+								<span className='kbl-bubble-name'>{ displayName }</span>
 							) : null }
 						</div>
 					) : null }
