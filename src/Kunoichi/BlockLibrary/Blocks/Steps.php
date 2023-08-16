@@ -37,7 +37,7 @@ class Steps extends BlockLibraryBase {
 				continue;
 			}
 			$json = [
-				'name'  => $match[1],
+				'name' => $match[1],
 				'step' => [],
 			];
 			// Total Time,
