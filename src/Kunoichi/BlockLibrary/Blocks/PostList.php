@@ -214,6 +214,7 @@ HTML;
 			} else {
 				// No archive.
 			}
+			$more_url = apply_filters( 'kbl_post_list_more_url', $more_url, $attributes, $query );
 			if ( $attributes['term_ids'] ) {
 				foreach ( $attributes['term_ids'] as $term_id ) {
 					$term = get_term( $term_id );
@@ -229,7 +230,7 @@ HTML;
 				}
 			}
 			if ( $more_url ) {
-				$more_label   = $attributes['moreLabel'] ?: apply_filters( 'kbl_post_list_more_default', __( 'More', 'kbl' ) );
+				$more_label   = $attributes['moreLabel'] ?: apply_filters( 'kbl_post_list_more_default', __( 'More', 'kbl' ), $query, $attributes );
 				$button_class = apply_filters( 'kbl_post_list_button_classes', [ 'kbl-post-list-button' ] );
 				printf(
 					'<div class="%1$s"><a href="%2$s" class="kbl-post-list-button-link">%3$s</a></div>',
