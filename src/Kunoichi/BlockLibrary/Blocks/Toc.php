@@ -72,19 +72,19 @@ class Toc extends BlockLibraryBase {
 	 */
 	protected function filter_attributes( $args ) {
 		$args['attributes'] = [
-			'max_depth'      => [
+			'max_depth' => [
 				'type'    => 'integer',
 				'default' => 3,
 			],
-			'prefix'             => [
+			'prefix'    => [
 				'type'    => 'string',
 				'default' => 'content-section-',
 			],
-			'className'     => [
+			'className' => [
 				'type'    => 'string',
 				'default' => '',
 			],
-			'title'         => [
+			'title'     => [
 				'type'    => 'string',
 				'default' => '',
 			],
@@ -102,10 +102,10 @@ class Toc extends BlockLibraryBase {
 	 */
 	protected function render( $html, $attributes = [] ) {
 		$attributes = wp_parse_args( $attributes, [
-			'max_depth'     => 3,
-			'prefix'        => 'content-section-',
-			'className'     => '',
-			'title'         => '',
+			'max_depth' => 3,
+			'prefix'    => 'content-section-',
+			'className' => '',
+			'title'     => '',
 		] );
 		if ( ! $this->parser ) {
 			$this->parser = new \Kunoichi\TocGenerator\Parser( $attributes['max_depth'], true, $attributes['prefix'] );
