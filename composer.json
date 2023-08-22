@@ -28,7 +28,8 @@
         "wp-coding-standards/wpcs": "^2.0",
         "kunoichi/virtual-member": "^1.0",
 		"phpcompatibility/php-compatibility": "^9.3",
-		"dealerdirect/phpcodesniffer-composer-installer": "^1.0"
+		"dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+        "kunoichi/toc-generator": "^1.0"
 	},
     "autoload": {
         "psr-0": {
