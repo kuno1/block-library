@@ -101,12 +101,7 @@ class Toc extends BlockLibraryBase {
 	 * @return string
 	 */
 	protected function render( $html, $attributes = [] ) {
-		$attributes = wp_parse_args( $attributes, [
-			'max_depth' => 3,
-			'prefix'    => 'content-section-',
-			'className' => '',
-			'title'     => '',
-		] );
+		$attributes = $this->args( $attributes );
 		if ( ! $this->parser ) {
 			$this->parser = new \Kunoichi\TocGenerator\Parser( $attributes['max_depth'], true, $attributes['prefix'] );
 			$html         = $this->parser->add_link_html( $html );
@@ -143,15 +138,31 @@ class Toc extends BlockLibraryBase {
 		}
 		foreach ( parse_blocks( $content ) as $block ) {
 			if ( 'kunoichi/toc' === $block['blockName'] ) {
-				$this->parser = new \Kunoichi\TocGenerator\Parser( $block['attrs']['max_depth'], true, $block['attrs']['prefix'] );
-				if ( $block['attrs']['title'] ) {
-					$this->parser->set_title( $block['attrs']['title'] );
+				$attributes = $this->args( $block['attrs'] );
+				$this->parser = new \Kunoichi\TocGenerator\Parser( $attributes['max_depth'], true, $attributes['prefix'] );
+				if ( $attributes['title'] ) {
+					$this->parser->set_title( $attributes['title'] );
 				}
 				$content = $this->parser->add_link_html( $content );
 				break;
 			}
 		}
 		return $content;
+	}
+
+	/**
+	 * Parse attributes.
+	 *
+	 * @param array $attributes
+	 * @return array
+	 */
+	protected function args( array $attributes ) {
+		return wp_parse_args( $attributes, [
+			'max_depth' => 3,
+			'prefix'    => 'content-section-',
+			'className' => '',
+			'title'     => '',
+		] );
 	}
 
 	/**

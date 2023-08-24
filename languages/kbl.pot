@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kunoichi Block Library\n"
-"POT-Creation-Date: 2023-08-16 12:22+0900\n"
+"POT-Creation-Date: 2023-08-24 20:31+0900\n"
 "PO-Revision-Date: 2020-01-10 13:36+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
@@ -116,7 +116,7 @@ msgstr ""
 msgid "Nothing matches your criteria.<br />Please change conditions."
 msgstr ""
 
-#: src/Kunoichi/BlockLibrary/Blocks/PostList.php:232
+#: src/Kunoichi/BlockLibrary/Blocks/PostList.php:233
 #: assets/js/blocks/posts.js:140 assets/js/blocks/posts.js:146
 msgid "More"
 msgstr ""
@@ -132,7 +132,7 @@ msgstr ""
 
 #: src/Kunoichi/BlockLibrary/Pattern/Widgets.php:56
 #: assets/js/blocks/alert.js:63 assets/js/blocks/internal-link.js:72
-#: assets/js/components/placeholder.js:119
+#: assets/js/blocks/toc.js:63 assets/js/components/placeholder.js:119
 msgid "Title"
 msgstr ""
 
@@ -1172,6 +1172,42 @@ msgstr ""
 
 #: assets/js/blocks/tiled-grid.js:97
 msgid "Global vertical alignment of child tiles."
+msgstr ""
+
+#: assets/js/blocks/toc.js:62
+msgid "Toc Setting"
+msgstr ""
+
+#: assets/js/blocks/toc.js:65
+msgid "Default is empty."
+msgstr ""
+
+#: assets/js/blocks/toc.js:67
+msgid "Heading Level"
+msgstr ""
+
+#: assets/js/blocks/toc.js:71
+msgid "Prefix for ID"
+msgstr ""
+
+#: assets/js/blocks/toc.js:73
+msgid "Prefix for headings ID attributes."
+msgstr ""
+
+#: assets/js/blocks/toc.js:98
+msgid "Table of Contents"
+msgstr ""
+
+#: assets/js/blocks/toc.js:101
+msgid "No headings found."
+msgstr ""
+
+#: assets/js/blocks/toc.js:111
+msgid "Toc"
+msgstr ""
+
+#: assets/js/blocks/toc.js:117
+msgid "Display TOC extracted from Heading tags."
 msgstr ""
 
 #: assets/js/components/add-child.js:20
