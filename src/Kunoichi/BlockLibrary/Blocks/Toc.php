@@ -138,7 +138,7 @@ class Toc extends BlockLibraryBase {
 		}
 		foreach ( parse_blocks( $content ) as $block ) {
 			if ( 'kunoichi/toc' === $block['blockName'] ) {
-				$attributes = $this->args( $block['attrs'] );
+				$attributes   = $this->args( $block['attrs'] );
 				$this->parser = new \Kunoichi\TocGenerator\Parser( $attributes['max_depth'], true, $attributes['prefix'] );
 				if ( $attributes['title'] ) {
 					$this->parser->set_title( $attributes['title'] );
