@@ -65,7 +65,7 @@ const Edit = ( { attributes, setAttributes } ) => {
 						help={ __( 'Default is empty.', 'kbl' ) } />
 					<hr />
 					<SelectControl label={ __( 'Heading Level', 'kbl' ) } value={ attributes.max_depth }
-						onChange={ ( maxDepth ) => setAttributes( { max_depth: maxDepth } ) }
+						onChange={ ( maxDepth ) => setAttributes( { max_depth: parseInt( maxDepth ) } ) }
 						options={ options }	 />
 					<hr />
 					<TextControl label={ __( 'Prefix for ID', 'kbl' ) } value={ attributes.prefix}
@@ -114,7 +114,7 @@ registerBlockType( 'kunoichi/toc', {
 
 	category: 'formatting',
 
-	description: __( 'Display TOC extracted from Heading tags.', 'kbl' ),
+	description: __( 'Display TOC extracted from Heading tags in post content.', 'kbl' ),
 
 	attributes: {
 		title: {
