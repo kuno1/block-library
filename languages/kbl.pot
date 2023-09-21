@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kunoichi Block Library\n"
-"POT-Creation-Date: 2023-08-24 20:31+0900\n"
+"POT-Creation-Date: 2023-09-21 15:04+0900\n"
 "PO-Revision-Date: 2020-01-10 13:36+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.3.1\n"
+"X-Generator: Poedit 3.3.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: block-library.php\n"
@@ -24,6 +24,9 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
 "X-Poedit-SearchPathExcluded-3: dist\n"
 "X-Poedit-SearchPathExcluded-4: wordpress\n"
+"X-Poedit-SearchPathExcluded-5: gulpfile.js\n"
+"X-Poedit-SearchPathExcluded-6: stylelint.config.js\n"
+"X-Poedit-SearchPathExcluded-7: webpack.config.js\n"
 
 #: src/Kunoichi/BlockLibrary/Blocks/Alert.php:14
 msgid "Primary"
@@ -1207,7 +1210,7 @@ msgid "Toc"
 msgstr ""
 
 #: assets/js/blocks/toc.js:117
-msgid "Display TOC extracted from Heading tags."
+msgid "Display TOC extracted from Heading tags in post content."
 msgstr ""
 
 #: assets/js/components/add-child.js:20

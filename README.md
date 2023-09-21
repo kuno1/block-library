@@ -54,6 +54,7 @@ PHP files are located at [src/Kunoichi/BlockLibrary/Blocks](./src/Kunoichi/Block
 
 18 blocks are available.
 
+
 #### Alert `kunoichi/alert`  
 Styled alert blocks.
 
@@ -85,6 +86,25 @@ Definition Description.
 #### Definition List `kunoichi/definition-list`  
 Definition list.
 
+#### Internal Link `kunoichi/internal-link`  
+Same as Oembed link block, but this link is referred as post ID.  
+*Dynamic Block*: see [InternalLink](./src/Kunoichi/BlockLibrary/Blocks/InternalLink.php)
+
+#### Offer List `kunoichi/offer-list`  
+Display offer list of products with price, links, and spec.
+
+#### Offer Content `kunoichi/offer-content`  
+Title, price, and specs of an offer.  
+*Parents*: available only in `kunoichi/offer`
+
+#### Offer Action `kunoichi/offer-action`  
+Action link for offer block.  
+*Parents*: available only in `kunoichi/offer`
+
+#### Offer `kunoichi/offer`  
+Product offer with price, link, and spec. Helpful for promoting external products.  
+*Parents*: available only in `kunoichi/offer-list`
+
 #### Panel `kunoichi/panel`  
 Panel block for emphasized and separated contents.
 
@@ -98,6 +118,9 @@ Display price table. Insert 3 or 4 items.
 #### Price Item `kunoichi/price`  
 Price item in price tables.  
 *Parents*: available only in `kunoichi/price-table`
+
+#### Section `kunoichi/section`  
+Enhanced group block which supports background.
 
 #### Step `kunoichi/step`  
 Step Block  
@@ -116,6 +139,9 @@ Tile item in tiled grid.
 
 #### Tiled Grid `kunoichi/tiled-grid`  
 Grid style layout of panel items. Ready for text & background colors.
+
+#### Toc `kunoichi/toc`  
+Display TOC extracted from Heading tags in post content.
 
 
 ## Widgets

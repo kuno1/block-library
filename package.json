@@ -19,7 +19,8 @@
 		"jed-ja": "po2json languages/kbl-ja.po languages/kbl-ja-kbl.json -f jed",
 		"env": "wp-env",
 		"cli": "wp-env run cli wp",
-		"lint": "gulp lint"
+		"lint": "gulp lint",
+		"doc": "gulp doc"
 	},
 	"repository": {
 		"type": "git",

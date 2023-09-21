@@ -6,7 +6,7 @@ namespace Kunoichi\BlockLibrary\Blocks;
 use Kunoichi\BlockLibrary\Pattern\BlockLibraryBase;
 
 /**
- * Toc Block
+ * Toc Block.
  *
  * @package Kunoichi\BlockLibrary\Blocks
  */
@@ -34,7 +34,7 @@ class Toc extends BlockLibraryBase {
 			add_filter( 'the_content', [ $this, 'the_content_filter' ], 1 );
 			add_filter( 'the_content', [ $this, 'convert_toc' ], 11 );
 		}
-		return parent::init();
+		parent::init();
 	}
 
 	/**
