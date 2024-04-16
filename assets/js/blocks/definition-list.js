@@ -39,13 +39,13 @@ registerBlockType( 'kunoichi/dt', {
 	},
 
 	edit( { attributes, setAttributes } ) {
-		return <RichText tagName={ 'p' } multiline={ false } className="kbl-dl-term"
+		return <RichText tagName={ 'p' }  className="kbl-dl-term"
 			placeholder={ __( 'Enter term name.', 'kbl' ) }
 			value={ attributes.content } onChange={ ( content ) => setAttributes( { content } ) } />
 	},
 
 	save( { attributes } ) {
-		return <RichText.Content tagName="dt" multiline={ false } className='kbl-dl-term'
+		return <RichText.Content tagName="dt"  className='kbl-dl-term'
 			value={ attributes.content } />
 	},
 } );
@@ -83,13 +83,13 @@ registerBlockType( 'kunoichi/dd', {
 	},
 
 	edit( { attributes, setAttributes } ) {
-		return <RichText tagName={ 'p' } multiline={ false } className="kbl-dl-description"
+		return <RichText tagName={ 'p' }  className="kbl-dl-description"
 			placeholder={ __( 'Enter description here.', 'kbl' ) }
 			value={ attributes.content } onChange={ ( content ) => setAttributes( { content } ) } />
 	},
 
 	save( { attributes } ) {
-		return <RichText.Content tagName="dd" multiline={ false } className='kbl-dl-description'
+		return <RichText.Content tagName="dd"  className='kbl-dl-description'
 			value={ attributes.content } />
 	},
 } );

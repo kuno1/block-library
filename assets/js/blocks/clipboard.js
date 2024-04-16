@@ -30,8 +30,8 @@ registerBlockType( 'kunoichi/clipboard', {
 			selector: '.kbl-clipboard-label',
 		},
 		content: {
-			type: 'array',
-			source: 'children',
+			type: 'string',
+			source: 'html',
 			selector: '.kbl-clipboard-content',
 		},
 	},
@@ -52,7 +52,6 @@ registerBlockType( 'kunoichi/clipboard', {
 					<div className="kbl-clipboard-button">
 						<span className="kbl-clipboard-icon" />
 						<RichText value={ attributes.label } className="kbl-clipboard-label" tagName="div"
-							keepPlaceholderOnFocus={ true }
 							onChange={ ( label ) => setAttributes( { label } ) }
 							placeholder={ __( 'e.g. Click to Copy', 'kbl' ) } />
 					</div>

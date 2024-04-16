@@ -1,5 +1,5 @@
 /*!
- * wpdeps=wp-blocks,kbl,wp-block-editor, wp-components, wp-api-fetch, kbl-components-user-selector, kbl-components-post-selector
+ * wpdeps=wp-blocks,kbl,wp-block-editor, wp-element, wp-api-fetch, kbl-components-user-selector, kbl-components-post-selector
  */
 
 /* global KblBubble:false */
@@ -8,7 +8,7 @@ const { registerBlockType } = wp.blocks;
 const { __, sprintf } = wp.i18n;
 const { RichText, withColors, InspectorControls, PanelColorSettings, MediaUpload, MediaUploadCheck } = wp.blockEditor;
 const { Button, PanelBody, SelectControl, TextControl } = wp.components;
-const { withState } = wp.compose;
+const { useState } = wp.element;
 const { UserSelector, PostSelector } = kbl;
 
 const userResults = {};
@@ -82,16 +82,15 @@ registerBlockType( 'kunoichi/bubble', {
 			default: '',
 		},
 		content: {
-			type: 'array',
-			source: 'children',
-			selector: 'p'
+			type: 'string',
+			source: 'html',
+			selector: '.kbl-bubble-text'
 		}
 	},
 
-	edit: withState( {
-		src: KblBubble.avatar,
-		name: '',
-	} )( withColors( 'backgroundColor', 'textColor' )( ( { attributes, setAttributes, backgroundColor, setBackgroundColor, textColor, setTextColor, src, setState } ) => {
+	edit: withColors( 'backgroundColor', 'textColor' )( ( { attributes, setAttributes, backgroundColor, setBackgroundColor, textColor, setTextColor } ) => {
+		const[ src, setSrc ] = useState( KblBubble.avatar );
+		const [ name, setName ] = useState( '' );
 		let displayName = name;
 		let imageSrc = src;
 		if ( attributes.user ) {
@@ -110,10 +109,8 @@ registerBlockType( 'kunoichi/bubble', {
 						displayError( __( 'User not found.', 'kbl' ), 'error' );
 					} else {
 						userResults[ attributes.user ] = res[ 0 ];
-						setState( {
-							name: res[ 0 ].display_name,
-							src: res[ 0 ].avatar,
-						} );
+						setName( res[0].display_name );
+						setSrc( res[ 0 ].avatar );
 					}
 				} ).catch( res => {
 					let message = __( 'Error', 'kbl' );
@@ -140,10 +137,8 @@ registerBlockType( 'kunoichi/bubble', {
 						displayError( __( 'Post not found.', 'kbl' ), 'error' );
 					} else {
 						postResults[ attributes.writer ] = res[ 0 ];
-						setState( {
-							name: attributes.name ? attributes.name : res[ 0 ].title,
-							src: attributes.avatar ? attributes.avatar : res[ 0 ].thumbnail,
-						} );
+						setName( attributes.name ? attributes.name : res[ 0 ].title );
+						setSrc( attributes.avatar ? attributes.avatar : res[ 0 ].thumbnail );
 					}
 				} ).catch( res => {
 					let message = __( 'Error', 'kbl' );
@@ -205,7 +200,7 @@ registerBlockType( 'kunoichi/bubble', {
 								render={ ( { open } ) => {
 									return (
 										<>
-											<Button isDefault={ true }
+											<Button isSecondary={ true }
 												onClick={ open }>{ __( 'Select Avatar', 'kbl' ) }</Button>
 											{ attributes.avatar &&
 											<Button style={ { marginLeft: '10px' } } isLink={ true }
@@ -263,7 +258,7 @@ registerBlockType( 'kunoichi/bubble', {
 				</div>
 			</>
 		);
-	} ) ),
+	} ),
 
 	save( { attributes } ) {
 		return (

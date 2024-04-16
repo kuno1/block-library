@@ -57,10 +57,10 @@ registerBlockType( 'kunoichi/panel', {
 
 	attributes: {
 		title: {
-			type: 'array',
-			source: 'children',
+			type: 'string',
+			source: 'html',
 			selector: '.kbl-panel-title',
-			default: [],
+			default: '',
 		},
 		icon: {
 			type: 'string',
@@ -100,8 +100,8 @@ registerBlockType( 'kunoichi/panel', {
 				<div className={ getClassName( attributes, className ) }>
 					<header className='kbl-panel-heading'>
 						<RichText tagName='p' className="kbl-panel-title"
-							value={ attributes.title } multiline={ false }
-							keepPlaceholderOnFocus={ true } placeholder={ __( 'Panel Heading', 'kbl' ) }
+							value={ attributes.title }
+							placeholder={ __( 'Panel Heading', 'kbl' ) }
 							onChange={ ( title ) => setAttributes( { title } ) } />
 					</header>
 					<div className="kbl-panel-body">
@@ -118,7 +118,7 @@ registerBlockType( 'kunoichi/panel', {
 				<header className='kbl-panel-heading'>
 					<RichText.Content tagName='p' className="kbl-panel-title"
 						value={ attributes.title }
-						multiline={ false } />
+						 />
 				</header>
 				<div className="kbl-panel-body">
 					<InnerBlocks.Content />

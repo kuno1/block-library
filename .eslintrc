@@ -5,11 +5,10 @@
 		"jquery": true
 	},
 	"globals": {
-		"Vue": false,
 		"kbl": true
 	},
 	"extends": [
-		"plugin:@wordpress/eslint-plugin/recommended"
+		"plugin:@wordpress/eslint-plugin/recommended-with-formatting"
 	],
 	"rules": {
 		"object-shorthand": "off",

@@ -1,12 +1,11 @@
 /*!
- * wpdeps=wp-blocks, kbl, wp-block-editor, kbl, wp-components, wp-compose
+ * wpdeps=wp-blocks, kbl, wp-block-editor, kbl
  */
 
 const { registerBlockType } = wp.blocks;
 const { __ } = wp.i18n;
-const { withState } = wp.compose;
 const { RichText, InspectorControls, MediaUpload, MediaUploadCheck, AlignmentToolbar, BlockControls, URLInputButton } = wp.blockEditor;
-const { G, Path, SVG, PanelBody, TextControl } = wp.components;
+const { G, Path, SVG, PanelBody, TextControl, ToolbarGroup, ToolbarItem } = wp.components;
 
 /* global KblLinkCard: false */
 
@@ -45,9 +44,9 @@ registerBlockType( 'kunoichi/card', {
 
 	attributes: {
 		text: {
-			type: 'array',
+			type: 'string',
 			default: '',
-			source: 'children',
+			source: 'html',
 			selector: '.kbl-link-card-text',
 		},
 		url: {
@@ -55,7 +54,7 @@ registerBlockType( 'kunoichi/card', {
 			default: '',
 			source: 'attribute',
 			attribute: 'href',
-			selector: '.kbl-link-card-anchor'
+			selector: '.kbl-link-card-anchor',
 		},
 		src: {
 			type: 'string',
@@ -70,22 +69,24 @@ registerBlockType( 'kunoichi/card', {
 		},
 	},
 
-	edit: withState( {
-		linkEdit: false,
-	} )( ( { attributes, setAttributes, className } ) => {
+	edit: ( { attributes, setAttributes, className } ) => {
 		const mediaSrc = attributes.src || KblLinkCard.default_src;
 		return (
 			<>
 				<BlockControls>
-					<div className="components-toolbar kbl-link-card-edit-link">
-						<URLInputButton url={ attributes.url } onChange={ ( url ) => setAttributes( { url } ) } />
-					</div>
-					<AlignmentToolbar
-						value={ attributes.textAlign }
-						onChange={ ( textAlign ) => {
-							setAttributes( { textAlign } );
-						} }
-					/>
+					<ToolbarGroup>
+						<ToolbarItem>
+							{ ( toolbarItemHTMLProps ) => (
+								<URLInputButton toggleProps={ toolbarItemHTMLProps } url={ attributes.url } onChange={ ( url ) => setAttributes( { url } ) } />
+							) }
+						</ToolbarItem>
+						<AlignmentToolbar
+							value={ attributes.textAlign }
+							onChange={ ( textAlign ) => {
+								setAttributes( { textAlign } );
+							} }
+						/>
+					</ToolbarGroup>
 				</BlockControls>
 				<InspectorControls>
 					<PanelBody title={ __( 'Link Setting', 'kbl' ) }>
@@ -111,26 +112,26 @@ registerBlockType( 'kunoichi/card', {
 									<img src={ mediaSrc } alt="" style={ { cursor: 'pointer' } }
 										title={ __( 'Click to change image.', 'kbl' ) } className="kbl-link-card-img"
 										onClick={ () => open() } tabIndex={ 0 } />
-								)
+								);
 							} } />
 						</MediaUploadCheck>
-						<RichText tagName="p" multiline={ false } value={ attributes.text }
+						<RichText tagName="p" value={ attributes.text }
 							className="kbl-link-card-text"
 							onChange={ ( text ) => setAttributes( { text } ) }
-							placeholder={ __( 'e.g. Category Name', 'kbl' ) } keepPlaceholderOnFocus={ true }
+							placeholder={ __( 'e.g. Category Name', 'kbl' ) }
 						/>
 					</div>
 				</div>
 			</>
 		);
-	} ),
+	},
 
 	save( { attributes } ) {
 		return (
-			<figure className={ setClassName( "", attributes ) }>
+			<figure className={ setClassName( '', attributes ) }>
 				<a className="kbl-link-card-anchor" href={ attributes.url }>
 					<img src={ attributes.src || KblLinkCard.default_src } alt="" className="kbl-link-card-img" />
-					<RichText.Content value={ attributes.text } multiline={ false } className="kbl-link-card-text"
+					<RichText.Content value={ attributes.text }  className="kbl-link-card-text"
 						tagName="p" />
 				</a>
 			</figure>

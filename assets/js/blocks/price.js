@@ -58,14 +58,14 @@ registerBlockType( 'kunoichi/price', {
 
 	attributes: {
 		title: {
-			type: 'array',
-			source: 'children',
+			type: 'string',
+			source: 'html',
 			selector: '.kbl-price-plan',
 			default: '',
 		},
 		price: {
-			type: 'array',
-			source: 'children',
+			type: 'string',
+			source: 'html',
 			selector: '.kbl-price-number',
 			default: '',
 		},
@@ -96,13 +96,11 @@ registerBlockType( 'kunoichi/price', {
 				</InspectorControls>
 				<div className={ getClassName( className, attributes ) }>
 					<RichText tagName="h3" className="kbl-price-plan" value={ attributes.title }
-						multiline={ false }
-						keepPlaceholderOnFocus={ true } placeholder={ __( 'e.g. Standard', 'kbl' ) }
+						placeholder={ __( 'e.g. Standard', 'kbl' ) }
 						onChange={ ( title ) => setAttributes( { title } ) } />
 					<div className="kbl-price-detail">
 						<RichText tagName="p" className="kbl-price-number" value={ attributes.price }
-							multiline={ false }
-							keepPlaceholderOnFocus={ true } placeholder={ __( 'Free', 'kbl' ) }
+							placeholder={ __( 'Free', 'kbl' ) }
 							onChange={ ( price ) => setAttributes( { price } ) } />
 						{ attributes.help && (
 							<p className="kbl-price-help">{ attributes.help }</p>
@@ -117,11 +115,9 @@ registerBlockType( 'kunoichi/price', {
 	save( { attributes } ) {
 		return (
 			<li className={ getClassName( null, attributes ) }>
-				<RichText.Content tagName="h3" className="kbl-price-plan" value={ attributes.title }
-					multiline={ false } />
+				<RichText.Content tagName="h3" className="kbl-price-plan" value={ attributes.title } />
 				<div className="kbl-price-detail">
-					<RichText.Content tagName="p" className="kbl-price-number" value={ attributes.price }
-						multiline={ false } />
+					<RichText.Content tagName="p" className="kbl-price-number" value={ attributes.price } />
 					{ attributes.help && (
 						<p className="kbl-price-help">{ attributes.help }</p>
 					) }

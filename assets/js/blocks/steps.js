@@ -129,7 +129,7 @@ registerBlockType( 'kunoichi/steps', {
 					</PanelBody>
 				</InspectorControls>
 				<div className={ className } data-step-type={ attributes.type }>
-					<RichText className="kbl-step-title" tagName="h2" multiline={ false }
+					<RichText className="kbl-step-title" tagName="h2"
 						value={ attributes.title } placeholder={ __( 'e.g. How to tie necktie.', 'kbl' ) }
 						onChange={ ( title ) => setAttributes( { title } ) } />
 					{ 0 < attributes.totalTime.length && (
@@ -137,7 +137,7 @@ registerBlockType( 'kunoichi/steps', {
 					) }
 					{ textList( attributes.supplies, __( 'Materials', 'kbl' ), 'kbl-step-supplies' ) }
 					{ textList( attributes.tools, __( 'Tools', 'kbl' ), 'kbl-step-tools' ) }
-					<RichText className="kbl-step-description" tagName="p" multiline={ false }
+					<RichText className="kbl-step-description" tagName="p"
 						value={ attributes.description } placeholder={ __( 'e.g. This article will explain how to tie a necktie.', 'kbl' ) }
 						onChange={ ( description) => setAttributes( { description } ) } />
 					<div className="kbl-step-list">
@@ -151,8 +151,8 @@ registerBlockType( 'kunoichi/steps', {
 	save( { attributes } ) {
 		return (
 			<div className="kbl-step-wrap">
-				<RichText.Content className="kbl-step-title" tagName="h2" value={ attributes.title } multiline={ false } />
-				<RichText.Content className="kbl-step-description" tagName="p" value={ attributes.description } multiline={ false } />
+				<RichText.Content className="kbl-step-title" tagName="h2" value={ attributes.title } />
+				<RichText.Content className="kbl-step-description" tagName="p" value={ attributes.description } />
 				{ 0 < attributes.totalTime.length && (
 					<div className="kbl-step-total-time">{ __( 'Total Time: ', 'kbl' ) } { duration( attributes.totalTime ) }</div>
 				) }

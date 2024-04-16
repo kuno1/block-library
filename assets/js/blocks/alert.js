@@ -28,9 +28,9 @@ registerBlockType( 'kunoichi/alert', {
 			selector: '.kbl-alert-title'
 		},
 		content: {
-			type: 'array',
-			source: 'children',
-			selector: '.kbl-alert-body'
+			type: 'string',
+			source: 'html',
+			selector: '.kbl-alert-body p'
 		},
 		alignment: {
 			type: 'string',
@@ -83,10 +83,11 @@ registerBlockType( 'kunoichi/alert', {
 							<span aria-hidden="true">&times;</span>
 						</button>
 					) }
-					<RichText className="kbl-alert-body"
-						tagName={ 'div' } value={ attributes.content }
-						multiline="p"
-						onChange={ content => setAttributes( { content } ) } />
+					<div className="kbl-alert-body">
+						<RichText
+							tagName={ 'p' } value={ attributes.content }
+							onChange={ content => setAttributes( { content } ) } />
+					</div>
 				</div>
 			</>
 		);
@@ -114,7 +115,9 @@ registerBlockType( 'kunoichi/alert', {
 						{ attributes.title }
 					</div>
 				) }
-				<RichText.Content tagName='div' multiline="p" className='kbl-alert-body' value={ attributes.content } />
+				<div className='kbl-alert-body'>
+					<RichText.Content tagName="p" value={ attributes.content } />
+				</div>
 			</div>
 		)
 	}
