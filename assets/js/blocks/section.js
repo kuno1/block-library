@@ -19,14 +19,14 @@ const { InnerBlocks, withColors, InspectorControls, PanelColorSettings, MediaUpl
  * @return {{filter: string, top: string, left: string, bottom: string, right: string}} Style object.
  */
 const getBlurStyle = ( attributes ) => {
-	const blurPadding = attributes.blur * -1 + 'px';
+	const blurPadding = ( attributes.blur * -1 ) + 'px';
 	return {
 		left: blurPadding,
 		right: blurPadding,
 		top: blurPadding,
 		bottom: blurPadding,
-		filter: `blur( ${ attributes.blur }px )`
-	}
+		filter: `blur( ${ attributes.blur }px )`,
+	};
 };
 
 const classNameFromAttributes = ( className, attributes ) => {
@@ -98,7 +98,7 @@ const getVideoTag = ( attributes ) => {
 			} );
 			return (
 				<div className="kbl-section-youtube-container">
-					<iframe title={ __( 'Youtube', 'kbl' ) } className="kbl-section-youtube"  name="movie" src={ playerUrl} />
+					<iframe title={ __( 'Youtube', 'kbl' ) } className="kbl-section-youtube" name="movie" src={ playerUrl } />
 				</div>
 			);
 		default:
@@ -175,7 +175,7 @@ registerBlockType( 'kunoichi/section', {
 		repeat: {
 			type: 'boolean',
 			default: true,
-		}
+		},
 	},
 
 	edit: withColors( 'backgroundColor' )( ( props ) => {
@@ -190,13 +190,13 @@ registerBlockType( 'kunoichi/section', {
 								help={ __( 'If checked, container will be inside.', 'kbl' ) } />
 							<TextControl label={ __( 'Vertical Padding', 'kbl' ) } value={ attributes.paddingVertical }
 								type="number"
-								onChange={ value => setAttributes( { paddingVertical: parseInt( value, 10 ) } ) } />
+								onChange={ ( value ) => setAttributes( { paddingVertical: parseInt( value, 10 ) } ) } />
 							<TextControl label={ __( 'Horizontal Padding', 'kbl' ) }
 								value={ attributes.paddingHorizontal } type="number"
-								onChange={ value => setAttributes( { paddingHorizontal: parseInt( value, 10 ) } ) } />
+								onChange={ ( value ) => setAttributes( { paddingHorizontal: parseInt( value, 10 ) } ) } />
 							<TextControl label={ __( 'Vertical Height', 'kbl' ) }
 								value={ attributes.minHeight } type="number"
-								onChange={ minHeight => setAttributes( { minHeight: parseInt( minHeight, 10 ) } ) }
+								onChange={ ( minHeight ) => setAttributes( { minHeight: parseInt( minHeight, 10 ) } ) }
 								help={ __( 'Percentage of window height. For example, If set to 100, this block will have 100% of window height.', 'kbl' ) } />
 						</>, props ) }
 					</PanelBody>
@@ -213,18 +213,18 @@ registerBlockType( 'kunoichi/section', {
 						<RangeControl label={ __( 'Opacity', 'kbl' ) }
 							value={ attributes.opacity }
 							min={ 0 } max={ 100 }
-							onChange={ val => setAttributes( { opacity: val } ) }
+							onChange={ ( val ) => setAttributes( { opacity: val } ) }
 						/>
 					</PanelColorSettings>
 					<PanelBody title={ __( 'Background Image', 'kbl' ) } initialOpen={ true }>
 						{ attributes.backgroundImage ? (
 							<p style={ { textAlign: 'center' } }>
 								<img style={ { maxWidth: '100%', width: 'auto', height: 'auto' } }
-									className='kbl-section-background-sample' src={ attributes.backgroundImage }
-									alt='' />
+									className="kbl-section-background-sample" src={ attributes.backgroundImage }
+									alt="" />
 							</p>
 						) : (
-							<p className='kbl-section-background-desc description'>
+							<p className="kbl-section-background-desc description">
 								{ __( 'Set background image for section.', 'kbl' ) }
 							</p>
 						) }
@@ -254,13 +254,13 @@ registerBlockType( 'kunoichi/section', {
 						<RangeControl label={ __( 'Blur', 'kbl' ) }
 							value={ attributes.blur }
 							min={ 0 } max={ 20 }
-							onChange={ val => setAttributes( { blur: val } ) }
+							onChange={ ( val ) => setAttributes( { blur: val } ) }
 						/>
 					</PanelBody>
 					<PanelBody title={ __( 'Background Movie', 'kbl' ) } initialOpen={ false }>
 						<TextControl label={ __( 'Movie URL', 'kbl' ) } value={ attributes.movie } placeholder="https://example.com/movie.mov"
 							type="url" help={ __( 'Enter movie file URL. YouTube is also supported.', 'kbl' ) }
-							onChange={ movie => setAttributes( { movie } ) } />
+							onChange={ ( movie ) => setAttributes( { movie } ) } />
 						<MediaUpload
 							onSelect={ ( { url } ) => {
 								setAttributes( { movie: url } );
@@ -279,7 +279,7 @@ registerBlockType( 'kunoichi/section', {
 								</p>
 							) }
 						/>
-						<ToggleControl checked={ attributes.repeat } label={ __( 'Repeat', 'kbl' ) } onChange={ repeat => setAttributes( { repeat } ) } />
+						<ToggleControl checked={ attributes.repeat } label={ __( 'Repeat', 'kbl' ) } onChange={ ( repeat ) => setAttributes( { repeat } ) } />
 					</PanelBody>
 					<PanelBody title={ __( 'Hidden Contents', 'kbl' ) }>
 						<ToggleControl checked={ attributes.more } label={ __( 'Hide Contents', 'kbl' ) }
@@ -297,7 +297,7 @@ registerBlockType( 'kunoichi/section', {
 				<section className={ classNameFromAttributes( className, attributes ) }
 					style={ sectionStyle( attributes ) }>
 					{ attributes.blur ? (
-						<div className='kbl-section-blur' style={ getBlurStyle( attributes ) } />
+						<div className="kbl-section-blur" style={ getBlurStyle( attributes ) } />
 					) : null }
 					{ getVideoTag( attributes ) }
 					<div className={ setBgClass( attributes ) } style={ { opacity: attributes.opacity / 100 } } />
@@ -329,7 +329,7 @@ registerBlockType( 'kunoichi/section', {
 
 		return <section className={ classNames } style={ styles }>
 			{ attributes.blur ? (
-				<div className='wp-block-kunoichi-section-blur' style={ getBlurStyle( attributes ) } />
+				<div className="wp-block-kunoichi-section-blur" style={ getBlurStyle( attributes ) } />
 			) : null }
 			{ getVideoTag( attributes ) }
 			<div className={ bgClass } style={ { opacity: attributes.opacity / 100 } } />
@@ -342,5 +342,5 @@ registerBlockType( 'kunoichi/section', {
 				</button>
 			) }
 		</section>;
-	}
+	},
 } );

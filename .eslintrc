@@ -1,21 +1,25 @@
 {
-	"parser": "babel-eslint",
+	"parser": "@babel/eslint-parser",
 	"env": {
 		"browser": true,
 		"jquery": true
 	},
 	"globals": {
-		"Vue": false,
 		"kbl": true
 	},
 	"extends": [
-		"plugin:@wordpress/eslint-plugin/recommended"
+		"plugin:@wordpress/eslint-plugin/recommended-with-formatting"
 	],
 	"rules": {
 		"object-shorthand": "off",
 		"prettier/prettier": "off",
 		"jsx-a11y/click-events-have-key-events": "off",
 		"jsx-a11y/no-noninteractive-element-interactions": "off"
+	},
+	"settings": {
+		"react": {
+			"version": "16.9.0"
+		}
 	}
 }
 

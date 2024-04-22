@@ -18,11 +18,6 @@ const Edit = ( { attributes, setAttributes } ) => {
 		loading: true,
 		html: '',
 	} );
-	// Run initialization.
-	useEffect( () => {
-		fetch();
-	}, [ attributes.title, attributes.max_depth, attributes.className, attributes.prefix ] );
-
 	// Set option variables.
 	const options = [];
 	for ( let i = 2; i <= 6; i++ ) {
@@ -56,11 +51,16 @@ const Edit = ( { attributes, setAttributes } ) => {
 			} );
 		} );
 	};
+	// Run initialization.
+	useEffect( () => {
+		fetch();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [ attributes.title, attributes.max_depth, attributes.className, attributes.prefix ] );
 	return (
 		<>
 			<InspectorControls>
 				<PanelBody title={ __( 'Toc Setting', 'kbl' ) }>
-					<TextControl label={ __( 'Title', 'kbl' ) } value={ attributes.title}
+					<TextControl label={ __( 'Title', 'kbl' ) } value={ attributes.title }
 						onChange={ ( title ) => setAttributes( { title } ) }
 						help={ __( 'Default is empty.', 'kbl' ) } />
 					<hr />
@@ -68,7 +68,7 @@ const Edit = ( { attributes, setAttributes } ) => {
 						onChange={ ( maxDepth ) => setAttributes( { max_depth: parseInt( maxDepth ) } ) }
 						options={ options }	 />
 					<hr />
-					<TextControl label={ __( 'Prefix for ID', 'kbl' ) } value={ attributes.prefix}
+					<TextControl label={ __( 'Prefix for ID', 'kbl' ) } value={ attributes.prefix }
 						onChange={ ( prefix ) => setAttributes( { prefix } ) }
 						help={ __( 'Prefix for headings ID attributes.', 'kbl' ) } />
 				</PanelBody>
@@ -82,13 +82,13 @@ const Edit = ( { attributes, setAttributes } ) => {
 						transform: 'translate(-50%, -50%)',
 					} } />
 				</div>
-			)}
+			) }
 			{ ( ! loading && 0 < html.length ) && (
 				<div className="kbl-toc-admin" dangerouslySetInnerHTML={ { __html: html } }></div>
 			) }
 			{ ( ! loading && 1 > html.length ) && (
 				<div className="components-placeholder" style={ {
-					backgroundColor: '#f3f3f3'
+					backgroundColor: '#f3f3f3',
 				} }>
 					<div className="components-placeholder__label" style={ {
 						justifyContent: 'center',

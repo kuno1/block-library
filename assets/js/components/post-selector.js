@@ -8,11 +8,10 @@ const { ObjectSelector } = kbl;
 const { Button } = wp.components;
 
 class PostSelector extends ObjectSelector {
-
 	fetch( id ) {
 		this.setState( { loading: true }, () => {
 			wp.apiFetch( {
-				path: sprintf( 'kbl/v1/search/%1$s?id=%2$d', this.postType(), id )
+				path: sprintf( 'kbl/v1/search/%1$s?id=%2$d', this.postType(), id ),
 			} ).then( ( res ) => {
 				if ( res.length ) {
 					this.setState( {
@@ -75,5 +74,4 @@ class PostSelector extends ObjectSelector {
 }
 
 window.kbl.PostSelector = PostSelector;
-
 

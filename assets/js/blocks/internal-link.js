@@ -1,12 +1,12 @@
 /*!
  * Internal link
  *
- * wpdeps=kbl-components-post-searcher,kbl-components-post-placeholder,wp-blocks,wp-components,wp-block-editor, wp-compose, wp-server-side-render
+ * wpdeps=kbl-components-post-searcher,kbl-components-post-placeholder,wp-blocks,wp-components,wp-block-editor, wp-element, wp-server-side-render
  */
 
 const { registerBlockType } = wp.blocks;
 const { __ } = wp.i18n;
-const { withState } = wp.compose;
+const { useState } = wp.element;
 const { PanelBody, TextControl, TextareaControl, Notice, Placeholder, Button } = wp.components;
 const { serverSideRender: ServerSideRender } = wp;
 const { InspectorControls } = wp.blockEditor;
@@ -39,9 +39,9 @@ registerBlockType( 'kunoichi/internal-link', {
 		},
 	},
 
-	edit: withState( {
-		editing: false,
-	} )( ( { attributes, className, setAttributes, editing, setState } ) => {
+	edit: ( { attributes, className, setAttributes } ) => {
+		// eslint-disable-next-line react-hooks/rules-of-hooks
+		const [ editing, setEditing ] = useState( false );
 		return (
 			<>
 				<InspectorControls>
@@ -54,7 +54,7 @@ registerBlockType( 'kunoichi/internal-link', {
 									handler: () => {
 										setAttributes( { id: 0 } );
 									},
-								}
+								},
 							] } />
 						) : (
 							<Notice status="warning" isDismissible={ false }>
@@ -90,7 +90,7 @@ registerBlockType( 'kunoichi/internal-link', {
 						{ ! editing && (
 							<Button isSecondary={ true } className="kbl-internal-link-toggle" icon="welcome-write-blog"
 								onClick={ () => {
-									setState( { editing: true } )
+									setEditing( true );
 								} }>
 								{ __( 'Edit', 'kbl' ) }
 							</Button>
@@ -102,10 +102,10 @@ registerBlockType( 'kunoichi/internal-link', {
 								<div className="kbl-internal-link-editor-id">
 									<TextControl type="number" label={ __( 'Post ID', 'kbl' ) } value={ attributes.id }
 										placeholder={ __( 'Post ID', 'kbl' ) } onChange={ ( id ) => {
-										setAttributes( {
-											id: parseInt( id, 10 ),
-										} )
-									} } />
+											setAttributes( {
+												id: parseInt( id, 10 ),
+											} );
+										} } />
 								</div>
 								<div className="kbl-internal-link-editor-search">
 									<PostSearcher label={ __( 'Search Post', 'kbl' ) } onSelect={ ( id ) => {
@@ -120,16 +120,16 @@ registerBlockType( 'kunoichi/internal-link', {
 							</div>
 							<Button className="kbl-internal-link-editor-close" icon="no" label={ __( 'Close', 'kbl' ) }
 								onClick={ () => {
-									setState( { editing: false } );
+									setEditing( false );
 								} } />
 						</div>
 					) }
 				</div>
 			</>
 		);
-	} ),
+	},
 
 	save() {
 		return null;
-	}
+	},
 } );

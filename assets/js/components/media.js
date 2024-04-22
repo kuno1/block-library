@@ -7,20 +7,19 @@ const { __ } = wp.i18n;
 const { Spinner } = wp.components;
 
 class MediaWithId extends React.Component {
-
 	constructor( props ) {
 		super( props );
 		this.state = {
 			loading: true,
 			src: '',
 			alt: '',
-		}
+		};
 	}
 
 	className( extraClasses ) {
 		const classNames = [ 'kbl-image' ];
 		if ( this.state.loading ) {
-			classNames.push( 'kbl-image-loading' )
+			classNames.push( 'kbl-image-loading' );
 		}
 		if ( extraClasses ) {
 			classNames.push( extraClasses );
@@ -40,7 +39,7 @@ class MediaWithId extends React.Component {
 		this.setState( {
 			loading: true,
 			src: '',
-			alt: ''
+			alt: '',
 		}, () => {
 			wp.apiFetch( {
 				path: 'wp/v2/media/' + this.props.id,
@@ -78,7 +77,7 @@ class MediaWithId extends React.Component {
 		}
 		const { src, loading, alt } = this.state;
 		return src && ! loading ? (
-			<img className={ this.className( this.props.extraClasses) } src={ src } alt={ alt } />
+			<img className={ this.className( this.props.extraClasses ) } src={ src } alt={ alt } />
 		) : (
 			<div className={ this.className( this.props.extraClasses ) }>
 				<Spinner />

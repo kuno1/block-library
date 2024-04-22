@@ -134,7 +134,9 @@ registerBlockType( 'kunoichi/posts', {
 									{ label: __( 'Descending', 'kbl' ), value: 'DESC' },
 									{ label: __( 'Ascending', 'kbl' ), value: 'ASC' },
 								] }
-								onChange={ ( order ) => { setAttributes( { order } ) } } />
+								onChange={ ( order ) => {
+									setAttributes( { order } );
+								} } />
 						) }
 					</PanelBody>
 					<PanelBody title={ __( 'More', 'kbl' ) } initialOpen={ false }>

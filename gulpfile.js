@@ -85,17 +85,18 @@ gulp.task( 'js:compile', () => {
 // ESLint
 gulp.task( 'js:eslint', () => {
 	let task = gulp.src( [
-			'assets/js/**/*.js',
-			'assets/js/**/*.jsx',
-		] )
-		.pipe( $.eslint( {
-			useEslintrc: true,
-		} ) )
-		.pipe( $.eslint.format() );
+		'assets/js/**/*.js',
+		'assets/js/**/*.jsx',
+	] );
 	if ( ! noplumber ) {
-		task = task.pipe( $.eslint.failOnError() );
+		task = task.pipe( $.plumber( {
+			errorHandler: $.notify.onError( '<%= error.message %>' ),
+		} ) );
 	}
-	return task;
+	return task.pipe( $.eslint( {
+		useEslintrc: true,
+	} ) )
+		.pipe( $.eslint.format() );
 } );
 
 // JS task
@@ -166,7 +167,7 @@ gulp.task( 'watch', ( done ) => {
 } );
 
 // Dump dependency setting.
-gulp.task( 'dump', function( done ) {
+gulp.task( 'dump', function ( done ) {
 	dumpSetting( 'dist' );
 	done();
 } );
@@ -215,12 +216,12 @@ gulp.task( 'doc', ( done ) => {
 		fileContent = fileContent.slice( 2, fileContent.length );
 		for ( const block of fileContent ) {
 			// Extract name.
-			if ( ! block.match( /^\( ?'([^']+)'/ ) ) {
+			if ( !block.match( /^\( ?'([^']+)'/ ) ) {
 				continue;
 			}
 			const blockName = RegExp.$1;
 			// Extract Title.
-			if ( ! block.match( /title: ?__\( '(.*)', 'kbl' \),?$/m ) ) {
+			if ( !block.match( /title: ?__\( '(.*)', 'kbl' \),?$/m ) ) {
 				continue;
 			}
 			const title = RegExp.$1;
@@ -234,7 +235,7 @@ gulp.task( 'doc', ( done ) => {
 			if ( block.match( /parent: \[(.*)],?$/m ) ) {
 				RegExp.$1.split( ',' ).map( ( parent ) => {
 					parents.push( parent.trim().replace( /'/mg, '' ) );
-				} ).filter( obj => !! obj );
+				} ).filter( obj => !!obj );
 			}
 			// Detect if is dynamic.
 			let serverSide = false;
@@ -261,7 +262,7 @@ gulp.task( 'doc', ( done ) => {
 		const row = [ `#### ${ block.title } \`${ block.blockName }\`` ];
 		row.push( block.desc || 'No description provided.' );
 		if ( block.parents.length ) {
-			row.push( '*Parents*: available only in ' + block.parents.map( ( parent ) => '`' + parent + '`' ) . join( ', ' ) )
+			row.push( '*Parents*: available only in ' + block.parents.map( ( parent ) => '`' + parent + '`' ).join( ', ' ) )
 		}
 		if ( block.serverSide ) {
 			row.push( `*Dynamic Block*: see [${ block.renderer.name }](${ block.renderer.path })` );

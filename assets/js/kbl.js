@@ -30,8 +30,8 @@ window.kbl = {
 	 * @return {Array} Array of li elements.
 	 */
 	nl2li: ( text ) => {
-		return  text.split( /\r?\n/ ).filter( line => line.length ).map( ( line , index) => {
-			return <li key={ `li-${index}` }>{ line }</li>
+		return text.split( /\r?\n/ ).filter( ( line ) => line.length ).map( ( line, index ) => {
+			return <li key={ `li-${ index }` }>{ line }</li>;
 		} );
 	},
 };

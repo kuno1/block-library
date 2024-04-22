@@ -10,7 +10,6 @@ const { __, sprintf } = wp.i18n;
 const { RichText, InspectorControls } = wp.blockEditor;
 const { PanelBody, SelectControl, TextControl, ToggleControl } = wp.components;
 
-
 registerBlockType( 'kunoichi/alert', {
 
 	title: __( 'Alert', 'kbl' ),
@@ -25,12 +24,12 @@ registerBlockType( 'kunoichi/alert', {
 		title: {
 			type: 'string',
 			source: 'text',
-			selector: '.kbl-alert-title'
+			selector: '.kbl-alert-title',
 		},
 		content: {
-			type: 'array',
-			source: 'children',
-			selector: '.kbl-alert-body'
+			type: 'string',
+			source: 'html',
+			selector: '.kbl-alert-body p',
 		},
 		alignment: {
 			type: 'string',
@@ -39,16 +38,16 @@ registerBlockType( 'kunoichi/alert', {
 		closable: {
 			type: 'boolean',
 			default: false,
-		}
+		},
 	},
 
-	edit(  { attributes, setAttributes, className } ) {
+	edit( { attributes, setAttributes, className } ) {
 		const classes = [ 'kbl-alert', 'alert' ];
 		if ( attributes.alignment ) {
 			classes.push( sprintf( 'has-text-align-%s', attributes.alignment ) );
 		}
 		if ( className ) {
-			classes.unshift( className )
+			classes.unshift( className );
 		}
 		const options = [
 			{ value: null, label: __( 'Not specify', 'kbl' ), disabled: true },
@@ -83,10 +82,11 @@ registerBlockType( 'kunoichi/alert', {
 							<span aria-hidden="true">&times;</span>
 						</button>
 					) }
-					<RichText className="kbl-alert-body"
-						tagName={ 'div' } value={ attributes.content }
-						multiline="p"
-						onChange={ content => setAttributes( { content } ) } />
+					<div className="kbl-alert-body">
+						<RichText
+							tagName={ 'p' } value={ attributes.content }
+							onChange={ ( content ) => setAttributes( { content } ) } />
+					</div>
 				</div>
 			</>
 		);
@@ -114,10 +114,12 @@ registerBlockType( 'kunoichi/alert', {
 						{ attributes.title }
 					</div>
 				) }
-				<RichText.Content tagName='div' multiline="p" className='kbl-alert-body' value={ attributes.content } />
+				<div className="kbl-alert-body">
+					<RichText.Content tagName="p" value={ attributes.content } />
+				</div>
 			</div>
-		)
-	}
+		);
+	},
 } );
 
 let isDefault = true;
