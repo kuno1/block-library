@@ -42,5 +42,5 @@ registerBlockType( 'kunoichi/offer-list', {
 				<InnerBlocks.Content />
 			</ul>
 		);
-	}
+	},
 } );

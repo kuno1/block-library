@@ -6,13 +6,11 @@ const React = wp.element;
 const { CheckboxControl } = wp.components;
 
 class CheckboxGroup extends React.Component {
-
 	constructor( props ) {
 		super( props );
 		this.state = {
 			checked: props.checked,
 		};
-
 	}
 
 	render() {

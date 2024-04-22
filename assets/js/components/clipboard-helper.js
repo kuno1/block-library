@@ -32,10 +32,10 @@ const execCopy = ( string ) => {
 };
 
 // Add event listener for click event.
-$( '.kbl-clipboard-button' ).click( function ( e ) {
+$( '.kbl-clipboard-button' ).click( function( e ) {
 	e.preventDefault();
 	// Remove br element.
-	const content = $( this ).next( '.kbl-clipboard-content' ).html().replace( /(<br>|<br\/>|<br \/>)/gm, "\n" );
+	const content = $( this ).next( '.kbl-clipboard-content' ).html().replace( /(<br>|<br\/>|<br \/>)/gm, '\n' );
 	execCopy( content );
 	const msg = __( 'Data is copied to clipboard.', 'kbl' );
 	const shouldCall = applyFilters( 'kbl_copy_alert', true, msg, this );

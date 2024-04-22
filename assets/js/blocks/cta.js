@@ -81,11 +81,11 @@ registerBlockType( 'kunoichi/cta', {
 					block="kunoichi/cta"
 					attributes={ attributes } />
 			</div>
-		</>
+		</>;
 	},
 
 	save() {
 		return null;
-	}
+	},
 
 } );

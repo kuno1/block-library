@@ -7,9 +7,7 @@ const React = wp.element;
 const { __ } = wp.i18n;
 const { TextControl, Button, Spinner } = wp.components;
 
-
 class ObjectSelector extends React.Component {
-
 	constructor( props ) {
 		super( props );
 		// Set id.
@@ -65,7 +63,7 @@ class ObjectSelector extends React.Component {
 	setCurrent( target ) {
 		this.setState( {
 			object: target,
-			founds:[],
+			founds: [],
 			term: '',
 		}, () => {
 			this.handleChange( target ? target.id : 0 );

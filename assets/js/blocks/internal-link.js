@@ -40,6 +40,7 @@ registerBlockType( 'kunoichi/internal-link', {
 	},
 
 	edit: ( { attributes, className, setAttributes } ) => {
+		// eslint-disable-next-line react-hooks/rules-of-hooks
 		const [ editing, setEditing ] = useState( false );
 		return (
 			<>
@@ -53,7 +54,7 @@ registerBlockType( 'kunoichi/internal-link', {
 									handler: () => {
 										setAttributes( { id: 0 } );
 									},
-								}
+								},
 							] } />
 						) : (
 							<Notice status="warning" isDismissible={ false }>
@@ -101,10 +102,10 @@ registerBlockType( 'kunoichi/internal-link', {
 								<div className="kbl-internal-link-editor-id">
 									<TextControl type="number" label={ __( 'Post ID', 'kbl' ) } value={ attributes.id }
 										placeholder={ __( 'Post ID', 'kbl' ) } onChange={ ( id ) => {
-										setAttributes( {
-											id: parseInt( id, 10 ),
-										} )
-									} } />
+											setAttributes( {
+												id: parseInt( id, 10 ),
+											} );
+										} } />
 								</div>
 								<div className="kbl-internal-link-editor-search">
 									<PostSearcher label={ __( 'Search Post', 'kbl' ) } onSelect={ ( id ) => {
@@ -130,5 +131,5 @@ registerBlockType( 'kunoichi/internal-link', {
 
 	save() {
 		return null;
-	}
+	},
 } );

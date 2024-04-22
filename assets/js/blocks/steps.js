@@ -59,7 +59,7 @@ registerBlockType( 'kunoichi/steps', {
 	icon: (
 		<SVG viewBox="0 0 20 20">
 			<G id="step">
-				<Polygon points="0.75 19.25 0.75 13.08 6.92 13.08 6.92 6.92 13.08 6.92 13.08 0.75 19.25 0.75 19.25 19.25 0.75 19.25" style={ { fill: '#898989', stroke: '#444', strokeMiterlimit:10 } } />
+				<Polygon points="0.75 19.25 0.75 13.08 6.92 13.08 6.92 6.92 13.08 6.92 13.08 0.75 19.25 0.75 19.25 19.25 0.75 19.25" style={ { fill: '#898989', stroke: '#444', strokeMiterlimit: 10 } } />
 			</G>
 		</SVG>
 	),
@@ -109,8 +109,8 @@ registerBlockType( 'kunoichi/steps', {
 			<>
 				<InspectorControls>
 					<PanelBody title={ __( 'How-to Setting', 'kbl' ) } defaultOpen={ true }>
-						<ToggleControl checked={ !attributes.nojson } label={ __( 'Generate JSON-LD', 'kbl' ) }
-							onChange={ ( nojson ) =>  setAttributes( { nojson: !nojson } ) } />
+						<ToggleControl checked={ ! attributes.nojson } label={ __( 'Generate JSON-LD', 'kbl' ) }
+							onChange={ ( nojson ) => setAttributes( { nojson: ! nojson } ) } />
 						<TextControl label={ __( 'Total Time', 'kbl' ) }
 							help={ __( 'A digit in minutes. 30d will be considered as days. Only minutes(no unit) and days(**d) are supported.', 'kbl' ) }
 							value={ attributes.totalTime }
@@ -139,7 +139,7 @@ registerBlockType( 'kunoichi/steps', {
 					{ textList( attributes.tools, __( 'Tools', 'kbl' ), 'kbl-step-tools' ) }
 					<RichText className="kbl-step-description" tagName="p"
 						value={ attributes.description } placeholder={ __( 'e.g. This article will explain how to tie a necktie.', 'kbl' ) }
-						onChange={ ( description) => setAttributes( { description } ) } />
+						onChange={ ( description ) => setAttributes( { description } ) } />
 					<div className="kbl-step-list">
 						<InnerBlocks allowedBlocks={ [ 'kunoichi/step' ] } templateLock={ false } />
 					</div>
@@ -163,5 +163,5 @@ registerBlockType( 'kunoichi/steps', {
 				</ol>
 			</div>
 		);
-	}
+	},
 } );

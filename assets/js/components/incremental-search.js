@@ -9,7 +9,6 @@ const { TextControl } = wp.components;
 const { __ } = wp.i18n;
 
 class IncrementalSearch extends React.Component {
-
 	constructor( props ) {
 		super( props );
 		this.state = {
@@ -29,7 +28,7 @@ class IncrementalSearch extends React.Component {
 		const hasResult = !! ( suggestions && suggestions.length );
 		return (
 			<div className="kbl-incremental-search">
-				<TextControl value={ this.state.term }  placeholder={ __( 'Type and search…', 'kbl' ) } label={ this.props.label || '' }
+				<TextControl value={ this.state.term } placeholder={ __( 'Type and search…', 'kbl' ) } label={ this.props.label || '' }
 					onChange={ ( term ) => {
 						this.setState( { term }, () => {
 							this.enqueueSearch();
@@ -43,7 +42,7 @@ class IncrementalSearch extends React.Component {
 					onBlur={ () => {
 						this.clearCountDown();
 					} }
-				 />
+				/>
 
 				{ searching && (
 					<div className="kbl-incremental-search-result">

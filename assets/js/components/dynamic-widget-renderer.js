@@ -10,7 +10,6 @@ const { Component } = wp.element;
 const $ = jQuery;
 
 class DynamicWidgetRenderer extends Component {
-
 	constructor( props ) {
 		super( props );
 		this.state = this.filterState( {

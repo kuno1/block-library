@@ -8,7 +8,6 @@ const { RichText, InnerBlocks, InspectorControls } = wp.blockEditor;
 const { G, Path, SVG, Rect, PanelBody, TextControl, TextareaControl } = wp.components;
 const { nl2br } = kbl;
 
-
 const getStepCounterClass = ( attributes ) => {
 	const classes = [ 'kbl-step-counter' ];
 	if ( ! attributes.number ) {
@@ -52,7 +51,7 @@ registerBlockType( 'kunoichi/step', {
 		direction: {
 			type: 'string',
 			source: 'html',
-			selector: '.kbl-step-direction'
+			selector: '.kbl-step-direction',
 		},
 		tips: {
 			type: 'string',
@@ -85,7 +84,7 @@ registerBlockType( 'kunoichi/step', {
 				<div className={ className }>
 					<div className="kbl-step-header">
 						<span className={ getStepCounterClass( attributes ) }>{ attributes.number }</span>
-						<RichText tagName={ 'h3' }  className="kbl-step-name"
+						<RichText tagName={ 'h3' } className="kbl-step-name"
 							value={ attributes.title } placeholder={ __( 'e.g. Choose a necktie', 'kbl' ) }
 							onChange={ ( title ) => setAttributes( { title } ) } />
 					</div>
@@ -110,7 +109,7 @@ registerBlockType( 'kunoichi/step', {
 			<li className="kbl-step-item">
 				<div className="kbl-step-header">
 					<span className={ getStepCounterClass( attributes ) }>{ attributes.number }</span>
-					<RichText.Content tagName={ 'h3' }  className="kbl-step-name"
+					<RichText.Content tagName={ 'h3' } className="kbl-step-name"
 						value={ attributes.title } />
 				</div>
 				<div className="kbl-step-body">

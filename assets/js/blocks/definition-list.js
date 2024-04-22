@@ -39,17 +39,17 @@ registerBlockType( 'kunoichi/dt', {
 	},
 
 	edit( { attributes, setAttributes } ) {
-		return <RichText tagName={ 'p' }  className="kbl-dl-term"
-			placeholder={ __( 'Enter term name.', 'kbl' ) }
-			value={ attributes.content } onChange={ ( content ) => setAttributes( { content } ) } />
+		return (
+			<RichText tagName={ 'p' } className="kbl-dl-term"
+				placeholder={ __( 'Enter term name.', 'kbl' ) }
+				value={ attributes.content } onChange={ ( content ) => setAttributes( { content } ) } />
+		);
 	},
 
 	save( { attributes } ) {
-		return <RichText.Content tagName="dt"  className='kbl-dl-term'
-			value={ attributes.content } />
+		return <RichText.Content tagName="dt" className="kbl-dl-term" value={ attributes.content } />;
 	},
 } );
-
 
 registerBlockType( 'kunoichi/dd', {
 
@@ -83,17 +83,17 @@ registerBlockType( 'kunoichi/dd', {
 	},
 
 	edit( { attributes, setAttributes } ) {
-		return <RichText tagName={ 'p' }  className="kbl-dl-description"
-			placeholder={ __( 'Enter description here.', 'kbl' ) }
-			value={ attributes.content } onChange={ ( content ) => setAttributes( { content } ) } />
+		return (
+			<RichText tagName={ 'p' } className="kbl-dl-description"
+				placeholder={ __( 'Enter description here.', 'kbl' ) }
+				value={ attributes.content } onChange={ ( content ) => setAttributes( { content } ) } />
+		);
 	},
 
 	save( { attributes } ) {
-		return <RichText.Content tagName="dd"  className='kbl-dl-description'
-			value={ attributes.content } />
+		return <RichText.Content tagName="dd" className="kbl-dl-description" value={ attributes.content } />;
 	},
 } );
-
 
 registerBlockType( 'kunoichi/definition-list', {
 
@@ -141,7 +141,7 @@ registerBlockType( 'kunoichi/definition-list', {
 					<InnerBlocks allowedBlocks={ allowedBlocks } templateLock={ false } />
 				</div>
 			</>
-		)
+		);
 	},
 
 	save( { attributes } ) {
@@ -149,7 +149,7 @@ registerBlockType( 'kunoichi/definition-list', {
 			<dl className="kbl-dl" data-faq={ attributes.faq ? 'faq' : 'dl' }>
 				<InnerBlocks.Content />
 			</dl>
-		)
-	}
+		);
+	},
 
 } );

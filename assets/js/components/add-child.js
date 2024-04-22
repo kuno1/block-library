@@ -10,7 +10,7 @@ const { Button } = wp.components;
 
 kbl.addChild = ( blockName, clientId ) => {
 	const block = createBlock( blockName );
-	const innerCount = select( 'core/block-editor' ).getBlocksByClientId( clientId )[0].innerBlocks.length;
+	const innerCount = select( 'core/block-editor' ).getBlocksByClientId( clientId )[ 0 ].innerBlocks.length;
 	dispatch( 'core/block-editor' ).insertBlocks( block, innerCount, clientId );
 };
 
@@ -18,7 +18,7 @@ class ChildInsert extends React.Component {
 	render() {
 		const { block, clientId } = this.props;
 		const label = this.props.label || __( 'Add', 'kbl' );
-		const icon  = this.props.icon || 'plus';
+		const icon = this.props.icon || 'plus';
 		return (
 			<div className="kbl-child-insert">
 				<Button icon={ icon } onClick={ () => kbl.addChild( block, clientId ) } label={ label } />

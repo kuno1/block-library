@@ -8,7 +8,6 @@ const { __ } = wp.i18n;
 const { ObjectPlaceholder } = kbl;
 
 class PostPlaceholder extends ObjectPlaceholder {
-
 	renderObject() {
 		const { data } = this.state;
 		return (
@@ -27,12 +26,12 @@ class PostPlaceholder extends ObjectPlaceholder {
 
 	apiFetch() {
 		return wp.apiFetch( {
-			path: `kbl/v1/search/any?id=${ this.props.id }`
+			path: `kbl/v1/search/any?id=${ this.props.id }`,
 		} );
 	}
 
 	handleSuccess( response ) {
-		const post =  response[0];
+		const post = response[ 0 ];
 		return this.setState( {
 			data: {
 				id: post.id,

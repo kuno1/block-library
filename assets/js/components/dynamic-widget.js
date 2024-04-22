@@ -19,7 +19,7 @@ const isPlaceholder = ( $widget ) => {
 	return 0 < $widget.parents( '#available-widgets' ).length;
 };
 
-$.fn.dynamicWidget = function ( options ) {
+$.fn.dynamicWidget = function( options ) {
 	// Setup options.
 	const settings = $.extend( {
 		selector: '.dynamic-widget',
@@ -54,17 +54,17 @@ $.fn.dynamicWidget = function ( options ) {
 		props[ settings.propName ] = $widget.find( selector ).val();
 		render( React.createElement( Renderer, props ), $widget.find( settings.selector )[ 0 ] );
 		// Bind event listener
-		$widget.on( 'widget-value-updated', function ( event, value ) {
+		$widget.on( 'widget-value-updated', function( event, value ) {
 			$widget.find( selector ).val( value ).trigger( 'change' );
 		} );
 	};
 	// Initialize dynamic widgets.
-	return this.each( function ( int, input ) {
+	return this.each( function( int, input ) {
 		const $widget = $( input ).parents( '.widget' );
 		// Register widget change.
-		$( document ).on( 'widget-updated widget-added', function ( event, widget ) {
+		$( document ).on( 'widget-updated widget-added', function( event, widget ) {
 			// If widget doesn't have any input, skip.
-			if ( !widget.find( selector ).length ) {
+			if ( ! widget.find( selector ).length ) {
 				return;
 			}
 			widgetInit( widget );

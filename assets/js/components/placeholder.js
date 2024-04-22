@@ -3,15 +3,12 @@
  * wpdeps=wp-api-fetch,wp-element,kbl,wp-components,wp-data, moment
  */
 
-
-
 const React = wp.element;
 const { __ } = wp.i18n;
 const caches = {};
 const { Button, ButtonGroup } = wp.components;
 
 class ObjectPlaceholder extends React.Component {
-
 	constructor( props ) {
 		super( props );
 		this.state = {
@@ -75,7 +72,7 @@ class ObjectPlaceholder extends React.Component {
 							{ this.props.actions.map( ( action, i ) => {
 								return <Button key={ `action-${ i }` } iconSize={ 16 } isSmall={ true } label={ action.label } icon={ action.icon || 'plus' } onClick={ () => {
 									action.handler( this.props.id );
-								} } />
+								} } />;
 							} ) }
 						</ButtonGroup>
 					</div>

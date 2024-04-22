@@ -15,7 +15,7 @@ const setClassName = ( className, attributes ) => {
 		classes += ' ' + className;
 	}
 	if ( attributes.textAlign ) {
-		classes += ` has-text-align-${ attributes.textAlign }`
+		classes += ` has-text-align-${ attributes.textAlign }`;
 	}
 	return classes;
 };
@@ -131,7 +131,7 @@ registerBlockType( 'kunoichi/card', {
 			<figure className={ setClassName( '', attributes ) }>
 				<a className="kbl-link-card-anchor" href={ attributes.url }>
 					<img src={ attributes.src || KblLinkCard.default_src } alt="" className="kbl-link-card-img" />
-					<RichText.Content value={ attributes.text }  className="kbl-link-card-text"
+					<RichText.Content value={ attributes.text } className="kbl-link-card-text"
 						tagName="p" />
 				</a>
 			</figure>

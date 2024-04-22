@@ -84,12 +84,12 @@ registerBlockType( 'kunoichi/bubble', {
 		content: {
 			type: 'string',
 			source: 'html',
-			selector: '.kbl-bubble-text'
-		}
+			selector: '.kbl-bubble-text',
+		},
 	},
 
 	edit: withColors( 'backgroundColor', 'textColor' )( ( { attributes, setAttributes, backgroundColor, setBackgroundColor, textColor, setTextColor } ) => {
-		const[ src, setSrc ] = useState( KblBubble.avatar );
+		const [ src, setSrc ] = useState( KblBubble.avatar );
 		const [ name, setName ] = useState( '' );
 		let displayName = name;
 		let imageSrc = src;
@@ -102,17 +102,17 @@ registerBlockType( 'kunoichi/bubble', {
 			} else {
 				wp.apiFetch( {
 					path: sprintf( 'kbl/v1/users/search?id=%d', attributes.user ),
-				} ).then( res => {
+				} ).then( ( res ) => {
 					if ( ! res.length ) {
 						// User not found.
 						setAttributes( { user: 0 } );
 						displayError( __( 'User not found.', 'kbl' ), 'error' );
 					} else {
 						userResults[ attributes.user ] = res[ 0 ];
-						setName( res[0].display_name );
+						setName( res[ 0 ].display_name );
 						setSrc( res[ 0 ].avatar );
 					}
-				} ).catch( res => {
+				} ).catch( ( res ) => {
 					let message = __( 'Error', 'kbl' );
 					if ( res.responseJSON && res.responseJSON.message ) {
 						message = res.responseJSON.message;
@@ -140,7 +140,7 @@ registerBlockType( 'kunoichi/bubble', {
 						setName( attributes.name ? attributes.name : res[ 0 ].title );
 						setSrc( attributes.avatar ? attributes.avatar : res[ 0 ].thumbnail );
 					}
-				} ).catch( res => {
+				} ).catch( ( res ) => {
 					let message = __( 'Error', 'kbl' );
 					if ( res.responseJSON && res.responseJSON.message ) {
 						message = res.responseJSON.message;
@@ -172,7 +172,7 @@ registerBlockType( 'kunoichi/bubble', {
 		const bodyClasses = [ 'kbl-bubble-text' ];
 		const bodyStyle = {};
 		if ( backgroundColor.class ) {
-			bodyClasses.push( backgroundColor.class )
+			bodyClasses.push( backgroundColor.class );
 		} else if ( backgroundColor.color ) {
 			bodyStyle.backgroundColor = backgroundColor.color;
 		}
@@ -191,11 +191,11 @@ registerBlockType( 'kunoichi/bubble', {
 						</h4>
 						<TextControl label={ __( 'Name', 'kbl' ) } value={ attributes.name }
 							help={ __( 'If name is empty, this will be just omitted.', 'kbl' ) }
-							onChange={ newName => setAttributes( { name: newName } ) } />
+							onChange={ ( newName ) => setAttributes( { name: newName } ) } />
 						<MediaUploadCheck>
 							<MediaUpload allowedTypes={ [ 'image' ] }
-								onSelect={ select => {
-									setAttributes( { avatar: extractAvatar( select ) } )
+								onSelect={ ( select ) => {
+									setAttributes( { avatar: extractAvatar( select ) } );
 								} }
 								render={ ( { open } ) => {
 									return (
@@ -232,28 +232,28 @@ registerBlockType( 'kunoichi/bubble', {
 								{ label: __( 'Left', 'kbl' ), value: 'left' },
 								{ label: __( 'Right', 'kbl' ), value: 'right' },
 							] }
-							onChange={ position => {
-								setAttributes( { position } )
+							onChange={ ( position ) => {
+								setAttributes( { position } );
 							} }
 						/>
 					</PanelBody>
 					<PanelColorSettings title={ __( 'Color Setting', 'kbl' ) } colorSettings={ colorSettings }
 						initialOpen={ false } />
 				</InspectorControls>
-				<div className='kbl-bubble' data-position={ attributes.position }>
+				<div className="kbl-bubble" data-position={ attributes.position }>
 					{ imageSrc ? (
-						<div className='kbl-bubble-avatar'>
-							<img className='kbl-bubble-image' src={ imageSrc } alt={ displayName } width={ 96 } height={ 96 } />
+						<div className="kbl-bubble-avatar">
+							<img className="kbl-bubble-image" src={ imageSrc } alt={ displayName } width={ 96 } height={ 96 } />
 							{ displayName.length ? (
-								<span className='kbl-bubble-name'>{ displayName }</span>
+								<span className="kbl-bubble-name">{ displayName }</span>
 							) : null }
 						</div>
 					) : null }
-					<div className='kbl-bubble-body'>
+					<div className="kbl-bubble-body">
 						<RichText className={ bodyClasses.join( ' ' ) } style={ bodyStyle || null }
 							tagName={ 'p' } value={ attributes.content }
 							placeholder={ __( 'Enter speech here.', 'kbl' ) }
-							onChange={ content => setAttributes( { content } ) } />
+							onChange={ ( content ) => setAttributes( { content } ) } />
 					</div>
 				</div>
 			</>
@@ -262,9 +262,9 @@ registerBlockType( 'kunoichi/bubble', {
 
 	save( { attributes } ) {
 		return (
-			<div className='kbl-bubble-body'>
-				<RichText.Content tagName='p' className='kbl-bubble-text' value={ attributes.content } />
+			<div className="kbl-bubble-body">
+				<RichText.Content tagName="p" className="kbl-bubble-text" value={ attributes.content } />
 			</div>
-		)
-	}
+		);
+	},
 } );

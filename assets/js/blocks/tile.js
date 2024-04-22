@@ -9,14 +9,14 @@ const { __, sprintf } = wp.i18n;
 const { InnerBlocks, InspectorControls, withColors, PanelColorSettings } = wp.blockEditor;
 
 const tileClass = ( className, attributes ) => {
-	const c = ['kbl-tiled-grid-item'];
+	const c = [ 'kbl-tiled-grid-item' ];
 	if ( className ) {
 		c.push( className );
 	}
 	if ( attributes.color ) {
 		c.push( sprintf( 'has-%s-text-color', attributes.color ) );
 	}
-	if ( attributes.backgroundColor) {
+	if ( attributes.backgroundColor ) {
 		c.push( sprintf( 'has-%s-background-color', attributes.backgroundColor ) );
 	}
 	return c.join( ' ' );
@@ -45,14 +45,13 @@ registerBlockType( 'kunoichi/tile', {
 		},
 	},
 
-	edit: withColors( 'backgroundColor', 'color' )( ( { attributes, className, backgroundColor, setBackgroundColor, color, setColor } ) =>  {
-
+	edit: withColors( 'backgroundColor', 'color' )( ( { attributes, className, backgroundColor, setBackgroundColor, color, setColor } ) => {
 		const colorSettings = [
 			{
 				value: color.color,
 				label: __( 'Text Color', 'kbl' ),
 				onChange: setColor,
-				disableCustomColors : true,
+				disableCustomColors: true,
 			},
 			{
 				value: backgroundColor.color,

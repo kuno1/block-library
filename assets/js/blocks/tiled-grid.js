@@ -35,7 +35,6 @@ const classNames = ( classes, attributes ) => {
 	return c.join( ' ' );
 };
 
-
 registerBlockType( 'kunoichi/tiled-grid', {
 
 	title: __( 'Tiled Grid', 'kbl' ),
@@ -114,6 +113,6 @@ registerBlockType( 'kunoichi/tiled-grid', {
 				<InnerBlocks.Content />
 			</div>
 		);
-	}
+	},
 
 } );

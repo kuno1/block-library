@@ -7,7 +7,6 @@ const { __, sprintf } = wp.i18n;
 const { TextControl, Tooltip, Spinner } = wp.components;
 
 class Term extends React.Component {
-
 	constructor( props ) {
 		super( props );
 		this.state = {
@@ -47,11 +46,9 @@ class Term extends React.Component {
 			</Tooltip>
 		);
 	}
-
 }
 
 class TaxonomySelector extends React.Component {
-
 	constructor( props ) {
 		super( props );
 		this.timer = null;
@@ -67,7 +64,7 @@ class TaxonomySelector extends React.Component {
 			clearTimeout( this.timer );
 		}
 		this.setState( { found: [] }, () => {
-			if ( !text.length ) {
+			if ( ! text.length ) {
 				return;
 			}
 			this.setState( { loading: true }, () => {
@@ -104,7 +101,7 @@ class TaxonomySelector extends React.Component {
 			}
 		}
 		this.setState( {
-			selected
+			selected,
 		}, () => {
 			if ( this.props.onChange ) {
 				this.props.onChange( selected );
@@ -139,7 +136,7 @@ class TaxonomySelector extends React.Component {
 				<p style={ { marginBottom: '5px' } }>{ this.props.label || __( 'Taxonomy', 'kbl' ) }</p>
 				{ this.state.selected && <div className="kbl-taxonomy-selector-selected">
 					{ this.state.selected.map( ( term ) => {
-						return <Term key={ term } id={ term } onRemove={ ( id ) => this.remove( id ) } />
+						return <Term key={ term } id={ term } onRemove={ ( id ) => this.remove( id ) } />;
 					} ) }
 				</div> }
 				<TextControl placeholder={ __( 'Search…', 'kbl' ) } onChange={ ( text ) => this.search( text ) } />
@@ -149,11 +146,11 @@ class TaxonomySelector extends React.Component {
 				{ this.state.loading && (
 					<Spinner />
 				) }
-				{ ( !this.state.loading ) && this.state.found && this.state.found.map( ( term ) => {
+				{ ( ! this.state.loading ) && this.state.found && this.state.found.map( ( term ) => {
 					return (
 						<Tooltip text={ __( 'Click to add', 'kbl' ) } key={ term.id }>
 							<span className="kbl-taxonomy-selector-button kbl-taxonomy-selector-button-secondary"
-								  onClick={ () => this.select( term.id ) } tabIndex={ 0 } role="button">
+								onClick={ () => this.select( term.id ) } tabIndex={ 0 } role="button">
 								<small>{ term.taxonomy }</small>
 								{ term.name }{ sprintf( /* translators: %d is term count. */ __( '(%d)', 'kbl' ), term.count ) }
 							</span>

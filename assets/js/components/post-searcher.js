@@ -9,7 +9,6 @@ const { IncrementalSearch } = kbl;
 const { Snackbar } = wp.components;
 
 class PostSearcher extends React.Component {
-
 	constructor( props ) {
 		super( props );
 		this.state = {
