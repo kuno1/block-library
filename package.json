@@ -48,7 +48,7 @@
 		"@wordpress/stylelint-config": "^18.0.0",
 		"babel-loader": "^9.0.0",
 		"eslint": "^7.32.0",
-		"gulp": "^4.0.2",
+		"gulp": "^5.0.0",
 		"gulp-autoprefixer": "^9.0.0",
 		"gulp-babel": "^8.0.0",
 		"gulp-eslint": "^6.0.0",
